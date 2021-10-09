@@ -67,8 +67,8 @@ div.pe-0-1 {
 
 
 	<header class="header">
-		<!-- Header½ÃÀÛ -->
-		<!-- Navbar-->
+		<!-- Headerì‹œìž‘ -->
+		<!--  Navbar-->
 		<nav
 			class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
 			<div class="container-fluid">
@@ -388,7 +388,7 @@ div.pe-0-1 {
 		</nav>
 		<!-- /Navbar -->
 	</header>
-	<!-- Header³¡ -->
+	<!-- Headerë -->
 
 
 
@@ -398,11 +398,11 @@ div.pe-0-1 {
 		<div class="container">
 			<!-- Breadcrumbs -->
 
-			<h2 class="hero-heading mb-0">±âº» Á¤º¸</h2>
+			<h2 class="hero-heading mb-0">ê¸°ë³¸ ì •ë³´</h2>
 
 			<div class="row2">
 			
-				<!-- Å×ÀÌºí Á¤·ÄÀ» À§ÇØ  css default¿¡ row2Ãß°¡ -->
+				<!-- í…Œì´ë¸” ì •ë ¬ì„ ìœ„í•´  cssì— row2ì¶”ê°€ -->
 				<div class="col-lg-7 mb-5 mb-lg-0">
 					<div class="text-block">
 						<div class="row mb-3">
@@ -411,32 +411,32 @@ div.pe-0-1 {
 								<br>
 								
 
-								<!--   Å×ÀÌºí Çü½ÄÀ¸·Î ¸¸µé±â -->
+								<!--   í…Œì´ë¸” í˜•ì‹ìœ¼ë¡œ ë§Œë“¤ê¸° -->
 								<div class="card-body">
 									<table class="table text-sm mb-0">
 										<tr>
-										<!-- ps-0-1 È¸¿øÁ¤º¸ Å×ÀÌºíÀÇ ÅØ½ºÆ® °¡¿îµ¥ Á¤·Ä css default¿¡ Ãß°¡ -->
-										<!-- pe-0-1 È¸¿øÁ¤º¸ Å×ÀÌºíÀÇ ÅØ½ºÆ® °¡¿îµ¥ Á¤·Ä css default¿¡ Ãß°¡ -->
+										<!-- ps-0-1 íšŒì›ì •ë³´ í…Œì´ë¸”ì˜ í…ìŠ¤íŠ¸ ê°€ìš´ë° ì •ë ¬ css defaultì— ì¶”ê°€ -->
+										<!-- pe-0-1 íšŒì›ì •ë³´ í…Œì´ë¸”ì˜ í…ìŠ¤íŠ¸ ê°€ìš´ë° ì •ë ¬ css defaultì— ì¶”ê°€ -->
 										
-											<th class="ps-0-1"  >ÀÌ¸§</th>
-											<td class="pe-0-1 ">Á¶À¯ÁÖ ´Ô</td>
+											<th class="ps-0-1"  >ì´ë¦„</th>
+											<td class="pe-0-1 ">ì¡°ìœ ì£¼ ë‹˜</td>
 										</tr>
 										<tr>
-											<th class="ps-0-1">´Ð³×ÀÓ</th>
+											<th class="ps-0-1">ë‹‰ë„¤ìž„</th>
 											<td class="pe-0-1">Yuju</td>
 										</tr>
 										<tr>
-											<th class="ps-0-1" >¿¬¶ôÃ³</th>
+											<th class="ps-0-1" >ì—°ë½ì²˜</th>
 											<td class="pe-0-1 ">010-1234-5678</td>
 										</tr>
 										<tr>
-											<th class="ps-0-1" >µî·Ï Áö¿ª</th>
-											<td class="pe-0-1">°­³²±¸ ¿ª»ïµ¿</td>
+											<th class="ps-0-1" >ë“±ë¡ ì§€ì—­</th>
+											<td class="pe-0-1">ê°•ë‚¨êµ¬ ì—­ì‚¼ë™</td>
 										</tr>
 										<tr>
-											<th class="ps-0-1" >ÁÖ¼Ò</th>
-											<td class="pe-0-1">¿ìÆí¹øÈ£ : 123-456 <br>ÁÖ¼Ò :
-												¼­¿ï½ÃÆ¯º°±¸ °­³²±¸ ¿ª»ïµ¿ 731-1
+											<th class="ps-0-1" >ì£¼ì†Œ</th>
+											<td class="pe-0-1">ìš°íŽ¸ë²ˆí˜¸ : 123-456 <br>ì£¼ì†Œ :
+												ì„œìš¸ì‹œíŠ¹ë³„êµ¬ ê°•ë‚¨êµ¬ ì—­ì‚¼ë™ 731-1
 											</td>
 										</tr>
 									</table>
@@ -448,9 +448,9 @@ div.pe-0-1 {
 <br><br>
 
 
-						<button class="btn btn-outline-primary mb-4" type="submit"  id="accountDelete" name="accountDelete" onClick="location.href='account_delete.jsp'">È¸¿ø Å»Åð</button>
+						<button class="btn btn-outline-primary mb-4" type="submit"  id="accountDelete" name="accountDelete" onClick="location.href='account_delete.jsp'">íšŒì› íƒˆí‡´</button>
 						
-						<button class="btn btn-outline-primary mb-4" type="submit" id="accountModify"  name="accountModify" onClick="location.href='profile.jsp'">È¸¿ø Á¤º¸ ¼öÁ¤</button>
+						<button class="btn btn-outline-primary mb-4" type="submit" id="accountModify"  name="accountModify" onClick="location.href='profile.jsp'">íšŒì› ì •ë³´ ìˆ˜ì •</button>
 						
 					</div>
 				</div>

@@ -12,7 +12,7 @@
     <meta name="robots" content="all,follow">
     <!-- Price Slider Stylesheets -->
     <link rel="stylesheet" href="resources/vendor/nouislider/nouislider.css">
-    <!-- Google fonts - Playfair Display-->
+    <!--  Google fonts - Playfair Display-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
     <!-- Google fonts - Poppins-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">

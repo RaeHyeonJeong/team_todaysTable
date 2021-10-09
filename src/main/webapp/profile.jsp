@@ -68,7 +68,7 @@ div.row2 {
 
 
 	<header class="header">
-		<!-- HeaderΩ√¿€ -->
+		<!-- HeaderÏãúÏûë -->
 		<!-- Navbar-->
 		<nav
 			class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
@@ -389,7 +389,7 @@ div.row2 {
 		</nav>
 		<!-- /Navbar -->
 	</header>
-	<!-- Header≥° -->
+	<!-- HeaderÎÅù -->
 
 
 
@@ -408,20 +408,20 @@ div.row2 {
 							<a class="d-inline-block" href="#"><img
 								class="d-block avatar avatar-xxl p-2 mb-2"
 								src="resources/img/avatar/avatar-10.jpg" alt=""></a>
-							<h5>¡∂¿Ø¡÷</h5>
-							<p class="text-muted text-sm mb-0">¿Ø¡÷</p>
+							<h5>Ï°∞Ïú†Ï£º</h5>
+							<p class="text-muted text-sm mb-0">Ïú†Ï£º</p>
 						</div>
 
 						<div class="card-body p-4">
 							<div class="d-flex align-items-center mb-3">
 								<div
 									class="icon-rounded icon-rounded-sm bg-primary-light flex-shrink-0 me-2">
-									<svg class="svg-icon text-primary svg-icon-md"> <!-- ∏Æ∫‰ æ∆¿Ãƒ‹ ∏æÁ¿⁄√º -->
+									<svg class="svg-icon text-primary svg-icon-md"> <!-- Î¶¨Î∑∞ ÏïÑÏù¥ÏΩò Î™®ÏñëÏûêÏ≤¥ -->
                       <use xlink:href="#diploma-1"> </use>
                     </svg>
 								</div>
 								<div>
-									<p class="mb-0">∏Æ∫‰ 12∞≥</p>
+									<p class="mb-0">Î¶¨Î∑∞ 12Í∞ú</p>
 								</div>
 							</div>
 
@@ -440,19 +440,19 @@ div.row2 {
 
 
 				<div class="col-lg-9 ps-lg-5">
-					<h3 class="hero-heading mb-0">«¡∑Œ«  ∞¸∏Æ</h3>
+					<h3 class="hero-heading mb-0">ÌîÑÎ°úÌïÑ Í¥ÄÎ¶¨</h3>
 					<div class="d-flex d-block d-sm-flex review ">
 
 						<div class="card-body">
 							<table class="table text-sm mb-0">
 								<tr>
-									<th class="ps-0-1">∫Òπ–π¯»£ ∫Ø∞Ê</th>
+									<th class="ps-0-1">ÎπÑÎ∞ÄÎ≤àÌò∏ Î≥ÄÍ≤Ω</th>
 									
 									<td class="pe-0-1 ">
 											<div class="row py-0">
 											<div class="mb-1 col-md-6">
 												<input class="form-text" type="text" name="pass1" id="pass1"
-													value="«ˆ¿Á ∫Òπ–π¯»£ ¿‘∑¬">
+													value="ÌòÑÏû¨ ÎπÑÎ∞ÄÎ≤àÌò∏ ÏûÖÎ†•">
 											</div>
 										</div>
 
@@ -460,7 +460,7 @@ div.row2 {
 										<div class="row py-0">
 											<div class="mb-1 col-md-6">
 												<input class="form-text" type="text" name="pass2" id="pass2"
-													value="ªı∑ŒøÓ ∫Òπ–π¯»£ ¿‘∑¬">
+													value="ÏÉàÎ°úÏö¥ ÎπÑÎ∞ÄÎ≤àÌò∏ ÏûÖÎ†•">
 											</div>
 										</div>
 										
@@ -468,7 +468,7 @@ div.row2 {
 										<div class="row py-0">
 											<div class="mb-1 col-md-6">
 												<input class="form-text" type="text" name="pass3" id="pass3"
-													value="ªı∑ŒøÓ ∫Òπ–π¯»£ ¿‘∑¬">
+													value="ÏÉàÎ°úÏö¥ ÎπÑÎ∞ÄÎ≤àÌò∏ ÏûÖÎ†•">
 											</div>
 										</div>
 									</td>
@@ -488,34 +488,34 @@ div.row2 {
 
 
 								<tr>
-									<th class="ps-0-1">¡÷º“ ∫Ø∞Ê</th>
+									<th class="ps-0-1">Ï£ºÏÜå Î≥ÄÍ≤Ω</th>
 									
 									<td class="pe-0-1">
 										<div class="row py-0">
 											<div class="mb-1 col-md-6">
 												<input class="form-text" type="text" name="zipcode"
-													id="zipcode" value="øÏ∆Ìπ¯»£">																						
+													id="zipcode" value="Ïö∞Ìé∏Î≤àÌò∏">																						
 											</div>
 										</div>								
 									
 												<div class="row py-0">
 											<div class="mb-1 col-md-6">
 												<input class="form-text" type="text" name="address1"
-													id="address1" value="¡÷º“">
+													id="address1" value="Ï£ºÏÜå">
 											</div>
 										</div>
 
 										<div class="row py-0">
 											<div class="mb-1 col-md-6">
 												<input class="form-text" type="text" name="address2"
-													id="address2" value="ªÛºº ¡÷º“">
+													id="address2" value="ÏÉÅÏÑ∏ Ï£ºÏÜå">
 											</div>
 										</div>
 									</td>
 									
 										
 									<td><div class="d-flex flex-row-reverse bd-highlight">
-                     <button class="btn btn-outline-primary" name="zipcode" id="zipcode">øÏ∆Ìπ¯»£</button>
+                     <button class="btn btn-outline-primary" name="zipcode" id="zipcode">Ïö∞Ìé∏Î≤àÌò∏</button>
                   </div>
 									</td>
 									<td>
@@ -527,7 +527,7 @@ div.row2 {
 
 
 								<tr>
-									<th class="ps-0-1">ø¨∂Ù√≥ ∫Ø∞Ê</th>
+									<th class="ps-0-1">Ïó∞ÎùΩÏ≤ò Î≥ÄÍ≤Ω</th>
 									<td class="pe-0-1">
 
 										<div class="row py-0">
@@ -553,20 +553,20 @@ div.row2 {
 
 
 								<tr>
-									<th class="ps-0-1">¥–≥◊¿” ∫Ø∞Ê</th>
+									<th class="ps-0-1">ÎãâÎÑ§ÏûÑ Î≥ÄÍ≤Ω</th>
 									<td class="pe-0-1">
 
 										<div class="row py-0">
 											<div class="mb-1 col-md-6">
 
 												<input class="form-text" type="text" name="nickname" id="nickname"
-													value="ªı∑ŒøÓ ¥–≥◊¿” ¿‘∑¬">
+													value="ÏÉàÎ°úÏö¥ ÎãâÎÑ§ÏûÑ ÏûÖÎ†•">
 									</div>
 										</div>
 									</td>
 									<td>
 									<div class="d-flex flex-row-reverse bd-highlight">
-                     <button class="btn btn-outline-primary" id="nicknameCheck" name="nicknameCheck">¡ﬂ∫π»Æ¿Œ</button>
+                     <button class="btn btn-outline-primary" id="nicknameCheck" name="nicknameCheck">Ï§ëÎ≥µÌôïÏù∏</button>
                   </div>
 									</td>
 									<td>
@@ -576,7 +576,7 @@ div.row2 {
 								</tr>
 
 								<tr>
-									<th class="ps-0-1">«¡∑Œ«  ¿ÃπÃ¡ˆ ∫Ø∞Ê</th>
+									<th class="ps-0-1">ÌîÑÎ°úÌïÑ Ïù¥ÎØ∏ÏßÄ Î≥ÄÍ≤Ω</th>
 									<td class="pe-0-1">
 
 										<div class="row py-0">
@@ -585,13 +585,13 @@ div.row2 {
 													class="d-block avatar avatar-xxl p-2 mb-2"
 													src="resources/img/avatar/avatar-10.jpg" alt=""></a>
 													 <input class="form-text" type="text" name="photo" id="photo"
-													value="ªÁøÎ«“ ¿ÃπÃ¡ˆ æ˜∑ŒµÂ">
+													value="ÏÇ¨Ïö©Ìï† Ïù¥ÎØ∏ÏßÄ ÏóÖÎ°úÎìú">
 												
 										</div>
 									</td>
 									<td>
 									<div class="d-flex flex-row-reverse bd-highlight">
-                     <button class="btn btn-outline-primary" id="photoUpload" name="photoUpload">æ˜∑ŒµÂ</button>
+                     <button class="btn btn-outline-primary" id="photoUpload" name="photoUpload">ÏóÖÎ°úÎìú</button>
                   </div>
 									</td>
 									<td>
@@ -606,9 +606,9 @@ div.row2 {
 					</div>
 				</div>
 			<div class="row2">
-			<button class="btn btn-outline-primary mb-4" type="submit" id="cancel" name="cancel"  onClick="location.href='personal_information.jsp'">µπæ∆∞°±‚</button>
+			<button class="btn btn-outline-primary mb-4" type="submit" id="cancel" name="cancel"  onClick="location.href='personal_information.jsp'">ÎèåÏïÑÍ∞ÄÍ∏∞</button>
 						<p>&emsp;&emsp;&emsp;</p>
-						<button class="btn btn-outline-primary mb-4" type="submit" id="save" name="save"  onClick="location.href='personal_information.jsp'">ºˆ¡§«œ±‚</button>
+						<button class="btn btn-outline-primary mb-4" type="submit" id="save" name="save"  onClick="location.href='personal_information.jsp'">ÏàòÏ†ïÌïòÍ∏∞</button>
 			</div>
 			</form>
 		</div>
@@ -618,7 +618,7 @@ div.row2 {
 	
 
 
-	<!-- Footer-->
+	<!--  Footer-->
 	<footer class="position-relative z-index-10 d-print-none">
 		<!-- Main block - menus, subscribe form-->
 		<div class="py-6 bg-gray-200 text-muted">

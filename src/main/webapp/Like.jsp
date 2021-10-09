@@ -399,29 +399,29 @@ font-size:1.6em;
 							<a class="d-inline-block" href="#"><img
 								class="d-block avatar avatar-xxl p-2 mb-2"
 								src="resources/img/avatar/avatar-10.jpg" alt=""></a>
-							<h5>¡∂¿Ø¡÷</h5>
-							<p class="text-muted text-sm mb-0">¿Ø¡÷</p>
+							<h5>Ï°∞Ïú†Ï£º</h5>
+							<p class="text-muted text-sm mb-0">Ïú†Ï£º</p>
 						</div>
 
 						<div class="card-body p-4">
 							<div class="d-flex align-items-center mb-3">
 								<div
 									class="icon-rounded icon-rounded-sm bg-primary-light flex-shrink-0 me-2">
-									<svg class="svg-icon text-primary svg-icon-md"> <!-- ∏Æ∫‰ æ∆¿Ãƒ‹ ∏æÁ¿⁄√º -->
+									<svg class="svg-icon text-primary svg-icon-md"> <!-- Î¶¨Î∑∞ ÏïÑÏù¥ÏΩò Î™®ÏñëÏûêÏ≤¥ -->
                       <use xlink:href="#diploma-1"> </use>
                     </svg>
 								</div>
 								<div>
-									<p class="mb-0">∏Æ∫‰ 12∞≥</p>
+									<p class="mb-0">Î¶¨Î∑∞ 12Í∞ú</p>
 								</div>
 							</div>
 
 
 							<hr>
-							<h6>∏∂¿Ã ∏ÆΩ∫∆Æ</h6>
+							<h6>ÎßàÏù¥ Î¶¨Ïä§Ìä∏</h6>
 							<ul class="card-text text-muted">
-								<li>√÷±Ÿ ∫ª ∞°∞‘</li>
-								<li>¬Ú«— ∞°∞‘</li>
+								<li>ÏµúÍ∑º Î≥∏ Í∞ÄÍ≤å</li>
+								<li>Ï∞úÌïú Í∞ÄÍ≤å</li>
 							</ul>
 						</div>
 					</div>
@@ -429,10 +429,10 @@ font-size:1.6em;
 
 
 				 <div class="col-lg-9 ps-lg-5">
-					<h2 class="hero-heading mb-0">¬Ú «— ∞°∞‘</h2>
+					<h2 class="hero-heading mb-0">Ï∞ú Ìïú Í∞ÄÍ≤å</h2>
 					<div align="right">
 						<button class="btn btn-outline-primary mb-4" type="submit" id="return" name="return" onClick="location.href='personal_information.jsp'">
-							µπæ∆∞°±‚
+							ÎèåÏïÑÍ∞ÄÍ∏∞
 						</button>
 					</div>
 
@@ -441,7 +441,7 @@ font-size:1.6em;
 					<div class="d-flex flex-column d-block d-sm-flex review ">
                   <div class="d-flex flex-row bd-highlight mb-3">
                      <div class="text-md-center flex-shrink-0 me-4 me-xl-5">
-                        <img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/avatar/seoulke.png" alt="º≠øÔƒ…π‰∆‰¿Ã¡ˆ">
+                        <img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/avatar/seoulke.png" alt="ÏÑúÏö∏ÏºÄÎ∞•ÌéòÏù¥ÏßÄ">
                      </div>
                      
                      <div class="score-layout">
@@ -451,11 +451,11 @@ font-size:1.6em;
                      <div>&emsp;</div>
                      
                      <div>
-                        <h6 class="mt-2 mb-1">1.º≠øÔƒ…π‰</h6>
+                        <h6 class="mt-2 mb-1">1.ÏÑúÏö∏ÏºÄÎ∞•</h6>
                         <div class="mb-2">
                            <i class="fa fa-xs fa-star text-primary"></i> <i class="fa fa-xs fa-star text-primary"></i> <i class="fa fa-xs fa-star text-primary"></i> <i class="fa fa-xs fa-star text-primary"></i>
                         </div>
-                        <p class="text-muted text-sm">º≠øÔ∆Ø∫∞Ω√ øÎªÍ±∏ ªı¬¸∑Œ 181 </p>
+                        <p class="text-muted text-sm">ÏÑúÏö∏ÌäπÎ≥ÑÏãú Ïö©ÏÇ∞Íµ¨ ÏÉàÏ∞∏Î°ú 181 </p>
                      </div>
                      
                   </div>
@@ -468,7 +468,7 @@ font-size:1.6em;
 				<div class="d-flex flex-column d-block d-sm-flex review ">
                   <div class="d-flex flex-row bd-highlight mb-3">
                      <div class="text-md-center flex-shrink-0 me-4 me-xl-5">
-                        <img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/avatar/batos.png" alt="πŸ≈‰Ω∫∆‰¿Ã¡ˆ">
+                        <img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/avatar/batos.png" alt="Î∞îÌÜ†Ïä§ÌéòÏù¥ÏßÄ">
                      </div>
                      
                      <div class="score-layout">
@@ -478,11 +478,11 @@ font-size:1.6em;
                      <div>&emsp;</div>
                      
                      <div>
-                        <h6 class="mt-2 mb-1">2.πŸ≈‰Ω∫</h6>
+                        <h6 class="mt-2 mb-1">2.Î∞îÌÜ†Ïä§</h6>
                         <div class="mb-2">
                            <i class="fa fa-xs fa-star text-primary"></i> <i class="fa fa-xs fa-star text-primary"></i> <i class="fa fa-xs fa-star text-primary"></i> <i class="fa fa-xs fa-star text-primary"></i>
                         </div>
-                        <p class="text-muted text-sm">º≠øÔ∆Ø∫∞Ω√ º€∆ƒ±∏ ø√∏≤«»∑Œ 240 </p>
+                        <p class="text-muted text-sm">ÏÑúÏö∏ÌäπÎ≥ÑÏãú ÏÜ°ÌååÍµ¨ Ïò¨Î¶ºÌîΩÎ°ú 240 </p>
                      </div>
                      
                   </div>
@@ -494,7 +494,7 @@ font-size:1.6em;
 					<div class="d-flex flex-column d-block d-sm-flex review ">
                   <div class="d-flex flex-row bd-highlight mb-3">
                      <div class="text-md-center flex-shrink-0 me-4 me-xl-5">
-                        <img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/avatar/kku.png" alt="≤Ÿ¿◊∆‰¿Ã¡ˆ">
+                        <img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/avatar/kku.png" alt="Íæ∏ÏûâÌéòÏù¥ÏßÄ">
                      </div>
                      
                      <div class="score-layout">
@@ -504,16 +504,16 @@ font-size:1.6em;
                      <div>&emsp;</div>
                      
                      <div>
-                        <h6 class="mt-2 mb-1">3.≤Ÿ¿◊</h6>
+                        <h6 class="mt-2 mb-1">3.Íæ∏Ïûâ</h6>
                         <div class="mb-2">
                            <i class="fa fa-xs fa-star text-primary"></i> <i class="fa fa-xs fa-star text-primary"></i> <i class="fa fa-xs fa-star text-primary"></i> <i class="fa fa-xs fa-star text-primary"></i>
                         </div>
-                        <p class="text-muted text-sm">º≠øÔ∆Ø∫∞Ω√ øÎªÍ±∏ ¿Ã≈¬ø¯∑Œ 189 </p>
+                        <p class="text-muted text-sm">ÏÑúÏö∏ÌäπÎ≥ÑÏãú Ïö©ÏÇ∞Íµ¨ Ïù¥ÌÉúÏõêÎ°ú 189 </p>
                      </div>
                      
                   </div>
                   <div class="d-flex flex-row-reverse bd-highlight">
-                     <button class="btn btn-outline-primary" type="submit" id="like3" name="like3">something</button> <!-- ¬Ú «ÿ¡¶«œ±‚ -->
+                     <button class="btn btn-outline-primary" type="submit" id="like3" name="like3">something</button> 
                   </div>
                </div>
                   </div>

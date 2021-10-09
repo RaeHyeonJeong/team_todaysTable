@@ -20,7 +20,7 @@
 <!-- swiper-->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
-<!-- Magnigic Popup-->
+<!--  Magnigic Popup-->
 <link rel="stylesheet" href="resources/vendor/magnific-popup/magnific-popup.css">
 <!-- theme stylesheet-->
 <link rel="stylesheet" href="resources/css/style.default.css"

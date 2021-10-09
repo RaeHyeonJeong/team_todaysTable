@@ -14,7 +14,7 @@
 <!-- Google fonts - Playfair Display-->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
-<!-- Google fonts - Poppins-->
+<!--  Google fonts - Poppins-->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">
 <!-- swiper-->

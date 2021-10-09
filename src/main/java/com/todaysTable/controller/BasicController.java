@@ -36,4 +36,15 @@ public class BasicController {
       return modelAndView;
    }
    
+   @RequestMapping(value="moveStoreDetail.do")
+   public ModelAndView moveStoreDetail() {
+      ModelAndView modelAndView=new ModelAndView();
+      modelAndView.addObject("Message", "HelloSpringMVC3");
+      modelAndView.setViewName("WEB-INF/views/bookStore");
+      
+      
+      return modelAndView;
+   }
+   
+   
 }

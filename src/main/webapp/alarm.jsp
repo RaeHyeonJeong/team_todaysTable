@@ -11,7 +11,7 @@
 <meta name="robots" content="all,follow">
 <!--  Price Slider Stylesheets -->
 <link rel="stylesheet" href="resources/vendor/nouislider/nouislider.css">
-<!-- Google fonts - Playfair Display-->
+<!--  Google fonts - Playfair Display-->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
 <!-- Google fonts - Poppins-->
@@ -377,13 +377,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7">
-					<h1 class="h2 mb-5">¾Ë¸²</h1>
+					<h1 class="h2 mb-5">ì•Œë¦¼</h1>
 
 				</div>
 
 				<div align="right">
 					<button class="btn btn-outline-primary mb-4" type="submit" id="return" name="return" onClick="location.href='personal_information.jsp'">
-						µ¹¾Æ°¡±â
+						ëŒì•„ê°€ê¸°
 					</button>
 				</div>
 
@@ -413,9 +413,9 @@
 									<div class="d-flex align-items-center">
 										<div>
 											<h4>
-												<a class="text-reset" href="resources/detail-rooms.html">´õ¹éÇªµåÆ®·°</a>
+												<a class="text-reset" href="resources/detail-rooms.html">ë”ë°±í‘¸ë“œíŠ¸ëŸ­</a>
 											</h4>
-											<p class="text-muted text-sm mb-0">Ä¡Áî°¡ ÂÞ¿íÂÞ¿í!</p>
+											<p class="text-muted text-sm mb-0">ì¹˜ì¦ˆê°€ ì­ˆìš±ì­ˆìš±!</p>
 											<div class="mt-n1">
 												<i class="fa fa-xs fa-star text-primary"></i><i
 													class="fa fa-xs fa-star text-primary"></i><i
@@ -424,7 +424,7 @@
 													class="fa fa-xs fa-star text-gray-200"></i>
 											</div>
 										</div>
-										<a class="flex-shrink-0" href="´õ¹éÇªµåÆ®·°"><img
+										<a class="flex-shrink-0" href="ë”ë°±í‘¸ë“œíŠ¸ëŸ­"><img
 											class="ms-3 rounded"
 											src="resources/img/avatar/theback.png" alt=""
 											width="200"></a>
@@ -433,15 +433,15 @@
 								<div class="text-block py-3">
 									<ul class="list-unstyled mb-0">
 										<li class="mb-3"><i
-											class="far fa-calendar fa-fw text-muted me-2"></i>ÀÏÁ¤:2021.11.09(È­)
-											¿ÀÈÄ 06:00</li>
+											class="far fa-calendar fa-fw text-muted me-2"></i>ì¼ì •:2021.11.09(í™”)
+											ì˜¤í›„ 06:00</li>
 										<li class="mb-3"><i
-											class="fas fa-users fa-fw text-muted me-2"></i>3¸í</li>
+											class="fas fa-users fa-fw text-muted me-2"></i>3ëª…</li>
 										<li class="mb-3"><i
-											class="fas fa-door-open fa-fw text-muted me-2"></i>°´½Ç:°³ÀÎ·ë</li>
+											class="fas fa-door-open fa-fw text-muted me-2"></i>ê°ì‹¤:ê°œì¸ë£¸</li>
 										<li class="mb-3"><i
-											class="fas fa-id-card fa-fw text-muted me-2"></i>°áÁ¦
-											³¯Â¥:2021.09.17</li>
+											class="fas fa-id-card fa-fw text-muted me-2"></i>ê²°ì œ
+											ë‚ ì§œ:2021.09.17</li>
 									</ul>
 								</div>
 
@@ -453,10 +453,10 @@
 
 											<div>
 												<button class="btn btn-outline-primary mb-4" type="submit" id="cancel" name="cancel" onClick="location.href='booking-cancel.jsp'">
-													¿¹¾à Ãë¼Ò
+													ì˜ˆì•½ ì·¨ì†Œ
 												</button>
-												<button class="btn btn-outline-primary mb-4" type="submit" id="modify" id="modify" onclick.location="'¿¹¾à ¼öÁ¤ ÆäÀÌÁö';">
-													¿¹¾à ¼öÁ¤  <!-- ¿¹¾à ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿ ¿¹Á¤ -->
+												<button class="btn btn-outline-primary mb-4" type="submit" id="modify" id="modify" onclick.location="'ì˜ˆì•½ ìˆ˜ì • íŽ˜ì´ì§€';">
+													ì˜ˆì•½ ìˆ˜ì •  <!-- ì˜ˆì•½ ìˆ˜ì • íŽ˜ì´ì§€ë¡œ ì´ë™ ì˜ˆì • -->
 												</button>
 											</div>
 

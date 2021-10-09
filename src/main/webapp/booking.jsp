@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
-<!--  Price Slider Stylesheets -->
+<!--   Price Slider Stylesheets -->
 <link rel="stylesheet" href="resources/vendor/nouislider/nouislider.css">
 <!-- Google fonts - Playfair Display-->
 <link rel="stylesheet"
@@ -394,30 +394,30 @@
 							<a class="d-inline-block" href="#"><img
 								class="d-block avatar avatar-xxl p-2 mb-2"
 								src="resources/img/avatar/avatar-10.jpg" alt=""></a>
-							<h5>Á¶À¯ÁÖ</h5>
-							<p class="text-muted text-sm mb-0">À¯ÁÖ</p>
+							<h5>ì¡°ìœ ì£¼</h5>
+							<p class="text-muted text-sm mb-0">ìœ ì£¼</p>
 						</div>
 
 						<div class="card-body p-4">
 							<div class="d-flex align-items-center mb-3">
 								<div
 									class="icon-rounded icon-rounded-sm bg-primary-light flex-shrink-0 me-2">
-									<svg class="svg-icon text-primary svg-icon-md"> <!-- ¸®ºä ¾ÆÀÌÄÜ ¸ð¾çÀÚÃ¼ -->
+									<svg class="svg-icon text-primary svg-icon-md"> <!-- ë¦¬ë·° ì•„ì´ì½˜ ëª¨ì–‘ìžì²´ -->
                       <use xlink:href="#diploma-1"> </use>
                     </svg>
 								</div>
 								<div>
-									<p class="mb-0">¸®ºä 12°³</p>
+									<p class="mb-0">ë¦¬ë·° 12ê°œ</p>
 								</div>
 							</div>
 
 
 							<hr>
-							<h6>¿¹¾à ³»¿ª °ü¸®</h6>
+							<h6>ì˜ˆì•½ ë‚´ì—­ ê´€ë¦¬</h6>
 							<ul class="card-text text-muted">
-								<li>¿¹¾à ³»¿ª È®ÀÎ</li>
-								<li>¿¹¾à ¼öÁ¤</li>
-								<li>¿¹¾à Ãë¼Ò</li>
+								<li>ì˜ˆì•½ ë‚´ì—­ í™•ì¸</li>
+								<li>ì˜ˆì•½ ìˆ˜ì •</li>
+								<li>ì˜ˆì•½ ì·¨ì†Œ</li>
 							</ul>
 						</div>
 					</div>
@@ -425,7 +425,7 @@
 
 
 				<div class="col-lg-9 ps-lg-5">
-					<h2 class="hero-heading mb-0">¿¹¾à È®ÀÎ</h2>
+					<h2 class="hero-heading mb-0">ì˜ˆì•½ í™•ì¸</h2>
 
 
 					<div class="d-flex d-block d-sm-flex review ">
@@ -438,79 +438,79 @@
 
 
 							<tr>
-								<td scope="col" colspan="3" style="background: gray">ÇöÀç ¿¹¾àÁß</td>
+								<td scope="col" colspan="3" style="background: gray">í˜„ìž¬ ì˜ˆì•½ì¤‘</td>
 
 							</tr>
 
 							<tr>
 								<td scope="col" align="center">1</td>
-								<td scope="col"><p>Ã»ÃÊ¼ö¹°È¸</p>
+								<td scope="col"><p>ì²­ì´ˆìˆ˜ë¬¼íšŒ</p>
 									<p>
-										<span style="color: gray; font-size: 10pt">°áÁ¦ ³¯Â¥ :
-											2021.08.12<br> ¿¹¾à ³¯Â¥ : 2021.08.14
+										<span style="color: gray; font-size: 10pt">ê²°ì œ ë‚ ì§œ :
+											2021.08.12<br> ì˜ˆì•½ ë‚ ì§œ : 2021.08.14
 										</span>
 									</p></td>
 								<td scope="col">
-									<button class="btn btn-outline-primary mb-4" type="submit" id="bookingModify1" name="bookingModify1" onclick.location="'¿¹¾à ¼öÁ¤ ÆäÀÌÁö';">
-										¿¹¾à ¼öÁ¤     <!-- ¿¹¾à ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿ ¿¹Á¤ -->
+									<button class="btn btn-outline-primary mb-4" type="submit" id="bookingModify1" name="bookingModify1" onclick.location="'ì˜ˆì•½ ìˆ˜ì • íŽ˜ì´ì§€';">
+										ì˜ˆì•½ ìˆ˜ì •     <!-- ì˜ˆì•½ ìˆ˜ì • íŽ˜ì´ì§€ë¡œ ì´ë™ ì˜ˆì • -->
 									</button>
 									<br>
 									<button class="btn btn-outline-primary mb-4" type="submit" id="bookingCancel1" name="bookingCancel1" onClick="location.href='booking-cancel.jsp'">
-										¿¹¾à Ãë¼Ò
+										ì˜ˆì•½ ì·¨ì†Œ
 									</button>
 								</td>
 							</tr>
 
 							<tr>
 								<td scope="col" align="center">2</td>
-								<td scope="col"><p>°­¸ª ÇÑ¿ÁÁý</p>
+								<td scope="col"><p>ê°•ë¦‰ í•œì˜¥ì§‘</p>
 									<p>
-										<span style="color: gray; font-size: 10pt">°áÁ¦ ³¯Â¥ :
-											2021.09.01<br> ¿¹¾à ³¯Â¥ : 2021.09.10
+										<span style="color: gray; font-size: 10pt">ê²°ì œ ë‚ ì§œ :
+											2021.09.01<br> ì˜ˆì•½ ë‚ ì§œ : 2021.09.10
 										</span>
 									</p></td>
 								<td scope="col">
-									<button class="btn btn-outline-primary mb-4" type="submit"  id="bookingModify2" name="bookingModify2" onclick.location="'¿¹¾à ¼öÁ¤ ÆäÀÌÁö';">
-										¿¹¾à ¼öÁ¤ <!-- ¿¹¾à ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿ ¿¹Á¤ -->
+									<button class="btn btn-outline-primary mb-4" type="submit"  id="bookingModify2" name="bookingModify2" onclick.location="'ì˜ˆì•½ ìˆ˜ì • íŽ˜ì´ì§€';">
+										ì˜ˆì•½ ìˆ˜ì • <!-- ì˜ˆì•½ ìˆ˜ì • íŽ˜ì´ì§€ë¡œ ì´ë™ ì˜ˆì • -->
 									</button>
 									<br>
 									<button class="btn btn-outline-primary mb-4" type="submit"  id="bookingCancel2" name="bookingCancel2"  onClick="location.href='booking-cancel.jsp'">
-										¿¹¾à Ãë¼Ò
+										ì˜ˆì•½ ì·¨ì†Œ
 									</button>
 								</td>
 							</tr>
 
 							<tr>
 								<td scope="col" align="center">3</td>
-								<td scope="col"><p>Æ÷Æú·Î ÇÇÀÚ</p>
+								<td scope="col"><p>í¬í´ë¡œ í”¼ìž</p>
 									<p>
-										<span style="color: gray; font-size: 10pt">°áÁ¦ ³¯Â¥ :
-											2021.09.03<br> ¿¹¾à ³¯Â¥ : 2021.09.25
+										<span style="color: gray; font-size: 10pt">ê²°ì œ ë‚ ì§œ :
+											2021.09.03<br> ì˜ˆì•½ ë‚ ì§œ : 2021.09.25
 										</span>
 									</p></td>
 								<td scope="col">
-									<button class="btn btn-outline-primary mb-4" type="submit"  id="bookingModify3" name="bookingModify3" onclick.location="'¿¹¾à ¼öÁ¤ ÆäÀÌÁö';">
-										¿¹¾à ¼öÁ¤ <!-- ¿¹¾à ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿ ¿¹Á¤ -->
+									<button class="btn btn-outline-primary mb-4" type="submit"  id="bookingModify3" name="bookingModify3" onclick.location="'ì˜ˆì•½ ìˆ˜ì • íŽ˜ì´ì§€';">
+										ì˜ˆì•½ ìˆ˜ì • <!-- ì˜ˆì•½ ìˆ˜ì • íŽ˜ì´ì§€ë¡œ ì´ë™ ì˜ˆì • -->
 									</button>
 									<br>
 									<button class="btn btn-outline-primary mb-4" type="submit"  id="bookingCancel3" name="bookingCancel3"  onClick="location.href='booking-cancel.jsp'">
-										¿¹¾à Ãë¼Ò
+										ì˜ˆì•½ ì·¨ì†Œ
 									</button>
 								</td>
 							</tr>
 
 							<tr>
-								<td scope="col" colspan="3" style="background: gray">¿¹¾à Ãë¼Ò
-									³»¿ª</td>
+								<td scope="col" colspan="3" style="background: gray">ì˜ˆì•½ ì·¨ì†Œ
+									ë‚´ì—­</td>
 
 							</tr>
 
 							<tr>
 								<td scope="col" align="center">1</td>
-								<td scope="col"><p>½ÉÇÐ»ê µµÅä¸®</p>
+								<td scope="col"><p>ì‹¬í•™ì‚° ë„í† ë¦¬</p>
 									<p>
-										<span style="color: gray; font-size: 10pt">°áÁ¦ ³¯Â¥ :
-											2021.05.23<br> ¿¹¾à ³¯Â¥ : 2021.05.25
+										<span style="color: gray; font-size: 10pt">ê²°ì œ ë‚ ì§œ :
+											2021.05.23<br> ì˜ˆì•½ ë‚ ì§œ : 2021.05.25
 										</span>
 									</p></td>
 								<td scope="col">&emsp;</td>
@@ -518,10 +518,10 @@
 
 							<tr>
 								<td scope="col" align="center">2</td>
-								<td scope="col"><p>À±¹Ð¿ø</p>
+								<td scope="col"><p>ìœ¤ë°€ì›</p>
 									<p>
-										<span style="color: gray; font-size: 10pt">°áÁ¦ ³¯Â¥ :
-											2021.06.12<br> ¿¹¾à ³¯Â¥ : 2021.06.17
+										<span style="color: gray; font-size: 10pt">ê²°ì œ ë‚ ì§œ :
+											2021.06.12<br> ì˜ˆì•½ ë‚ ì§œ : 2021.06.17
 										</span>
 									</p></td>
 								<td scope="col">&emsp;</td>
@@ -533,7 +533,7 @@
 					<br>
 					<div align="left">
 						<button class="btn btn-outline-primary mb-4" type="submit" id="return" name="return" onClick="location.href='personal_information.jsp'">
-							µ¹¾Æ°¡±â
+							ëŒì•„ê°€ê¸°
 						</button>
 
 

@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
-<!--  Price Slider Stylesheets -->
+<!--   Price Slider Stylesheets -->
 <link rel="stylesheet" href="resources/vendor/nouislider/nouislider.css">
 <!-- Google fonts - Playfair Display-->
 <link rel="stylesheet"
@@ -394,30 +394,30 @@
 							<a class="d-inline-block" href="#"><img
 								class="d-block avatar avatar-xxl p-2 mb-2"
 								src="resources/img/avatar/avatar-10.jpg" alt=""></a>
-							<h5>Á¶À¯ÁÖ</h5>
-							<p class="text-muted text-sm mb-0">À¯ÁÖ</p>
+							<h5>ì¡°ìœ ì£¼</h5>
+							<p class="text-muted text-sm mb-0">ìœ ì£¼</p>
 						</div>
 
 						<div class="card-body p-4">
 							<div class="d-flex align-items-center mb-3">
 								<div
 									class="icon-rounded icon-rounded-sm bg-primary-light flex-shrink-0 me-2">
-									<svg class="svg-icon text-primary svg-icon-md"> <!-- ¸®ºä ¾ÆÀÌÄÜ ¸ð¾çÀÚÃ¼ -->
+									<svg class="svg-icon text-primary svg-icon-md"> <!-- ë¦¬ë·° ì•„ì´ì½˜ ëª¨ì–‘ìžì²´ -->
                       <use xlink:href="#diploma-1"> </use>
                     </svg>
 								</div>
 								<div>
-									<p class="mb-0">¸®ºä 12°³</p>
+									<p class="mb-0">ë¦¬ë·° 12ê°œ</p>
 								</div>
 							</div>
 
 
 							<hr>
-							<h6>¿¹¾à ³»¿ª °ü¸®</h6>
+							<h6>ì˜ˆì•½ ë‚´ì—­ ê´€ë¦¬</h6>
 							<ul class="card-text text-muted">
-								<li>¿¹¾à ³»¿ª È®ÀÎ</li>
-								<li>¿¹¾à ¼öÁ¤</li>
-								<li>¿¹¾à Ãë¼Ò</li>
+								<li>ì˜ˆì•½ ë‚´ì—­ í™•ì¸</li>
+								<li>ì˜ˆì•½ ìˆ˜ì •</li>
+								<li>ì˜ˆì•½ ì·¨ì†Œ</li>
 							</ul>
 						</div>
 					</div>
@@ -425,7 +425,7 @@
 
 
  <div class="col-lg-9 ps-lg-5">
-					<h2 class="hero-heading mb-0">¿¹¾à Ãë¼Ò</h2>
+					<h2 class="hero-heading mb-0">ì˜ˆì•½ ì·¨ì†Œ</h2>
 
 
 				<div class="d-flex d-block d-sm-flex review ">
@@ -439,10 +439,10 @@
 						
 						<div class="card">
               <div class="card-body p-5"><strong class="text-uppercase text-secondary d-inline-block mb-2 text-sm"></strong>
-                <h6 class="mb-3">¿¹¾à Ãë¼Ò ¾à°ü</h6>
+                <h6 class="mb-3">ì˜ˆì•½ ì·¨ì†Œ ì•½ê´€</h6>
                 <br>
-                <p class="text-muted">¿¹¾à Ãë¼Ò ½Ã º¯°æÀÌ ºÒ°¡´ÉÇÏ¸ç Àç¿¹¾à¸¸ °¡´ÉÇÕ´Ï´Ù.<br>
-							 ¿¹¾à Ãë¼Ò·Î ÀÎÇÑ ºÒÀÌÀÍÀÌ ¹ß»ýÇÒ ½Ã »ç¿ëÀÚ°¡ ºÎ´ãÇØ¾ß ÇÕ´Ï´Ù.</p>
+                <p class="text-muted">ì˜ˆì•½ ì·¨ì†Œ ì‹œ ë³€ê²½ì´ ë¶ˆê°€ëŠ¥í•˜ë©° ìž¬ì˜ˆì•½ë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤.<br>
+							 ì˜ˆì•½ ì·¨ì†Œë¡œ ì¸í•œ ë¶ˆì´ìµì´ ë°œìƒí•  ì‹œ ì‚¬ìš©ìžê°€ ë¶€ë‹´í•´ì•¼ í•©ë‹ˆë‹¤.</p>
                 <a class="btn btn-link p-0" href="resources/post.html"> </a>
               </div>
             </div>
@@ -452,7 +452,7 @@
 							<div class="form-check">
 								<input class="form-check-input" id="idDelete" type="checkbox">
 								<label class="form-check-label text-muted" for="idDelete">
-									<span class="text-sm">µ¿ÀÇÇÕ´Ï´Ù</span>
+									<span class="text-sm">ë™ì˜í•©ë‹ˆë‹¤</span>
 								</label>
 							</div>
 						</div>
@@ -463,11 +463,11 @@
 <br>
 <div align="left">
 			<button class="btn btn-outline-primary mb-4" type="submit" id="cancel" name="cancel" onClick="location.href='personal_information.jsp'">
-				µ¹¾Æ°¡±â
+				ëŒì•„ê°€ê¸°
 			</button>
 			&emsp;
 			<button class="btn btn-outline-primary mb-4" type="submit" id="save" name="save" onClick="location.href='booking.jsp'">
-				È®ÀÎ
+				í™•ì¸
 			</button>
 		</div>
 

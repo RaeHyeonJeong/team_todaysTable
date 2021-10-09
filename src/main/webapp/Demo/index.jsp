@@ -26,7 +26,7 @@
 	<button id="btn2">예약 페이지</button>
 	<button id="btn3">리뷰 페이지</button>
 	<button id="btn4">개인정보</button>
-	<h1>hi github!!!</h1>
+	<h1>hi github!!!!</h1>
 
 </body>
 </html>

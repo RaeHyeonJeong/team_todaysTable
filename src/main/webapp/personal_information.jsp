@@ -25,7 +25,7 @@
 <!-- theme stylesheet-->
 <link rel="stylesheet" href="resources/css/style.default.css"
 	id="theme-stylesheet">
-<!-- Custom stylesheet - for your changes-->
+<!--  Custom stylesheet - for your changes-->
 <link rel="stylesheet" href="resources/css/custom.css">
 <!-- Favicon-->
 <link rel="shortcut icon" href="resources/img/favicon.png">

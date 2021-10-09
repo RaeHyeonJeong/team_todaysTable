@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -34,7 +34,7 @@
   
   <style type="text/css">
   
-  div.score-layout{ ∫∞¡° ∆˘∆Æ º≥¡§
+  div.score-layout{ 
 color:orange;
 font-size:1.6em;
 }  
@@ -242,28 +242,28 @@ font-size:1.6em;
           <div class="col-lg-3 me-lg-auto">
             <div class="card border-0 shadow mb-6 mb-lg-0">
               <div class="card-header bg-gray-100 py-4 border-0 text-center"><a class="d-inline-block" href="#"><img class="d-block avatar avatar-xxl p-2 mb-2" src="resources/img/avatar/avatar-10.jpg" alt=""></a>
-                <h5>¡∂¿Ø¡÷</h5>
-                <p class="text-muted text-sm mb-0">¿Ø¡÷ </p>
+                <h5>Ï°∞Ïú†Ï£º</h5>
+                <p class="text-muted text-sm mb-0">Ïú†Ï£º </p>
               </div>
               
               <div class="card-body p-4">
                 <div class="d-flex align-items-center mb-3">
                   <div class="icon-rounded icon-rounded-sm bg-primary-light flex-shrink-0 me-2">
-                    <svg class="svg-icon text-primary svg-icon-md"> <!-- ∏Æ∫‰ æ∆¿Ãƒ‹ ∏æÁ¿⁄√º -->
+                    <svg class="svg-icon text-primary svg-icon-md"> 
                       <use xlink:href="#diploma-1"> </use>
                     </svg>
                   </div>
                   <div>
-                    <p class="mb-0">∏Æ∫‰ 12∞≥ </p>
+                    <p class="mb-0">Î¶¨Î∑∞ 12Í∞ú </p>
                   </div>
                 </div>
                 
                 
                 <hr>
-                <h6>∏∂¿Ã ∏ÆΩ∫∆Æ</h6>
+                <h6>ÎßàÏù¥ Î¶¨Ïä§Ìä∏</h6>
                 <ul class="card-text text-muted">
-                  <li>√÷±Ÿ ∫ª ∞°∞‘</li>
-                  <li>¬Ú «— ∞°∞‘</li>
+                  <li>ÏµúÍ∑º Î≥∏ Í∞ÄÍ≤å</li>
+                  <li>Ï∞ú Ìïú Í∞ÄÍ≤å</li>
                  </ul>
               </div>
             </div>
@@ -271,13 +271,13 @@ font-size:1.6em;
           
           
           <div class="col-lg-9 ps-lg-5">
-          <h2 class="hero-heading mb-0">√÷±Ÿ ∫ª ∞°∞‘</h2>
+          <h2 class="hero-heading mb-0">ÏµúÍ∑º Î≥∏ Í∞ÄÍ≤å</h2>
           <div align="right">
-            <button class="btn btn-outline-primary mb-4" type="submit" id="return" name="return" onClick="location.href='personal_information.jsp'">µπæ∆∞°±‚</button>
+            <button class="btn btn-outline-primary mb-4" type="submit" id="return" name="return" onClick="location.href='personal_information.jsp'">ÎèåÏïÑÍ∞ÄÍ∏∞</button>
 		  </div>
             
              <div class="d-flex d-block d-sm-flex review">
-                <div class="text-md-center flex-shrink-0 me-4 me-xl-5"><img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/avatar/soi.png" alt="º“¿Ãø¨≥≤∏∂ø¿"></div>
+                <div class="text-md-center flex-shrink-0 me-4 me-xl-5"><img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/avatar/soi.png" alt="ÏÜåÏù¥Ïó∞ÎÇ®ÎßàÏò§"></div>
                 
 		     
 						<div class="score-layout">
@@ -288,11 +288,11 @@ font-size:1.6em;
 		     
 		     
 		     <div>
-                  <h6 class="mt-2 mb-1">1. º“¿Ãø¨≥≤∏∂ø¿</h6>
+                  <h6 class="mt-2 mb-1">1. ÏÜåÏù¥Ïó∞ÎÇ®ÎßàÏò§</h6>
                   <div class="mb-2"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i>
                   <i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i>
                                     </div>
-                  <p class="text-muted text-sm">º≠¿ª∆Ø∫∞Ω√ ∞≠≥≤±∏ µµªÍ¥Î∑Œ 53±Ê 30</p>
+                  <p class="text-muted text-sm">ÏÑúÏùÑÌäπÎ≥ÑÏãú Í∞ïÎÇ®Íµ¨ ÎèÑÏÇ∞ÎåÄÎ°ú 53Í∏∏ 30</p>
                 </div>
               </div>
              
@@ -300,7 +300,7 @@ font-size:1.6em;
              
             
             <div class="d-flex d-block d-sm-flex review">
-                <div class="text-md-center flex-shrink-0 me-4 me-xl-5"><img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/avatar/slow.png" alt="¿ŒµÒΩΩ∑ŒøÏ"></div>
+                <div class="text-md-center flex-shrink-0 me-4 me-xl-5"><img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/avatar/slow.png" alt="Ïù∏ÎîïÏä¨Î°úÏö∞"></div>
                 
 		    
 						<div class="score-layout">
@@ -309,18 +309,18 @@ font-size:1.6em;
 						<div>&emsp;</div><div>&emsp;</div>
 		    
 		    <div>
-                  <h6 class="mt-2 mb-1">2. ¿ŒµÒΩΩ∑ŒøÏ</h6>
+                  <h6 class="mt-2 mb-1">2. Ïù∏ÎîïÏä¨Î°úÏö∞</h6>
                   <div class="mb-2"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i>
 		  <i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i>
                   </div>
-                  <p class="text-muted text-sm">º≠øÔ∆Ø∫∞Ω√ ∞≠≥≤±∏ æ–±∏¡§∑Œ4±Ê 13 1F</p>
+                  <p class="text-muted text-sm">ÏÑúÏö∏ÌäπÎ≥ÑÏãú Í∞ïÎÇ®Íµ¨ ÏïïÍµ¨Ï†ïÎ°ú4Í∏∏ 13 1F</p>
                 </div>
               </div>
 		  
 		  
                        
             <div class="d-flex d-block d-sm-flex review">
-                <div class="text-md-center flex-shrink-0 me-4 me-xl-5"><img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/avatar/mangata.png" alt="∏∏∞°≈∏"></div>
+                <div class="text-md-center flex-shrink-0 me-4 me-xl-5"><img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/avatar/mangata.png" alt="ÎßåÍ∞ÄÌÉÄ"></div>
                
 		    
 						<div class="score-layout">
@@ -329,11 +329,11 @@ font-size:1.6em;
 						<div>&emsp;</div><div>&emsp;</div>
 		    
 		    <div>
-                  <h6 class="mt-2 mb-1">3. ∏∏∞°≈∏</h6>
+                  <h6 class="mt-2 mb-1">3. ÎßåÍ∞ÄÌÉÄ</h6>
                   <div class="mb-2"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i>
 		  <i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i> 4.7<i class="fa fa-xs fa-star text-primary"></i>
                   </div>
-                  <p class="text-muted text-sm">º≠øÔ∆Ø∫∞Ω√ ¡æ∑Œ±∏ ªÔ√ªµø 2±Ê 2</p>
+                  <p class="text-muted text-sm">ÏÑúÏö∏ÌäπÎ≥ÑÏãú Ï¢ÖÎ°úÍµ¨ ÏÇºÏ≤≠Îèô 2Í∏∏ 2</p>
                 </div>
               </div>
               </div> 

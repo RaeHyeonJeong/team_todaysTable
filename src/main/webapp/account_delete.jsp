@@ -33,7 +33,7 @@
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-<!--  Font Awesome CSS-->
+<!--   Font Awesome CSS-->
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
@@ -392,7 +392,7 @@
 		
  
  <div class="col-lg-9 ps-lg-5">
-					<h2 class="hero-heading mb-0">È¸¿ø Å»Åð</h2>
+					<h2 class="hero-heading mb-0">íšŒì› íƒˆí‡´</h2>
 
 
 				
@@ -405,12 +405,12 @@
 						
 						<div class="card">
               <div class="card-body p-5"><strong class="text-uppercase text-secondary d-inline-block mb-2 text-sm"></strong>
-                <h5 class="mb-3">È¸¿ø Å»Åð ¹× º¹±¸¿¡ ´ëÇÑ ¾È³»</h5>
+                <h5 class="mb-3">íšŒì› íƒˆí‡´ ë° ë³µêµ¬ì— ëŒ€í•œ ì•ˆë‚´</h5>
                 <br>
-                <p class="text-muted">Å»Åð ÈÄ È¸¿ø º¹±¸¸¦ ¿øÇÏ½Ã´Â °æ¿ì È¸¿ø Å»Åð °áÁ¤ ³¯Â¥·ÎºÎÅÍ<br>
-                 2ÁÖ ÀÌ³» xxx@sist.comÀ¸·Î ¹ß¼Û½Ã Å»Åð Ã¶È¸ °¡´ÉÇÏ½Ã¸ç ±â°£ÀÌ Áö³­ ÈÄ¿¡´Â º¹±¸°¡ ºÒ°¡´ÉÇÕ´Ï´Ù.
-                <br>È¸¿ø Å»Åð¸¦ ÁøÇàÇÏ½Ç °æ¿ì °ü·ÃµÈ ¸ðµç µ¥ÀÌÅÍ°¡ ¼Ò¸êµÇ¾î È®ÀÎÇÒ ¼ö ¾ø½À´Ï´Ù.
-                <br>Á¤¸»·Î Å»ÅðÇÏ½Ã°Ú½À´Ï±î?</p>
+                <p class="text-muted">íƒˆí‡´ í›„ íšŒì› ë³µêµ¬ë¥¼ ì›í•˜ì‹œëŠ” ê²½ìš° íšŒì› íƒˆí‡´ ê²°ì • ë‚ ì§œë¡œë¶€í„°<br>
+                 2ì£¼ ì´ë‚´ xxx@sist.comìœ¼ë¡œ ë°œì†¡ì‹œ íƒˆí‡´ ì² íšŒ ê°€ëŠ¥í•˜ì‹œë©° ê¸°ê°„ì´ ì§€ë‚œ í›„ì—ëŠ” ë³µêµ¬ê°€ ë¶ˆê°€ëŠ¥í•©ë‹ˆë‹¤.
+                <br>íšŒì› íƒˆí‡´ë¥¼ ì§„í–‰í•˜ì‹¤ ê²½ìš° ê´€ë ¨ëœ ëª¨ë“  ë°ì´í„°ê°€ ì†Œë©¸ë˜ì–´ í™•ì¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.
+                <br>ì •ë§ë¡œ íƒˆí‡´í•˜ì‹œê² ìŠµë‹ˆê¹Œ?</p>
                 <a class="btn btn-link p-0" href="resources/post.html"> </a>
               </div>
             </div>
@@ -420,7 +420,7 @@
 							<div class="form-check">
 								<input class="form-check-input" id="idDelete" type="checkbox">
 								<label class="form-check-label text-muted" for="idDelete">
-									<span class="text-sm">µ¿ÀÇÇÕ´Ï´Ù</span>
+									<span class="text-sm">ë™ì˜í•©ë‹ˆë‹¤</span>
 								</label>
 							</div>
 						</div>
@@ -429,11 +429,11 @@
 <br>
 <div align="center">
 			<button class="btn btn-outline-primary mb-4" id="cancel" name="cancel" type="submit" onClick="location.href='personal_information.jsp'">
-				Ãë¼Ò
-			</button> <!-- ±âº» Á¤º¸ Ãâ·Â ÆäÀÌÁö·Î ÀÌµ¿ -->
+				ì·¨ì†Œ
+			</button> <!-- ê¸°ë³¸ ì •ë³´ ì¶œë ¥ íŽ˜ì´ì§€ë¡œ ì´ë™ -->
 			&emsp;
-			<button class="btn btn-outline-primary mb-4" id="save" type="submit" name="submit" onclick.location="'#';"><!--  ¸ÞÀÎÆäÀÌÁö·Î ÀÌµ¿ ¿¹Á¤ -->
-				È®ÀÎ
+			<button class="btn btn-outline-primary mb-4" id="save" type="submit" name="submit" onclick.location="'#';"><!--  ë©”ì¸íŽ˜ì´ì§€ë¡œ ì´ë™ ì˜ˆì • -->
+				í™•ì¸
 			</button>
 		</div>
 

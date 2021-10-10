@@ -18,11 +18,6 @@
 <meta name="robots" content="all,follow">
 <!-- Price Slider Stylesheets -->
 <link rel="stylesheet" href="resources/vendor/nouislider/nouislider.css">
-
-<!-- DateTimePicker  -->
-<link href="resources/window-date-picker-master/dist/css/window-date-picker.css" rel="stylesheet">
-
-
 <!-- Google fonts - Playfair Display-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
 <!-- Google fonts - Poppins-->
@@ -309,8 +304,6 @@
 								<label class="form-label" for="userEmail">이메일</label> <input class="form-control" name="userEmail" id="userEmail" type="email" placeholder="name@address.com" autocomplete="off" required data-msg="Please enter your email">
 							</div>
 						</form>
-						
-						
 						<br>
 						<hr class="my-4">
 						<div class="text-left">
@@ -322,26 +315,15 @@
 							<p class="text-sm text-muted">소재지 :</p>
 							<p class="text-sm text-muted">연락처 :</p>
 						</div>
-						<br>
 						<div class="custom-control custom-checkbox">
-							<input class="custom-control-input" id="select_userInfo_0" type="checkbox"> 
-							<label class="custom-control-label" for="select_userInfo_0">
+							<input class="custom-control-input" id="select_userInfo_0" type="checkbox"> <label class="custom-control-label" for="select_userInfo_0">
 								<p class="text-sm text-muted">개인정보 수집 동의</p>
 							</label>
-							<div style="overflow:scroll; width:700px; height:70px; border: 1px solid gray">
-								<p class="text-sm text-muted">개인정보 수집 동의 관련 내용 첨부</p>
-							</div>
 						</div>
-						<br>
 						<div class="custom-control custom-checkbox">
-							<input class="custom-control-input" id="select_userInfo_1" type="checkbox"> 
-							<label class="custom-control-label" for="select_userInfo_1">
+							<input class="custom-control-input" id="select_userInfo_1" type="checkbox"> <label class="custom-control-label" for="select_userInfo_1">
 								<p class="text-sm text-muted">개인정보 제공 동의</p>
 							</label>
-							<div style="overflow:scroll; width:700px; height:70px; border: 1px solid gray">
-								<p class="text-sm text-muted">개인정보 제공 동의 관련 내용 첨부</p>
-								
-							</div>
 						</div>
 						<br>
 						<br>
@@ -353,16 +335,12 @@
 						<br> <span class="text-primary h3">객실 선택</span>
 						<hr class="my-4">
 						<form class="form" id="booking-form" method="get" action="#" autocomplete="off">
-
 							<div class="list-group shadow mb-5">
-								<div class="list-group-item list-group-item-action p-4">
+								<div class="list-group-item list-group-item-action p-3">
 									<div class="row">
-										<div
-											class="col-2 col-lg-1 align-self-lg-center py-3 d-flex align-items-lg-center z-index-10">
-											<div class="form-check">
-												<input class="form-check-input" id="select_message_0"
-													type="checkbox"> <label class="form-check-label"
-													for="select_message_0"> </label>
+										<div class="col-2 col-lg-1 align-self-lg-center py-3 d-flex align-items-lg-center">
+											<div class="custom-control custom-checkbox">
+												<input class="custom-control-input" id="select_message_0" type="checkbox"> <label class="custom-control-label" for="select_message_0"> </label>
 											</div>
 										</div>
 										<div class="col-9 col-lg-4 align-self-center mb-3 mb-lg-0">
@@ -372,25 +350,18 @@
 											<p class="text-sm text-muted">코멘트</p>
 											<span class="badge badge-pill p-2 badge-secondary-light">BEST</span>
 										</div>
-										<div class="col-10 ms-auto col-lg-7">
+										<div class="col-10 ml-auto col-lg-7">
 											<div class="row">
-												<div class="col-md-8 py-3">
-												
 												<img src="resources/img/photo/photo-1494526585095-c41746248156.jpg" alt="Jack London" width="300" height="200">
-												
-												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="list-group-item list-group-item-action p-4">
 									<div class="row">
-										<div
-											class="col-2 col-lg-1 align-self-lg-center py-3 d-flex align-items-lg-center z-index-10">
-											<div class="form-check">
-												<input class="form-check-input" id="select_message_1"
-													type="checkbox"> <label class="form-check-label"
-													for="select_message_1"> </label>
+										<div class="col-2 col-lg-1 align-self-lg-center py-3 d-flex align-items-lg-center">
+											<div class="custom-control custom-checkbox">
+												<input class="custom-control-input" id="select_message_1" type="checkbox"> <label class="custom-control-label" for="select_message_1"> </label>
 											</div>
 										</div>
 										<div class="col-9 col-lg-4 align-self-center mb-3 mb-lg-0">
@@ -400,23 +371,18 @@
 											<p class="text-sm text-muted">코멘트</p>
 											<span class="badge badge-pill p-2 badge-primary-light">PERSONAL</span>
 										</div>
-										<div class="col-10 ms-auto col-lg-7">
+										<div class="col-10 ml-auto col-lg-7">
 											<div class="row">
-												<div class="col-md-8 py-3">
-													<img src="resources/img/photo/photo-1512917774080-9991f1c4c750.jpg" alt="Jack London" width="300" height="200">
-												</div>
+												<img src="resources/img/photo/photo-1512917774080-9991f1c4c750.jpg" alt="Jack London" width="300" height="200">
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="list-group-item list-group-item-action p-4">
 									<div class="row">
-										<div
-											class="col-2 col-lg-1 align-self-lg-center py-3 d-flex align-items-lg-center z-index-10">
-											<div class="form-check">
-												<input class="form-check-input" id="select_message_2"
-													type="checkbox"> <label class="form-check-label"
-													for="select_message_2"> </label>
+										<div class="col-2 col-lg-1 align-self-lg-center py-3 d-flex align-items-lg-center">
+											<div class="custom-control custom-checkbox">
+												<input class="custom-control-input" id="select_message_2" type="checkbox"> <label class="custom-control-label" for="select_message_2"> </label>
 											</div>
 										</div>
 										<div class="col-9 col-lg-4 align-self-center mb-3 mb-lg-0">
@@ -425,23 +391,18 @@
 											</div>
 											<p class="text-sm text-muted">코멘트</p>
 										</div>
-										<div class="col-10 ms-auto col-lg-7">
+										<div class="col-10 ml-auto col-lg-7">
 											<div class="row">
-												<div class="col-md-8 py-3">
-													<img src="resources/img/photo/photo-1484154218962-a197022b5858.jpg" alt="Jack London" width="300" height="200">
-												</div>
+												<img src="resources/img/photo/photo-1484154218962-a197022b5858.jpg" alt="Jack London" width="300" height="200">
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="list-group-item list-group-item-action p-4">
 									<div class="row">
-										<div
-											class="col-2 col-lg-1 align-self-lg-center py-3 d-flex align-items-lg-center z-index-10">
-											<div class="form-check">
-												<input class="form-check-input" id="select_message_3"
-													type="checkbox"> <label class="form-check-label"
-													for="select_message_3"> </label>
+										<div class="col-2 col-lg-1 align-self-lg-center py-3 d-flex align-items-lg-center">
+											<div class="custom-control custom-checkbox">
+												<input class="custom-control-input" id="select_message_3" type="checkbox"> <label class="custom-control-label" for="select_message_3"> </label>
 											</div>
 										</div>
 										<div class="col-9 col-lg-4 align-self-center mb-3 mb-lg-0">
@@ -450,23 +411,18 @@
 											</div>
 											<p class="text-sm text-muted">코멘트</p>
 										</div>
-										<div class="col-10 ms-auto col-lg-7">
+										<div class="col-10 ml-auto col-lg-7">
 											<div class="row">
-												<div class="col-md-8 py-3">
 												<img src="resources/img/photo/photo-1522771739844-6a9f6d5f14af.jpg" alt="Jack London" width="300" height="200">
-												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="list-group-item list-group-item-action p-4">
 									<div class="row">
-										<div
-											class="col-2 col-lg-1 align-self-lg-center py-3 d-flex align-items-lg-center z-index-10">
-											<div class="form-check">
-												<input class="form-check-input" id="select_message_4"
-													type="checkbox"> <label class="form-check-label"
-													for="select_message_4"> </label>
+										<div class="col-2 col-lg-1 align-self-lg-center py-3 d-flex align-items-lg-center">
+											<div class="custom-control custom-checkbox">
+												<input class="custom-control-input" id="select_message_4" type="checkbox"> <label class="custom-control-label" for="select_message_4"> </label>
 											</div>
 										</div>
 										<div class="col-9 col-lg-4 align-self-center mb-3 mb-lg-0">
@@ -475,228 +431,40 @@
 											</div>
 											<p class="text-sm text-muted">코멘트</p>
 										</div>
-										<div class="col-10 ms-auto col-lg-7">
+										<div class="col-10 ml-auto col-lg-7">
 											<div class="row">
-												<div class="col-md-8 py-3">
-													<img src="resources/img/photo/photo-1488805990569-3c9e1d76d51c.jpg" alt="Jack London" width="300" height="200">
-												</div>
+												<img src="resources/img/photo/photo-1488805990569-3c9e1d76d51c.jpg" alt="Jack London" width="300" height="200">
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-
-
-
-
 							<div class="form-group">
-							<form action="#" method="post">
-								<button class="btn btn-primary btn-block">예약하기</button>
-							</form>
-						</div>
+								<button class="btn btn-primary btn-block" type="submit">예약하기</button>
+							</div>
 						</form>
 					</div>
 				</div>
 			</div>
-			
-			
+			<!-- 날짜 선택 -->
 			<div class="col-lg-4">
 				<div class="p-4 shadow ml-lg-4 rounded sticky-top" style="top: 100px;">
 					<span class="text-primary h3">날짜 / 인원 수 / 시간</span>
 					<hr class="my-4">
 					<form class="form" id="booking-form" method="get" action="#" autocomplete="off">
-						
-						<!-- 날짜 선택 -->
 						<div class="form-group">
 							<label class="form-label" for="bookingDate">날짜</label>
-							
-						
-
-							<div id="picker" class="wdp" style="left: 50px; top: 259.6px;">
-								<div class="wdp-container">
-									<div class="wdp-header">
-										<span>Fri, 1 Oct 2021</span>
-										<div>
-											<div>
-												<svg width="16" height="16" viewBox="0 0 1792 1792"
-													class="wdp-non-opaque">
-													<path
-														d="M192 1664h1408v-1024h-1408v1024zm384-1216v-288q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v288q0 14 9 23t23 9h64q14 0 23-9t9-23zm768 0v-288q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v288q0 14 9 23t23 9h64q14 0 23-9t9-23zm384-64v1280q0 52-38 90t-90 38h-1408q-52 0-90-38t-38-90v-1280q0-52 38-90t90-38h128v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h384v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h128q52 0 90 38t38 90z"></path></svg>
-												<svg width="16" height="16" viewBox="0 0 1792 1792">
-													<path
-														d="M1024 544v448q0 14-9 23t-23 9h-320q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h224v-352q0-14 9-23t23-9h64q14 0 23 9t9 23zm416 352q0-148-73-273t-198-198-273-73-273 73-198 198-73 273 73 273 198 198 273 73 273-73 198-198 73-273zm224 0q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"></path></svg>
-											</div>
-											<div>
-												<svg width="16" height="16" viewBox="0 0 1792 1792"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z"></path></svg>
-											</div>
-										</div>
-									</div>
-									<div class="wdp-body">
-										<div class="wdp-date-container">
-											<div class="wdp-date-header">
-												<span>October 2021</span>
-												<div>
-													<div>
-														<svg width="20" height="20" viewBox="0 0 1792 1792"
-															xmlns="http://www.w3.org/2000/svg">
-															<path
-																d="M1395 1184q0 13-10 23l-50 50q-10 10-23 10t-23-10l-393-393-393 393q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l466 466q10 10 10 23z"></path></svg>
-													</div>
-													<div>
-														<svg width="20" height="20" viewBox="0 0 1792 1792"
-															xmlns="http://www.w3.org/2000/svg">
-															<path
-																d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"></path></svg>
-													</div>
-												</div>
-											</div>
-											<div class="wdp-date-body">
-												<div class="wdp-week-container">
-													<div class="wdp-week-header">
-														<ul class="wdp-week">
-															<li>Mo</li>
-															<li>Tu</li>
-															<li>We</li>
-															<li>Th</li>
-															<li>Fr</li>
-															<li>Sa</li>
-															<li>Su</li>
-														</ul>
-													</div>
-													<div class="wdp-week-body">
-														<ul class="wdp-week">
-															<li date="27-9-2021" class="wdp-muted">27</li>
-															<li date="28-9-2021" class="wdp-muted">28</li>
-															<li date="29-9-2021" class="wdp-muted">29</li>
-															<li date="30-9-2021" class="wdp-muted">30</li>
-															<li date="1-10-2021" class="wdp-active">1</li>
-															<li date="2-10-2021">2</li>
-															<li date="3-10-2021">3</li>
-														</ul>
-														<ul class="wdp-week">
-															<li date="4-10-2021">4</li>
-															<li date="5-10-2021">5</li>
-															<li date="6-10-2021">6</li>
-															<li date="7-10-2021">7</li>
-															<li date="8-10-2021">8</li>
-															<li date="9-10-2021">9</li>
-															<li date="10-10-2021">10</li>
-														</ul>
-														<ul class="wdp-week">
-															<li date="11-10-2021">11</li>
-															<li date="12-10-2021">12</li>
-															<li date="13-10-2021">13</li>
-															<li date="14-10-2021">14</li>
-															<li date="15-10-2021">15</li>
-															<li date="16-10-2021">16</li>
-															<li date="17-10-2021">17</li>
-														</ul>
-														<ul class="wdp-week">
-															<li date="18-10-2021">18</li>
-															<li date="19-10-2021">19</li>
-															<li date="20-10-2021">20</li>
-															<li date="21-10-2021">21</li>
-															<li date="22-10-2021">22</li>
-															<li date="23-10-2021">23</li>
-															<li date="24-10-2021">24</li>
-														</ul>
-														<ul class="wdp-week">
-															<li date="25-10-2021">25</li>
-															<li date="26-10-2021">26</li>
-															<li date="27-10-2021">27</li>
-															<li date="28-10-2021">28</li>
-															<li date="29-10-2021">29</li>
-															<li date="30-10-2021">30</li>
-															<li date="31-10-2021">31</li>
-														</ul>
-														<ul class="wdp-week">
-															<li date="1-11-2021" class="wdp-muted">1</li>
-															<li date="2-11-2021" class="wdp-muted">2</li>
-															<li date="3-11-2021" class="wdp-muted">3</li>
-															<li date="4-11-2021" class="wdp-muted">4</li>
-															<li date="5-11-2021" class="wdp-muted">5</li>
-															<li date="6-11-2021" class="wdp-muted">6</li>
-															<li date="7-11-2021" class="wdp-muted">7</li>
-														</ul>
-													</div>
-												</div>
-												<div class="wdp-list-container"></div>
-												<div class="wdp-list-container"></div>
-											</div>
-										</div>
-										<div class="wdp-hour-container wdp-d-none">
-											<div class="wdp-hour-arrow-container">
-												<div>
-													<svg viewBox="0 0 1792 1792"
-														xmlns="http://www.w3.org/2000/svg">
-														<path
-															d="M1395 1184q0 13-10 23l-50 50q-10 10-23 10t-23-10l-393-393-393 393q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l466 466q10 10 10 23z"></path></svg>
-												</div>
-												<div>
-													<svg viewBox="0 0 1792 1792"
-														xmlns="http://www.w3.org/2000/svg">
-														<path
-															d="M1395 1184q0 13-10 23l-50 50q-10 10-23 10t-23-10l-393-393-393 393q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l466 466q10 10 10 23z"></path></svg>
-												</div>
-												<div>
-													<svg viewBox="0 0 1792 1792"
-														xmlns="http://www.w3.org/2000/svg">
-														<path
-															d="M1395 1184q0 13-10 23l-50 50q-10 10-23 10t-23-10l-393-393-393 393q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l466 466q10 10 10 23z"></path></svg>
-												</div>
-											</div>
-											<div class="wdp-hour-el-container">
-												<input type="text" spellcheck="false" class="wdp-hour-el">
-												<input type="text" spellcheck="false" class="wdp-hour-el">
-												<input type="text" spellcheck="false" class="wdp-hour-el">
-											</div>
-											<div class="wdp-hour-arrow-container">
-												<div>
-													<svg viewBox="0 0 1792 1792"
-														xmlns="http://www.w3.org/2000/svg">
-														<path
-															d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"></path></svg>
-												</div>
-												<div>
-													<svg viewBox="0 0 1792 1792"
-														xmlns="http://www.w3.org/2000/svg">
-														<path
-															d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"></path></svg>
-												</div>
-												<div>
-													<svg viewBox="0 0 1792 1792"
-														xmlns="http://www.w3.org/2000/svg">
-														<path
-															d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"></path></svg>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+							<div class="datepicker-container datepicker-container-right">
+								<input class="form-control" type="text" name="bookingDate" id="bookingDate" placeholder="Choose your dates" required="required">
 							</div>
-
 						</div>
-						
-								<!-- 이 곳의 id는 변경하지 말아주세요. -->
-							<input class="form-control" type="text" name="bookingDate" id="demo" placeholder="Choose your dates" required="required">
-							<br>
-              				<button class="btn btn-outline-primary" id="toggle" type="button" data-bs-toggle="collapse" data-bs-target="#leaveReview" aria-expanded="true" aria-controls="leaveReview">날짜 선택</button>
-							<br><br>
-							
 						<div class="form-group">
 							<label class="form-label" for="guest_Number">인원 수</label> <input class="form-control" name="guest_Number" id="guest_Number" type="number" placeholder="0" autocomplete="off" required data-msg="Please enter your capacity" pattern="^[0-9]+$">
 						</div>
-						<br>
 						<label class="form-label" for="time">시간 선택</label> <input type="text" id="time1" name="time1" class="form-control" style="width: 200px;">
 					</form>
 				</div>
 			</div>
-			
-			
-			
 		</div>
 	</div>
 	<!-- Footer-->
@@ -797,18 +565,6 @@
 	</script>
 	<!-- jQuery-->
 	<script src="resources/vendor/jquery/jquery.min.js"></script>
-	
-	<!-- dateTimepicker.js -->
-	<script src="resources/window-date-picker-master/dist/js/window-date-picker.js"></script>
-	<script type="text/javascript">
-	const picker = new WindowDatePicker({
-	      el: '#picker',
-	      toggleEl: '#toggle',
-	      inputEl: '#demo'
-	});
-	
-	</script>
-	
 	<!-- timepicker dropdown -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
@@ -868,11 +624,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js">
 		
 	</script>
-<!-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.19.0/jquery.daterangepicker.min.js">
- -->		
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.19.0/jquery.daterangepicker.min.js">
+		
 	</script>
-<!-- 	<script src="resources/js/datepicker-detail.js">
- -->		
+	<script src="resources/js/datepicker-detail.js">
+		
 	</script>
 </body>
 </html>

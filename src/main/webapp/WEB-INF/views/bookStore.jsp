@@ -277,7 +277,6 @@
 			<div class="swiper-button-next swiper-button-white"></div>
 		</div>
 	</section>
-	
 	<div class="container py-5">
 		<div class="row">
 			<div class="col-lg-8">
@@ -295,13 +294,13 @@
 						</ul>
 					</div>
 					<br>
-					<!-- 예약자 정보 DB에 저장 -->
+					<!-- 예약자 정보 -->
 					<div class="text-block" style="top: 100px;">
 						<span class="text-primary h3">예약자 정보</span>
 						<hr class="my-4">
-						<form class="form" id="booking-form" method="post" action="#" autocomplete="off">
+						<form class="form" id="booking-form" method="get" action="#" autocomplete="off">
 							<div class="form-group">
-								<label class="form-label" for="userName">예약자 명</label> <input class="form-control" name="userName" id="userName" type="text" autocomplete="off" required data-msg="Please enter your Name">
+								<label class="form-label" for="userName">예약자 명</label> <input class="form-control" name="userName" id="username" type="text" autocomplete="off" required data-msg="Please enter your email">
 							</div>
 							<div class="form-group">
 								<label class="form-label" for="phoneNumber">연락처</label> <input class="form-control" name="phoneNumber" id="phoneNumber" type="text" placeholder="0001115678" autocomplete="off" required data-msg="Please enter your phone number" pattern="^[0-9]+$">
@@ -348,12 +347,12 @@
 						<br>
 						<p class="text-sm text-muted">예약 서비스 이용을 위한 개인정보 수집 및 제 3자 제공을 확인하였으며 이에 동의합니다.</p>
 					</div>
-					<!-- 객실 선택(체크박스 상태 DB에 저장해야 함)-->
+					<!-- 객실 선택 -->
 					<div class="text-block" style="top: 100px;">
 						<br>
 						<br> <span class="text-primary h3">객실 선택</span>
 						<hr class="my-4">
-						<form class="form" id="booking-form" method="post" action="#" autocomplete="off">
+						<form class="form" id="booking-form" method="get" action="#" autocomplete="off">
 
 							<div class="list-group shadow mb-5">
 								<div class="list-group-item list-group-item-action p-4">
@@ -491,8 +490,10 @@
 
 
 							<div class="form-group">
-								<input type="submit" class="btn btn-primary btn-block" value="예약하기">
-							</div>
+							<form action="#" method="post">
+								<button class="btn btn-primary btn-block">예약하기</button>
+							</form>
+						</div>
 						</form>
 					</div>
 				</div>
@@ -503,12 +504,14 @@
 				<div class="p-4 shadow ml-lg-4 rounded sticky-top" style="top: 100px;">
 					<span class="text-primary h3">날짜 / 인원 수 / 시간</span>
 					<hr class="my-4">
-					<form class="form" id="booking-form" method="post" action="#" autocomplete="off">
+					<form class="form" id="booking-form" method="get" action="#" autocomplete="off">
 						
 						<!-- 날짜 선택 -->
 						<div class="form-group">
 							<label class="form-label" for="bookingDate">날짜</label>
 							
+						
+
 							<div id="picker" class="wdp" style="left: 50px; top: 259.6px;">
 								<div class="wdp-container">
 									<div class="wdp-header">
@@ -678,7 +681,7 @@
 						</div>
 						
 								<!-- 이 곳의 id는 변경하지 말아주세요. -->
-							<input class="form-control" type="text" name="bookingDate" id="demo" placeholder="원하는 예약 날짜를 선택해주세요." required="required">
+							<input class="form-control" type="text" name="bookingDate" id="demo" placeholder="Choose your dates" required="required">
 							<br>
               				<button class="btn btn-outline-primary" id="toggle" type="button" data-bs-toggle="collapse" data-bs-target="#leaveReview" aria-expanded="true" aria-controls="leaveReview">날짜 선택</button>
 							<br><br>

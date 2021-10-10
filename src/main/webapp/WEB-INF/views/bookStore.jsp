@@ -488,7 +488,7 @@
 
 
 
-
+							<!-- 값 보낼 때 수정 -->
 							<div class="form-group">
 							<form action="#" method="post">
 								<button class="btn btn-primary btn-block">예약하기</button>

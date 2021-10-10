@@ -11,22 +11,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
 <meta name="description" content="This is an example dashboard created using build-in elements and components.">
 <meta name="msapplication-tap-highlight" content="no">
-<!--
-    =========================================================
-    * ArchitectUI HTML Theme Dashboard - v1.0.0
-    =========================================================
-    * Product Page: https://dashboardpack.com
-    * Copyright 2019 DashboardPack (https://dashboardpack.com)
-    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
-    =========================================================
-    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-    -->
-<link href="resources/architectui-html/main.css" rel="stylesheet">
+
+<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 	<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
 		<div class="app-header header-shadow">
 			<div class="app-header__logo">
+				<!-- 페이지 좌측 상단 로고 -->
 				<div>오늘의 식탁</div>
 				<div class="header__pane ml-auto">
 					<div>
@@ -98,6 +90,7 @@
 					<div class="app-sidebar__inner">
 						<ul class="vertical-nav-menu">
 
+							<!-- 좌측 LIST -->
 							<li><a href="#"> <i class="metismenu-icon pe-7s-info"></i> <font color="#3162C7">매장 정보 관리</font> <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
 							</a>
 								<ul>
@@ -153,6 +146,7 @@
 								<div class="page-title-icon">
 									<i class="pe-7s-users icon-gradient bg-mean-fruit"> </i>
 								</div>
+								<!-- PAGE 중앙 상단 -->
 								<div>
 									탈퇴 회원 관리
 									<div class="page-title-subheading">30일 이내에 탈퇴 한 회원의 정보를 복구</div>
@@ -161,6 +155,7 @@
 							<div class="page-title-actions">
 								<div class="search-wrapper">
 									<div class="input-holder">
+										<!-- ID, NAME SEARCH -->
 										<input type="text" class="search-input" placeholder="아이디 또는 이름 검색">
 										<button class="search-icon">
 											<span></span>
@@ -171,6 +166,8 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- 회원 정보 입출력란 -->
 					<div class="main-card mb-3 card">
 						<div class="card-body">
 							<form class="">
@@ -222,29 +219,27 @@
 										</div>
 									</div>
 								</div>
-								<div class="form-row">
-									<div class="col-md-6">
-										<div class="position-relative form-group">
-											<label for="addr" class="">프로필 사진</label> <br> <img style="margin-left: 20px" width="120" class="rounded-circle" src="assets/images/avatars/1.jpg" alt=""> <br>
-										</div>
-										<button class="mb-2 mr-2 btn btn-light">사진 변경</button>
-										<button class="mb-2 mr-2 btn btn-light">사진 삭제</button>
-									</div>
-									<div align="right" class="col-md-6" style="top: 150px">
-										<div align="right">
-											<!-- Button trigger modal -->
-											<button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target="#exampleModal">회원 정보 복구</button>
-										</div>
-									</div>
-
-								</div>
 							</form>
-
+							<div class="form-row">
+								<div class="col-md-6">
+									<div class="position-relative form-group">
+										<label for="addr" class="">프로필 사진</label> <br> <img style="margin-left: 20px" width="120" class="rounded-circle" src="img/avatars/1.jpg" alt=""> <br>
+									</div>
+									<button class="mb-2 mr-2 btn btn-light">사진 변경</button>
+									<button class="mb-2 mr-2 btn btn-light">사진 삭제</button>
+								</div>
+								<div align="right" class="col-md-6" style="top: 150px">
+									<div align="right">
+										<!-- Button trigger modal -->
+										<button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target="#exampleModal">회원 정보 복구</button>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<script type="text/javascript" src="resources/architectui-html/assets/scripts/main.js"></script>
+			<script type="text/javascript" src="js/main.js"></script>
 		</div>
 	</div>
 </body>

@@ -11,22 +11,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
 <meta name="description" content="This is an example dashboard created using build-in elements and components.">
 <meta name="msapplication-tap-highlight" content="no">
-<!--
-    =========================================================
-    * ArchitectUI HTML Theme Dashboard - v1.0.0
-    =========================================================
-    * Product Page: https://dashboardpack.com
-    * Copyright 2019 DashboardPack (https://dashboardpack.com)
-    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
-    =========================================================
-    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-    -->
-<link href="./css/main.css" rel="stylesheet">
+
+<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 	<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
 		<div class="app-header header-shadow">
 			<div class="app-header__logo">
+				<!-- 페이지 좌측 상단 로고 -->
 				<div>오늘의 식탁</div>
 				<div class="header__pane ml-auto">
 					<div>
@@ -97,6 +89,8 @@
 				<div class="scrollbar-sidebar">
 					<div class="app-sidebar__inner">
 						<ul class="vertical-nav-menu">
+
+							<!-- 좌측 LIST -->
 							<li><a href="#"> <i class="metismenu-icon pe-7s-info"></i> <font color="#3162C7">매장 정보 관리</font> <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
 							</a>
 								<ul>
@@ -165,6 +159,7 @@
 							<h5 class="card-title" style="font-size: 20px">관리자 메뉴</h5>
 							<div class="row">
 								<div class="col">
+									<!-- 페이지 링크연결 -->
 									<ul class="nav flex-column">
 										<li class="nav-item-header nav-item" style="font-size: 15px">매장 정보 관리</li>
 										<li class="nav-item"><a href="javascript:void(0);" class="nav-link">매장 검색 </a></li>
@@ -181,15 +176,15 @@
 								<div class="col">
 									<ul class="nav flex-column">
 										<li class="nav-item-header nav-item" style="font-size: 15px">회원 관리</li>
-										<li class="nav-item"><a href="javascript:void(0);" class="nav-link"><span>일반회원 정보 관리</span> </a></li>
-										<li class="nav-item"><a href="javascript:void(0);" class="nav-link"><span>탈퇴회원 정보 관리</span></a></li>
+										<li class="nav-item"><a href="userManage.jsp" class="nav-link"><span>일반회원 정보 관리</span> </a></li>
+										<li class="nav-item"><a href="userRestore.jsp" class="nav-link"><span>탈퇴회원 정보 관리</span></a></li>
 										<li class="nav-item-divider nav-item"></li>
 
 										<li class="nav-item-header nav-item" style="font-size: 15px">통계 관리</li>
-										<li class="nav-item"><a href="javascript:void(0);" class="nav-link"><span>방문자 수 그래프</span> </a></li>
-										<li class="nav-item"><a href="javascript:void(0);" class="nav-link"><span>회원 가입자 수 그래프</span> </a></li>
-										<li class="nav-item"><a href="javascript:void(0);" class="nav-link"><span>매장 순위</span></a></li>
-										<li class="nav-item"><a href="javascript:void(0);" class="nav-link"><span>지역 순위</span></a></li>
+										<li class="nav-item"><a href="visitGraph.jsp" class="nav-link"><span>방문자 수 그래프</span> </a></li>
+										<li class="nav-item"><a href="signUpGraph.jsp" class="nav-link"><span>회원 가입자 수 그래프</span> </a></li>
+										<li class="nav-item"><a href="shopRanking.jsp" class="nav-link"><span>매장 순위</span></a></li>
+										<li class="nav-item"><a href="locationRanking.jsp" class="nav-link"><span>지역 순위</span></a></li>
 									</ul>
 								</div>
 							</div>
@@ -198,6 +193,6 @@
 
 				</div>
 			</div>
-			<script type="text/javascript" src="./js/main.js"></script>
+			<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

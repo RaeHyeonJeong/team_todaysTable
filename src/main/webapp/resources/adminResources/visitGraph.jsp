@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
 
@@ -12,22 +11,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
 <meta name="description" content="This is an example dashboard created using build-in elements and components.">
 <meta name="msapplication-tap-highlight" content="no">
-<!--
-    =========================================================
-    * ArchitectUI HTML Theme Dashboard - v1.0.0
-    =========================================================
-    * Product Page: https://dashboardpack.com
-    * Copyright 2019 DashboardPack (https://dashboardpack.com)
-    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
-    =========================================================
-    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-    -->
-<link href="resources/architectui-html/main.css" rel="stylesheet">
+
+<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 	<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
 		<div class="app-header header-shadow">
 			<div class="app-header__logo">
+				<!-- 페이지 좌측 상단 로고 -->
 				<div>오늘의 식탁</div>
 				<div class="header__pane ml-auto">
 					<div>
@@ -98,6 +89,8 @@
 				<div class="scrollbar-sidebar">
 					<div class="app-sidebar__inner">
 						<ul class="vertical-nav-menu">
+
+							<!-- 좌측 LIST -->
 							<li><a href="#"> <i class="metismenu-icon pe-7s-info"></i> <font color="#3162C7">매장 정보 관리</font> <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
 							</a>
 								<ul>
@@ -153,6 +146,7 @@
 								<div class="page-title-icon">
 									<i class="pe-7s-display1 icon-gradient bg-mean-fruit"> </i>
 								</div>
+								<!-- PAGE 중앙 상단 -->
 								<div>
 									방문자 수 그래프
 									<div class="page-title-subheading">방문자 수를 그래프로 나타내는 페이지</div>
@@ -160,27 +154,29 @@
 							</div>
 						</div>
 					</div>
-
+					
+					<!-- 항목 선택 -->
 					<div class="position-relative form-group">
 						<!-- <label for="exampleCustomSelect" class="">Custom Select</label> -->
-						<select type="select" id="exampleCustomSelect" name="customSelect" class="custom-select" style="width: 200px">
+						<select type="select" id="CustomSelect" name="visitSelect" class="custom-select" style="width: 200px">
 							<option value="">Select</option>
 							<option value="dayVisit">일 별 방문자수</option>
 							<option value="monthVisit">월 별 방문자수</option>
 							<option value="yearvisit">년도 별 방문자수</option>
 						</select>
 					</div>
-
+					
+					<!-- 그래프 -->
 					<div class="main-card mb-3 card">
 						<div class="card-body">
 							<h5 class="card-title">Line Chart</h5>
 							<div style="height: 400px">
-								<canvas id="line-chart"></canvas>
+								<canvas id="line-chart" name="vistChart"></canvas>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<script type="text/javascript" src="resources/architectui-html/assets/scripts/main.js"></script>
+			<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

@@ -7,12 +7,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>관리자 - 탈퇴회원정보 관리</title>
+<title>관리자 - 매장 순위</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
 <meta name="description" content="This is an example dashboard created using build-in elements and components.">
 <meta name="msapplication-tap-highlight" content="no">
 
-<link href="css/main.css" rel="stylesheet">
+<link href="/controller/resources/adminResources/css/main.css" rel="stylesheet">
 </head>
 <body>
 	<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -144,123 +144,63 @@
 						<div class="page-title-wrapper">
 							<div class="page-title-heading">
 								<div class="page-title-icon">
-									<i class="pe-7s-users icon-gradient bg-mean-fruit"> </i>
+									<i class="pe-7s-display1 icon-gradient bg-mean-fruit"> </i>
 								</div>
 								<!-- PAGE 중앙 상단 -->
 								<div>
-									탈퇴 회원 관리
-									<div class="page-title-subheading">30일 이내에 탈퇴 한 회원의 정보를 복구</div>
-								</div>
-							</div>
-							<div class="page-title-actions">
-								<div class="search-wrapper">
-									<div class="input-holder">
-										<!-- ID, NAME SEARCH -->
-										<input type="text" class="search-input" placeholder="아이디 또는 이름 검색">
-										<button class="search-icon">
-											<span></span>
-										</button>
-									</div>
-									<button class="close"></button>
+									매장 순위
+									<div class="page-title-subheading">조회수, 찜, 리뷰수에 따른 순위</div>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- 회원 정보 입출력란 -->
-					<div class="main-card mb-3 card">
-						<div class="card-body">
-							<form class="">
-								<div class="form-row">
-									<div class="col-md-6">
-										<div class="position-relative form-group">
-											<label for="id" class="">아이디</label> <input name="id" id="id" placeholder="" type="text" class="form-control">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="position-relative form-group">
-											<label for="birth" class="">생년월일</label> <input name="birth" id="birth" placeholder="" type="text" class="form-control">
-										</div>
-									</div>
+					<!-- 항목 선택 -->
+					<div class="position-relative form-group">
+						<!-- <label for="exampleCustomSelect" class="">Custom Select</label> -->
+						<select type="select" id="selectList" name="selectList" class="custom-select" style="width: 200px">
+							<option value="">정렬 선택</option>
+							<option value="viewList">조회수 순</option>
+							<option value="heartList">찜 순</option>
+							<option value="reviewList">리뷰수 순</option>
+						</select>
+					</div>
+
+					<!-- 매장 각각의 카드형 리스트 -->
+					<div class="row">
+						<div class="col-md-3">
+							<div class="main-card mb-3 card">
+								<img width="100%" src="/controller/resources/adminResources/img/avatars/1.jpg" alt="Card image cap" class="card-img-top">
+								<div class="card-body">
+									<h3 class="card-title" style="font-size: 20px">매장명</h3>
+									<span class="fa fa-eye"></span>&nbsp;조회수: 5000 <br> <span class="fa fa-heart"></span>&nbsp;찜 수: 215<br> <span class="fa fa-comment"></span>&nbsp;리뷰수: 100
 								</div>
-								<div class="form-row">
-									<div class="col-md-6">
-										<div class="position-relative form-group">
-											<label for="name" class="">이름</label> <input name="name" id="name" placeholder="" type="text" class="form-control">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="position-relative form-group">
-											<label for="nickname" class="">닉네임</label> <input name="nickname" id="nickname" placeholder="" type="text" class="form-control">
-										</div>
-									</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="main-card mb-3 card">
+								<img width="100%" src="/controller/resources/adminResources/img/avatars/1.jpg" alt="Card image cap" class="card-img-top">
+								<div class="card-body">
+									<h3 class="card-title" style="font-size: 20px">매장명</h3>
+									<span class="fa fa-eye"></span>&nbsp;조회수: 100<br> <span class="fa fa-heart"></span>&nbsp;찜 수: 200<br> <span class="fa fa-comment"></span>&nbsp;리뷰수: 400
 								</div>
-								<div class="form-row">
-									<div class="col-md-6">
-										<div class="position-relative form-group">
-											<label for="id" class="">EMAIL</label> <input name="email" id="email" placeholder="" type="email" class="form-control">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="position-relative form-group">
-											<label for="birth" class="">연락처</label> <input name="tel" id="tel" placeholder="" type="text" class="form-control">
-										</div>
-									</div>
-								</div>
-								<div class="form-row">
-									<div class="col-md-6">
-										<div class="position-relative form-group">
-											<label for="addr1" class="">주소</label> <input name="addr1" id="addr1" placeholder="" type="text" class="form-control">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="position-relative form-group">
-											<label for="addr2" class="">상세주소</label> <input name="addr2" id="addr2" placeholder="" type="text" class="form-control">
-										</div>
-									</div>
-								</div>
-							</form>
-							<div class="form-row">
-								<div class="col-md-6">
-									<div class="position-relative form-group">
-										<label for="addr" class="">프로필 사진</label> <br> <img style="margin-left: 20px" width="120" class="rounded-circle" src="img/avatars/1.jpg" alt=""> <br>
-									</div>
-									<button class="mb-2 mr-2 btn btn-light">사진 변경</button>
-									<button class="mb-2 mr-2 btn btn-light">사진 삭제</button>
-								</div>
-								<div align="right" class="col-md-6" style="top: 150px">
-									<div align="right">
-										<!-- Button trigger modal -->
-										<button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target="#exampleModal">회원 정보 복구</button>
-									</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="main-card mb-3 card">
+								<img width="100%" src="/controller/resources/adminResources/img/avatars/1.jpg" alt="Card image cap" class="card-img-top">
+								<div class="card-body">
+									<h3 class="card-title" style="font-size: 20px">매장명</h3>
+									<span class="fa fa-eye"></span>&nbsp;조회수: 400<br> <span class="fa fa-heart"></span>&nbsp;찜 수: 50<br> <span class="fa fa-comment"></span>&nbsp;리뷰수: 198
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<script type="text/javascript" src="js/main.js"></script>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="/controller/resources/adminResources/js/main.js"></script>
 </body>
 </html>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">탈퇴회원 정보 복구</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<p class="mb-0">정말로 회원 정보를 복구하시겠습니까?</p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">아니오</button>
-				<button type="button" class="btn btn-primary">예</button>
-			</div>
-		</div>
-	</div>
-</div>

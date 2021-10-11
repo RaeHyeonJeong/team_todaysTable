@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>관리자 - 매장 정보 수정</title>
+<title>관리자 - 매장 검색</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
 <meta name="description"
@@ -23,7 +23,7 @@
     =========================================================
     * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
     -->
-<link href="css/main.css" rel="stylesheet">
+<link href="/controller/resources/adminResources/css/main.css" rel="stylesheet">
 </head>
 <body>
 	<div
@@ -531,273 +531,103 @@
 						<div class="page-title-wrapper">
 							<div class="page-title-heading">
                                 <div class="page-title-icon">
-                                    <i class="pe-7s-graph text-success">
-                                    </i>
+                                    <i class="pe-7s-menu icon-gradient bg-ripe-malin">
+									</i>
                                 </div>
-								<div>매장 정보 수정
-									<div class="page-title-subheading">매장 정보를 수정해주세요(<font color="red">*</font>필수 입력 항목)
+								<div>매장 검색
+									<div class="page-title-subheading">
 									</div>
 								</div>
 							</div>
+							<div class="page-title-actions">
+								<div class="search-wrapper">
+								   <div class="input-holder">
+									  <input type="text" class="search-input" placeholder="지역 혹은 매장명 검색">
+									  <button class="search-icon">
+										 <span></span>
+									  </button>
+								   </div>
+								   <button class="close"></button>
+								</div>
+							 </div>
 						</div>
 					</div>
 					<div class="main-card mb-3 card">
 						<div class="card-body">
-							<form class="">
-								<div class="position-relative row form-group"><label for="storeName" class="col-sm-2 col-form-label"><font color="red">*</font>매장명</label>
-									<div class="col-sm-10"><input name="storeName" id="storeName" placeholder="업체명을 입력해주세요" type="text" class="form-control"></div>
-								</div>
-								<div class="position-relative row form-group"><label for="tel1" class="col-sm-2 col-form-label"><font color="red">*</font>전화번호</label>
-									<div class="col-sm-1"><select name="tel1" id="tel1" class="form-control">
-										<option>02</option>
-										<option>051</option>
-										<option>053</option>
-										<option>032</option>
-										<option>062</option>
-										<option>042</option>
-										<option>052</option>
-										<option>044</option>
-										<option>031</option>
-										<option>033</option>
-										<option>043</option>
-										<option>041</option>
-										<option>063</option>
-										<option>061</option>
-										<option>054</option>
-										<option>055</option>
-										<option>064</option>
+							<div class="position-relative row form-group">
+								<img class="col-sm-4" src="/controller/resources/adminResources/img/store.jpg"/>
 
-									</select></div>
-									-
-									<div class="col-sm-1"><input name="tel2" id="tel2" placeholder="" type="tel" class="form-control"></div>
-									-
-									<div class="col-sm-1"><input name="tel3" id="tel3" placeholder="" type="tel" class="form-control"></div>
+							</div>
+							<div class="position-relative row form-group"><label for="storeName" class="col-sm-2 col-form-label">가게 이름</label>
+								<div class="col-sm-10"><h5 name="storeName" id="storeName">전주식당</h5></div>
+							</div>
+							<div class="position-relative row form-group"><label for="category" class="col-sm-2 col-form-label">카테고리</label>
+								<div class="col-sm-8"><h5 name="category" id="category">한식</h5></div>
+								<div class="col-sm-2">
+									<button class="btn btn-primary">수정</button>
 								</div>
-								<div class="position-relative row form-group"><label for="imageFile" class="col-sm-2 col-form-label"><font color="red">*</font>매장 대표 사진</label>
-									<div class="col-sm-10"><input name="imageFile" id="imageFile" type="file" class="form-control-file">
-										<small class="form-text text-muted"></small>
-									</div>
+							</div>
+							<div class="position-relative row form-group"><label for="location" class="col-sm-2 col-form-label">위치</label>
+								<div class="col-sm-8"><h5 name="location" id="location">서울 강남구 강남대로94길 23</h5></div>
+								<div class="col-sm-2">
+									<button type="button" class="btn mr-2 mb-2 btn-secondary" data-toggle="modal" data-target="#exampleModal">
+										삭제
+									</button>
 								</div>
-								<div class="position-relative row form-group"><label for="address" class="col-sm-2 col-form-label"><font color="red">*</font>주소</label>
-									<div class="col-sm-2"><input name="address" id="address" placeholder="우편번호" type="text" class="form-control"></div>
-									<div class="col-sm-2"><button id="findAddress" class="btn btn-secondary">주소 찾기</button></div>
-								</div>
-								<div class="position-relative row form-group"><label for="address1" class="col-sm-2 col-form-label"> </label>
-									<div class="col-sm-10"><input name="address1" id="address1" placeholder="주소" type="text" class="form-control"></div>
-								</div>
-								<div class="position-relative row form-group"><label for="address2" class="col-sm-2 col-form-label"> </label>
-									<div class="col-sm-10"><input name="address2" id="address2" placeholder="상세 주소" type="text" class="form-control"></div>
-								</div>
-								<div class="position-relative row form-group"><label for="businessHours" class="col-sm-2 col-form-label"><font color="red">*</font>영업시간</label>
-									<div class="col-sm-1"><select name="businessHours" id="businessHours" class="form-control">
-										<option>오전</option>
-										<option>오후</option>
-									</select></div>
-									<div class="col-sm-1"><select name="businessHours2" id="businessHours2" class="form-control">
-										<option>시</option>
-										<option>1시</option>
-										<option>2시</option>
-										<option>3시</option>
-										<option>4시</option>
-										<option>5시</option>
-										<option>6시</option>
-										<option>7시</option>
-										<option>8시</option>
-										<option>9시</option>
-										<option>10시</option>
-										<option>11시</option>
-										<option>12시</option>
-									</select></div>
-									<div class="col-sm-1"><select name="businessHours3" id="businessHours" class="form-control">
-										<option>분</option>
-										<option>0분</option>
-										<option>1분</option>
-										<option>2분</option>
-										<option>3분</option>
-										<option>4분</option>
-										<option>5분</option>
-										<option>6분</option>
-										<option>7분</option>
-										<option>8분</option>
-										<option>9분</option>
-										<option>10분</option>
-										<option>11분</option>
-										<option>12분</option>
-										<option>13분</option>
-										<option>14분</option>
-										<option>15분</option>
-										<option>16분</option>
-										<option>17분</option>
-										<option>18분</option>
-										<option>19분</option>
-										<option>20분</option>
-										<option>21분</option>
-										<option>22분</option>
-										<option>23분</option>
-										<option>24분</option>
-										<option>25분</option>
-										<option>26분</option>
-										<option>27분</option>
-										<option>28분</option>
-										<option>29분</option>
-										<option>30분</option>
-										<option>31분</option>
-										<option>32분</option>
-										<option>33분</option>
-										<option>34분</option>
-										<option>35분</option>
-										<option>36분</option>
-										<option>37분</option>
-										<option>38분</option>
-										<option>39분</option>
-										<option>40분</option>
-										<option>41분</option>
-										<option>42분</option>
-										<option>43분</option>
-										<option>44분</option>
-										<option>45분</option>
-										<option>46분</option>
-										<option>47분</option>
-										<option>48분</option>
-										<option>49분</option>
-										<option>50분</option>
-										<option>51분</option>
-										<option>52분</option>
-										<option>53분</option>
-										<option>54분</option>
-										<option>55분</option>
-										<option>56분</option>
-										<option>57분</option>
-										<option>58분</option>
-										<option>59분</option>
-									</select></div>
-									-
-									<div class="col-sm-1"><select name="businessHours4" id="businessHours" class="form-control">
-										<option>오전</option>
-										<option>오후</option>
-									</select></div>
-									<div class="col-sm-1"><select name="businessHours5" id="businessHours2" class="form-control">
-										<option>시</option>
-										<option>1시</option>
-										<option>2시</option>
-										<option>3시</option>
-										<option>4시</option>
-										<option>5시</option>
-										<option>6시</option>
-										<option>7시</option>
-										<option>8시</option>
-										<option>9시</option>
-										<option>10시</option>
-										<option>11시</option>
-										<option>12시</option>
-									</select></div>
-									<div class="col-sm-1"><select name="businessHours6" id="businessHours" class="form-control">
-										<option>분</option>
-										<option>0분</option>
-										<option>1분</option>
-										<option>2분</option>
-										<option>3분</option>
-										<option>4분</option>
-										<option>5분</option>
-										<option>6분</option>
-										<option>7분</option>
-										<option>8분</option>
-										<option>9분</option>
-										<option>10분</option>
-										<option>11분</option>
-										<option>12분</option>
-										<option>13분</option>
-										<option>14분</option>
-										<option>15분</option>
-										<option>16분</option>
-										<option>17분</option>
-										<option>18분</option>
-										<option>19분</option>
-										<option>20분</option>
-										<option>21분</option>
-										<option>22분</option>
-										<option>23분</option>
-										<option>24분</option>
-										<option>25분</option>
-										<option>26분</option>
-										<option>27분</option>
-										<option>28분</option>
-										<option>29분</option>
-										<option>30분</option>
-										<option>31분</option>
-										<option>32분</option>
-										<option>33분</option>
-										<option>34분</option>
-										<option>35분</option>
-										<option>36분</option>
-										<option>37분</option>
-										<option>38분</option>
-										<option>39분</option>
-										<option>40분</option>
-										<option>41분</option>
-										<option>42분</option>
-										<option>43분</option>
-										<option>44분</option>
-										<option>45분</option>
-										<option>46분</option>
-										<option>47분</option>
-										<option>48분</option>
-										<option>49분</option>
-										<option>50분</option>
-										<option>51분</option>
-										<option>52분</option>
-										<option>53분</option>
-										<option>54분</option>
-										<option>55분</option>
-										<option>56분</option>
-										<option>57분</option>
-										<option>58분</option>
-										<option>59분</option>
-									</select></div>
-								</div>
-                                <div class="position-relative row form-group"><label for="dayOff" class="col-sm-2 col-form-label">휴무일</label>
-                                    <div id="dayOff" class="col-sm-1">
-                                        <div class="position-relative form-check"><label class="form-check-label"><input name="dayOff1" type="radio" class="form-check-input">연중무휴</label></div>
-                                        <div class="position-relative form-check"><label class="form-check-label"><input name="dayOff1" type="radio" class="form-check-input">직접입력</label></div>
-                                    </div>
-                                    <div class="col-sm-2"><input name="dayOff2" type="text" class="form-check-input"></div>
-                                </div>
-                                <div class="position-relative row form-group"><label for="price1" class="col-sm-2 col-form-label"><font color="red">*</font>가격 정보</label>
-									<div class="col-sm-2"><input name="price1" id="price1" placeholder="ex) 아메리카노" type="text" class="form-control"></div>
-                                    <div class="col-sm-2"><input name="price2" id="price2" placeholder="ex) 3000" type="text" class="form-control"></div>
-                                    <div class="col-sm-6"><img src="img/plus.png"/>가격정보 추가</div>
-								</div>
-                                <div class="position-relative row form-group"><label for="priceImg" class="col-sm-2 col-form-label"> </label>
-                                    <div class="col-sm-2"><img src="img/sample.png"/></div>
-                                    <div class="col-sm-8"><input name="menuInfo" id="menuInfo" placeholder="메뉴 상세 설명" type="textarea" class="form-control"></div>
-                                </div>
-                                <div class="position-relative row form-group"><label for="parking" class="col-sm-2 col-form-label">주차 가능 여부</label>
-                                    <div id="parking" class="col-sm-1 position-relative form-check"><label class="form-check-label"><input name="parking1" type="radio" class="form-check-input">가능</label></div>
-                                    <div class="col-sm-1 position-relative form-check"><label class="form-check-label"><input name="parking1" type="radio" class="form-check-input">불가능</label></div>
-                                </div>
-                                <div class="position-relative row form-group"><label for="takeout" class="col-sm-2 col-form-label">포장 가능 여부</label>
-                                    <div id="takeout" class="col-sm-1 position-relative form-check"><label class="form-check-label"><input name="takeout1" type="radio" class="form-check-input">가능</label></div>
-                                    <div class="col-sm-1 position-relative form-check"><label class="form-check-label"><input name="takeout1" type="radio" class="form-check-input">불가능</label></div>
-                                </div>
-                                <div class="position-relative row form-group"><label for="reserve" class="col-sm-2 col-form-label">예약 가능 여부</label>
-                                    <div id="reserve" class="col-sm-1 position-relative form-check"><label class="form-check-label"><input name="reserve1" type="radio" class="form-check-input">가능</label></div>
-                                    <div class="col-sm-1 position-relative form-check"><label class="form-check-label"><input name="reserve1" type="radio" class="form-check-input">불가능</label></div>
-                                </div>
-                                <div class="position-relative row form-group"><label for="capacity" class="col-sm-2 col-form-label">수용 가능 인원</label>
-									<div class="col-sm-3"><input name="capacity" id="capacity" placeholder="수용 가능 인원을 입력해주세요" type="text" class="form-control"></div>
-								</div>
-								<div class="position-relative row form-group">
-									<div class="col-sm-10 offset-sm-2">
-										<button class="btn btn-primary">Submit</button>
-									</div>
-								</div>
-							</form>
+							</div>
 						</div>
+					</div>
 
+					<div class="main-card mb-3 card">
+						<div class="card-body">
+							<div class="position-relative row form-group">
+								<img class="col-sm-4" src="/controller/resources/adminResources/img/store2.jpg"/>
+							</div>
+							<div class="position-relative row form-group"><label for="storeName" class="col-sm-2 col-form-label">가게 이름</label>
+								<div class="col-sm-10"><h5 name="storeName" id="storeName">강남더수제비</h5></div>
+							</div>
+							<div class="position-relative row form-group"><label for="category" class="col-sm-2 col-form-label">카테고리</label>
+								<div class="col-sm-8"><h5 name="category" id="category">수제비</h5></div>
+								<div class="col-sm-2">
+									<button class="btn btn-primary">수정</button>
+								</div>
+							</div>
+							<div class="position-relative row form-group"><label for="location" class="col-sm-2 col-form-label">위치</label>
+								<div class="col-sm-8"><h5 name="location" id="location">서울 강남구 강남대로94길 23</h5></div>
+								<div class="col-sm-2">
+									<button type="button" class="btn mr-2 mb-2 btn-secondary" data-toggle="modal" data-target="#exampleModal">
+										삭제
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
 
 					<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 				</div>
 			</div>
-			<script type="text/javascript" src="./assets/scripts/main.js"></script>
+			<script type="text/javascript" src="/controller/resources/adminResources/js/main.js"></script>
+		</div>
+	</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">매장 삭제</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-0">정말로 선택하신 매장을 삭제하시겠습니까?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">아니오</button>
+                <button type="button" class="btn btn-primary">네</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

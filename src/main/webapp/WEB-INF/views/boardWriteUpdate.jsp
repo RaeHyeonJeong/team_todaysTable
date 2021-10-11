@@ -36,77 +36,33 @@
 <body style="padding-top: 72px;">
 	<!-- HEADER include -->
 	<jsp:include page="subHeader.jsp" />
-	<section class="py-5 bg-gray-100 mp-5">
-		<div class="container">
-			<div class="text-center pb-lg-4">
-				<p class="subtitle text-secondary">Title</p>
-				<h3 class="mb-4">이 곳 추천 합니다.!</h3>
-			</div>
-		</div>
-		<div class="container">
-			<!-- Slider main container-->
-			<div class="swiper-container detail-slider slider-gallery">
-				<!-- Additional required wrapper-->
-				<div class="swiper-wrapper">
-					<!-- Slides-->
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1426122402199-be02db90eb90.jpg" data-toggle="gallery-top" title="Our street">
-							<img class="img-fluid" src="resources/img/photo/photo-1426122402199-be02db90eb90.jpg" alt="Our street">
-						</a>
+	<section class="py-6 bg-gray-100">
+		<div class="container d-flex justify-content-center">
+			<div class="col-md-7 mb-5 mb-md-0">
+				<form class="form" id="BoardWriteUpdate-form" method="post" action="#" enctype="multipart/form-data">
+					<div class="controls">
+						<div class="form-group mb-4">
+							<label class="form-label" for="title">제목</label> <input class="form-control" type="text" name="title" id="title" placeholder="제목을 적어주세요" required="required" style="width: 500px;">
+						</div>
+						<div class="form-group mb-4">
+							<label class="form-label" for="context">내용</label>
+							<textarea class="form-control" rows="4" name="context" id="context" placeholder="내용을 적어주세요" required="required" style="height: 400px; width: 750px;"></textarea>
+						</div>
+						<div class="form-group mb-4">
+							<label class="form-label" for="formFile">UPLOAD IMAGE</label> <input class="form-control" id="files-upload" multiple="multiple" type="file" name="filename[]">
+						</div>
+						<div class="form-group mb-4">
+							<label class="form-label" for="formFile">비밀번호</label> <input class="form-control" id="password" type="text" name="password" required="required">
+						</div>
+						<div class="form-group mb-4">
+							<button class="btn btn-outline-primary" type="submit">등록하기</button>
+							<button class="btn btn-outline-primary" type="button" onclick="history.go(-1)">돌아가기</button>
+						</div>
 					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1512917774080-9991f1c4c750.jpg" data-toggle="gallery-top" title="Outside">
-							<img class="img-fluid" src="resources/img/photo/photo-1512917774080-9991f1c4c750.jpg" alt="Outside">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1494526585095-c41746248156.jpg" data-toggle="gallery-top" title="Rear entrance">
-							<img class="img-fluid" src="resources/img/photo/photo-1494526585095-c41746248156.jpg" alt="Rear entrance">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1484154218962-a197022b5858.jpg" data-toggle="gallery-top" title="Kitchen">
-							<img class="img-fluid" src="resources/img/photo/photo-1484154218962-a197022b5858.jpg" alt="Kitchen">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1522771739844-6a9f6d5f14af.jpg" data-toggle="gallery-top" title="Bedroom">
-							<img class="img-fluid" src="resources/img/photo/photo-1522771739844-6a9f6d5f14af.jpg" alt="Bedroom">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1488805990569-3c9e1d76d51c.jpg" data-toggle="gallery-top" title="Bedroom">
-							<img class="img-fluid" src="resources/img/photo/photo-1488805990569-3c9e1d76d51c.jpg" alt="Bedroom">
-						</a>
-					</div>
-				</div>
-				<div class="swiper-pagination swiper-pagination-white"></div>
-				<div class="swiper-button-prev swiper-button-white"></div>
-				<div class="swiper-button-next swiper-button-white"></div>
+				</form>
 			</div>
 		</div>
 	</section>
-	<div class="container col-lg-7 mt-5">
-		<div class="text-block d-flex">
-			<img class="avatar avatar-md p-1 flex-shrink-0 me-4" src="resources/img/avatar/avatar-10.jpg" alt="Jack London">
-			<p class="col">
-				<span class="text-muted text-uppercase text-sm">Write by </span> <br> <strong>Jack London</strong>
-			</p>
-			<p class="col">
-				<span class="text-muted text-sm"> 작성일 </span> <br> 2021/10/31
-			</p>
-		</div>
-		<div class="text-block">
-			<div class="d-flex">
-				<p class="text-muted text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
-			</div>
-		</div>
-	</div>
-	<div class="text-block"></div>
-	<div class="container col-lg-7 mt-5">
-		<div class="text-block">
-			<img class="avatar avatar-md p-1 flex-shrink-0 me-4" src="resources/img/avatar/avatar-10.jpg" alt="Jack London">
-		</div>
 	</div>
 	<!-- Footer-->
 	<jsp:include page="footer.jsp" />

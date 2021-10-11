@@ -29,8 +29,8 @@
 					<button class="btn btn-sm btn-primary my-2" onclick="location.href='#'">Filter</button>
 				</form>
 				<ul class="navbar-nav  ms-auto">
-					<li class="nav-item mt-3 mt-lg-0 ms-lg-3 d-lg-none d-xl-inline-block pe-3"><a class="btn btn-secondary" href="#">평점기준 식당 리스트</a></li>
-					<li class="nav-item mt-3 mt-lg-0 ms-lg-3 d-lg-none d-xl-inline-block"><a class="btn btn-secondary" href="#">거리기준 식당 리스트</a></li>
+					<li class="nav-item mt-3 mt-lg-0 ms-lg-3 d-lg-none d-xl-inline-block pe-3"><a class="btn btn-secondary" href="listAvgPoint.jsp">평점기준 식당 리스트</a></li>
+					<li class="nav-item mt-3 mt-lg-0 ms-lg-3 d-lg-none d-xl-inline-block"><a class="btn btn-secondary" href="listDistance.jsp">거리기준 식당 리스트</a></li>
 				</ul>
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item dropdown ms-lg-3"><a id="userDropdownMenuLink" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

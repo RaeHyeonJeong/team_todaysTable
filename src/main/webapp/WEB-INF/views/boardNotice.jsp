@@ -36,78 +36,86 @@
 <body style="padding-top: 72px;">
 	<!-- HEADER include -->
 	<jsp:include page="subHeader.jsp" />
-	<section class="py-5 bg-gray-100 mp-5">
-		<div class="container">
-			<div class="text-center pb-lg-4">
-				<p class="subtitle text-secondary">Title</p>
-				<h3 class="mb-4">이 곳 추천 합니다.!</h3>
-			</div>
-		</div>
-		<div class="container">
-			<!-- Slider main container-->
-			<div class="swiper-container detail-slider slider-gallery">
-				<!-- Additional required wrapper-->
-				<div class="swiper-wrapper">
-					<!-- Slides-->
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1426122402199-be02db90eb90.jpg" data-toggle="gallery-top" title="Our street">
-							<img class="img-fluid" src="resources/img/photo/photo-1426122402199-be02db90eb90.jpg" alt="Our street">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1512917774080-9991f1c4c750.jpg" data-toggle="gallery-top" title="Outside">
-							<img class="img-fluid" src="resources/img/photo/photo-1512917774080-9991f1c4c750.jpg" alt="Outside">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1494526585095-c41746248156.jpg" data-toggle="gallery-top" title="Rear entrance">
-							<img class="img-fluid" src="resources/img/photo/photo-1494526585095-c41746248156.jpg" alt="Rear entrance">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1484154218962-a197022b5858.jpg" data-toggle="gallery-top" title="Kitchen">
-							<img class="img-fluid" src="resources/img/photo/photo-1484154218962-a197022b5858.jpg" alt="Kitchen">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1522771739844-6a9f6d5f14af.jpg" data-toggle="gallery-top" title="Bedroom">
-							<img class="img-fluid" src="resources/img/photo/photo-1522771739844-6a9f6d5f14af.jpg" alt="Bedroom">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1488805990569-3c9e1d76d51c.jpg" data-toggle="gallery-top" title="Bedroom">
-							<img class="img-fluid" src="resources/img/photo/photo-1488805990569-3c9e1d76d51c.jpg" alt="Bedroom">
-						</a>
+	<div class="container-fluid pb-5 px-lg-5">
+		<!-- Hero Section-->
+		<section class="hero py-5 py-lg-6 mb-3">
+			<div class="container position-relative">
+				<!-- Breadcrumbs -->
+				<ol class="breadcrumb ps-0  justify-content-center">
+					<li class="breadcrumb-item active">Notice board</li>
+				</ol>
+				<h1 class="hero-heading">공지사항</h1>
+				<div class="row">
+					<div class="col-xl-8 mx-auto">
+						<p class="text-muted">중요 사항을 공지합니다.</p>
+						<p class="text-muted">궁금한 사항이 있다면 ' TodaysTable@org.com ' 로 메일을 보내주세요!</p>
 					</div>
 				</div>
-				<div class="swiper-pagination swiper-pagination-white"></div>
-				<div class="swiper-button-prev swiper-button-white"></div>
-				<div class="swiper-button-next swiper-button-white"></div>
 			</div>
-		</div>
-	</section>
-	<div class="container col-lg-7 mt-5">
-		<div class="text-block d-flex">
-			<img class="avatar avatar-md p-1 flex-shrink-0 me-4" src="resources/img/avatar/avatar-10.jpg" alt="Jack London">
-			<p class="col">
-				<span class="text-muted text-uppercase text-sm">Write by </span> <br> <strong>Jack London</strong>
-			</p>
-			<p class="col">
-				<span class="text-muted text-sm"> 작성일 </span> <br> 2021/10/31
-			</p>
-		</div>
-		<div class="text-block">
-			<div class="d-flex">
-				<p class="text-muted text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
-			</div>
+		</section>
+		<div class="container">
+			<table class="table table-sm" style="height: 5px">
+				<thead class="table-light text-center">
+					<tr class="fw-bold">
+						<th class="col-md-1" scope="col">#</th>
+						<th class="col-md-4" scope="col">제목</th>
+						<th class="col-md-1" scope="col">작성자</th>
+						<th class="col-md-1" scope="col">조회수</th>
+						<th class="col-md-1" scope="col">좋아요</th>
+						<th class="col-md-1" scope="col">작성날짜</th>
+					</tr>
+				</thead>
+				<tbody class="text-center text-break">
+					<tr style="cursor: pointer;" onClick="location.href='index.html'">
+						<th scope="row">1</th>
+						<td>Mark </a>
+						</td>
+						<td>홍길동</td>
+						<td>120</td>
+						<td>88</td>
+						<td>2021/10/5</td>
+					</tr>
+					<tr style="cursor: pointer;" onClick="location.href='index.html'">
+						<th scope="row">2</th>
+						<td>Marksdsdsadsa</td>
+						<td>홍길동</td>
+						<td>120</td>
+						<td>88</td>
+						<td>2021/10/5</td>
+					</tr>
+					<tr style="cursor: pointer;" onClick="location.href='index.html'">
+						<th scope="row">3</th>
+						<td>Mark</td>
+						<td>홍길동</td>
+						<td>120</td>
+						<td>88</td>
+						<td>2021/10/5</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
-	<div class="text-block"></div>
-	<div class="container col-lg-7 mt-5">
-		<div class="text-block">
-			<img class="avatar avatar-md p-1 flex-shrink-0 me-4" src="resources/img/avatar/avatar-10.jpg" alt="Jack London">
-		</div>
+	<div class="mb-5 d-grid gap-2 col-6 mx-auto">
+		<button class="btn btn-primary h-100" onClick="location.href='boardWriteUpdate.html'">글쓰기</button>
 	</div>
+	<div class="mb-5">
+		<!-- Pagination -->
+		<nav aria-label="Page navigation example">
+			<ul class="pagination pagination-template d-flex justify-content-center">
+				<li class="page-item"><a class="page-link" href="#">
+						<i class="fa fa-angle-left"></i>
+					</a></li>
+				<li class="page-item active"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item"><a class="page-link" href="#">
+						<i class="fa fa-angle-right"></i>
+					</a></li>
+			</ul>
+		</nav>
+	</div>
+	>
+	<div class="row row-col-2 d-flex justify-content-center"></div>
 	<!-- Footer-->
 	<jsp:include page="footer.jsp" />
 	<!-- JavaScript files-->

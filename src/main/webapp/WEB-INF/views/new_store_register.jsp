@@ -23,7 +23,7 @@
     =========================================================
     * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
     -->
-<link href="./main.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 	<div
@@ -66,7 +66,7 @@
 				<div class="app-header-right">
                     <ul class="header-menu nav">
                         <li class="btn-group nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
+                            <a href="dashBoard.jsp" class="nav-link">
                                 <i class="nav-link-icon fa fa-arrow-circle-left"></i>
                                 돌아가기
                             </a>
@@ -476,61 +476,49 @@
 				<div class="scrollbar-sidebar">
 					<div class="app-sidebar__inner">
 						<ul class="vertical-nav-menu">
-							<li ><a href="#"> <i class="metismenu-icon pe-7s-info"></i>
-									<font color="#3162C7">매장 정보 관리</font> <i
-									class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+						
+							<!-- 좌측 LIST -->
+							<li><a href="#"> <i class="metismenu-icon pe-7s-info"></i> <font color="#3162C7">매장 정보 관리</font> <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
 							</a>
 								<ul>
 									<li><a href="store_search.jsp"> <i class="metismenu-icon"></i> 매장 검색
 									</a></li>
-									<li><a href="new_store_register.jsp"> <i class="metismenu-icon"></i> 신규 매장
-											등록
+									<li><a href="new_store_register.jsp"> <i class="metismenu-icon"></i> 신규 매장 등록
 									</a></li>
-									<li><a href="store_info_modify.jsp"> <i class="metismenu-icon"></i> 매장 정보
-											수정
+									<li><a href="store_info_modify.jsp"> <i class="metismenu-icon"></i> 매장 정보 수정
 									</a></li>
 									<li><a href="#"> <i class="metismenu-icon"></i> 매장 삭제
 									</a></li>
 								</ul></li>
 							<div class="app-sidebar__heading"></div>
-							<li><a href="#"> <i class="metismenu-icon pe-7s-tools"></i>
-								<font color="#3162C7">사이트 관리</font> <i
-									class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+							<li><a href="#"> <i class="metismenu-icon pe-7s-tools"></i><font color="#3162C7"> 사이트 관리</font> <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
 							</a>
 								<ul>
 									<li><a href="design_manage.jsp"> <i class="metismenu-icon"></i> 디자인 관리
 									</a></li>
-									<li><a href="#"> <i class="metismenu-icon"></i> 게시판 관리
+									<li><a href="board_manage.jsp"> <i class="metismenu-icon"></i> 게시판 관리
 									</a></li>
 								</ul></li>
 							<div class="app-sidebar__heading"></div>
-							<li><a href="#"> <i class="metismenu-icon pe-7s-users"></i>
-								<font color="#3162C7">회원 관리</font> <i
-									class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+							<li><a href="#"> <i class="metismenu-icon pe-7s-users"></i> <font color="#3162C7">회원 관리</font> <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
 							</a>
 								<ul>
-									<li><a href="userManage.html"> <i
-											class="metismenu-icon"></i> 일반회원 정보 관리
+									<li><a href="userManage.jsp"> <i class="metismenu-icon"></i> 일반회원 정보 관리
 									</a></li>
-									<li><a href="#"> <i class="metismenu-icon"></i> 탈퇴회원
-											정보 관리
+									<li><a href="userRestore.jsp"> <i class="metismenu-icon"></i> 탈퇴회원 정보 관리
 									</a></li>
 								</ul></li>
 							<div class="app-sidebar__heading"></div>
-							<li><a href="#"> <i
-									class="metismenu-icon pe-7s-display1"></i> <font color="#3162C7">통계 관리</font> <i
-									class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+							<li><a href="#"> <i class="metismenu-icon pe-7s-display1"></i> <font color="#3162C7">통계 관리</font> <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
 							</a>
 								<ul>
-									<li><a href="#"> <i class="metismenu-icon"></i> 방문자 수
-											그래프
+									<li><a href="visitGraph.jsp"> <i class="metismenu-icon"></i> 방문자 수 그래프
 									</a></li>
-									<li><a href="#"> <i class="metismenu-icon"></i> 회원 가입자
-											수 그래프
+									<li><a href="signUpGraph.jsp"> <i class="metismenu-icon"></i> 회원 가입자 수 그래프
 									</a></li>
-									<li><a href="#"> <i class="metismenu-icon"></i> 매장 순위
+									<li><a href="shopRanking.jsp"> <i class="metismenu-icon"></i> 매장 순위
 									</a></li>
-									<li><a href="#"> <i class="metismenu-icon"></i> 지역 순위
+									<li><a href="locationRanking.jsp"> <i class="metismenu-icon"></i> 지역 순위
 									</a></li>
 								</ul></li>
 						</ul>

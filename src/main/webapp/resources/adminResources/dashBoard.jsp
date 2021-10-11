@@ -89,16 +89,16 @@
 				<div class="scrollbar-sidebar">
 					<div class="app-sidebar__inner">
 						<ul class="vertical-nav-menu">
-
+						
 							<!-- 좌측 LIST -->
 							<li><a href="#"> <i class="metismenu-icon pe-7s-info"></i> <font color="#3162C7">매장 정보 관리</font> <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
 							</a>
 								<ul>
-									<li><a href="#"> <i class="metismenu-icon"></i> 매장 검색
+									<li><a href="store_search.jsp"> <i class="metismenu-icon"></i> 매장 검색
 									</a></li>
-									<li><a href="#"> <i class="metismenu-icon"></i> 신규 매장 등록
+									<li><a href="new_store_register.jsp"> <i class="metismenu-icon"></i> 신규 매장 등록
 									</a></li>
-									<li><a href="#"> <i class="metismenu-icon"></i> 매장 정보 수정
+									<li><a href="store_info_modify.jsp"> <i class="metismenu-icon"></i> 매장 정보 수정
 									</a></li>
 									<li><a href="#"> <i class="metismenu-icon"></i> 매장 삭제
 									</a></li>
@@ -107,9 +107,9 @@
 							<li><a href="#"> <i class="metismenu-icon pe-7s-tools"></i><font color="#3162C7"> 사이트 관리</font> <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
 							</a>
 								<ul>
-									<li><a href="#"> <i class="metismenu-icon"></i> 디자인 관리
+									<li><a href="design_manage.jsp"> <i class="metismenu-icon"></i> 디자인 관리
 									</a></li>
-									<li><a href="#"> <i class="metismenu-icon"></i> 게시판 관리
+									<li><a href="board_manage.jsp"> <i class="metismenu-icon"></i> 게시판 관리
 									</a></li>
 								</ul></li>
 							<div class="app-sidebar__heading"></div>
@@ -162,15 +162,15 @@
 									<!-- 페이지 링크연결 -->
 									<ul class="nav flex-column">
 										<li class="nav-item-header nav-item" style="font-size: 15px">매장 정보 관리</li>
-										<li class="nav-item"><a href="javascript:void(0);" class="nav-link">매장 검색 </a></li>
-										<li class="nav-item"><a href="javascript:void(0);" class="nav-link">신규 매장 등록</a></li>
-										<li class="nav-item"><a href="javascript:void(0);" class="nav-link">매장 정보 수정</a></li>
+										<li class="nav-item"><a href="store_search.jsp" class="nav-link">매장 검색 </a></li>
+										<li class="nav-item"><a href="new_store_register.jsp" class="nav-link">신규 매장 등록</a></li>
+										<li class="nav-item"><a href="store_info_modify.jsp" class="nav-link">매장 정보 수정</a></li>
 										<li class="nav-item"><a href="javascript:void(0);" class="nav-link">매장 삭제</a></li>
 										<li class="nav-item-divider nav-item"></li>
 
 										<li class="nav-item-header nav-item" style="font-size: 15px">사이트 관리</li>
-										<li class="nav-item"><a href="javascript:void(0);" class="nav-link">디자인 관리 </a></li>
-										<li class="nav-item"><a href="javascript:void(0);" class="nav-link">게시판관리 </a></li>
+										<li class="nav-item"><a href="design_manage.jsp" class="nav-link">디자인 관리 </a></li>
+										<li class="nav-item"><a href="board_manage.jsp" class="nav-link">게시판관리 </a></li>
 									</ul>
 								</div>
 								<div class="col">

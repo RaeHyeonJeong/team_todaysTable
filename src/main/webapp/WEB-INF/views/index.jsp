@@ -43,9 +43,11 @@
 		</div>
 	</section>
 	<!-- HEADER include -->
-	<jsp:include page="headerMain.jsp" />
+		<jsp:include page="headerMain.jsp" />
 	<!-- Search start-->
-	<section class="py-6"></section>
+	<section class="py-6">
+		
+	</section>
 	<div class="container d-flex justify-content-center">
 		<div class="search-bar rounded col-11 p-lg-4  position-relative mt-n5 z-index-20">
 			<form action="#">

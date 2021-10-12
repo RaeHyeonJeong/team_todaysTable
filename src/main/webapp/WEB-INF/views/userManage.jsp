@@ -7,18 +7,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>관리자 - 메인페이지</title>
+<title>관리자 - 일반회원정보 관리</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
 <meta name="description" content="This is an example dashboard created using build-in elements and components.">
 <meta name="msapplication-tap-highlight" content="no">
 
-<link href="css/main.css" rel="stylesheet">
+<link href="/controller/resources/adminResources/css/main.css" rel="stylesheet">
 </head>
 <body>
 	<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
 		<div class="app-header header-shadow">
 			<div class="app-header__logo">
-				<!-- 페이지 좌측 상단 로고 -->
+			<!-- 페이지 좌측 상단 로고 -->
 				<div>오늘의 식탁</div>
 				<div class="header__pane ml-auto">
 					<div>
@@ -49,7 +49,7 @@
 				<div class="app-header-left"></div>
 				<div class="app-header-right">
 					<ul class="header-menu nav">
-						<li class="btn-group nav-item"><a href="javascript:void(0);" class="nav-link"> <i class="nav-link-icon fa fa-arrow-circle-left"></i> 돌아가기
+						<li class="btn-group nav-item"><a href="dashBoard.jsp" class="nav-link"> <i class="nav-link-icon fa fa-arrow-circle-left"></i> 돌아가기
 						</a></li>
 						<li class="dropdown nav-item"><a href="javascript:void(0);" class="nav-link"> <i class="nav-link-icon fa fa-compass"></i> 사이트 이동
 						</a></li>
@@ -144,55 +144,104 @@
 						<div class="page-title-wrapper">
 							<div class="page-title-heading">
 								<div class="page-title-icon">
-									<i class="pe-7s-user icon-gradient bg-mean-fruit"> </i>
+									<i class="pe-7s-users icon-gradient bg-mean-fruit"> </i>
 								</div>
+								
+								<!-- PAGE 중앙 상단 -->
 								<div>
-									관리자 메인페이지
-									<div class="page-title-subheading">관리자 로그인 후 이용하실 수 있습니다</div>
+									일반 회원 관리
+									<div class="page-title-subheading">회원 정보를 수정 및 삭제</div>
+								</div>
+							</div>
+							<div class="page-title-actions">
+								<div class="search-wrapper">
+									<div class="input-holder">
+									
+										<!-- ID, NAME SEARCH -->
+										<input name="search" type="text" class="search-input" placeholder="아이디 또는 이름 검색">
+										<button class="search-icon">
+											<span></span>
+										</button>
+									</div>
+									<button class="close"></button>
 								</div>
 							</div>
 						</div>
 					</div>
-
+					
+					<!-- 회원 정보 입출력란 -->
 					<div class="main-card mb-3 card">
 						<div class="card-body">
-							<h5 class="card-title" style="font-size: 20px">관리자 메뉴</h5>
-							<div class="row">
-								<div class="col">
-									<!-- 페이지 링크연결 -->
-									<ul class="nav flex-column">
-										<li class="nav-item-header nav-item" style="font-size: 15px">매장 정보 관리</li>
-										<li class="nav-item"><a href="store_search.jsp" class="nav-link">매장 검색 </a></li>
-										<li class="nav-item"><a href="new_store_register.jsp" class="nav-link">신규 매장 등록</a></li>
-										<li class="nav-item"><a href="store_info_modify.jsp" class="nav-link">매장 정보 수정</a></li>
-										<li class="nav-item"><a href="javascript:void(0);" class="nav-link">매장 삭제</a></li>
-										<li class="nav-item-divider nav-item"></li>
-
-										<li class="nav-item-header nav-item" style="font-size: 15px">사이트 관리</li>
-										<li class="nav-item"><a href="design_manage.jsp" class="nav-link">디자인 관리 </a></li>
-										<li class="nav-item"><a href="board_manage.jsp" class="nav-link">게시판관리 </a></li>
-									</ul>
+							<form class="" method="post">
+								<div class="form-row">
+									<div class="col-md-6">
+										<div class="position-relative form-group">
+											<label for="id" class="">아이디</label> <input name="id" id="id" placeholder="" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="position-relative form-group">
+											<label for="birth" class="">생년월일</label> <input name="birth" id="birth" placeholder="" type="text" class="form-control">
+										</div>
+									</div>
 								</div>
-								<div class="col">
-									<ul class="nav flex-column">
-										<li class="nav-item-header nav-item" style="font-size: 15px">회원 관리</li>
-										<li class="nav-item"><a href="userManage.jsp" class="nav-link"><span>일반회원 정보 관리</span> </a></li>
-										<li class="nav-item"><a href="userRestore.jsp" class="nav-link"><span>탈퇴회원 정보 관리</span></a></li>
-										<li class="nav-item-divider nav-item"></li>
-
-										<li class="nav-item-header nav-item" style="font-size: 15px">통계 관리</li>
-										<li class="nav-item"><a href="visitGraph.jsp" class="nav-link"><span>방문자 수 그래프</span> </a></li>
-										<li class="nav-item"><a href="signUpGraph.jsp" class="nav-link"><span>회원 가입자 수 그래프</span> </a></li>
-										<li class="nav-item"><a href="shopRanking.jsp" class="nav-link"><span>매장 순위</span></a></li>
-										<li class="nav-item"><a href="locationRanking.jsp" class="nav-link"><span>지역 순위</span></a></li>
-									</ul>
+								<div class="form-row">
+									<div class="col-md-6">
+										<div class="position-relative form-group">
+											<label for="name" class="">이름</label> <input name="name" id="name" placeholder="" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="position-relative form-group">
+											<label for="nickname" class="">닉네임</label> <input name="nickname" id="nickname" placeholder="" type="text" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="col-md-6">
+										<div class="position-relative form-group">
+											<label for="email" class="">EMAIL</label> <input name="email" id="email" placeholder="" type="email" class="form-control">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="position-relative form-group">
+											<label for="tel" class="">연락처</label> <input name="tel" id="tel" placeholder="" type="text" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="col-md-6">
+										<div class="position-relative form-group">
+											<label for="addr1" class="">주소</label> <input name="addr1" id="addr1" placeholder="" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="position-relative form-group">
+											<label for="addr2" class="">상세주소</label> <input name="addr2" id="addr2" placeholder="" type="text" class="form-control">
+										</div>
+									</div>
+								</div>
+							</form>
+							<div class="form-row">
+								<div class="col-md-6">
+									<div class="position-relative form-group">
+										<label for="addr" class="">프로필 사진</label> <br> <img style="margin-left: 20px" width="120" class="rounded-circle" src="/controller/resources/adminResources/img/avatars/1.jpg" alt=""> <br>
+									</div>
+									<button type="submit" class="mb-2 mr-2 btn btn-light" name="changePic">사진 변경</button>
+									<button type="submit" class="mb-2 mr-2 btn btn-light" name="delPic">사진 삭제</button>
+								</div>
+								<div align="right" class="col-md-6" style="top: 100px">
+									<div class="position-relative form-group">
+										<button type="submit" class="mt-2 btn btn-primary" style="width: 80px" name="modifyUser">수정</button>
+										<br>
+										<button type="submit" class="mt-2 btn btn-secondary" style="width: 80px" name="delUser">&nbsp;삭제&nbsp;</button>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
-			<script type="text/javascript" src="js/main.js"></script>
+			<script type="text/javascript" src="/controller/resources/adminResources/js/main.js"></script>
 </body>
 </html>

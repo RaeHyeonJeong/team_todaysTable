@@ -534,7 +534,19 @@
                                     <i class="pe-7s-menu icon-gradient bg-ripe-malin">
 									</i>
                                 </div>
-								<div>게시판 관리 - 공지사항
+                                <%
+                                	String menu = request.getParameter("menu");
+                                	if(menu != null) {
+	                                	if(menu.equals("notice")) {
+	                                		menu = "공지사항";
+	                                	} else if(menu.equals("recommend")) {
+	                                		menu = "맛집 추천 게시판";
+	                                	} else if(menu.equals("QnA")) {
+	                                		menu = "QnA 게시판";
+	                                	}                                		
+                                	}
+                                %>
+								<div>게시판 관리 - <%=menu%>
 									<div class="page-title-subheading">
 									</div>
 								</div>
@@ -559,77 +571,26 @@
 					</div>
 					<div class="main-card mb-3 card">
 						<div class="card-body">
+							<form>
 							<div class="container">
-								<table class="table table-sm" style="height: 5px">
-									<thead class="table-light text-center">
-										<tr class="fw-bold">
-											<th class="col-md-1" scope="col">체크</th>
-											<th class="col-md-1" scope="col">#</th>
-											<th class="col-md-4" scope="col">제목</th>
-											<th class="col-md-1" scope="col">작성자</th>
-											<th class="col-md-1" scope="col">조회수</th>
-											<th class="col-md-1" scope="col">좋아요</th>
-											<th class="col-md-1" scope="col">작성날짜</th>
-										</tr>
-									</thead>
-									<tbody class="text-center text-break">
-										<tr style="cursor: pointer;" onClick="location.href='board_manage_detail.jsp?menu=notice'">
-											<td><input type="checkbox" name="check1"></td>
-											<th scope="row">1</th>
-											<td>Mark</td>
-											<td>홍길동</td>
-											<td>120</td>
-											<td>88</td>
-											<td>2021/10/5</td>
-										</tr>
-										<tr style="cursor: pointer;" onClick="location.href='board_manage_detail.jsp?menu=notice'">
-											<td><input type="checkbox" name="check2"></td>
-											<th scope="row">2</th>
-											<td>Marksdsdsadsa</td>
-											<td>홍길동</td>
-											<td>120</td>
-											<td>88</td>
-											<td>2021/10/5</td>
-										</tr>
-										<tr style="cursor: pointer;" onClick="location.href='board_manage_detail.jsp?menu=notice'">
-											<td><input type="checkbox" name="check3"></td>
-											<th scope="row">3</th>
-											<td>Mark</td>
-											<td>홍길동</td>
-											<td>120</td>
-											<td>88</td>
-											<td>2021/10/5</td>
-										</tr>
-									</tbody>
-								</table>
-								<!-- <table class="table table-sm" style="height: 5px">
-									<thead class="table-light text-center">
-										<tr class="fw-bold">
-											<th class="col-md-1" scope="col">체크</th>
-											<th class="col-md-1" scope="col">#</th>
-											<th class="col-md-4" scope="col">제목</th>
-											<th class="col-md-1" scope="col">작성자</th>
-											<th class="col-md-1" scope="col">조회수</th>
-											<th class="col-md-1" scope="col">작성날짜</th>
-										</tr>
-									</thead>
-									<tbody class="text-center text-break">
-										<tr style="cursor: pointer;">
-											<td><input type="checkbox" name="check"></td>
-											<th scope="row">1</th>
-											<td>Mark</td>
-											<td>홍길동</td>
-											<td>120</td>
-											<td>2021/10/5</td>
-										</tr>
-									</tbody>
-								</table> -->
-								<div class="row">
-								<div class="col-sm-10"></div>
-								<div class="col-sm-1"><button class="btn btn-primary">삭제</button></div>
-								<div class="col-sm-1"><button class="btn btn-primary">글쓰기</button></div>
+								<div class="position-relative row form-group"><label for="title" class="col-sm-2 col-form-label">제목</label>
+									<div class="col-sm-10"><input name="title" id="title" type="text" class="form-control"></div>
+								</div>
+								<div class="position-relative row form-group"><label for="content" class="col-sm-2 col-form-label">내용</label>
+									<div class="col-sm-10"><textarea name="content" id="content" class="form-control"></textarea></div>
+								</div>
+								<div class="position-relative row form-group"><label for="imageFile" class="col-sm-2 col-form-label">이미지 업로드</label>
+								<div class="col-sm-10"><input multiple="multiple" name="imageFile[]" id="imageFile" type="file" class="form-control-file">
+									<small class="form-text text-muted"></small>
 								</div>
 							</div>
+								<div class="row">
+								<div class="col-sm-8"></div>
+								<div class="col-sm-2"><button class="btn btn-primary">게시글 수정</button></div>
+								<div class="col-sm-2"><button class="btn btn-primary">게시글 삭제</button></div>
+								</div>
+							</div>
+							</form>
 						</div>
 					</div>
 

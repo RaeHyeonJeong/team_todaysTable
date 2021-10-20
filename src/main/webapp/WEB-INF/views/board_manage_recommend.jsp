@@ -534,7 +534,7 @@
                                     <i class="pe-7s-menu icon-gradient bg-ripe-malin">
 									</i>
                                 </div>
-								<div>게시판 관리 - 공지사항
+								<div>게시판 관리 - 맛집 추천 게시판
 									<div class="page-title-subheading">
 									</div>
 								</div>
@@ -573,7 +573,7 @@
 										</tr>
 									</thead>
 									<tbody class="text-center text-break">
-										<tr style="cursor: pointer;" onClick="location.href='board_manage_detail.jsp?menu=notice'">
+										<tr style="cursor: pointer;" onClick="location.href='board_manage_detail.jsp?menu=recommend'">
 											<td><input type="checkbox" name="check1"></td>
 											<th scope="row">1</th>
 											<td>Mark</td>
@@ -582,7 +582,7 @@
 											<td>88</td>
 											<td>2021/10/5</td>
 										</tr>
-										<tr style="cursor: pointer;" onClick="location.href='board_manage_detail.jsp?menu=notice'">
+										<tr style="cursor: pointer;" onClick="location.href='board_manage_detail.jsp?menu=recommend'">
 											<td><input type="checkbox" name="check2"></td>
 											<th scope="row">2</th>
 											<td>Marksdsdsadsa</td>
@@ -591,7 +591,7 @@
 											<td>88</td>
 											<td>2021/10/5</td>
 										</tr>
-										<tr style="cursor: pointer;" onClick="location.href='board_manage_detail.jsp?menu=notice'">
+										<tr style="cursor: pointer;" onClick="location.href='board_manage_detail.jsp?menu=recommend'">
 											<td><input type="checkbox" name="check3"></td>
 											<th scope="row">3</th>
 											<td>Mark</td>
@@ -602,28 +602,6 @@
 										</tr>
 									</tbody>
 								</table>
-								<!-- <table class="table table-sm" style="height: 5px">
-									<thead class="table-light text-center">
-										<tr class="fw-bold">
-											<th class="col-md-1" scope="col">체크</th>
-											<th class="col-md-1" scope="col">#</th>
-											<th class="col-md-4" scope="col">제목</th>
-											<th class="col-md-1" scope="col">작성자</th>
-											<th class="col-md-1" scope="col">조회수</th>
-											<th class="col-md-1" scope="col">작성날짜</th>
-										</tr>
-									</thead>
-									<tbody class="text-center text-break">
-										<tr style="cursor: pointer;">
-											<td><input type="checkbox" name="check"></td>
-											<th scope="row">1</th>
-											<td>Mark</td>
-											<td>홍길동</td>
-											<td>120</td>
-											<td>2021/10/5</td>
-										</tr>
-									</tbody>
-								</table> -->
 								<div class="row">
 								<div class="col-sm-10"></div>
 								<div class="col-sm-1"><button class="btn btn-primary">삭제</button></div>

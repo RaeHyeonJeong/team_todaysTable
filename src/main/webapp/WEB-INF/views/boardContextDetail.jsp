@@ -104,8 +104,68 @@
 	</div>
 	<div class="text-block"></div>
 	<div class="container col-lg-7 mt-5">
-		<div class="text-block">
-			<img class="avatar avatar-md p-1 flex-shrink-0 me-4" src="resources/img/avatar/avatar-10.jpg" alt="Jack London">
+		<div class="row">
+			<div class="col-xxl">
+				<div class="text-block">
+					<p class="subtitle text-sm text-primary">Reply</p>
+					<div class="d-flex d-block d-sm-flex review">
+						<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
+							<img class="d-block avatar avatar-md p-1 flex-shrink-0 me-4" src="resources/img/avatar/avatar-8.jpg" alt="Padmé Amidala">
+							<span class="text-uppercase text-muted text-sm">댓글작성날짜</span>
+						</div>
+						<div>
+							<h6 class="mt-2 mb-1">Padmé Amidala</h6>
+							<div class="mb-2"></div>
+							<p class="text-muted text-sm">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin</p>
+						</div>
+					</div>
+					<div class="d-flex d-block d-sm-flex review">
+						<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
+							<img class="d-block avatar avatar-md p-1 flex-shrink-0 me-4" src="resources/img/avatar/avatar-2.jpg" alt="Luke Skywalker">
+							<span class="text-uppercase text-muted text-sm">댓글작성날짜</span>
+						</div>
+						<div>
+							<h6 class="mt-2 mb-1">Luke Skywalker</h6>
+							<div class="mb-2"></div>
+							<p class="text-muted text-sm">The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+						</div>
+					</div>
+					<div class="py-5">
+						<button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#leaveReview" aria-expanded="false" aria-controls="leaveReview">Leave a review</button>
+						<div class="collapse mt-4" id="leaveReview">
+							<h5 class="mb-4">Leave a review</h5>
+							<form class="form" id="contact-form" method="get" action="#">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="mb-4">
+											<label class="form-label" for="name">Your name *</label> <input class="form-control" type="text" name="name" id="name" placeholder="Enter your name" required="required">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="mb-4">
+											<label class="form-label" for="rating">Your rating *</label> <select class="form-select focus-shadow-0" name="rating" id="rating">
+												<option value="5">&#9733;&#9733;&#9733;&#9733;&#9733; (5/5)</option>
+												<option value="4">&#9733;&#9733;&#9733;&#9733;&#9734; (4/5)</option>
+												<option value="3">&#9733;&#9733;&#9733;&#9734;&#9734; (3/5)</option>
+												<option value="2">&#9733;&#9733;&#9734;&#9734;&#9734; (2/5)</option>
+												<option value="1">&#9733;&#9734;&#9734;&#9734;&#9734; (1/5)</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="mb-4">
+									<label class="form-label" for="email">Your email *</label> <input class="form-control" type="email" name="email" id="email" placeholder="Enter your  email" required="required">
+								</div>
+								<div class="mb-4">
+									<label class="form-label" for="review">Review text *</label>
+									<textarea class="form-control" rows="4" name="review" id="review" placeholder="Enter your review" required="required"></textarea>
+								</div>
+								<button class="btn btn-primary" type="submit">Post review</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!-- Footer-->

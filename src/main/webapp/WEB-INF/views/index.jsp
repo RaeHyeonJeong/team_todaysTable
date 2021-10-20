@@ -49,7 +49,7 @@
 		
 	</section>
 	<div class="container d-flex justify-content-center">
-		<div class="search-bar rounded col-11 p-lg-4  position-relative mt-n5 z-index-20">
+		<div class="search-bar rounded col-11 p-lg-4 px-4 py-4 position-relative mt-n5 z-index-20">
 			<form action="#">
 				<div class="row">
 					<div class="col-lg-5 d-flex align-items-center form-group">
@@ -71,87 +71,98 @@
 					<div class="col-12 py-4">
 						<div class="collapse" id="moreFilters">
 							<div class="col-12 mb-4">
-								<label class="form-label">Tag</label>
+								<label class="form-label">Menu Option</label>
 								<ul class="list-inline mb-0">
 									<li class="list-inline-item">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="type_0" name="type[]"> <label class="form-check-label" for="type_0">Hipster</label>
+											<input class="form-check-input" type="checkbox" id="type_0" name="type[]"> <label class="form-check-label" for="type_0">아침 메뉴</label>
 										</div>
 									</li>
 									<li class="list-inline-item">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="type_1" name="type[]"> <label class="form-check-label" for="type_1">Music club</label>
+											<input class="form-check-input" type="checkbox" id="type_1" name="type[]"> <label class="form-check-label" for="type_1">점심 메뉴</label>
 										</div>
 									</li>
 									<li class="list-inline-item">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="type_2" name="type[]"> <label class="form-check-label" for="type_2">Bar</label>
+											<input class="form-check-input" type="checkbox" id="type_2" name="type[]"> <label class="form-check-label" for="type_2">어린이메뉴</label>
 										</div>
 									</li>
 									<li class="list-inline-item">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="type_3" name="type[]"> <label class="form-check-label" for="type_3">Pub</label>
+											<input class="form-check-input" type="checkbox" id="type_3" name="type[]"> <label class="form-check-label" for="type_3">글루텐 프리</label>
 										</div>
 									</li>
 									<li class="list-inline-item">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="type_4" name="type[]"> <label class="form-check-label" for="type_4">Deli</label>
+											<input class="form-check-input" type="checkbox" id="type_4" name="type[]"> <label class="form-check-label" for="type_4">베지테리언</label>
 										</div>
 									</li>
 									<li class="list-inline-item">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="type_5" name="type[]"> <label class="form-check-label" for="type_5">Bistro</label>
+											<input class="form-check-input" type="checkbox" id="type_4" name="type[]"> <label class="form-check-label" for="type_4">콜키지 프리</label>
 										</div>
 									</li>
 								</ul>
 							</div>
 							<div class="mb-4">
-								<label class="form-label">Cuisine</label>
+								<label class="form-label">매장 추가 정보</label>
 								<ul class="list-inline mb-0">
 									<li class="list-inline-item">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="cuisine_0" name="cuisine[]"> <label class="form-check-label" for="cuisine_0">Fusion</label>
+											<input class="form-check-input" type="checkbox" id="cuisine_0" name="cuisine[]"> <label class="form-check-label" for="cuisine_0">주차장</label>
 										</div>
 									</li>
 									<li class="list-inline-item">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="cuisine_1" name="cuisine[]"> <label class="form-check-label" for="cuisine_1">Indian</label>
+											<input class="form-check-input" type="checkbox" id="cuisine_1" name="cuisine[]"> <label class="form-check-label" for="cuisine_1">FREE WIFI</label>
 										</div>
 									</li>
 									<li class="list-inline-item">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="cuisine_2" name="cuisine[]"> <label class="form-check-label" for="cuisine_2">French</label>
+											<input class="form-check-input" type="checkbox" id="cuisine_2" name="cuisine[]"> <label class="form-check-label" for="cuisine_2">예약 가능</label>
 										</div>
 									</li>
 									<li class="list-inline-item">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="cuisine_3" name="cuisine[]"> <label class="form-check-label" for="cuisine_3">American</label>
+											<input class="form-check-input" type="checkbox" id="cuisine_3" name="cuisine[]"> <label class="form-check-label" for="cuisine_3">포장 가능</label>
 										</div>
 									</li>
 									<li class="list-inline-item">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="cuisine_4" name="cuisine[]"> <label class="form-check-label" for="cuisine_4">Mexican</label>
+											<input class="form-check-input" type="checkbox" id="cuisine_4" name="cuisine[]"> <label class="form-check-label" for="cuisine_4">애완동물 가능</label>
 										</div>
 									</li>
 									<li class="list-inline-item">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="cuisine_5" name="cuisine[]"> <label class="form-check-label" for="cuisine_5">Other</label>
+											<input class="form-check-input" type="checkbox" id="cuisine_5" name="cuisine[]"> <label class="form-check-label" for="cuisine_5">대관 가능</label>
 										</div>
 									</li>
+									<li class="list-inline-item">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="cuisine_5" name="cuisine[]"> <label class="form-check-label" for="cuisine_5">외부 좌석</label>
+										</div>
+									</li>
+									
 								</ul>
 							</div>
 							<div class="row">
 								<div class="col-xl-6 mb-3">
-									<label class="form-label">Vegetarians</label>
+									<label class="form-label">유아, 어린이</label>
 									<ul class="list-inline mb-0">
 										<li class="list-inline-item">
 											<div class="form-check">
-												<input class="form-check-input" type="radio" id="vegetarians_0" name="vegetarians"> <label class="form-check-label" for="vegetarians_0">All</label>
+												<input class="form-check-input" type="radio" id="vegetarians_0" name="vegetarians"> <label class="form-check-label" for="vegetarians_0">유아용 의자</label>
 											</div>
 										</li>
 										<li class="list-inline-item">
 											<div class="form-check">
-												<input class="form-check-input" type="radio" id="vegetarians_1" name="vegetarians"> <label class="form-check-label" for="vegetarians_1">Vegetarian only</label>
+												<input class="form-check-input" type="radio" id="vegetarians_1" name="vegetarians"> <label class="form-check-label" for="vegetarians_1">키즈존</label>
+											</div>
+										</li>
+										<li class="list-inline-item">
+											<div class="form-check">
+												<input class="form-check-input" type="radio" id="vegetarians_1" name="vegetarians"> <label class="form-check-label" for="vegetarians_1">노키즈존</label>
 											</div>
 										</li>
 									</ul>

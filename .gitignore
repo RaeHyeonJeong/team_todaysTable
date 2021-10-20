@@ -70,7 +70,6 @@ local.properties
 
 .sts4-cache/
 
-mybatis-config.xml
 log4j.xml
 
 ### Maven ###

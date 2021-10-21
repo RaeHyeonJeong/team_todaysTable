@@ -9,6 +9,10 @@
 		<property name="url" value="jdbc:oracle:thin:@todaystable_medium?TNS_ADMIN=C://TeamProject/Team_todaysTable/src/main/resources/Wallet_TodaysTable/"></property>
 		<property name="username" value="ADMIN"></property>
 		<property name="password" value="TodaysTable123"></property>
+		
+		<!-- <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></property>
+		<property name="username" value="C##APPLE"></property>
+		<property name="password" value="1234"></property> -->
 	</bean>
 
 	<!-- SqlSessionFactory 객체 주입  -->

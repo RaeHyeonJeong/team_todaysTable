@@ -33,5 +33,33 @@ public class BasicController {
 
 		return modelAndView;
 	}
+	
+	@RequestMapping(value = "search.do")
+	public ModelAndView basicsearch() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("Message", "HelloSpringMVC3");
+		modelAndView.setViewName("WEB-INF/views/store_search");
+
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "searchResult.do")
+	public ModelAndView basicsearchResult() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("Message", "HelloSpringMVC3");
+		modelAndView.setViewName("WEB-INF/views/searchResult");
+
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "main.do")
+	public ModelAndView basicMain() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("Message", "HelloSpringMVC3");
+		modelAndView.setViewName("WEB-INF/views/index");
+
+		return modelAndView;
+	}
+
 
 }

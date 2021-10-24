@@ -2,6 +2,13 @@ package com.todaysTable.vo;
 
 import java.sql.Date;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 public class MemberVO {
 	private int member_no;
 	private String id;

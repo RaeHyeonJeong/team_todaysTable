@@ -26,8 +26,8 @@
 					<li class="nav-item mt-3 mt-lg-0 ms-lg-3 d-lg-none d-xl-inline-block"><a class="btn btn-secondary" href="listDistance.jsp">거리기준 식당 리스트</a></li>
 				</ul>
 				<ul class="navbar-nav ms-auto">
-					<li class="nav-item"><a class="nav-link" href="login.html">Sign in</a></li>
-					<li class="nav-item"><a class="nav-link" href="signup.html">Sign up</a></li>
+					<li class="nav-item"><a class="nav-link" href="login.do">Sign in</a></li>
+					<li class="nav-item"><a class="nav-link" href="signup.do">Sign up</a></li>
 				</ul>
 			</div>
 		</div>

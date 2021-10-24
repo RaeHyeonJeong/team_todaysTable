@@ -15,6 +15,7 @@ public class MemberVO {
 	private String profile_image_path;
 	private Date sign_up_date;
 	private String admin_id;
+	
 	}
 
 

@@ -27,7 +27,7 @@
 				</ul>
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item"><a class="nav-link" href="login.do">Sign in</a></li>
-					<li class="nav-item"><a class="nav-link" href="signup.do">Sign up</a></li>
+					<li class="nav-item"><a class="nav-link" href="agreement.do">Sign up</a></li>
 				</ul>
 			</div>
 		</div>

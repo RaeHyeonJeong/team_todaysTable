@@ -32,6 +32,9 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+ 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+ 	<script type="text/javascript">
+ 	</script>
   </head>
   <body>
     <div class="container-fluid px-3">
@@ -41,18 +44,10 @@
             <div class="mb-4"><img class="img-fluid mb-4" src="resources/img/logo-square.svg" alt="..." style="max-width: 4rem;">
               <h2>Sign up</h2><br>
             </div>
-            <form class="form-validate" id="adress">
+            <form class="form-validate" action="signupsubmit.do" method="post">
               <div class="mb-4">
                 <label class="form-label" for="loginUsername">아이디(본인 이메일 작성)</label><br>
-                <input class="form-control" style="width: 450px; float: left;" name="address1" id="address1" placeholder="name" type="text" required data-msg="주소를 입력하세요"><p style="float: right;">@</p>
-                <input class="form-control" name="address2" id="address2" placeholder="address.com" type="text" required data-msg="상세주소를 입력하세요">
-              <select class="form-control" name="emailaddr" id="address3">
-                 <option value="">선택하세요</option>
-                 <option value="daum.net">daum.net</option>
-                 <option value="gmail.com">gmail.com</option>
-                 <option value="hanmail.net">hanmail.net</option>
-                 <option value="naver.com">naver.com</option>
-              </select>
+                <input class="form-control" style="width: 380px; float: left;" name="id" id="id" placeholder="name@address.com" type="text" required data-msg="주소를 입력하세요">
                  <button class="btn btn-primary" type="button" id="check" style="float: right;">중복확인</button>
                <div class="mb-4">
                <br><br>
@@ -64,22 +59,28 @@
                <div class="mb-4">
                 <input class="form-control" style="width: 340px; float: left;" name="num" id="num" placeholder="인증번호 입력" required data-msg="인증번호를 입력해 주세요.">
                  <button type="button" class="btn btn-primary" id="numcheck" style="float: right;">인증번호 확인</button><br>
-                <p><small style="color: blue; float: left;">인증이 확인되었습니다.</small></p>
+               <div>
+				<p><small style="color: blue; float: left;">인증이 확인되었습니다.</small></p>
+               </div>
               </div>
               </div>
               <div class="mb-4">
               <br><br><br>
                <label class="form-label" for="password" style="float: left;">비밀번호</label>
-                <input class="form-control" name="loginPassword1" id="loginPassword1" placeholder="비밀번호 입력" type="password" required data-msg="비밀번호를 입력해 주세요">
+                <input class="form-control" name="password" id="password" placeholder="비밀번호 입력" type="password" required data-msg="비밀번호를 입력해 주세요">
              	<p><small style="color: red;">*특수문자, 대문자, 숫자 조합 필수</small></p>
               </div>
                <div class="mb-4">
-                <label class="form-label" for="loginPassword2">비밀번호 재확인</label>
-                <input class="form-control" name="loginPassword2" id="loginPassword2" placeholder="비밀번호 재입력" type="password">
+                <label class="form-label" for="password2">비밀번호 재확인</label>
+                <input class="form-control" name="password2" id="loginPassword2" placeholder="비밀번호 재입력" type="password">
               </div>
               <div class="mb-4">
                 <label class="form-label" for="name">이름</label>
                 <input class="form-control" name="name" id="name" placeholder="이름" type="text" required data-msg="이름을 입력하세요">
+              </div>
+               <div class="mb-4">
+                <label class="form-label" for="birthdate">생년월일</label>
+                <input class="form-control" name="birthdate" id="birthdate" type="date" onclick="" required data-msg="생년월일을 입력하세요">
               </div>
                <div class="mb-4">
                 <label class="form-label" for="tel">연락처</label><br>
@@ -87,21 +88,22 @@
               </div> 
               <div class="mb-4">
                 <label class="form-label" for="address">주소</label><br>
-                <input class="form-control" style="width: 340px; float: left;" name="postnum" id="postnum" placeholder="우편번호" type="" required data-msg="우편번호를 입력하세요.">
+                <input class="form-control" style="width: 340px; float: left;" name="postnum" id="postnum" placeholder="우편번호" type="text" required data-msg="우편번호를 입력하세요.">
                  <button type="button" class="btn btn-primary" id="postnumcheck" style="float: right;">우편번호 등록</button>
                 <input class="form-control" name="address1" id="address1" placeholder="주소" type="text" required data-msg="주소를 입력하세요">
                 <input class="form-control" name="address2" id="address2" placeholder="상세주소" type="text" required data-msg="상세주소를 입력하세요">
+                <input class="form-control" type="text" name="address" id="address"> 
               </div>
               <div class="mb-4">
                 <label class="form-label" for="nickname"> 닉네임</label><br>
-                <input class="form-control" style="width: 360px; float: left;" name="inputnick" id="inputnick" placeholder="닉네임 입력" type="text" required data-msg="닉네임을 작성하세요">
+                <input class="form-control" style="width: 360px; float: left;" name="nickname" id="nickname" placeholder="닉네임 입력" type="text" required data-msg="닉네임을 작성하세요">
              	 <button type="button" class="btn btn-primary" id="nickcheck" style="float: right;">중복확인</button>
               </div>
            
                <div class="mb-4">
                <br><br>
                 <label class="form-label" for="profile">프로필</label><br>
-                <input class="form-control" name="profileimg" id="profileimg" type="text" style="width: 350px; height: 40px; float: left;" placeholder="프로필 사진을 업로드">
+                <input class="form-control" name="profile_image_path" id="profile_image_path" type="text" style="width: 350px; height: 40px; float: left;" placeholder="프로필 사진을 업로드">
              	 <button type="button" class="btn btn-primary" id="profilephoto" style="float: right;">사진 업로드</button>
               </div>
               <div class="mb-4">
@@ -114,7 +116,7 @@
               </div>
               <br>
               
-            </form><a class="close-absolute me-md-5 me-xl-6 pt-5" href="index.jsp"> 
+            </form><a class="close-absolute me-md-5 me-xl-6 pt-5" href="main.do"> 
               <svg class="svg-icon w-3rem h-3rem">
                 <use xlink:href="#close-1"> </use>
               </svg></a>

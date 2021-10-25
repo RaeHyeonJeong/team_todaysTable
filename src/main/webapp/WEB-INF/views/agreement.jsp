@@ -30,32 +30,35 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 <!-- Font Awesome CSS-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 </head>
 <body>
 	<div class="container-fluid px-3">
 		<div class="row min-vh-100">
 			<div class="col-md-8 col-lg-6 col-xl-5 d-flex align-items-center">
 				<div class="w-100 py-5 px-md-5 px-xxl-6 position-relative">
+				
 					<div class="mb-5">
 						<img class="img-fluid mb-3" src="resources/img/logo-square.svg" alt="..." style="max-width: 4rem;">
 						<h3>약관 동의</h3>
 					</div>
-					<form class="form-validate">
+					<div class="checkbox_group">
+					<form class="form-validate" action="signup.do">
 						<div class="mb-4">
-							<input type="checkbox" style="width: 20px; height: 20px;" id="check1"><br> <span>이용 약관, 개인정보 수집 및 이용, 위치 정보 이용 약관(선택)에 모두 동의합니다.</span>
+							<input type="checkbox" style="width: 20px; height: 20px;" id="check_all" class="check_all"><br> <span>이용 약관, 개인정보 수집 및 이용, 위치 정보 이용 약관(선택)에 모두 동의합니다.</span>
 						</div>
 						<div class="mb-4">
-							<input type="checkbox" style="width: 20px; height: 20px;" id="check2">&nbsp;<span>이용 약관 동의<strong>(필수)</strong></span>
+							<input type="checkbox" style="width: 20px; height: 20px;" id="check2" class="normal">&nbsp;<span>이용 약관 동의<strong>(필수)</strong></span>
 							<textarea class="form-control" name="" id="" style="width: 450px; height: 100px; resize: none;" readonly="readonly">본 서비스 약관에는 '오늘의식탁'의 사업 운영 방식, '오늘의식탁'에 적용되는 법률, '오늘의식탁'이 항상 진실이라고 여기는 특정 내용이 반영되어 있습니다. 따라서 귀하가 '오늘의식탁' 서비스와 상호작용하면 본 서비스 약관을 근거로 '오늘의식탁'과의 관계가 정의됩니다. 예를 들어, 약관에는 다음과 같은 제목의 주제들이 포함됩니다.
                  </textarea>
 						</div>
 						<div class="mb-4">
-							<input type="checkbox" style="width: 20px; height: 20px;" id="check3">&nbsp;<span>개인정보 수집 및 이용<strong>(필수)</strong></span>
+							<input type="checkbox" style="width: 20px; height: 20px;" id="check3" class="normal">&nbsp;<span>개인정보 수집 및 이용<strong>(필수)</strong></span>
 							<textarea class="form-control" name="" id="" style="width: 450px; resize: none;" readonly="readonly">「개인정보보호법 제 15조(개인정보의 수집이용),제 17조(개인정보의 제공),제 18조(개인정보의 이용 제공 제한), 제22조(동의를 받는 방법)」에 의거 개인정보처리에 관하여 고지를 받았으며 본인은 위와 같이 개인정보 수집 및 이용 제공에 동의합니다.
                 </textarea>
 						</div>
 						<div class="mb-4">
-							<input type="checkbox" style="width: 20px; height: 20px;" id="check4">&nbsp;<span>위치 정보 이용 약관<strong>(선택)</strong></span>
+							<input type="checkbox" style="width: 20px; height: 20px;" id="check4" class="normal">&nbsp;<span>위치 정보 이용 약관<strong>(선택)</strong></span>
 							<textarea class="form-control" name="" id="" style="width: 450px; resize: none;" readonly="readonly">제 1 조 (목적)
 이 약관은 네이버 주식회사 (이하 “회사”)가 제공하는 위치정보사업 또는 위치기반서비스사업과 관련하여 회사와 개인위치정보주체와의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
 				</textarea>
@@ -63,14 +66,16 @@
 						<!-- Submit-->
 						<div class="d-grid">
 							<br>
-							<button class="btn btn-lg btn-primary" type="button" id="okbtn" onclick="location.href='signup.jsp'">확인</button>
+							<button class="btn btn-lg btn-primary" type="submit" >확인</button>
 						</div>
 					</form>
-					<a class="close-absolute me-md-5 me-xl-6 pt-5" href="index.jsp">
+					</div>
+					<a class="close-absolute me-md-5 me-xl-6 pt-5" href="main.do">
 						<svg class="svg-icon w-3rem h-3rem">
                 <use xlink:href="#close-1"> </use>
               </svg>
 					</a>
+					
 				</div>
 			</div>
 			<div class="col-md-4 col-lg-6 col-xl-7 d-none d-md-block">

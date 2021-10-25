@@ -7,7 +7,7 @@ import com.todaysTable.vo.NoticeBoardVO;
 public interface NoticeBoardDao {
 	public List<NoticeBoardVO> selectAllBoard();
 	// 게시물 전체 목록
-	public void selectBoard();
+	public  NoticeBoardVO selectBoard(NoticeBoardVO vo);
 	// 특정 게시물 목록
 	public void insertBoard();
 	// 게시물 등록 

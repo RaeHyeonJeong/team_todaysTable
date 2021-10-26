@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="storeMapper">
+
+	<sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 'loc'.toString()">AND LOCATION LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'name'.toString()">AND NAME LIKE '%' || #{keyword} || '%'</if>
+		</if>
+	</sql>
+
+	<!-- <select id="list" resultType="com.todaysTable.vo.StoreVO"> SELECT NAME, 
+		CATEGORY, TEL, LOCATION, ADDRESS, BREAK_TIME, BUSINESS_HOURS FROM STORE </select> -->
+
+	<!-- STORE 테이블 쿼리 -->
+	<select id="listPage" resultType="com.todaysTable.vo.StoreVO"
+		parameterType="com.todaysTable.vo.Criteria">
+		SELECT STORE_NO, NAME, CATEGORY, TEL,
+		LOCATION, ADDRESS,
+		BREAK_TIME, BUSINESS_HOURS
+		FROM (
+		SELECT STORE_NO, NAME, CATEGORY, TEL,
+		LOCATION, ADDRESS, BREAK_TIME, BUSINESS_HOURS,
+		ROW_NUMBER() OVER(ORDER
+		BY STORE_NO DESC) AS RNUM
+		FROM STORE
+		WHERE 1=1
+		<include refid="search"></include>
+		) WHERE RNUM BETWEEN #{rowStart}
+		AND #{rowEnd}
+		ORDER BY STORE_NO DESC
+	</select>
+
+	<select id="listCount" resultType="int" parameterType="com.todaysTable.vo.StoreVO" >
+		SELECT COUNT(STORE_NO)
+		FROM STORE
+		WHERE 1=1
+		<include refid="search"></include>
+		AND STORE_NO > 0
+	</select>
+
+	<!-- <select id="search" resultType="com.todaysTable.vo.StoreVO">
+		SELECT STORE_NO, NAME, CATEGORY,
+		TEL,
+		LOCATION, ADDRESS, BREAK_TIME,
+		BUSINESS_HOURS
+		FROM STORE
+		WHERE NAME
+		LIKE '%' || #{keyword} || '%'
+	</select> -->
+
+</mapper>

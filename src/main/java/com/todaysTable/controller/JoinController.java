@@ -3,16 +3,21 @@ package com.todaysTable.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.todaysTable.dao.SignupMemberDao;
+import com.todaysTable.service.SignUpService;
 import com.todaysTable.vo.MemberVO;
 
 @Controller
 public class JoinController {
 	@Autowired
 	private SignupMemberDao dao;
+	@Autowired
+	private SignUpService service;
 
-	@RequestMapping(value = "signup.do") 
+	@RequestMapping(value = "signup.do")
 	public String joinView() {
 		return "WEB-INF/views/signup";
 	}
@@ -22,18 +27,29 @@ public class JoinController {
 		return "WEB-INF/views/agreement";
 	}
 
-	@RequestMapping(value = "signupsubmit.do")
-	public String joinSubmit(MemberVO vo) {
+	// 회원가입
+	@ResponseBody
+	@RequestMapping(value = "signupsubmit.do", method = RequestMethod.POST)
+	public String joinSubmit(MemberVO vo) throws Exception {
+		// 생일 yy/mm/dd로 수정
 		String birthdate = vo.getBirthdate();
 		birthdate = birthdate.replace('-', '/');
 		birthdate = birthdate.substring(2, birthdate.length());
 		vo.setBirthdate(birthdate);
-		try {
-			dao.memberJoin(vo);
-			System.out.println(vo);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		// 회원가입 정보 넣어줌
+		dao.memberJoin(vo);
+		// System.out.println(vo);
+
 		return "WEB-INF/views/index";
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "idCheck.do")
+	public int idcCheckCtR(String id) {
+		System.out.println(id);
+		int result = service.IdCheck(id);
+		System.out.println(result);
+		
+		return result;
 	}
 }

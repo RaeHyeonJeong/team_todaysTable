@@ -33,8 +33,27 @@
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
  	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
- 	<script type="text/javascript">
- 	</script>
+	<script type="text/javascript">
+	$(function() {
+		$("button#idCheck").click(function() {
+			$.ajax({
+				url:"idCheck.do",
+				type:"post",
+				dataType:"text",
+				data:{id:$("input#id").val()},
+				success : function(data){
+					alert(data);
+					if(data == 1){
+						alert("중복된 아이디입니다.");
+					}else if(data == 0){
+						alert("사용가능한 아이디입니다.");
+					}
+				}
+			});
+		});
+	});
+	
+	</script>
   </head>
   <body>
     <div class="container-fluid px-3">
@@ -48,9 +67,14 @@
               <div class="mb-4">
                 <label class="form-label" for="loginUsername">아이디(본인 이메일 작성)</label><br>
                 <input class="form-control" style="width: 380px; float: left;" name="id" id="id" placeholder="name@address.com" type="text" required data-msg="주소를 입력하세요">
-                 <button class="btn btn-primary" type="button" id="check" style="float: right;">중복확인</button>
+                 <button class="btn btn-primary" type="button" id="idCheck"  style="float: right;">중복확인</button>
+                 <div>
+				<span><small style="color: blue; float: left;">사용 가능한 아이디 입니다.</small></span>
+				<span><small style="color: red; float: left;">이미 존재하는 아이디 입니다.</small></span>
+               </div>
+                 
                <div class="mb-4">
-               <br><br>
+               <br><br><br>
                
                 <label class="form-label" for="loginUsername">본인 확인 이메일</label><br>
                    <input class="form-control" style="width: 340px; float: left;" name="email" id="email" placeholder="name@address.com" required data-msg="이메일을 입력해 주세요">

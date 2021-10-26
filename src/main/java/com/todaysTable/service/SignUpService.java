@@ -3,6 +3,9 @@ package com.todaysTable.service;
 import com.todaysTable.vo.MemberVO;
 
 public interface SignUpService {
-	// 회원가입Service
+	// 회원가입 Service
 	public void memberJoinProcess(MemberVO vo);
+
+	// 아이디 중복 체크 Service
+	public int IdCheck(String id);
 }

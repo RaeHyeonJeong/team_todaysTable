@@ -11,7 +11,8 @@ import com.todaysTable.vo.MemberVO;
 @Repository
 public class SignUpServiceImpl implements SignUpService {
 
-	SignupMemberDao dao;
+	@Autowired
+	private SignupMemberDao dao;
 
 	@Override
 	public void memberJoinProcess(MemberVO vo) {
@@ -20,7 +21,11 @@ public class SignUpServiceImpl implements SignUpService {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
 
+	@Override
+	public int IdCheck(String id) {
+		return dao.IdCheck(id);
 	}
 
 }

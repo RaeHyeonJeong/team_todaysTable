@@ -12,7 +12,7 @@ public class JoinController {
 	@Autowired
 	private SignupMemberDao dao;
 
-	@RequestMapping(value = "signup.do")
+	@RequestMapping(value = "signup.do") 
 	public String joinView() {
 		return "WEB-INF/views/signup";
 	}

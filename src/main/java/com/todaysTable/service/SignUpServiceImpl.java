@@ -28,4 +28,9 @@ public class SignUpServiceImpl implements SignUpService {
 		return dao.IdCheck(id);
 	}
 
+	@Override
+	public int NickCheck(String nickname) {
+		return dao.NickCheck(nickname);
+	}
+
 }

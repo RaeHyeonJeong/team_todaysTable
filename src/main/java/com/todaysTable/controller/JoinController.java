@@ -45,11 +45,21 @@ public class JoinController {
 
 	@ResponseBody
 	@RequestMapping(value = "idCheck.do")
-	public int idcCheckCtR(String id) {
+	public int idCheckCtr(String id) {
 		System.out.println(id);
 		int result = service.IdCheck(id);
 		System.out.println(result);
-		
+
 		return result;
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "nickCheck.do")
+	public int nickCheckCtr(String nickname) {
+		System.out.println(nickname);
+		int Nresult = service.NickCheck(nickname);
+		System.out.println(Nresult);
+
+		return Nresult;
 	}
 }

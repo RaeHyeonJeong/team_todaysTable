@@ -43,6 +43,58 @@
 	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
 	crossorigin="anonymous">
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function Postcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("extraAddress").value = extraAddr;
+                    
+                } else {
+                    document.getElementById("extraAddress").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('postnum').value = data.zonecode;
+                document.getElementById("address1").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("address2").focus();
+            }
+        }).open();
+    }
+   
+</script>	
+
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script type="text/javascript">
 		
@@ -64,24 +116,26 @@
 		} 
 	}
 	
-	
 	$(function() {
-
-		//비밀번호 체크
-		$("#no_pass").hide();
-		//비밀번호 확인
-		$('#password').blur(function(){
-		   if($('#password1').val() != $('#password').val()){
-		    	if($('#password1').val()!=''){
-		    		$("#no_pass").css("display", "inline-block");
-		    	    $('#password1').val('');
-		    	    $('#password').val('');
-		          $('#password1').focus();
-		       }
-		    }
-		});  	   
 	
-		
+		//비밀번호 재확인
+		$("#no_pass").hide();
+		$("#ok_pass").hide();
+		$('#password').blur(function() {
+			if ($('#password1').val() != $('#password').val()) {//불일치
+				$("#no_pass").css("display", "inline-block");
+				$("#ok_pass").css("display", "none");
+				if ($('#password1').val() != '') {
+					$('#password1').val('');
+					$('#password').val('');
+					$('#password1').focus();
+				}
+			} else if ($('#password1').val() == $('#password').val()) {//일치
+				$("#ok_pass").css("display", "inline-block");
+				$("#no_pass").css("display", "none");
+			}
+		});
+
 		//아이디 중복체크
 		$("#no_check").hide();
 		$("#ok_check").hide();
@@ -95,7 +149,7 @@
 				},
 				success : function(data) {
 					var obj = document.getElementsByClassName('form-control');
-					
+
 					if (data == 1) { //중복된 아이디가 있을 때
 						$("#no_check").css("display", "inline-block");
 						$("#ok_check").css("display", "none");
@@ -133,7 +187,6 @@
 					if (data == 1) { //중복된 닉네임이 있을 때
 						$("#no_nick").css("display", "inline-block");
 						$("#ok_nick").css("display", "none");
-						return false;
 
 					} else if (data == 0) { //사용가능한 닉네임일 때
 						$("#ok_nick").css("display", "inline-block");
@@ -208,7 +261,7 @@
 								name="password1" id="password1" placeholder="비밀번호 입력"
 								type="password" required data-msg="비밀번호를 입력해 주세요" onchange="chkPW()">
 							<p>
-								<small style="color: red;">*특수문자, 대문자, 소문자, 숫자 조합 필수</small>
+								<small style="color: red;">*특수문자, 대문자, 소문자, 숫자 조합 필수(8자리 이상)</small>
 							</p>
 						</div>
 						<div class="mb-4">
@@ -220,6 +273,10 @@
 							<span id="no_pass"> <small
 								style="color: red; float: left;">비밀번호가 일치하지 않습니다.</small>
 							</span>
+							<span id="ok_pass"> <small
+								style="color: blue; float: left;">비밀번호가 일치합니다.</small>
+							</span>
+							
 						</div>
 						<div class="mb-4">
 							<label class="form-label" for="name">이름</label> <input
@@ -241,14 +298,13 @@
 								class="form-control" style="width: 340px; float: left;"
 								name="postnum" id="postnum" placeholder="우편번호" type="text"
 								required data-msg="우편번호를 입력하세요.">
-							<button type="button" class="btn btn-primary" id="postnumcheck"
-								style="float: right;">우편번호 등록</button>
-							<input class="form-control" name="address1" id="address1"
+							<input type="button" onclick="Postcode()" value="우편번호 찾기">
+							<input class="form-control"  id="address1"
 								placeholder="주소" type="text" required data-msg="주소를 입력하세요">
-							<input class="form-control" name="address2" id="address2"
+							<input class="form-control"  id="address2"
 								placeholder="상세주소" type="text" required data-msg="상세주소를 입력하세요">
-							<input class="form-control" type="text" name="address"
-								id="address">
+							<input class="form-control" type="text" id="extraAddress">
+							<input class="form-control" type="text" id="address" name="address">
 						</div>
 						<div class="mb-4">
 							<label class="form-label" for="nickname"> 닉네임</label><br> <input
@@ -281,7 +337,7 @@
 
 						<div class="d-grid gap-2">
 							<br>
-							<button class="btn btn-lg btn-primary" type="submit">Sign
+							<button class="btn btn-lg btn-primary" type="submit" id="popupBtn">Sign
 								up</button>
 						</div>
 						<br>
@@ -327,6 +383,7 @@
       injectSvgSprite('https://demo.bootstrapious.com/directory/1-4/icons/orion-svg-sprite.svg'); 
       
     </script>
+  
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- jQuery-->
@@ -350,5 +407,12 @@
 	<script>var basePath = ''</script>
 	<!-- Main Theme JS file    -->
 	<script src="resources/js/theme.js"></script>
+	
+	<script type="text/javascript">
+	$('#address2').blur(function(){
+		$('#address').val($('#address1').val()+" "+ $('#address2').val());
+	});
+	
+	</script>
 </body>
 </html>

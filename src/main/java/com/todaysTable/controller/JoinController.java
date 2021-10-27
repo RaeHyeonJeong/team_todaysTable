@@ -28,7 +28,6 @@ public class JoinController {
 	}
 
 	// 회원가입
-	@ResponseBody
 	@RequestMapping(value = "signupsubmit.do", method = RequestMethod.POST)
 	public String joinSubmit(MemberVO vo) throws Exception {
 		// 생일 yy/mm/dd로 수정
@@ -38,11 +37,12 @@ public class JoinController {
 		vo.setBirthdate(birthdate);
 		// 회원가입 정보 넣어줌
 		dao.memberJoin(vo);
-		// System.out.println(vo);
+		System.out.println(vo);
 
 		return "WEB-INF/views/index";
 	}
 
+	// 아이디 중복 체크
 	@ResponseBody
 	@RequestMapping(value = "idCheck.do")
 	public int idCheckCtr(String id) {
@@ -53,6 +53,7 @@ public class JoinController {
 		return result;
 	}
 
+	// 닉네임 중복 체크
 	@ResponseBody
 	@RequestMapping(value = "nickCheck.do")
 	public int nickCheckCtr(String nickname) {

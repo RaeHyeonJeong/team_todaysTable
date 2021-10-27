@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bookMapper">
+
+<!-- SELECT문 -->
+
+<select id="getMemberNo" parameterType="java.lang.String" resultType="java.lang.Integer">
+	SELECT MEMB_NO FROM MEMBER
+	WHERE ID=#{VALUE}
+</select>
+
+<select id="selectRooms" parameterType="java.lang.Integer" resultType="com.todaysTable.vo.RoomVO">
+	SELECT * FROM ROOM
+	WHERE STORE_NO = #{VALUE}
+</select>
+
+<!-- INSERT문 -->
+
+<insert id="insertReservationInfo" parameterType="com.todaysTable.vo.BookVO">
+	INSERT INTO RESERVATION(MEMB_NO, STORE_NO, ROOM_NO, HEADCOUNT, RESERVE_DATE, IS_CANCELED, CANCEL_DATE, NAME, TEL, EMAIL)
+	VALUES(#{memb_no}, #{store_no}, #{room_no}, #{headcount}, TO_DATE(#{reserve_date}, 'YYYY/MM/DD HH24:MI:SS'), 'N', NULL, #{name}, #{tel}, #{email})
+</insert>
+
+</mapper>

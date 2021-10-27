@@ -5,9 +5,25 @@
 	<!-- NOTICE TABLE SQL 쿼리 -->
 	
 	<select id="selectAllNoticeBoard" resultType="com.todaysTable.vo.NoticeBoardVO">
-		SELECT NOTICE_NO, TITLE, CONTENT, TO_CHAR(REG_DATE,'YYYY-MM-DD HH24:MI:SS')REG_DATE, ADMIN_ID
-		FROM NOTICE;
+		SELECT NOTICE_NO, TITLE, CONTENT, PASSWORD, HITS, TO_CHAR(REG_DATE,'YYYY-MM-DD')REG_DATE, ADMIN_ID
+		FROM NOTICE
+		ORDER BY REG_DATE DESC
 	</select>
+	
+	<insert id="insertNoticeBoard" parameterType="com.todaysTable.vo.NoticeBoardVO">
+		INSERT INTO NOTICE (NOTICE_NO, TITLE, CONTENT, PASSWORD, HITS, REG_DATE, ADMIN_ID)
+		VALUES(NOTICE_SEQ.NEXTVAL, #{title}, #{content}, #{password}, 0, SYSDATE, 'ADMIN')
+	</insert>
+	
+	<update id="updateNoticeBoard" parameterType="com.todaysTable.vo.NoticeBoardVO">
+		UPDATE NOTICE SET TITLE=#{title}, CONTENT=#{content}, REG_DATE=SYSDATE
+		WHERE NOTICE_NO = #{notice_no}
+	</update>
+	
+	<delete id="deleteNoticeBoard" parameterType="int">
+		DELETE FROM NOTICE
+		WHERE NOTICE_NO = #{notice_no}
+	</delete>
 	
 	<!-- RECOM_GOOD_REST TABLE SQL 쿼리 -->
 	

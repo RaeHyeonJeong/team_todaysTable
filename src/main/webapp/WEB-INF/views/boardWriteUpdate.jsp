@@ -38,15 +38,15 @@
 	<jsp:include page="subHeader.jsp" />
 	<section class="py-6 bg-gray-100">
 		<div class="container d-flex justify-content-center">
-			<div class="col-md-7 mb-5 mb-md-0">
-				<form class="form" id="BoardWriteUpdate-form" method="post" action="#" enctype="multipart/form-data">
+			<div class="col-md-7 mb-5 mb-md-0"><!-- enctype="multipart/form-data" -->
+				<form class="form" id="BoardWriteUpdate-form" method="post" action="insertNoticeBoard.do" >
 					<div class="controls">
 						<div class="form-group mb-4">
 							<label class="form-label" for="title">제목</label> <input class="form-control" type="text" name="title" id="title" placeholder="제목을 적어주세요" required="required" style="width: 500px;">
 						</div>
 						<div class="form-group mb-4">
 							<label class="form-label" for="context">내용</label>
-							<textarea class="form-control" rows="4" name="context" id="context" placeholder="내용을 적어주세요" required="required" style="height: 400px; width: 750px;"></textarea>
+							<textarea class="form-control" rows="4" name="content" id="content" placeholder="내용을 적어주세요" required="required" style="height: 400px; width: 750px;"></textarea>
 						</div>
 						<div class="form-group mb-4">
 							<label class="form-label" for="formFile">UPLOAD IMAGE</label> <input class="form-control" id="files-upload" multiple="multiple" type="file" name="filename[]">

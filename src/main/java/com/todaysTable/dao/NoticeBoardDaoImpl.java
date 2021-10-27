@@ -20,30 +20,21 @@ public class NoticeBoardDaoImpl  implements NoticeBoardDao{
 	}
 
 	@Override
-	public NoticeBoardVO selectBoard(NoticeBoardVO vo) {
-		// TODO Auto-generated method stub
-		return null;
+	public void insertNoticeBoard(NoticeBoardVO vo) {
+		sqlSession.insert("boardMapper.insertNoticeBoard", vo);
 	}
 
 	@Override
-	public void insertBoard() {
-		// TODO Auto-generated method stub
-		
+	public void updateNoticeBoard(NoticeBoardVO vo) {
+		sqlSession.update("boardMapper.updateNoticeBoard", vo);
+
 	}
 
 	@Override
-	public void updateBoard() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteBoard() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void deleteNoticeBoard(int no) {
+		sqlSession.delete("boardMapper.deleteNoticeBoard", no);
 	
-	
+	}
 	
 
 	

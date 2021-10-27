@@ -18,7 +18,7 @@
 					<h6 class="text-uppercase text-dark mb-3">borad</h6>
 					<ul class="list-unstyled">
 						<li><a class="text-muted" href="index.html">맛집 추천 게시판</a></li>
-						<li><a class="text-muted" href="category-rooms.html">공지사항</a></li>
+						<li><a class="text-muted" href="noticeBoard.do">공지사항</a></li>
 						<li><a class="text-muted" href="category-2-rooms.html">QnA</a></li>
 					</ul>
 				</div>

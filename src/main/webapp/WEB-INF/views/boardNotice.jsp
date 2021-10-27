@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="function" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,42 +63,27 @@
 						<th class="col-md-4" scope="col">제목</th>
 						<th class="col-md-1" scope="col">작성자</th>
 						<th class="col-md-1" scope="col">조회수</th>
-						<th class="col-md-1" scope="col">좋아요</th>
 						<th class="col-md-1" scope="col">작성날짜</th>
 					</tr>
 				</thead>
 				<tbody class="text-center text-break">
-					<tr style="cursor: pointer;" onClick="location.href='index.html'">
-						<th scope="row">1</th>
-						<td>Mark </a>
-						</td>
-						<td>홍길동</td>
-						<td>120</td>
-						<td>88</td>
-						<td>2021/10/5</td>
-					</tr>
-					<tr style="cursor: pointer;" onClick="location.href='index.html'">
-						<th scope="row">2</th>
-						<td>Marksdsdsadsa</td>
-						<td>홍길동</td>
-						<td>120</td>
-						<td>88</td>
-						<td>2021/10/5</td>
-					</tr>
-					<tr style="cursor: pointer;" onClick="location.href='index.html'">
-						<th scope="row">3</th>
-						<td>Mark</td>
-						<td>홍길동</td>
-						<td>120</td>
-						<td>88</td>
-						<td>2021/10/5</td>
-					</tr>
+					<c:set var="lastIndex" value="${function:length(list)}" />
+					<c:forEach var="row" items="${list}">
+						<tr>
+							<th scope="row">${lastIndex}</th>
+							<td><a class="text-muted" href="noticeBoard.do">${row.title}</a></td>
+							<td>관리자</td>
+							<td>${row.hits}</td>
+							<td>${row.reg_date}</td>
+						</tr>
+						<c:set var="lastIndex" value="${lastIndex-1}" />
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>
 	</div>
 	<div class="mb-5 d-grid gap-2 col-6 mx-auto">
-		<button class="btn btn-primary h-100" onClick="location.href='boardWriteUpdate.html'">글쓰기</button>
+		<button class="btn btn-primary h-100" onClick="location.href='writeBoard.do'">글쓰기</button>
 	</div>
 	<div class="mb-5">
 		<!-- Pagination -->

@@ -19,30 +19,21 @@ public class LoginController {
 	@Autowired
 	private MemberService service;
 
-	@PostMapping(value = "loginCheck.do" )
+	@PostMapping(value = "loginCheck.do")
 	public String loginCheck(HttpServletRequest request, HttpSession session) throws Exception {
 		logger.info("Login Page");
-		
-		
-		String state = service.loginCheck(request.getParameter("id"), request.getParameter("password"));
-		System.out.println("id:" + request.getParameter("id"));
-		System.out.println("password:" + request.getParameter("password"));
-		if (state=="1") {
+
+		boolean state = service.loginCheck(request.getParameter("id"), request.getParameter("password"));
+
+		if (state) {
 			session.setAttribute("id", request.getParameter("id"));
-			session.setMaxInactiveInterval(60 * 60);
-			System.out.println(session.getAttribute("id"));
-
+			session.setMaxInactiveInterval(60);
 			if (request.getParameter("id").equals("ADMIN")) {
-				System.out.println("Admin login success");
 				return "WEB-INF/views/dashBoard";
-
 			} else {
-				System.out.println("email login success");
 				return "WEB-INF/views/index";
 			}
-
 		} else {
-			System.out.println("login fail");
 			return "redirect:login.do";
 		}
 	}
@@ -51,5 +42,4 @@ public class LoginController {
 	public String login() {
 		return "WEB-INF/views/login";
 	}
-	
 }

@@ -8,4 +8,7 @@ public interface SignUpService {
 
 	// 아이디 중복 체크 Service
 	public int IdCheck(String id);
+
+	// 닉네임 중복 체크 service
+	public int NickCheck(String nickname);
 }

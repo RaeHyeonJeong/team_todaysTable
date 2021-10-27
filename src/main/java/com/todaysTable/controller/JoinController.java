@@ -39,7 +39,7 @@ public class JoinController {
 		dao.memberJoin(vo);
 		System.out.println(vo);
 
-		return "WEB-INF/views/index";
+		return "WEB-INF/views/signupcomplet";
 	}
 
 	// 아이디 중복 체크
@@ -63,4 +63,5 @@ public class JoinController {
 
 		return Nresult;
 	}
+	
 }

@@ -116,6 +116,7 @@
 		} 
 	}
 	
+	
 	$(function() {
 	
 		//비밀번호 재확인
@@ -198,6 +199,7 @@
 
 	});
 </script>
+
 </head>
 <body>
 	<div class="container-fluid px-3">
@@ -294,11 +296,11 @@
 								placeholder="010-1234-5678" required data-msg="전화번호를 입력하세요">
 						</div>
 						<div class="mb-4">
-							<label class="form-label" for="address">주소</label><br> <input
-								class="form-control" style="width: 340px; float: left;"
+							<label class="form-label" for="address">주소</label><br> 
+							<input class="form-control" style="width: 350px; float: left;"
 								name="postnum" id="postnum" placeholder="우편번호" type="text"
 								required data-msg="우편번호를 입력하세요.">
-							<input type="button" onclick="Postcode()" value="우편번호 찾기">
+							<input class="btn btn-primary" type="button" onclick="Postcode()" value="우편번호 찾기">
 							<input class="form-control"  id="address1"
 								placeholder="주소" type="text" required data-msg="주소를 입력하세요">
 							<input class="form-control"  id="address2"
@@ -337,8 +339,7 @@
 
 						<div class="d-grid gap-2">
 							<br>
-							<button class="btn btn-lg btn-primary" type="submit" id="popupBtn">Sign
-								up</button>
+							<button class="btn btn-lg btn-primary" type="submit">Sign up</button>
 						</div>
 						<br>
 

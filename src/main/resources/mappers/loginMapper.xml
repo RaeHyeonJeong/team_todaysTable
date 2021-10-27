@@ -6,7 +6,7 @@
 
 <select id="adminCk" parameterType="com.todaysTable.vo.AdminVO" resultType="java.lang.String">
    SELECT ADMIN_PASSWORD FROM ADMIN
-   WHERE ADMIN_ID='ADMIN'
+   WHERE ADMIN_ID=#{VALUE}
  </select>
  
  <select id="loginCk" parameterType="com.todaysTable.vo.MemberVO" resultType="java.lang.String">

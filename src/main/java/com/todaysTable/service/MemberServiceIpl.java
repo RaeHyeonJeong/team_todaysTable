@@ -14,30 +14,14 @@ public class MemberServiceIpl implements MemberService {
 	@Autowired
 	private MemberDao memberDao;
 
-	public String loginCheck(String id, String password) throws Exception {
-		String dbPass;
-		String state;
-		
+	public boolean loginCheck(String id, String password) throws Exception {
+
 		if (id.equals("ADMIN")) {
-			dbPass = adminDao.adminCk(id);
-			System.out.println("dbPass:"+dbPass);
-			if (dbPass != null && dbPass.equals(password)) {
-				state = "1"; 
-				return state;
-			} else {
-				state = "0";
-				return state; 
-			}
+			String dbPass = adminDao.adminCk(id);
+			return dbPass != null && dbPass.equals(password);
 		} else {
-			dbPass = memberDao.loginCk(id);
-			System.out.println("dbPass:"+dbPass);
-			if(dbPass != null && dbPass.equals(password)) {
-				state="1";
-						return state;
-			}else {
-				state="0";
-				return state;
-			}
+			String dbPass = memberDao.loginCk(id);
+			return dbPass != null && dbPass.equals(password);
 		}
 	}
 }

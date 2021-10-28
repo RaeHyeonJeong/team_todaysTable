@@ -4,15 +4,23 @@
 
 <!-- 로그인 -->
 
-<select id="adminCk" parameterType="com.todaysTable.vo.AdminVO" resultType="java.lang.String">
+  <select id="adminCk" parameterType="com.todaysTable.vo.AdminVO" resultType="java.lang.String">
    SELECT ADMIN_PASSWORD FROM ADMIN
    WHERE ADMIN_ID=#{VALUE}
- </select>
+  </select>
  
- <select id="loginCk" parameterType="com.todaysTable.vo.MemberVO" resultType="java.lang.String">
+  <select id="loginCk" parameterType="com.todaysTable.vo.MemberVO" resultType="java.lang.String">
    SELECT PASSWORD FROM MEMBER
    WHERE ID=#{VALUE}
- </select>
+  </select>
+ 
+  <select id="getLoginInfo" parameterType="com.todaysTable.vo.MemberVO" resultType="java.util.HashMap">
+  SELECT NAME,PROFILE_IMAGE_PATH
+  FROM MEMBER
+  WHERE ID=#{VALUE}
+  </select>
+ 
+
 
 
 </mapper>

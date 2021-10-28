@@ -10,7 +10,7 @@
 		BIRTHDATE, EMAIL, TEL, ADDRESS, NICKNAME, PROFILE_IMAGE_PATH,
 		SIGN_UP_DATE, ADMIN_ID)
 		VALUES
-		(memb_seq.nextval,#{id},#{password},#{name},#{birthdate},#{email},#{tel},#{address},#{nickname},'PROFILE_IMAGE_PATH',sysdate,'ADMIN')
+		(memb_seq.nextval,#{id},#{password},#{name},#{birthdate},#{email},#{tel},#{address},#{nickname},#{profile_image_path},sysdate,'ADMIN')
 	</insert>
 
 	<!-- 아이디 중복 체크 -->

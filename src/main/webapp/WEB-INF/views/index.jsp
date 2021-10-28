@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="functions" uri="http://java.sun.com/jsp/jstl/functions" %> 
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -32,6 +34,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
+
 	<section class="d-flex align-items-center dark-overlay bg-cover" style="background-image: url(resources/img/photo/photo-1525610553991-2bede1a236e2.jpg);">
 		<div class="container py-6 py-lg-7 text-white overlay-content text-center">
 			<div class="row">
@@ -42,9 +45,23 @@
 			</div>
 		</div>
 	</section>
+	
+	
 	<!-- HEADER include -->
-	<jsp:include page="headerMain.jsp" />
-	<!-- Search start-->
+	<%
+		String id = (String)session.getAttribute("id");
+		if(id == null){
+	%>
+		<jsp:include page="headerMain.jsp" />
+	<%
+		}else{
+	%>
+		<jsp:include page="headerMain_afterLogin.jsp" />
+	<%
+		}
+	%>
+
+
 	<section class="py-6"></section>
 	<div class="container d-flex justify-content-center">
 		<div class="search-bar rounded col-11 p-lg-4 px-4 py-4 position-relative mt-n5 z-index-20">
@@ -525,5 +542,8 @@
 	</script>
 	<!-- Main Theme JS file    -->
 	<script src="resources/js/theme.js"></script>
+	
+	
+	
 </body>
 </html>

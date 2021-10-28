@@ -27,4 +27,7 @@ public class SignupMemberDaoImpl implements SignupMemberDao {
 		return st.selectOne("memberMapper.nickCheck", nickname);
 	}
 
+	
+	
+
 }

@@ -73,28 +73,35 @@
 								</span>
 							</div>
 
-							<div class="mb-4">
+							<div class="mail_check_input_box" id="mail_check_input_box_false">
+							<div class="mb-4" >
 								<br>
 								<br>
 								<br> 
 								<label class="form-label" for="loginUsername">본인 확인 이메일</label><br> 
+								<div class="mail_check_button">
 								<input class="form-control"
 									style="width: 340px; float: left;" name="email" id="email"
 									placeholder="name@address.com" required data-msg="이메일을 입력해 주세요" readonly="readonly">
 								<button type="button" class="btn btn-primary" id="numsend"
 									style="float: right;">인증번호 받기</button>
+								</div>
 							</div>
 							<div class="mb-4">
 								<input class="form-control" style="width: 340px; float: left;"
 									name="num" id="num" placeholder="인증번호 입력" required
-									data-msg="인증번호를 입력해 주세요.">
-								<button type="button" class="btn btn-primary" id="numcheck"
-									style="float: right;">인증번호 확인</button>
-								<br>
+									data-msg="인증번호를 입력해 주세요." >
+									<div class="mail_check_button">
+										<button type="button" class="btn btn-primary" id="numcheck"
+											style="float: right;">인증번호 확인</button>
+									</div>
+									<br>
+							</div>
 								<div>
 									<p>
 										<small style="color: blue; float: left;">인증이 확인되었습니다.</small>
 									</p>
+									
 								</div>
 							</div>
 						</div>
@@ -400,13 +407,29 @@
 
 	});
 </script>
-	
-	<script type="text/javascript">
-		$('#address2').blur(
-				function() {
-					$('#address').val(
-							$('#address1').val() + " " + $('#address2').val());
-				});
-	</script>
+<script type="text/javascript">
+	$('#address2').blur(
+			function() {
+				$('#address').val(
+						$('#address1').val() + " " + $('#address2').val());
+			});
+</script>
+<script type="text/javascript">
+	/* 인증번호 이메일 전송 */
+	$(".mail_check_button").click(function() {
+		$.ajax({
+			type : "GET",
+			url : "emailcheck.do",
+			data : {
+				email : $("input#email").val()
+			},
+			success : function(data) {
+				
+				console.log("data : " + data);
+			}
+
+		});
+	});
+</script>
 </body>
 </html>

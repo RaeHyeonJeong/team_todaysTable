@@ -50,12 +50,12 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "insertNoticeBoard.do", method = RequestMethod.POST)
-	public String noticeBoardInsertAction(NoticeBoardVO vo, @RequestParam(value = "file", required = false) List<MultipartFile> fileList, MultipartHttpServletRequest request) {
+	public String noticeBoardInsertAction(NoticeBoardVO vo, @RequestParam(value = "file", required = false) List<MultipartFile> fileList, MultipartHttpServletRequest request, String folderName) {
 
 		vo.setContent(vo.getContent().replace("\r\n", "<br>"));
 		service.insertNoticeBoard(vo);
 		
-		fileUploader.multiFileUploader(fileList, request);
+		fileUploader.multiFileUploader(fileList, request, "noticeImg");
 		return "redirect:/noticeBoard.do";
 	}
 

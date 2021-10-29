@@ -10,11 +10,12 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 @Component
 public class FileUploader {
 
-	public void multiFileUploader(List<MultipartFile> fileList, MultipartHttpServletRequest request) {
+	public void multiFileUploader(List<MultipartFile> fileList, MultipartHttpServletRequest request, String folderName) {
 		fileList = request.getFiles("file");
 
-		String path = "C:\\TeamProject\\Team_todaysTable\\src\\main\\webapp\\resources\\img\\noticeImg\\";
-
+		String path = "C:\\TeamProject\\Team_todaysTable\\src\\main\\webapp\\resources\\img\\";
+		folderName = folderName + "\\";
+		
 		for(MultipartFile mFile : fileList)
 		{
 			String originFileName = mFile.getOriginalFilename();
@@ -23,7 +24,7 @@ public class FileUploader {
 			System.out.println("originFileName : " + originFileName);
 			System.out.println("fileSize : " + fileSize);
 
-			String safeFile = path + originFileName;
+			String safeFile = path + folderName + originFileName;
 			
 			try {
 				mFile.transferTo(new File(safeFile));

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="detailMapper">
+
+<select id="selectStoreInfo" parameterType="java.lang.Integer" resultType="com.todaysTable.vo.StoreVO">
+	SELECT * FROM STORE
+	WHERE STORE_NO = #{VALUE}
+</select>
+
+<select id="getAvgGrade" parameterType="java.lang.Integer" resultType="java.lang.Double">
+	SELECT AVG_GRADE FROM STORE_MORE_INFO
+	WHERE STORE_NO = #{VALUE}
+</select>
+
+<select id="getCanPark" parameterType="java.lang.Integer" resultType="java.lang.String">
+	SELECT CAN_PARK FROM STORE_OPTION
+	WHERE STORE_NO = #{VALUE}
+</select>
+
+<select id="selectMenuList" parameterType="java.lang.Integer" resultType="com.todaysTable.vo.MenuVO">
+	SELECT * FROM MENU
+	WHERE STORE_NO = #{VALUE}
+</select>
+
+<select id="getNickName" parameterType="java.lang.String" resultType="java.lang.String">
+	SELECT NICKNAME FROM MEMBER
+	WHERE ID = #{VALUE}
+</select>
+</mapper>

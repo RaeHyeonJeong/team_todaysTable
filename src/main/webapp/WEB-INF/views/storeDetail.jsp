@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html lang="en">
 <style type="text/css">
@@ -306,7 +307,6 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 <!-- Font Awesome CSS-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
 </head>
 <body style="padding-top: 72px;">
 	<!-- HEADER include -->
@@ -351,7 +351,7 @@
 					
 				<div class="text-block">
 					<p class="text-primary"><i class="fa-map-marker-alt fa me-1"></i> 가게핀 명 </p>
-					<h1>가게명</h1>
+					<h1>${store.name}</h1>
 					
 					<!-- 찜하기 버튼 (체크박스 활성화로 상태 값을 DB에 저장해야 함)-->
 						<div class="heartbox" style="position: absolute; left: 850px; top:70px;">
@@ -403,11 +403,16 @@
 						<!-- 별점 -->
 						<div class="mb-2">
 							<i class="flex-shrink-1 mb-0 card-stars text-xs text-right"></i>
-							<i class="fa fa-star text-warning"></i> <i
-								class="fa fa-star text-warning"></i> <i
-								class="fa fa-star text-warning"></i> <i
-								class="fa fa-star text-warning"></i> <i
-								class="fa fa-star text-gray-300"></i>
+							<c:forEach var="i" begin="1" end="5">
+								<c:choose>
+									<c:when test="${i le avgGrade}">
+										<i class="fa fa-star text-warning"></i>
+									</c:when>
+									<c:otherwise>
+										<i class="fa fa-star text-gray-300"></i>		
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
 						</div>
 						
 						
@@ -422,11 +427,20 @@
 						</ul>
 
 						<ul class="text-muted font-weight-light">
-							<li>주소 :</li>
-							<li>전화번호 :</li>
-							<li>위치 :</li>
-							<li>주차여부 :</li>
-							<li>메뉴 :</li>
+							<li>주소 : ${store.address}</li>
+							<li>전화번호 : ${store.tel}</li>
+							<li>위치 : ${store.location}</li>
+							<li>주차여부 : 
+								<c:choose>
+									<c:when test="${canPark eq 'Y'}">가능</c:when>
+									<c:otherwise>불가능</c:otherwise>
+								</c:choose>
+							</li>
+							<li>메뉴 : <br> 
+								<c:forEach var="i" items="${menu}">
+									${i.name} - ${i.price}원 <br>
+								</c:forEach>
+							</li>
 							<br>
 						</ul>
 
@@ -439,8 +453,12 @@
 						</p>
 
 						<!-- 예약페이지로 이동 -->
+						<%
+							session.setAttribute("store_no", 51);
+						%>
 						<div class="form-group">
-							<form action="moveStoreDetail.do" method="post">
+							<form action="moveToBookStore.do" method="post">
+								<input type="hidden" name="store_no" value="${store_no}">
 								<button class="btn btn-primary btn-block">예약</button>
 							</form>
 						</div>
@@ -469,21 +487,50 @@
 						aria-expanded="false" aria-controls="leaveReview">리뷰 작성</button>
 					<div class="mt-4 collapse" id="leaveReview" style="">
 						<!-- <h5 class="mb-4"></h5> -->
-						<form class="form" id="contact-form" method="get" action="#">
+				 		<!-- <form class="form" id="contact-form" method="POST" action=""> -->
 							<div class="row">
 								<div class="col-sm-6">
 									<!-- DB에 저장되어 있는 닉네임 값 불러와야함 -->
 									<div class="mb-4">
 										<label class="form-label" for="name">닉네임 *</label> <input
 											class="form-control" type="text" name="nickName" id="nickName"
-											placeholder="Database nickname stored value" disabled="disabled">
+											placeholder="Database nickname stored value" disabled="disabled" value="${nickName}">
 									</div>
 								</div>
 								
 								<!-- 리뷰 상 남긴 평점 값을 DB에 저장해야함 -->
 								<div class="col-sm-6">
 									<div class="mb-4">
-										<label class="form-label" for="rating">평점 *</label> <select
+										<label class="form-label" for="rating">맛 평점 *</label> <select
+											class="form-select focus-shadow-0" name="user_rating" id="user_rating">
+											<option value="5">★★★★★ (5/5)</option>
+											<option value="4">★★★★☆ (4/5)</option>
+											<option value="3">★★★☆☆ (3/5)</option>
+											<option value="2">★★☆☆☆ (2/5)</option>
+											<option value="1">★☆☆☆☆ (1/5)</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<!-- 리뷰 상 남긴 평점 값을 DB에 저장해야함 -->
+								<div class="col-sm-6">
+									<div class="mb-4">
+										<label class="form-label" for="rating">서비스 평점 *</label> <select
+											class="form-select focus-shadow-0" name="user_rating" id="user_rating">
+											<option value="5">★★★★★ (5/5)</option>
+											<option value="4">★★★★☆ (4/5)</option>
+											<option value="3">★★★☆☆ (3/5)</option>
+											<option value="2">★★☆☆☆ (2/5)</option>
+											<option value="1">★☆☆☆☆ (1/5)</option>
+										</select>
+									</div>
+								</div>
+								
+								<!-- 리뷰 상 남긴 평점 값을 DB에 저장해야함 -->
+								<div class="col-sm-6">
+									<div class="mb-4">
+										<label class="form-label" for="rating">분위기 평점 *</label> <select
 											class="form-select focus-shadow-0" name="user_rating" id="user_rating">
 											<option value="5">★★★★★ (5/5)</option>
 											<option value="4">★★★★☆ (4/5)</option>
@@ -499,8 +546,11 @@
 								<textarea class="form-control" rows="4" name="review"
 									id="review" placeholder="Enter your review" required="required"></textarea>
 							</div>
+							<div class="form-group mb-4">
+								<label class="form-label" for="formFile">이미지 업로드 *</label> <input class="form-control" id="files-upload" multiple="multiple" type="file" name="filename[]">
+							</div>
 							<input class="btn btn-primary" type="submit" value="게시">
-						</form>
+						<!-- </form> -->
 					</div>
 				</div>
 

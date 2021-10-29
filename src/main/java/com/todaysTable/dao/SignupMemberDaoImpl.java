@@ -22,6 +22,12 @@ public class SignupMemberDaoImpl implements SignupMemberDao {
 		return st.selectOne("memberMapper.idCheck", id);
 	}
 
+	@Override
+	public int NickCheck(String nickname) {
+		return st.selectOne("memberMapper.nickCheck", nickname);
+	}
+
+	
 	
 
 }

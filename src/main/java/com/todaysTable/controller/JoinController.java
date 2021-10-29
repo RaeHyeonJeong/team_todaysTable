@@ -4,7 +4,6 @@ import java.io.FileOutputStream;
 import java.util.Random;
 
 import javax.mail.internet.MimeMessage;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -84,14 +83,14 @@ public class JoinController {
 	// 이메일 인증
 	@ResponseBody
 	@RequestMapping(value = "emailcheck.do", method = RequestMethod.GET)
-	public void mailCheckGET(String email,HttpSession session) throws Exception {
+	public String mailCheck(String email) throws Exception {
 
 		/* 뷰(View)로부터 넘어온 데이터 확인 */
 		System.out.println(email);
 		/* 인증번호(난수) 생성 */
 		Random random = new Random();
 		int checkNum = random.nextInt(888888) + 111111;
-		System.out.println("인증번호" + checkNum);
+		System.out.println("인증번호:" + checkNum);
 		/* 이메일 보내기 */
 		String setFrom = "duddbs1631@gmail.com";
 		String toMail = email;
@@ -108,12 +107,12 @@ public class JoinController {
 			helper.setText(content, true);
 			mailSender.send(message);
 			
-			session.setAttribute("authNum", checkNum);
-			
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		String num = Integer.toString(checkNum);
+		
+		return num;
 	}
 
 	// 아이디 중복 체크

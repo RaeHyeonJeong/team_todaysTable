@@ -31,11 +31,21 @@ public class NoticeBoardDaoImpl  implements NoticeBoardDao{
 	}
 
 	@Override
-	public void deleteNoticeBoard(int no) {
-		sqlSession.delete("boardMapper.deleteNoticeBoard", no);
+	public void deleteNoticeBoard(int notice_no) {
+		sqlSession.delete("boardMapper.deleteNoticeBoard", notice_no);
 	
 	}
-	
 
+	@Override
+	public NoticeBoardVO deatilNoticeBoard(int notice_no) {
+		return sqlSession.selectOne("boardMapper.selectNoticeBoard", notice_no);	
+	}
+
+	@Override
+	public void updateHits(int notice_no) {
+		sqlSession.update("boardMapper.updateHits", notice_no);
+	}
+	
+	
 	
 }

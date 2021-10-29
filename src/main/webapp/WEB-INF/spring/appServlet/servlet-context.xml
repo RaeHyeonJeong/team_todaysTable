@@ -25,6 +25,15 @@
 		<beans:property name="prefix" value="/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
+
+	
+	<context:component-scan base-package="com.todaysTable.controller" />
+	<context:component-scan base-package="com.todaysTable.dao" />
+	<context:component-scan base-package="com.todaysTable.vo" />
+	<context:component-scan base-package="com.todaysTable.service" />
+	<context:component-scan base-package="com.todaysTable.func" />
+	
+
 	<!-- 파일업로드 -->
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
@@ -32,13 +41,5 @@
 		<beans:property name="maxUploadSize" value="300000000"></beans:property>
 	</beans:bean>
 
-	<context:component-scan
-		base-package="com.todaysTable.controller" />
-	<context:component-scan
-		base-package="com.todaysTable.dao" />
-	<context:component-scan
-		base-package="com.todaysTable.vo" />
-	<context:component-scan
-		base-package="com.todaysTable.service" />
-
+	
 </beans:beans>

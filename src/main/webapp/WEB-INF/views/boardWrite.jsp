@@ -1,6 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
-<%@ taglib prefix="function" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,71 +36,34 @@
 <body style="padding-top: 72px;">
 	<!-- HEADER include -->
 	<jsp:include page="subHeader.jsp" />
-	<div class="container-fluid pb-5 px-lg-5">
-		<!-- Hero Section-->
-		<section class="hero py-5 py-lg-6 mb-3">
-			<div class="container position-relative">
-				<!-- Breadcrumbs -->
-				<ol class="breadcrumb ps-0  justify-content-center">
-					<li class="breadcrumb-item active">Notice board</li>
-				</ol>
-				<h1 class="hero-heading">공지사항</h1>
-				<div class="row">
-					<div class="col-xl-8 mx-auto">
-						<p class="text-muted">중요 사항을 공지합니다.</p>
-						<p class="text-muted">궁금한 사항이 있다면 ' TodaysTable@org.com ' 로 메일을 보내주세요!</p>
+	<section class="py-6 bg-gray-100">
+		<div class="container d-flex justify-content-center">
+			<div class="col-md-7 mb-5 mb-md-0">
+				<form class="form" id="BoardWriteUpdate-form" method="post" action="insertNoticeBoard.do" enctype="multipart/form-data">
+					<div class="controls">
+						<div class="form-group mb-4">
+							<label class="form-label" for="title">제목</label> <input class="form-control" type="text" name="title" id="title" placeholder="제목을 적어주세요" required="required" style="width: 500px;">
+						</div>
+						<div class="form-group mb-4">
+							<label class="form-label" for="context">내용</label>
+							<textarea class="form-control" rows="4" name="content" id="content" placeholder="내용을 적어주세요" required="required" wrap="hard" style="height: 400px; width: 750px;"></textarea>
+						</div>
+						<div class="form-group mb-4">
+							<label class="form-label" for="formFile">UPLOAD IMAGE</label> <input class="form-control" id="file" name="file" multiple="multiple" type="file" >
+						</div>
+						<div class="form-group mb-4">
+							<label class="form-label" for="formFile">비밀번호</label> <input class="form-control" id="password" type="text" name="password" required="required">
+						</div>
+						<div class="form-group mb-4">
+							<button class="btn btn-outline-primary" type="submit">등록하기</button>
+							<button class="btn btn-outline-primary" type="button" onclick="history.go(-1)">돌아가기</button>
+						</div>
 					</div>
-				</div>
+				</form>
 			</div>
-		</section>
-		<div class="container">
-			<table class="table table-sm" style="height: 5px">
-				<thead class="table-light text-center">
-					<tr class="fw-bold">
-						<th class="col-md-1" scope="col">#</th>
-						<th class="col-md-4" scope="col">제목</th>
-						<th class="col-md-1" scope="col">작성자</th>
-						<th class="col-md-1" scope="col">조회수</th>
-						<th class="col-md-1" scope="col">작성날짜</th>
-					</tr>
-				</thead>
-				<tbody class="text-center text-break">
-					<c:set var="lastIndex" value="${function:length(list)}" />
-					<c:forEach var="row" items="${list}">
-						<tr>
-							<th scope="row">${lastIndex}</th>
-							<td><a class="text-muted" href="noticeBoardDetail.do?notice_no=${row.notice_no}">${row.title}</a></td>
-							<td>관리자</td>
-							<td>${row.hits}</td>
-							<td>${row.reg_date}</td>
-						</tr>
-						<c:set var="lastIndex" value="${lastIndex-1}" />
-					</c:forEach>
-				</tbody>
-			</table>
 		</div>
+	</section>
 	</div>
-	<div class="mb-5 d-grid gap-2 col-6 mx-auto">
-		<button class="btn btn-primary h-100" onClick="location.href='boardWriteMove.do'">글쓰기</button>
-	</div>
-	<div class="mb-5">
-		<!-- Pagination -->
-		<nav aria-label="Page navigation example">
-			<ul class="pagination pagination-template d-flex justify-content-center">
-				<li class="page-item"><a class="page-link" href="#">
-						<i class="fa fa-angle-left"></i>
-					</a></li>
-				<li class="page-item active"><a class="page-link" href="#">1</a></li>
-				<li class="page-item"><a class="page-link" href="#">2</a></li>
-				<li class="page-item"><a class="page-link" href="#">3</a></li>
-				<li class="page-item"><a class="page-link" href="#">
-						<i class="fa fa-angle-right"></i>
-					</a></li>
-			</ul>
-		</nav>
-	</div>
-	>
-	<div class="row row-col-2 d-flex justify-content-center"></div>
 	<!-- Footer-->
 	<jsp:include page="footer.jsp" />
 	<!-- JavaScript files-->

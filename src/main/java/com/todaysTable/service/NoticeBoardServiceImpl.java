@@ -26,12 +26,24 @@ public class NoticeBoardServiceImpl implements NoticeBoardService {
 
 	@Override
 	public void updateNoticeBoard(NoticeBoardVO vo) {
-		//dao.updateNoticeBoard(vo);
+		dao.updateNoticeBoard(vo);
 	}
 
 	@Override
-	public void deleteNoticeBoard(int num) {
-		//dao.deleteNoticeBoard(num);
+	public void deleteNoticeBoard(int notice_no) {
+		dao.deleteNoticeBoard(notice_no);
 	}
+
+	@Override
+	public NoticeBoardVO detailNoticeBoard(int notice_no) {
+		return dao.deatilNoticeBoard(notice_no);
+	}
+
+	@Override
+	public void updateHits(int notice_no) {
+		dao.updateHits(notice_no);	
+	}
+	
+	
 	
 }

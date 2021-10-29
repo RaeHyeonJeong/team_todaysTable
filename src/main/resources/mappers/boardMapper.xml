@@ -7,7 +7,7 @@
 	<select id="selectAllNoticeBoard" resultType="com.todaysTable.vo.NoticeBoardVO">
 		SELECT NOTICE_NO, TITLE, CONTENT, PASSWORD, HITS, TO_CHAR(REG_DATE,'YYYY-MM-DD')REG_DATE, ADMIN_ID
 		FROM NOTICE
-		ORDER BY REG_DATE DESC
+		ORDER BY NOTICE_NO DESC
 	</select>
 	
 	<insert id="insertNoticeBoard" parameterType="com.todaysTable.vo.NoticeBoardVO">
@@ -15,8 +15,14 @@
 		VALUES(NOTICE_SEQ.NEXTVAL, #{title}, #{content}, #{password}, 0, SYSDATE, 'ADMIN')
 	</insert>
 	
+	<select id="selectNoticeBoard" parameterType="int" resultType="com.todaysTable.vo.NoticeBoardVO">
+		SELECT NOTICE_NO, TITLE, CONTENT, PASSWORD, HITS, TO_CHAR(REG_DATE,'YYYY-MM-DD')REG_DATE, ADMIN_ID
+		FROM NOTICE
+		WHERE NOTICE_NO = #{notice_no}
+	</select>
+	
 	<update id="updateNoticeBoard" parameterType="com.todaysTable.vo.NoticeBoardVO">
-		UPDATE NOTICE SET TITLE=#{title}, CONTENT=#{content}, REG_DATE=SYSDATE
+		UPDATE NOTICE SET TITLE=#{title}, CONTENT=#{content}, PASSWORD=#{password}, REG_DATE=SYSDATE
 		WHERE NOTICE_NO = #{notice_no}
 	</update>
 	
@@ -24,6 +30,11 @@
 		DELETE FROM NOTICE
 		WHERE NOTICE_NO = #{notice_no}
 	</delete>
+	
+	<update id="updateHits" parameterType="int">
+		UPDATE NOTICE SET HITS=HITS+1
+		WHERE NOTICE_NO = #{notice_no}
+	</update>
 	
 	<!-- RECOM_GOOD_REST TABLE SQL 쿼리 -->
 	

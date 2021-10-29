@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.todaysTable.dao.NoticeBoardDao;
 import com.todaysTable.vo.NoticeBoardVO;
@@ -42,6 +43,13 @@ public class NoticeBoardServiceImpl implements NoticeBoardService {
 	@Override
 	public void updateHits(int notice_no) {
 		dao.updateHits(notice_no);	
+	}
+
+	@Override
+	public void insertNoticeBoardImage(List<MultipartFile> fileList) {
+		/*iterator fileNamelter = 
+		dao.insertNoticeBoardImage();*/
+		
 	}
 	
 	

@@ -38,15 +38,15 @@
 	<jsp:include page="subHeader.jsp" />
 	<section class="py-6 bg-gray-100">
 		<div class="container d-flex justify-content-center">
-			<div class="col-md-7 mb-5 mb-md-0"><!-- enctype="multipart/form-data" -->
-				<form class="form" id="BoardWriteUpdate-form" method="post" action="insertNoticeBoard.do" >
+			<div class="col-md-7 mb-5 mb-md-0">
+				<form class="form" id="BoardWriteUpdate-form" method="post" action="updateNoticeBoard.do?notice_no=${info.notice_no}" enctype="multipart/form-data">
 					<div class="controls">
 						<div class="form-group mb-4">
-							<label class="form-label" for="title">제목</label> <input class="form-control" type="text" name="title" id="title" placeholder="제목을 적어주세요" required="required" style="width: 500px;">
+							<label class="form-label" for="title">제목</label> <input class="form-control" type="text" name="title" id="title" placeholder="제목을 적어주세요" required="required" style="width: 500px;" value="${info.title}">
 						</div>
 						<div class="form-group mb-4">
 							<label class="form-label" for="context">내용</label>
-							<textarea class="form-control" rows="4" name="content" id="content" placeholder="내용을 적어주세요" required="required" style="height: 400px; width: 750px;"></textarea>
+							<textarea class="form-control" rows="4" name="content" id="content" placeholder="내용을 적어주세요" required="required" wrap="hard" style="height: 400px; width: 750px;">${info.content}</textarea>
 						</div>
 						<div class="form-group mb-4">
 							<label class="form-label" for="formFile">UPLOAD IMAGE</label> <input class="form-control" id="files-upload" multiple="multiple" type="file" name="filename[]">
@@ -55,7 +55,7 @@
 							<label class="form-label" for="formFile">비밀번호</label> <input class="form-control" id="password" type="text" name="password" required="required">
 						</div>
 						<div class="form-group mb-4">
-							<button class="btn btn-outline-primary" type="submit">등록하기</button>
+							<button class="btn btn-outline-primary" type="submit">수정하기</button>
 							<button class="btn btn-outline-primary" type="button" onclick="history.go(-1)">돌아가기</button>
 						</div>
 					</div>
@@ -63,7 +63,6 @@
 			</div>
 		</div>
 	</section>
-	</div>
 	<!-- Footer-->
 	<jsp:include page="footer.jsp" />
 	<!-- JavaScript files-->
@@ -132,5 +131,6 @@
 			inputValues[handle].value = values[handle];
 		})
 	</script>
+	
 </body>
 </html>

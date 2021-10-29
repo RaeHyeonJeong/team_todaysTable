@@ -13,4 +13,8 @@ public interface NoticeBoardDao {
 	// 게시물 수정 
 	public void deleteNoticeBoard(int no);
 	// 게시물 삭제
+	public NoticeBoardVO deatilNoticeBoard(int no);
+	// 조회수 증가
+	public void updateHits(int no);
+	 
 }

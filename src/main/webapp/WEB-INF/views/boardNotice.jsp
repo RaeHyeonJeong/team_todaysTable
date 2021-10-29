@@ -71,7 +71,7 @@
 					<c:forEach var="row" items="${list}">
 						<tr>
 							<th scope="row">${lastIndex}</th>
-							<td><a class="text-muted" href="noticeBoard.do">${row.title}</a></td>
+							<td><a class="text-muted" href="noticeBoardDetail.do?notice_no=${row.notice_no}">${row.title}</a></td>
 							<td>관리자</td>
 							<td>${row.hits}</td>
 							<td>${row.reg_date}</td>
@@ -83,7 +83,7 @@
 		</div>
 	</div>
 	<div class="mb-5 d-grid gap-2 col-6 mx-auto">
-		<button class="btn btn-primary h-100" onClick="location.href='writeBoard.do'">글쓰기</button>
+		<button class="btn btn-primary h-100" onClick="location.href='boardWriteMove.do'">글쓰기</button>
 	</div>
 	<div class="mb-5">
 		<!-- Pagination -->

@@ -12,7 +12,8 @@
 	<!-- <select id="list" resultType="com.todaysTable.vo.StoreVO"> SELECT NAME, 
 		CATEGORY, TEL, LOCATION, ADDRESS, BREAK_TIME, BUSINESS_HOURS FROM STORE </select> -->
 
-	<!-- STORE 테이블 쿼리 -->
+
+	 <!-- STORE 테이블 쿼리 -->
 	<select id="listPage" resultType="com.todaysTable.vo.StoreVO"
 		parameterType="com.todaysTable.vo.Criteria">
 		SELECT STORE_NO, NAME, CATEGORY, TEL,
@@ -48,5 +49,16 @@
 		WHERE NAME
 		LIKE '%' || #{keyword} || '%'
 	</select> -->
-
+	
+	<!-- 매장리스트 검색용 -->
+	<select id="storeList" resultType="com.todaysTable.vo.StoreVO">
+		SELECT * FROM STORE
+	</select>
+	
+	<!-- 매장리스트 랜덤출력용 -->
+	<select id="storeRandomList" resultType="com.todaysTable.vo.StoreVO">
+		<![CDATA[
+		select * from  (select * from store order by dbms_random.value) where rownum = 1
+		]]>
+	</select>
 </mapper>

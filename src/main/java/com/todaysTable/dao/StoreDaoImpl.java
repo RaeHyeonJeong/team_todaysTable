@@ -27,6 +27,20 @@ public class StoreDaoImpl implements StoreDao {
 		return sqlSession.selectOne("storeMapper.listCount",scri);
 	}
 	
+	//storeResult.jsp 매장리스트 검색용
+	@Override
+	public List<StoreVO> storeList() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("storeMapper.storeList");
+	}
+	
+	//index.jsp 매장리스트 랜덤출력용
+	@Override
+	public List<StoreVO> storeRandomList() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("storeMapper.storeRandomList");
+	}
+	
 	
 
 }

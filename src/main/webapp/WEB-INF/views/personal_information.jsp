@@ -119,7 +119,7 @@ div.row2 { -
 						</div>
 						<br> <br>
 						<button class="btn btn-outline-primary mb-4" type="submit" id="accountDelete" name="accountDelete" onClick="location.href='account_delete.jsp'">회원 탈퇴</button>
-						<button class="btn btn-outline-primary mb-4" type="submit" id="accountModify" name="accountModify" onClick="location.href='modifyProfile.do'">회원 정보 수정</button>
+						<button class="btn btn-outline-primary mb-4" type="submit" id="accountModify" name="accountModify" onClick="location.href='profileMove.do'">회원 정보 수정</button>
 					</div>
 				</div>
 			</div>

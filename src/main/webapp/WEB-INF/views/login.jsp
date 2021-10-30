@@ -117,7 +117,7 @@
 
 
 
-					<a class="close-absolute me-md-5 me-xl-6 pt-5" href="#"> <svg
+					<a class="close-absolute me-md-5 me-xl-6 pt-5" href="main.do"> <svg
 							class="svg-icon w-3rem h-3rem">
                 <use xlink:href="#close-1"> </use>
               </svg></a>

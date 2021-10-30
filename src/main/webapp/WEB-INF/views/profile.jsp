@@ -109,12 +109,12 @@ String name = (String) session.getAttribute("NAME");
 								id="address2" placeholder="상세주소" type="text" required
 								data-msg="상세주소를 입력하세요"> <input class="form-control"
 								type="text" id="extraAddress"> <input
-								class="form-control" type="text" id="address" name="address">
+								class="form-control" type="text" id="address" name="address" value="${list.address}">
 						</div>
 						<div class="mb-4">
 							<label class="form-label" for="nickname"> 닉네임</label> <br> <input
 								class="form-control" style="width: 240px; float: left;"
-								name="nickname" id="nickname" placeholder="닉네임 입력" type="text"
+								name="nickname" id="nickname" value="${list.nickname}" type="text"
 								required data-msg="닉네임을 작성하세요">
 							<button type="button" class="btn btn-primary" id="nickCheck"
 								style="float: right;">중복확인</button>
@@ -128,7 +128,7 @@ String name = (String) session.getAttribute("NAME");
 						</div>
 						<br>
 						<div class="mb-4">
-							<br> <br> <label class="form-label" for="profile">프로필</label><br>
+							<br> <br> <label class="form-label" for="myPageMove.do">프로필</label><br>
 							<input type="file" id="file" name="file" style="float: left;">
 						</div>
 						<br>
@@ -138,7 +138,7 @@ String name = (String) session.getAttribute("NAME");
 						</div>
 						<br>
 					</form>
-					<a class="close-absolute me-md-5 me-xl-6 pt-5" href="main.do">
+					<a class="close-absolute me-md-5 me-xl-6 pt-5" href="myPageMove.do">
 						<svg class="svg-icon w-3rem h-3rem">
                 <use xlink:href="#close-1"> </use>
               </svg>

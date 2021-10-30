@@ -5,6 +5,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.todaysTable.vo.MemberVO;
+
 @Repository
 public class MemberDaoIpl implements MemberDao {
 
@@ -21,4 +23,19 @@ public class MemberDaoIpl implements MemberDao {
 	public HashMap<String, Object> getLoginInfo(String id) {
 		return sqlSession.selectOne("loginMapper.getLoginInfo", id);// 입력한 id로 dbms에서 해당 회원의 name,profile_img_path를 가져옴
 	}
+
+	@Override
+	public MemberVO getPersonalInfo(String id) {//입력한 id로 dbms에서 해당 회원의 기본정보 가져옴
+		return sqlSession.selectOne("mypageMapper.getPersonalInfo", id);
+	}
+
+	@Override
+	public void updateProfile(MemberVO vo) {//로그인 한 회원의 기본정보 수정
+		this.sqlSession.update("mypageMapper.updateProfile",vo);
+		
+	}
+
+	
+	
+	
 }

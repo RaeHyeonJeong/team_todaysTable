@@ -17,7 +17,7 @@
 			else if (this.id == 'btn3')
 				document.location.href = '/controller/review.do';
 			else if (this.id == 'btn5')
-				document.location.href = '/controller/search.do';
+				document.location.href = '/controller/limit.do';
 			else if (this.id == 'btn6')
 				document.location.href = '/controller/searchResult.do';
 			else if (this.id == 'btn7')
@@ -33,7 +33,7 @@
 	<button id="btn3">리뷰 페이지</button>
 	<button id="btn4">개인정보</button>
 	
-	<button id="btn5">검색 페이지</button>
+	<button id="btn5">무한 페이지</button>
 	<button id="btn6">검색결과 페이지</button>
 	<button id="btn7">메인 페이지</button>
 </body>

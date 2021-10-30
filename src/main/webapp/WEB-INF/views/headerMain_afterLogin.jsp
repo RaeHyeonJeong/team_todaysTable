@@ -5,8 +5,9 @@
 <%
 // 세션값 가져오기
 String name = (String) session.getAttribute("NAME");
-String imgPath = (String) session.getAttribute("PROFILE_IMAGE_PATH");// Object 타입이므로 다운캐스팅
-
+String profile_image_path = (String) session.getAttribute("PROFILE_IMAGE_PATH");// Object 타입이므로 다운캐스팅
+String location ="resources/upload/";
+String main_profile=location.concat(profile_image_path);
 %>
 	<!-- Navbar-->
 	<nav class="navbar navbar-expand-lg shadow navbar-light bg-white" style="padding-bottom: 10px; padding-top: 10px;">
@@ -37,10 +38,11 @@ String imgPath = (String) session.getAttribute("PROFILE_IMAGE_PATH");// Object �
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item  text-muted fw-bold pe-1 position-sticky"><%=name %></li>
 					<li class="nav-item dropdown ms-lg-3"><a id="userDropdownMenuLink" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<img class="avatar avatar-sm avatar-border-white me-2" src="resources/img/avatar/avatar-10.jpg" alt="Jack London">
+							<img class="avatar avatar-sm avatar-border-white me-2" src="<%= main_profile %>" alt="Jack London">
 						</a>
+						
 						<div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownMenuLink">
-							<a class="dropdown-item" href="user-booking-1.html">마이페이지</a>
+							<a class="dropdown-item"  href="myPageMove.do">마이페이지</a> <!-- "myPageMove.do"를 이용해 마이페이지로 이동 -->
 							<a class="dropdown-item" href="user-grid.html">예약 내역 관리</a>
 							<a class="dropdown-item" href="user-booking-detail.html">내가 작성한 게시물</a>
 							<div class="dropdown-divider"></div>

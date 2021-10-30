@@ -1,4 +1,13 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="functions" uri="http://java.sun.com/jsp/jstl/functions" %> 
+
+<%
+// 세션값 가져오기
+String id = (String) session.getAttribute("id");
+
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,38 +77,49 @@ div.row2 { -
 							<div class="col-sm-9">
 								<br> <br>
 								<!--   테이블 형식으로 만들기 -->
-								<div class="card-body">
+ 								<form id="mypage" name="mypage" action="getPersonalInfo.do">
+ 								<div class="card-body">
 									<table class="table text-sm mb-0">
 										<tr>
 											<!-- ps-0-1 회원정보 테이블의 텍스트 가운데 정렬 css default에 추가 -->
 											<!-- pe-0-1 회원정보 테이블의 텍스트 가운데 정렬 css default에 추가 -->
+											<th class="ps-0-1">아이디</th>
+											<td class="pe-0-1 ">${list.id }</td>
+										</tr>
+										<tr>
 											<th class="ps-0-1">이름</th>
-											<td class="pe-0-1 ">조유주 님</td>
+											<td class="pe-0-1">${list.name }</td>
 										</tr>
 										<tr>
 											<th class="ps-0-1">닉네임</th>
-											<td class="pe-0-1">Yuju</td>
+											<td class="pe-0-1">${list.nickname }</td>
+										</tr>
+										<tr>
+											<th class="ps-0-1">생년월일</th>
+											<td class="pe-0-1 ">${list.birthdate }</td>
+										</tr>
+										<tr>
+											<th class="ps-0-1">이메일</th>
+											<td class="pe-0-1">${list.email }</td>
 										</tr>
 										<tr>
 											<th class="ps-0-1">연락처</th>
-											<td class="pe-0-1 ">010-1234-5678</td>
+											<td class="pe-0-1">${list.tel }</td>
 										</tr>
-										<tr>
-											<th class="ps-0-1">등록 지역</th>
-											<td class="pe-0-1">강남구 역삼동</td>
-										</tr>
+										
 										<tr>
 											<th class="ps-0-1">주소</th>
-											<td class="pe-0-1">우편번호 : 123-456 <br>주소 : 서울시특별구 강남구 역삼동 731-1
+											<td class="pe-0-1">${list.address }
 											</td>
 										</tr>
 									</table>
 								</div>
+								</form> 
 							</div>
 						</div>
 						<br> <br>
 						<button class="btn btn-outline-primary mb-4" type="submit" id="accountDelete" name="accountDelete" onClick="location.href='account_delete.jsp'">회원 탈퇴</button>
-						<button class="btn btn-outline-primary mb-4" type="submit" id="accountModify" name="accountModify" onClick="location.href='profile.jsp'">회원 정보 수정</button>
+						<button class="btn btn-outline-primary mb-4" type="submit" id="accountModify" name="accountModify" onClick="location.href='modifyProfile.do'">회원 정보 수정</button>
 					</div>
 				</div>
 			</div>

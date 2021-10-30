@@ -58,80 +58,17 @@
 					</select>
 				</div>
 			</div>
-			<div class="row">
-				<!-- venue item-->
-				<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92">
-					<div class="card h-100 border-0 shadow">
-						<!--가게 이미지  -->
-						<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/photo/restaurant-1430931071372-38127bd472b8.jpg); min-height: 200px;">
-							<!--가게 상세 페이지 링크  -->
-							<a class="tile-link" href="detail.html"></a>
-							<div class="card-img-overlay-bottom z-index-20">
-								<h4 class="text-white text-shadow">Blue Hill</h4>
-							</div>
-						</div>
-						<div class="card-body">
-							<p class="text-sm text-muted fw-bold mb-3">카테고리 : 일식, 스시</p>
-							<p class="text-sm text-muted fw-bold mb-3">주소 : 서울시 특별구 강남구 역삼동 735-1</p>
-							<p class="text-sm text-muted fw-bold mb-3">전화번호 : 000-000-0000</p>
-							<div class="d-flex justify-content-between align-items-center">
-								<p class="mb-2 text-sm fw-bold">
-									<i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i>
-								</p>
-								<!-- 찜한 가게 추가 sql -->
-								<form action="#">
-									<a class="position-relative z-index-40" href="javascript: void();">
-										<button class="btn btn-primary btn-sm" type="submit">찜하기</button>
-									</a>
-								</form>
-							</div>
-						</div>
-					</div>
+			
+			<!-- Infinity Scroll-->
+			<div class="listbody"style="margin:auto;">
+				<article>
+				<div class="storelist" id="storelist">
+				
 				</div>
-				<!-- venue item-->
-				<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92">
-					<div class="card h-100 border-0 shadow">
-						<!--가게 이미지  -->
-						<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/photo/restaurant-1436018626274-89acd1d6ec9d.jpg); min-height: 200px;">
-							<!--가게 상세 페이지 링크  -->
-							<a class="tile-link" href="detail.html"></a>
-							<div class="card-img-overlay-bottom z-index-20">
-								<h4 class="text-white text-shadow">Portuguse</h4>
-							</div>
-						</div>
-						<div class="card-body">
-							<p class="text-sm text-muted fw-bold mb-3">카테고리 : 일식, 스시</p>
-							<p class="text-sm text-muted fw-bold mb-3">주소 : 서울시 특별구 강남구 역삼동 735-1</p>
-							<p class="text-sm text-muted fw-bold mb-3">전화번호 : 000-000-0000</p>
-							<div class="d-flex justify-content-between align-items-center">
-								<p class="mb-2 text-sm fw-bold">
-									<i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i>
-								</p>
-								<!-- 찜한 가게 추가 sql -->
-								<form action="#">
-									<a class="position-relative z-index-40" href="javascript: void();">
-										<button class="btn btn-primary btn-sm" type="submit">찜하기</button>
-									</a>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Pagination -->
-				<nav aria-label="Page navigation example">
-					<ul class="pagination pagination-template d-flex justify-content-center">
-						<li class="page-item"><a class="page-link" href="#">
-								<i class="fa fa-angle-left"></i>
-							</a></li>
-						<li class="page-item active"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">
-								<i class="fa fa-angle-right"></i>
-							</a></li>
-					</ul>
-				</nav>
+				</article>
 			</div>
+
+			
 	</section>
 	<!-- Footer-->
 	<jsp:include page="footer.jsp" />
@@ -162,6 +99,116 @@
 	</script>
 	<!-- jQuery-->
 	<script src="resources/vendor/jquery/jquery.min.js"></script>
+	<script type="text/javascript">
+	
+	function searchList(){
+		$.ajax({
+			type : 'POST',
+			url : 'storelist.do',
+			data : "",
+			async : false,
+			contentType : "json",
+			success : function(data) {
+				
+				//리스트출력하기
+				if (data.length == 0) {
+					alert('데이터가 존재하지 않습니다.');
+				} else {
+					 $(data).each(function(idx){
+						
+						//페이지 로드 시 0~2번의 가게정보데이터를 추가해준다.
+						if(idx <=2 )
+						{
+							$("div#storelist").append(
+									
+									'<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%; width:900px;">'+
+									'<div class="card h-100 border-0 shadow">'+
+										'<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/photo/restaurant-1436018626274-89acd1d6ec9d.jpg); min-height: 200px;">'+
+											'<a class="tile-link" href="detail.html"></a>' +
+											'<div class="card-img-overlay-bottom z-index-20">'+
+												'<h4 class="text-white text-shadow">'+data[idx].name+'</h4>'+
+											'</div>'+
+										'</div>'+
+										'<div class="card-body">'+
+											'<p class="text-sm text-muted fw-bold mb-3">카테고리 :'+ data[idx].category   +'</p>'+
+											'<p class="text-sm text-muted fw-bold mb-3">주소 :'+  data[idx].address  +'</p>'+
+											'<p class="text-sm text-muted fw-bold mb-3">전화번호 :'+  data[idx].tel  +'</p>'+
+											'<div class="d-flex justify-content-between align-items-center">'+
+												'<p class="mb-2 text-sm fw-bold">'+
+													'<i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i>'+
+												'</p>'+
+												'<form action="#"> <a class="position-relative z-index-40" href="javascript: void();">'+
+														'<button class="btn btn-primary btn-sm" type="submit">찜하기'+ '</button>'+
+												'</a></form> </div> </div> </div> </div> </div>' 
+											
+							)
+						}
+						else
+						{
+							
+							//시작 변수 : 그냥 idx를 사용하면 여기서는 each함수를 사용했기 때문에 바로 길이개수끝까지 돌아가기 때문에 카운트변수로 지정해준 뒤 안에서 자동증가하게끔 바꾸었음.
+							var count = 3;
+							
+							//스크롤 바닥 감지
+							window.onscroll = function(e) {
+							    //window height + window scrollY 값이 document height보다 클 경우,
+							    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+									if(count >= data.length - 1 )return;//비교 다 했으면 탈출
+							    	
+							    	if(count>=3 && count < data.length)count++; //count를 받아온 정보길이 개수만큼 자동증가
+							    	
+							    	
+							    	//실행할 로직 (콘텐츠 추가 = 가게정보 데이터)
+							        var addContent = '<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%;width:900px;">'+
+									'<div class="card h-100 border-0 shadow">'+
+									'<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/photo/restaurant-1436018626274-89acd1d6ec9d.jpg); min-height: 200px;">'+
+										'<a class="tile-link" href="detail.html"></a>' +
+										'<div class="card-img-overlay-bottom z-index-20">'+
+											'<h4 class="text-white text-shadow">'+data[count].name+'</h4>'+
+										'</div>'+
+									'</div>'+
+									'<div class="card-body">'+
+										'<p class="text-sm text-muted fw-bold mb-3">카테고리 :'+ data[count].category   +'</p>'+
+										'<p class="text-sm text-muted fw-bold mb-3">주소 :'+  data[count].address  +'</p>'+
+										'<p class="text-sm text-muted fw-bold mb-3">전화번호 :'+  data[count].tel  +'</p>'+
+										'<div class="d-flex justify-content-between align-items-center">'+
+											'<p class="mb-2 text-sm fw-bold">'+
+												'<i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i>'+
+											'</p>'+
+											'<form action="#"> <a class="position-relative z-index-40" href="javascript: void();">'+
+													'<button class="btn btn-primary btn-sm" type="submit">찜하기'+ '</button>'+
+											'</a></form> </div> </div> </div> </div> </div>' ;
+							        
+									//article에 추가되는 콘텐츠를 append
+							        $('article').append(addContent);
+
+							    }
+							};
+							 
+						}
+						
+
+						
+					});
+					 
+				}
+			},
+			error : function(request, status, error) {
+				alert(error);
+			}
+		});
+	}
+	
+	
+	window.onload = function()
+	{
+		searchList();
+		
+	}
+	
+	
+	
+	</script>
 	<!-- Bootstrap JS bundle - Bootstrap + PopperJS-->
 	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- Magnific Popup - Lightbox for the gallery-->

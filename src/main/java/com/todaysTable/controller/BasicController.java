@@ -78,10 +78,26 @@ public class BasicController {
 	//index.jsp 매장리스트 랜덤출력용
 	@Inject
 	StoreService storeService;
-	@RequestMapping(value="storelist.do")
+	@RequestMapping(value="storeRandomlist.do")
 	@ResponseBody
 	public List<StoreVO> storeRandomList() {
 		return storeService.storeRandomList();
 	}
+	
+	//searchResult.jsp 매장리스트 출력용
+	@RequestMapping(value="storelist.do")
+	@ResponseBody
+	public List<StoreVO> storeList() {
+		return storeService.storelist();
+	}
 
+	
+	@RequestMapping(value = "limit.do")
+	public ModelAndView Limit() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("Message", "HelloSpringMVC3");
+		modelAndView.setViewName("WEB-INF/views/limit");
+
+		return modelAndView;
+	}
 }

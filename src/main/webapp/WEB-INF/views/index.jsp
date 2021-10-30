@@ -296,9 +296,9 @@
 							<div class="card-body">
 
 
-
+								<!-- Random List -->
+								<!-- 껍데기만 만들어놓고 ajax로 데이터받아온것을 append해주는 방식 -->
 								<table class="Rank_table">
-
 									<colgroup>
 										<col style="width: 30%;">
 										<col style="width: 70%">
@@ -308,9 +308,6 @@
 								</table>
 
 
-								<!-- 						<p class="text-sm text-muted fw-bold mb-3">카테고리 : </p>
-							<p class="text-sm text-muted fw-bold mb-3">주소 :  </p>
-							<p class="text-sm text-muted fw-bold mb-3">전화번호 :  </p> -->
 								<div class="d-flex justify-content-between align-items-center">
 									<p class="mb-2 text-sm fw-bold">
 										<i class="fa fa-star text-warning"></i><i
@@ -749,18 +746,13 @@
 	<!-- jQuery-->
 	<script src="resources/vendor/jquery/jquery.min.js"></script>
 	<script type="text/javascript">
-		//var test = $("#recBTN").val();
-		/* function showPopup() { 
-		 window.open("recommend.do", "recommend_popup", "width=400, height=300, left=100, top=50");
-		} */
 
 		$(function() {
 			$("button").click(function() {
 				if (this.id == 'recBTN') {
-					//document.location.href='storelist.do';
 					$.ajax({
 						type : 'POST',
-						url : 'storelist.do',
+						url : 'storeRandomlist.do',
 						data : "",
 						async : false,
 						contentType : "json",

@@ -30,13 +30,16 @@ public class MemberServiceIpl implements MemberService {
 		return memberDao.getLoginInfo(id);//입력한 id를 통해 name, profile_img_path를 리턴
 	}
 	
-	public MemberVO getPersonalInfo(String id) throws Exception {
-		return memberDao.getPersonalInfo(id);//입력한 id를 통해 회원의 기본정보를 리턴
+	public MemberVO myPageMove(String id) throws Exception {//기본 정보 출력 페이지로 이동
+		return memberDao.getPersonalInfo(id);
 	}
 
-	public void  updateProfile(MemberVO vo) throws Exception{
+	public void  updateProfile(MemberVO vo) throws Exception{//프로필 업데이트
 		this.memberDao.updateProfile(vo);
 		
+	}
+	public MemberVO profileMove(String id) throws Exception {
+		return memberDao.getPersonalInfo(id);//프로필 관리 페이지로 이동
 	}
 	
  }

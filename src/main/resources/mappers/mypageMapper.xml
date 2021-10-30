@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mypageMapper">
+
+<!-- 기본 정보 출력 -->
+
+ <select id="getPersonalInfo" parameterType="java.lang.String" resultType="com.todaysTable.vo.MemberVO">
+  SELECT 
+  NICKNAME, ADDRESS, TEL, ID, EMAIL, NAME,PASSWORD,
+  TO_CHAR(BIRTHDATE,'YYYY-MM-DD')BIRTHDATE
+  FROM MEMBER
+  WHERE ID=#{id}
+  </select>
+
+<!-- 프로필 관리 -->
+<update id="updateProfile" parameterType="com.todaysTable.vo.MemberVO" >
+   UPDATE MEMBER SET 
+   PASSWORD=#{password},TEL=#{tel},ADDRESS=#{address},NICKNAME=#{nickname},PROFILE_IMAGE_PATH=#{profile_image_path}
+   WHERE ID=#{id}
+  </update>
+
+</mapper>

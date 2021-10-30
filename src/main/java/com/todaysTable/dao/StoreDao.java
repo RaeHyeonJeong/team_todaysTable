@@ -16,4 +16,10 @@ public interface StoreDao {
 	// 게시물 총 갯수
 	public int listCount(SearchCriteria scri);
 	
+	//storeResult.jsp 매장리스트 검색용
+	public List<StoreVO> storeList();
+	
+	//index.jsp 매장리스트 랜덤출력용
+	public List<StoreVO> storeRandomList();
+	
 }

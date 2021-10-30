@@ -1,8 +1,21 @@
 package com.todaysTable.controller;
 
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.todaysTable.service.StoreService;
+import com.todaysTable.vo.PageMaker;
+import com.todaysTable.vo.SearchCriteria;
+import com.todaysTable.vo.StoreVO;
 
 @Controller
 public class BasicController {
@@ -61,5 +74,14 @@ public class BasicController {
 		return modelAndView;
 	}
 
+	
+	//index.jsp 매장리스트 랜덤출력용
+	@Inject
+	StoreService storeService;
+	@RequestMapping(value="storelist.do")
+	@ResponseBody
+	public List<StoreVO> storeRandomList() {
+		return storeService.storeRandomList();
+	}
 
 }

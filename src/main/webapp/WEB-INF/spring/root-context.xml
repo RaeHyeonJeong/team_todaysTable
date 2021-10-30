@@ -9,7 +9,7 @@
 		<property name="driverClassName"
 			value="oracle.jdbc.OracleDriver"></property>
 		<property name="url"
-			value="jdbc:oracle:thin:@todaystable_medium?TNS_ADMIN=C://Users/KONGYI/git/team_todaysTable/src/main/resources/Wallet_TodaysTable/"></property>
+			value="jdbc:oracle:thin:@todaystable_medium?TNS_ADMIN=C://Users/wootk/git/team_todaysTable/src/main/webapp/resources/Wallet_TodaysTable/"></property>
 		<property name="username" value="ADMIN"></property>
 		<property name="password" value="TodaysTable123"></property>
 

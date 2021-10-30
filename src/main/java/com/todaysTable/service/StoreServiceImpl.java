@@ -30,4 +30,19 @@ public class StoreServiceImpl implements StoreService {
 		return storeDao.listCount(scri);
 	}
 
+	//storeResult.jsp 매장리스트 검색용
+	@Override
+	public List<StoreVO> storelist() {
+		// TODO Auto-generated method stub
+		return  storeDao.storeList();
+	}
+
+	@Override
+	public List<StoreVO> storeRandomList() {
+		// TODO Auto-generated method stub
+		return storeDao.storeRandomList();
+	}
+	
+	
+
 }

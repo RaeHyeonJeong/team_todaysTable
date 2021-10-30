@@ -6,7 +6,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver"></property>	
-		<property name="url" value="jdbc:oracle:thin:@todaystable_medium?TNS_ADMIN=C://TeamProject/Team_todaysTable/src/main/resources/Wallet_TodaysTable/"></property>
+		<property name="url" value="jdbc:oracle:thin:@todaystable_medium?TNS_ADMIN=C://Users/wootk/git/team_todaysTable/src/main/webapp/resources/Wallet_TodaysTable/"></property>
 		<property name="username" value="ADMIN"></property>
 		<property name="password" value="TodaysTable123"></property>
 		

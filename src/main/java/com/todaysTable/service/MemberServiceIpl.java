@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.todaysTable.dao.AdminDao;
 import com.todaysTable.dao.MemberDao;
+import com.todaysTable.vo.MemberVO;
 
 @Service
 public class MemberServiceIpl implements MemberService {
@@ -28,4 +29,14 @@ public class MemberServiceIpl implements MemberService {
 	public HashMap<String, Object> getLoginInfo(String id) throws Exception {
 		return memberDao.getLoginInfo(id);//입력한 id를 통해 name, profile_img_path를 리턴
 	}
+	
+	public MemberVO getPersonalInfo(String id) throws Exception {
+		return memberDao.getPersonalInfo(id);//입력한 id를 통해 회원의 기본정보를 리턴
+	}
+
+	public void  updateProfile(MemberVO vo) throws Exception{
+		this.memberDao.updateProfile(vo);
+		
+	}
+	
  }

@@ -48,12 +48,15 @@
 					<p class="mb-3 mb-md-0">
 						<!-- 검색어 삽입 -->
 						<%
-						String search = request.getParameter("search");
-						String location = request.getParameter("location");
-						if(location.isEmpty()){
+						String search_value = request.getParameter("search");
+						String location_value = request.getParameter("location");
+						if(location_value.isEmpty() && search_value.isEmpty()){
 						%>
-						'<strong>${param.search}</strong>' 에 대한 검색 결과
+							검색어가 입력되지 않은 경우 전체리스트를 보여드립니다.
 						<%}
+						else if(location_value.isEmpty()){%>
+							'<strong>${param.search}</strong>' 에 대한 검색 결과
+						<% }
 						else{
 						%>
 						'<strong>${param.location}</strong>' 지역의 '<strong>${param.search}</strong>' 에 대한 검색 결과
@@ -113,7 +116,19 @@
 	<!-- jQuery-->
 	<script src="resources/vendor/jquery/jquery.min.js"></script>
 	<script type="text/javascript">
+	<%-- var search ="<%=search_value%>";  --%>
+	<%-- var location ="<%=location_value%>";  --%>
 	
+	//console.log(search);
+	//console.log(location);
+	
+	
+	//var search = '${param.search}';
+	//var location = '${param.location}';
+	//console.log(search +' '+location);
+	//console.log(search);
+	//console.log(location);
+
 	function searchList(){
 		$.ajax({
 			type : 'POST',
@@ -130,7 +145,7 @@
 					 $(data).each(function(idx){
 						
 						//페이지 로드 시 0~2번의 가게정보데이터를 추가해준다.
-						if(idx <=2 )
+						if(idx <=2)
 						{
 							//Object 변수를 이용한 url 파라미터 만들기		
 							var obj = data[idx];

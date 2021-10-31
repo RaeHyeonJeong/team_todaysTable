@@ -68,7 +68,8 @@
 				</div>
 				</article>
 			</div>
-
+			
+			<a me></a>
 			
 	</section>
 	<!-- Footer-->
@@ -137,7 +138,7 @@
 
 							//Object 변수를 이용한 url 파라미터 만들기		
 							var obj = data[idx];
-							var url = 'storeDetail.do';
+							var url = 'storeDetail_wej.do';
 							Object.keys(obj).forEach(function(key, index) {
 								  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
 							});
@@ -147,7 +148,7 @@
 									'<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%; width:900px;">'+
 									'<p style="display:none;">'+ url +'</p> <div class="card h-100 border-0 shadow">'+
 										'<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/photo/restaurant-1436018626274-89acd1d6ec9d.jpg); min-height: 200px;">'+
-											'<a class="tile-link" href="storeDetail.do"></a>' +
+											'<a class="tile-link" href=" '+ url +' "></a>' +
 											'<div class="card-img-overlay-bottom z-index-20">'+
 												'<h4 class="text-white text-shadow">'+data[idx].name+'</h4>'+
 											'</div>'+

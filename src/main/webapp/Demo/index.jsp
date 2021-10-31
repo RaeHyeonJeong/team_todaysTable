@@ -22,6 +22,8 @@
 				document.location.href = '/controller/maptwo.do';
 			else if (this.id == 'btn7')
 				document.location.href = '/controller/mapthree.do';
+			else if (this.id == 'btn8')
+				document.location.href = '/controller/mapfour.do';
 		});
 	});
 </script>
@@ -36,6 +38,7 @@
 	<button id="btn5">지도1 페이지</button>
 	<button id="btn6">지도2 페이지</button>
 	<button id="btn7">지도3 페이지</button>
+	<button id="btn8">지도4 페이지</button>
 </body>
 
 </html>

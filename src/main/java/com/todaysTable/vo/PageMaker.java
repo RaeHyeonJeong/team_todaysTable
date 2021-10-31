@@ -13,9 +13,9 @@ public class PageMaker {
 	private boolean prev;
 	private boolean next;
 	private int displayPageNum = 10;
-	private Criteria cri;
+	private CriteriaVO cri;
 
-	public void setCri(Criteria cri) {
+	public void setCri(CriteriaVO cri) {
 		this.cri = cri;
 	}
 
@@ -48,7 +48,7 @@ public class PageMaker {
 		return displayPageNum;
 	}
 
-	public Criteria getCri() {
+	public CriteriaVO getCri() {
 		return cri;
 	}
 
@@ -75,8 +75,8 @@ public class PageMaker {
 
 		UriComponents uriComponents = UriComponentsBuilder.newInstance().queryParam("page", page)
 				.queryParam("perPageNum", cri.getPerPageNum())
-				.queryParam("searchType", ((SearchCriteria) cri).getSearchType())
-				.queryParam("keyword", encoding(((SearchCriteria) cri).getKeyword())).build();
+				.queryParam("searchType", ((SearchCriteriaVO) cri).getSearchType())
+				.queryParam("keyword", encoding(((SearchCriteriaVO) cri).getKeyword())).build();
 		return uriComponents.toUriString();
 	}
 

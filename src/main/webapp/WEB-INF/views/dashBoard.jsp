@@ -51,7 +51,7 @@
 					<ul class="header-menu nav">
 						<li class="btn-group nav-item"><a href="javascript:void(0);" class="nav-link"> <i class="nav-link-icon fa fa-arrow-circle-left"></i> 돌아가기
 						</a></li>
-						<li class="dropdown nav-item"><a href="javascript:void(0);" class="nav-link"> <i class="nav-link-icon fa fa-compass"></i> 사이트 이동
+						<li class="dropdown nav-item"><a href="main.do" class="nav-link"> <i class="nav-link-icon fa fa-compass"></i> 사이트 이동
 						</a></li>
 					</ul>
 				</div>
@@ -94,9 +94,9 @@
 							<li><a href="#"> <i class="metismenu-icon pe-7s-info"></i> <font color="#3162C7">매장 정보 관리</font> <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
 							</a>
 								<ul>
-									<li><a href="store_search.jsp"> <i class="metismenu-icon"></i> 매장 검색
+									<li><a href="storeSearch.do"> <i class="metismenu-icon"></i> 매장 검색
 									</a></li>
-									<li><a href="new_store_register.jsp"> <i class="metismenu-icon"></i> 신규 매장 등록
+									<li><a href="newStoreRegister.do"> <i class="metismenu-icon"></i> 신규 매장 등록
 									</a></li>
 									<li><a href="store_info_modify.jsp"> <i class="metismenu-icon"></i> 매장 정보 수정
 									</a></li>
@@ -162,8 +162,8 @@
 									<!-- 페이지 링크연결 -->
 									<ul class="nav flex-column">
 										<li class="nav-item-header nav-item" style="font-size: 15px">매장 정보 관리</li>
-										<li class="nav-item"><a href="store_search.jsp" class="nav-link">매장 검색 </a></li>
-										<li class="nav-item"><a href="new_store_register.jsp" class="nav-link">신규 매장 등록</a></li>
+										<li class="nav-item"><a href="storeSearch.do" class="nav-link">매장 검색 </a></li>
+										<li class="nav-item"><a href="newStoreRegister.do" class="nav-link">신규 매장 등록</a></li>
 										<li class="nav-item"><a href="store_info_modify.jsp" class="nav-link">매장 정보 수정</a></li>
 										<li class="nav-item"><a href="javascript:void(0);" class="nav-link">매장 삭제</a></li>
 										<li class="nav-item-divider nav-item"></li>

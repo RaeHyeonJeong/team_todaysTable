@@ -1,6 +1,7 @@
 package com.todaysTable.vo;
 
-public class SearchCriteria extends Criteria{
+// 매장 검색을 위한 VO
+public class SearchCriteriaVO extends CriteriaVO{
 	private String searchType = "";
 	private String keyword = "";
 	
@@ -18,7 +19,7 @@ public class SearchCriteria extends Criteria{
 	}
 	@Override
 	public String toString() {
-		return "SearchCriteria [searchType=" + searchType + ", keyword=" + keyword + "]";
+		return "SearchCriteriaVO [searchType=" + searchType + ", keyword=" + keyword + "]";
 	}
 
 }

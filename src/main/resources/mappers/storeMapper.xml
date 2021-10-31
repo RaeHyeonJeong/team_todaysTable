@@ -9,21 +9,13 @@
 		</if>
 	</sql>
 
-	<!-- <select id="list" resultType="com.todaysTable.vo.StoreVO"> SELECT NAME, 
-		CATEGORY, TEL, LOCATION, ADDRESS, BREAK_TIME, BUSINESS_HOURS FROM STORE </select> -->
-
-
 	 <!-- STORE 테이블 쿼리 -->
 	<select id="listPage" resultType="com.todaysTable.vo.StoreVO"
-		parameterType="com.todaysTable.vo.Criteria">
-		SELECT STORE_NO, NAME, CATEGORY, TEL,
-		LOCATION, ADDRESS,
-		BREAK_TIME, BUSINESS_HOURS
+		parameterType="com.todaysTable.vo.SearchCriteriaVO">
+		SELECT STORE_NO, NAME, CATEGORY, TEL, LOCATION, ADDRESS, BREAK_TIME, BUSINESS_HOURS
 		FROM (
-		SELECT STORE_NO, NAME, CATEGORY, TEL,
-		LOCATION, ADDRESS, BREAK_TIME, BUSINESS_HOURS,
-		ROW_NUMBER() OVER(ORDER
-		BY STORE_NO DESC) AS RNUM
+		SELECT STORE_NO, NAME, CATEGORY, TEL, LOCATION, ADDRESS, BREAK_TIME, BUSINESS_HOURS,
+		ROW_NUMBER() OVER(ORDER	BY STORE_NO	DESC) AS RNUM
 		FROM STORE
 		WHERE 1=1
 		<include refid="search"></include>
@@ -32,7 +24,9 @@
 		ORDER BY STORE_NO DESC
 	</select>
 
-	<select id="listCount" resultType="int" parameterType="com.todaysTable.vo.StoreVO" >
+	<!-- 리스트 출력을 위한 총 데이터 갯수 -->
+	<select id="listCount" resultType="int"
+		parameterType="com.todaysTable.vo.CriteriaVO">
 		SELECT COUNT(STORE_NO)
 		FROM STORE
 		WHERE 1=1
@@ -40,15 +34,47 @@
 		AND STORE_NO > 0
 	</select>
 
-	<!-- <select id="search" resultType="com.todaysTable.vo.StoreVO">
-		SELECT STORE_NO, NAME, CATEGORY,
-		TEL,
-		LOCATION, ADDRESS, BREAK_TIME,
-		BUSINESS_HOURS
-		FROM STORE
-		WHERE NAME
-		LIKE '%' || #{keyword} || '%'
-	</select> -->
+	<!-- 신규 매장 등록 기본정보 INSERT -->
+	<insert id="insertStoreInfo" parameterType="com.todaysTable.vo.StoreVO">
+		INSERT INTO
+		STORE(STORE_NO, NAME, TEL, BUSINESS_HOURS, LOCATION, ADDRESS, DAY_OFF, BREAK_TIME,
+		CATEGORY, LAST_UPDATE_DATE, LATITUDE, LONGITUDE, ADMIN_ID)
+		VALUES(STORE_SEQ.NEXTVAL ,#{name}, #{tel}, #{business_hours}, #{location}, #{address},
+		#{day_off}, #{break_time}, #{category}, SYSDATE, #{latitude}, #{longitude}, 'ADMIN')
+	</insert>
+
+	<!-- 매장별 메뉴/가격 INSERT -->
+	<insert id="insertStoreMenu" parameterType="java.util.List">
+		<foreach collection="list" item="item" separator="," open="INSERT ALL" close="SELECT * FROM DUAL">
+			INTO MENU_NO, STORE_NO, MENU_NAME, PRICE
+			VALUES(
+			MENU_SEQ.NEXTVAL,
+			STORE_SEQ.CURRVAL,
+			#{item.menu_name},
+			#{item.price})
+		</foreach>
+	</insert>
+	
+<!-- STORE_NO,CAN_PARK,CAN_RESERVE,CAN_TAKEOUT,FREE_WIFI,KIDS_ZON,NO_KIDS_ZONE,KID_MENU,
+CORKAGE_FREE,VEGETARIAN,GLUTEN_FREE,HIGHCHAIR,CAN_GO_WITH_PET,CAN_DELIVER,OUTSIDE_SEAT,
+CAN_LUNCH_MENU,CAN_BREAKFAST_MENU,CAN_SPACE_RENTAL -->
+	
+	<!-- 편의사항 UPDATE -->
+	<update id="updateStoreOption" parameterType="java.util.List">
+		<foreach collection="list" item="item" separator=",">
+		UPDATE STORE_OPTION
+		SET
+		#{storeOption}=Y
+		WHERE STORE_NO = 
+		</foreach> 
+	</update>
+	
+	
+	<!-- 매장 이미지 업로드 -->
+	<insert id="uploadStoreImg">
+		INSERT INTO STORE_IMG(STORE_NO, IMAGE_PATH)
+		VALUES({store_no}, {file})
+	</insert>
 	
 	<!-- 매장리스트 검색용 -->
 	<select id="storeList" resultType="com.todaysTable.vo.StoreVO">

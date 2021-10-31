@@ -5,9 +5,8 @@
 <%
 // 세션값 가져오기
 String name = (String) session.getAttribute("NAME");
-String profile_image_path = (String) session.getAttribute("PROFILE_IMAGE_PATH");// Object 타입이므로 다운캐스팅
-String location ="resources/upload/";
-String main_profile=location.concat(profile_image_path);
+String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");	
+
 %>
 	<!-- Navbar-->
 	<nav class="navbar navbar-expand-lg shadow navbar-light bg-white" style="padding-bottom: 10px; padding-top: 10px;">
@@ -36,9 +35,9 @@ String main_profile=location.concat(profile_image_path);
 				</ul>
 				<form name="headerMain-afterLogin" id="headerMain-afterLogin" action="getLoginInfo.do">
 				<ul class="navbar-nav ms-auto">
-					<li class="nav-item  text-muted fw-bold pe-1 position-sticky"><%=name %></li>
+					<li class="nav-item  text-muted fw-bold pe-1 position-sticky"><%= name %></li>
 					<li class="nav-item dropdown ms-lg-3"><a id="userDropdownMenuLink" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<img class="avatar avatar-sm avatar-border-white me-2" src="<%= main_profile %>" alt="Jack London">
+							<img class="avatar avatar-sm avatar-border-white me-2" src="<%= profileImg %>" alt="">
 						</a>
 						
 						<div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownMenuLink">

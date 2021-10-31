@@ -17,11 +17,11 @@
 			else if (this.id == 'btn3')
 				document.location.href = '/controller/review.do';
 			else if (this.id == 'btn5')
-				document.location.href = '/controller/limit.do';
+				document.location.href = '/controller/mapone.do';
 			else if (this.id == 'btn6')
-				document.location.href = '/controller/searchResult.do';
+				document.location.href = '/controller/maptwo.do';
 			else if (this.id == 'btn7')
-				document.location.href = '/controller/main.do';
+				document.location.href = '/controller/mapthree.do';
 		});
 	});
 </script>
@@ -33,9 +33,9 @@
 	<button id="btn3">리뷰 페이지</button>
 	<button id="btn4">개인정보</button>
 	
-	<button id="btn5">무한 페이지</button>
-	<button id="btn6">검색결과 페이지</button>
-	<button id="btn7">메인 페이지</button>
+	<button id="btn5">지도1 페이지</button>
+	<button id="btn6">지도2 페이지</button>
+	<button id="btn7">지도3 페이지</button>
 </body>
 
 </html>

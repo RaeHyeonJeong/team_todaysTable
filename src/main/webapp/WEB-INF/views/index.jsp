@@ -273,12 +273,7 @@
 					</div>
 				</div>
 
-				<!-- RECOMMEND -->
-				<div class="col-lg-2 form-group d-grid mb-0"
-					style="left: 50%; transform: translateX(-50%); cue-after: none;">
-					<button class="btn btn-primary h-100" id="recBTN" type="button"
-						onclick="showPopup(true)">recommend</button>
-				</div>
+				
 
 				<div id="popup" class="hide">
 					<div class="col-sm-6 col-lg-4 mb-5 hover-animate"
@@ -339,6 +334,11 @@
 	<section class="pt-2 pb-6"></section>
 	<section class="py-6 bg-gray-100">
 		<div class="container">
+		
+			
+		
+		
+		
 			<div class="text-center pb-lg-4">
 				<p class="subtitle text-secondary">Try something new today</p>
 				<h2 class="mb-5">오늘 당신의 식탁은 어디인가요?</h2>
@@ -710,9 +710,11 @@
 				<!-- If we need pagination-->
 				<div class="swiper-pagination"></div>
 			</div>
+			
+			<!-- RECOMMEND -->
 			<div class="text-center mt-5">
-				<a class="btn btn-outline-primary" href="category-2.html">오늘의
-					식탁은 ?</a>
+				<button class="btn btn-outline-primary" id="recBTN" type="button"
+					onclick="showPopup(true)">오늘의 식탁은 ?</button>
 			</div>
 		</div>
 	</section>

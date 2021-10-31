@@ -25,21 +25,19 @@ public class MemberServiceIpl implements MemberService {
 			return dbPass != null && dbPass.equals(password);//mapper를 통해 가져온 ADMIN의 password는 null이 아니고 실제 입력한 password와 같을경우 true
 		}
 	}
-
-	public HashMap<String, Object> getLoginInfo(String id) throws Exception {
+	public HashMap<String, Object> getLoginInfo(String id) throws Exception {//로그인
 		return memberDao.getLoginInfo(id);//입력한 id를 통해 name, profile_img_path를 리턴
 	}
 	
-	public MemberVO myPageMove(String id) throws Exception {//기본 정보 출력 페이지로 이동
-		return memberDao.getPersonalInfo(id);
-	}
-
-	public void  updateProfile(MemberVO vo) throws Exception{//프로필 업데이트
-		this.memberDao.updateProfile(vo);
 		
+	public void  updateProfile(MemberVO vo) throws Exception{//회원정보 업데이트
+		this.memberDao.updateProfile(vo);		
 	}
-	public MemberVO profileMove(String id) throws Exception {
-		return memberDao.getPersonalInfo(id);//프로필 관리 페이지로 이동
-	}
+		
+	public MemberVO getPersonalInfo(String id) throws Exception {//회원 정보 가져오기
+		return memberDao.getPersonalInfo(id);
+	 }
 	
- }
+
+	
+}

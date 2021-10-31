@@ -21,7 +21,7 @@ import com.todaysTable.vo.StoreVO;
 public class BasicController {
 
 	//검색결과페이지 -> 매장상세페이지 이동
-	@RequestMapping(value = "storeDetail.do")
+	@RequestMapping(value = "storeDetail_wej.do")
 	public ModelAndView basicstoreDetail() {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("Message", "HelloSpringMVC1");

@@ -109,7 +109,7 @@
 		}
 	%>
 
-
+	<!-- 검색 -->
 	<section class="py-6"></section>
 	<div class="container d-flex justify-content-center">
 		<div
@@ -117,15 +117,15 @@
 			<form action="searchResult.do">
 				<div class="row">
 					<div class="col-lg-5 d-flex align-items-center form-group">
-						<input class="form-control border-0 shadow-0" type="search"
-							name="search" placeholder="What are you searching for?">
+						<input class="form-control border-0 shadow-0" type="text"
+							name="search" placeholder="가게명, 음식점을 검색해보세요">
 					</div>
 					<div class="col-md-6 col-lg-3 d-flex align-items-center form-group">
 						<div class="input-label-absolute input-label-absolute-right w-100">
 							<label class="label-absolute" for="location"><i
 								class="fa fa-crosshairs"></i> </label> <input
 								class="form-control border-0 shadow-0" type="text"
-								name="location" placeholder="Location" id="location">
+								name="location" placeholder="위치 검색" id="location">
 						</div>
 					</div>
 					<div class="col-lg-2 form-group d-grid mb-0">
@@ -138,6 +138,7 @@
 							<i class="fas fa-filter me-1"></i>FILTER
 						</button>
 					</div>
+					
 					<div class="col-12 py-4">
 						<div class="collapse" id="moreFilters">
 							<div class="col-12 mb-4">

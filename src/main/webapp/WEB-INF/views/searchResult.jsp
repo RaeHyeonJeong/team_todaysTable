@@ -47,7 +47,19 @@
 				<div class="me-3">
 					<p class="mb-3 mb-md-0">
 						<!-- 검색어 삽입 -->
-						<strong>'Something'</strong> 에 대한 검색 결과
+						<%
+						String search = request.getParameter("search");
+						String location = request.getParameter("location");
+						if(location.isEmpty()){
+						%>
+						'<strong>${param.search}</strong>' 에 대한 검색 결과
+						<%}
+						else{
+						%>
+						'<strong>${param.location}</strong>' 지역의 '<strong>${param.search}</strong>' 에 대한 검색 결과
+						<%	
+						}
+						%>
 					</p>
 				</div>
 				<div>
@@ -120,16 +132,13 @@
 						//페이지 로드 시 0~2번의 가게정보데이터를 추가해준다.
 						if(idx <=2 )
 						{
-									
 							//Object 변수를 이용한 url 파라미터 만들기		
 							var obj = data[idx];
-							console.log(data[idx]);
 							var url = 'storeDetail_wej.do';
 							Object.keys(obj).forEach(function(key, index) {
 								  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
 							});
 							
-							console.log(url);
 							$("div#storelist").append(
 									
 									'<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%; width:900px;">'+
@@ -175,7 +184,6 @@
 										  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
 									});
 									
-									console.log(url);
 							    	
 							    	//실행할 로직 (콘텐츠 추가 = 가게정보 데이터)
 							        var addContent = '<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%;width:900px;">'+

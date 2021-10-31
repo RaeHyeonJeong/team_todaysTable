@@ -20,11 +20,12 @@ import com.todaysTable.vo.StoreVO;
 @Controller
 public class BasicController {
 
+	//검색결과페이지 -> 매장상세페이지 이동
 	@RequestMapping(value = "storeDetail.do")
 	public ModelAndView basicstoreDetail() {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("Message", "HelloSpringMVC1");
-		modelAndView.setViewName("WEB-INF/views/storeDetail");
+		modelAndView.setViewName("WEB-INF/views/storeDetail_wej");
 
 		return modelAndView;
 	}
@@ -91,13 +92,4 @@ public class BasicController {
 		return storeService.storelist();
 	}
 
-	
-	@RequestMapping(value = "limit.do")
-	public ModelAndView Limit() {
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("Message", "HelloSpringMVC3");
-		modelAndView.setViewName("WEB-INF/views/limit");
-
-		return modelAndView;
-	}
 }

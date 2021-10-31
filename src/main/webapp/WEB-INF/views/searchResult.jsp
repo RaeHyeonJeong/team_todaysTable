@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,12 +120,34 @@
 						//페이지 로드 시 0~2번의 가게정보데이터를 추가해준다.
 						if(idx <=2 )
 						{
+									/* data[idx].address  +
+									data[idx].admin_id +
+									data[idx].break_time +
+									data[idx].business_hours +
+									data[idx].category +
+									data[idx].day_off +
+									data[idx].last_update_date +
+									data[idx].address +
+									data[idx].latitude +
+									data[idx].location +
+									data[idx].longitude +
+									data[idx].name +
+									data[idx].store_no +
+									data[idx].tel */
+
+							//Object 변수를 이용한 url 파라미터 만들기		
+							var obj = data[idx];
+							var url = 'storeDetail.do';
+							Object.keys(obj).forEach(function(key, index) {
+								  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
+							});
+									
 							$("div#storelist").append(
 									
 									'<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%; width:900px;">'+
-									'<div class="card h-100 border-0 shadow">'+
+									'<p style="display:none;">'+ url +'</p> <div class="card h-100 border-0 shadow">'+
 										'<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/photo/restaurant-1436018626274-89acd1d6ec9d.jpg); min-height: 200px;">'+
-											'<a class="tile-link" href="detail.html"></a>' +
+											'<a class="tile-link" href="storeDetail.do"></a>' +
 											'<div class="card-img-overlay-bottom z-index-20">'+
 												'<h4 class="text-white text-shadow">'+data[idx].name+'</h4>'+
 											'</div>'+
@@ -162,7 +185,7 @@
 							        var addContent = '<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%;width:900px;">'+
 									'<div class="card h-100 border-0 shadow">'+
 									'<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/photo/restaurant-1436018626274-89acd1d6ec9d.jpg); min-height: 200px;">'+
-										'<a class="tile-link" href="detail.html"></a>' +
+										'<a class="tile-link" href="storeDetail.do"></a>' +
 										'<div class="card-img-overlay-bottom z-index-20">'+
 											'<h4 class="text-white text-shadow">'+data[count].name+'</h4>'+
 										'</div>'+

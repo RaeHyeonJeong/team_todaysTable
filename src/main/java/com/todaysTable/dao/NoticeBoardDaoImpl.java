@@ -6,11 +6,12 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.todaysTable.vo.NoticeBoardImageVO;
 import com.todaysTable.vo.NoticeBoardVO;
 
 @Repository
-public class NoticeBoardDaoImpl  implements NoticeBoardDao{
-	
+public class NoticeBoardDaoImpl implements NoticeBoardDao {
+
 	@Autowired
 	SqlSessionTemplate sqlSession;
 
@@ -33,19 +34,23 @@ public class NoticeBoardDaoImpl  implements NoticeBoardDao{
 	@Override
 	public void deleteNoticeBoard(int notice_no) {
 		sqlSession.delete("boardMapper.deleteNoticeBoard", notice_no);
-	
+
 	}
 
 	@Override
 	public NoticeBoardVO deatilNoticeBoard(int notice_no) {
-		return sqlSession.selectOne("boardMapper.selectNoticeBoard", notice_no);	
+		return sqlSession.selectOne("boardMapper.selectNoticeBoard", notice_no);
 	}
 
 	@Override
 	public void updateHits(int notice_no) {
 		sqlSession.update("boardMapper.updateHits", notice_no);
 	}
-	
-	
-	
+
+	@Override
+	public void insertNoticeBoardImage(List<NoticeBoardImageVO> list) {
+		sqlSession.insert("boardMapper.insertNoticeImage", list);
+
+	}
+
 }

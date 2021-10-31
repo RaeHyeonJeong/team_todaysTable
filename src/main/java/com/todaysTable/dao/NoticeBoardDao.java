@@ -2,6 +2,7 @@ package com.todaysTable.dao;
 
 import java.util.List;
 
+import com.todaysTable.vo.NoticeBoardImageVO;
 import com.todaysTable.vo.NoticeBoardVO;
 
 public interface NoticeBoardDao {
@@ -16,5 +17,7 @@ public interface NoticeBoardDao {
 	public NoticeBoardVO deatilNoticeBoard(int no);
 	// 조회수 증가
 	public void updateHits(int no);
+	//이미지 삽입
+	public void insertNoticeBoardImage(List<NoticeBoardImageVO> list);
 	 
 }

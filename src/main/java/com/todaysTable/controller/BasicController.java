@@ -114,5 +114,13 @@ public class BasicController {
 		return modelAndView;
 	}
 	
+	@RequestMapping(value = "mapfour.do")
+	public ModelAndView basicmapfour() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("WEB-INF/views/kakaomapApi/maptest4");
+
+		return modelAndView;
+	}
+	
 
 }

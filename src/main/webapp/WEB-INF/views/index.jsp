@@ -274,7 +274,7 @@
 				</div>
 
 				
-
+				<!-- url넘겨받을 곳 -->
 				<div id="popup" class="hide">
 					<div class="col-sm-6 col-lg-4 mb-5 hover-animate"
 						data-marker-id="59c0c8e33b1527bfe2abaf92">
@@ -283,7 +283,7 @@
 							<div class="card-img-top overflow-hidden dark-overlay bg-cover"
 								style="background-image: url(resources/img/photo/restaurant-1430931071372-38127bd472b8.jpg); min-height: 200px;">
 								<!--가게 상세 페이지 링크  -->
-								<a class="tile-link" href="detail.html"></a>
+								<a class="tile-link" class="urlDetail" id="urlDetail"></a>
 								<div id="storeName" class="card-img-overlay-bottom z-index-20">
 									<!-- <h4 class="text-white text-shadow"></h4> -->
 								</div>
@@ -769,6 +769,22 @@
 							} else {
 								console.log(data);
 								$(data).each(function(idx){
+									
+									//Object 변수를 이용한 url 파라미터 만들기		
+									var obj = data[idx];
+									console.log(data[idx]);
+									var url = 'storeDetail_wej.do';
+									Object.keys(obj).forEach(function(key, index) {
+										  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
+									});
+									
+									//페이지 이동
+									$(function() {
+										$("a").click(function() {
+											if (this.id == 'urlDetail')
+												document.location.href = url;
+										});
+									});
 									
 									$("div#storeName").append(
 											

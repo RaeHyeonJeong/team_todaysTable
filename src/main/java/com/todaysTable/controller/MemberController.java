@@ -28,22 +28,25 @@ public class MemberController {
 		logger.info("GoToMypage");
 		session.getAttribute("id");//로그인시 저장했던 아이디 get
 		
-		MemberVO vo= service.myPageMove((String) session.getAttribute("id"));
-		model.addAttribute("list",vo);//해당 회원의 기본정보를 가져옴
-		return "WEB-INF/views/personal_information";//기본정보출력 페이지로 이동
+		MemberVO vo= service.getPersonalInfo((String) session.getAttribute("id"));
+				model.addAttribute("list",vo);//해당 회원의 기본정보를 가져옴
+	return "WEB-INF/views/personal_information";//기본정보출력 페이지로 이동
 	}
+	
+		
 	
 	@RequestMapping(value="profileMove.do")//프로필 관리 페이지로 이동
 	public String profileMove(HttpSession session,Model model) throws Exception{
 		logger.info("GoToProfile");
 		session.getAttribute("id");
 		
-		MemberVO vo= service.profileMove((String) session.getAttribute("id"));
+		MemberVO vo= service.getPersonalInfo((String) session.getAttribute("id"));
 		model.addAttribute("list",vo);//해당 회원의 기본정보를 가져옴
-		return "WEB-INF/views/profile";
+		return "WEB-INF/views/profile";//프로필 관리 페이지로 이동
 	}
-			
-	@PostMapping(value = "updateProfile.do")//프로필 관리 업데이트
+	
+	
+	@PostMapping(value = "updateProfile.do")//프로필 관리 수정하기
 	public String updateProfile(
 			MemberVO vo,HttpSession session,Model model, @RequestParam(value = "file", required = false) 
 			MultipartFile file) throws Exception {// 파일업로드
@@ -74,5 +77,6 @@ public class MemberController {
 		service.updateProfile(vo);
 	return "forward:myPageMove.do";//기본정보 출력 페이지로 다시 이동 (업데이트 된 정보로 출력됨)
 	}
+	
 
 }

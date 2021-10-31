@@ -91,5 +91,28 @@ public class BasicController {
 	public List<StoreVO> storeList() {
 		return storeService.storelist();
 	}
+	
+	@RequestMapping(value = "mapone.do")
+	public ModelAndView basicmapone() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("WEB-INF/views/kakaomapApi/maptest1");
+
+		return modelAndView;
+	}
+	@RequestMapping(value = "maptwo.do")
+	public ModelAndView basicmaptwo() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("WEB-INF/views/kakaomapApi/maptest2");
+
+		return modelAndView;
+	}
+	@RequestMapping(value = "mapthree.do")
+	public ModelAndView basicmapthree() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("WEB-INF/views/kakaomapApi/maptest3");
+
+		return modelAndView;
+	}
+	
 
 }

@@ -344,14 +344,29 @@
 	</section>
 
 
-
+	<%
+		/* data[idx].address  +
+		data[idx].admin_id +
+		data[idx].break_time +
+		data[idx].business_hours +
+		data[idx].category +
+		data[idx].day_off +
+		data[idx].last_update_date +
+		data[idx].address +
+		data[idx].latitude +
+		data[idx].location +
+		data[idx].longitude +
+		data[idx].name +
+		data[idx].store_no +
+		data[idx].tel */
+	%>
 	<div class="container py-5">
 		<div class="row">
 			<div class="col-lg-8">
 					
 				<div class="text-block">
-					<p class="text-primary"><i class="fa-map-marker-alt fa me-1"></i> 가게핀 명 </p>
-					<h1>${store.name}</h1>
+					<p class="text-primary"><i class="fa-map-marker-alt fa me-1"></i>${param.name}</p>
+					<h1>${param.name}</h1>
 					
 					<!-- 찜하기 버튼 (체크박스 활성화로 상태 값을 DB에 저장해야 함)-->
 						<div class="heartbox" style="position: absolute; left: 850px; top:70px;">
@@ -427,9 +442,9 @@
 						</ul>
 
 						<ul class="text-muted font-weight-light">
-							<li>주소 : ${store.address}</li>
-							<li>전화번호 : ${store.tel}</li>
-							<li>위치 : ${store.location}</li>
+							<li>주소 : ${param.address}</li>
+							<li>전화번호 : ${param.tel}</li>
+							<li>위치 : ${param.location}</li>
 							<li>주차여부 : 
 								<c:choose>
 									<c:when test="${canPark eq 'Y'}">가능</c:when>
@@ -453,12 +468,12 @@
 						</p>
 
 						<!-- 예약페이지로 이동 -->
-						<%
+				   <%-- <%
 							session.setAttribute("store_no", 51);
-						%>
+						%> --%>
 						<div class="form-group">
 							<form action="moveToBookStore.do" method="post">
-								<input type="hidden" name="store_no" value="${store_no}">
+								<input type="hidden" name="store_no" value="${param.store_no}">
 								<button class="btn btn-primary btn-block">예약</button>
 							</form>
 						</div>
@@ -651,7 +666,8 @@
 				<div class="p-4 shadow ml-lg-4 rounded sticky-top" style="top: 100px;">
 					<h5 class="mb-4">위치</h5>
 					<div class="map-wrapper-300 mb-3">
-						<div class="h-100" id="detailMap"></div>
+						<!-- <div class="h-100" id="detailMap"></div> -->
+						<div id="map" style="width:100%;height:300px;"></div>
 					</div>
 				</div>
 			</div>
@@ -897,15 +913,38 @@
 	<script src="resources/js/map-layers.js">
 		
 	</script>
-	<script src="resources/js/map-detail.js"></script>
+	<!-- 지도 핀 표시 -->
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1738ef78b208b65a2926c9bbc75401d6"></script>
 	<script>
-		createDetailMap({
-			mapId : 'detailMap',
-			mapZoom : 14,
-			mapCenter : [ 40.732346, -74.0014247 ],
-			circleShow : true,
-			circlePosition : [ 40.732346, -74.0014247 ]
-		})
+	
+	//latitude 위도
+	var latitude = "<c:out value="${param.latitude}" />";
+	//longitude 경도
+	var longitude = "<c:out value="${param.longitude}" />";
+	
+	console.log(latitude +' '+longitude);
+	
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+	        center: new kakao.maps.LatLng(latitude, longitude), // 지도의 중심좌표
+	        level: 5 // 지도의 확대 레벨
+	    };
+	
+	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	
+	// 마커가 표시될 위치입니다 
+	var markerPosition  = new kakao.maps.LatLng(latitude, longitude); 
+	
+	// 마커를 생성합니다
+	var marker = new kakao.maps.Marker({
+	    position: markerPosition
+	});
+	
+	// 마커가 지도 위에 표시되도록 설정합니다
+	marker.setMap(map);
+	
+	// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+	// marker.setMap(null);    
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js">
 		

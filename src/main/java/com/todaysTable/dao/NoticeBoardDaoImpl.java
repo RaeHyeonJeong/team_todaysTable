@@ -48,9 +48,16 @@ public class NoticeBoardDaoImpl implements NoticeBoardDao {
 	}
 
 	@Override
-	public void insertNoticeBoardImage(List<NoticeBoardImageVO> list) {
-		sqlSession.insert("boardMapper.insertNoticeImage", list);
+	public void insertNoticeBoardImage(String path) {
+		sqlSession.insert("boardMapper.insertNoticeImage", path);
 
 	}
+
+	@Override
+	public List<NoticeBoardImageVO> selectNoticeBoardImage(int notice_no) {
+		return sqlSession.selectList("boardMapper.selectNoticeImage", notice_no);
+	}
+	
+	
 
 }

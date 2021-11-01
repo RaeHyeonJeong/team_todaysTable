@@ -45,7 +45,7 @@
 							<label class="form-label" for="title">제목</label> <input class="form-control" type="text" name="title" id="title" placeholder="제목을 적어주세요" required="required" style="width: 500px;">
 						</div>
 						<div class="form-group mb-4">
-							<label class="form-label" for="context">내용</label>
+							<label class="form-label" for="content">내용</label>
 							<textarea class="form-control" rows="4" name="content" id="content" placeholder="내용을 적어주세요" required="required" wrap="hard" style="height: 400px; width: 750px;"></textarea>
 						</div>
 						<div class="form-group mb-4">

@@ -48,13 +48,17 @@
 		WHERE NOTICE_NO = #{notice_no}
 	</update>
 
-	<insert id="insertNoticeImage" parameterType="java.util.List">
-		<foreach collection="list" item="vo">
-			INSERT INTO NOTICE_IMAGE(IMAGE_NO, NOTICE_NO, IMAGE_PATH)
-			VALUES (NOTICE_IMAGE_SEQ.NEXTVAL, #{vo.notice_no}, #{vo.image_path})
-		</foreach>
+	<insert id="insertNoticeImage" parameterType="String">
+		INSERT INTO
+		NOTICE_IMAGE(IMAGE_NO, NOTICE_NO, IMAGE_PATH)
+		VALUES
+		(NOTICE_IMAGE_SEQ.NEXTVAL, NOTICE_SEQ.CURRVAL, #{VALUE})
 	</insert>
 
+	<select id="selectNoticeImage" parameterType="int" resultType="com.todaysTable.vo.NoticeBoardImageVO">
+		SELECT IMAGE_PATH FROM NOTICE_IMAGE
+		WHERE NOTICE_NO = #{VALUE}
+	</select>
 	<!-- RECOM_GOOD_REST TABLE SQL 쿼리 -->
 
 

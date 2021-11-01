@@ -20,11 +20,12 @@ import com.todaysTable.vo.StoreVO;
 @Controller
 public class BasicController {
 
-	@RequestMapping(value = "storeDetail.do")
+	//검색결과페이지 -> 매장상세페이지 이동
+	@RequestMapping(value = "storeDetail_wej.do")
 	public ModelAndView basicstoreDetail() {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("Message", "HelloSpringMVC1");
-		modelAndView.setViewName("WEB-INF/views/storeDetail");
+		modelAndView.setViewName("WEB-INF/views/storeDetail_wej");
 
 		return modelAndView;
 	}
@@ -90,14 +91,36 @@ public class BasicController {
 	public List<StoreVO> storeList() {
 		return storeService.storelist();
 	}
-
 	
-	@RequestMapping(value = "limit.do")
-	public ModelAndView Limit() {
+	@RequestMapping(value = "mapone.do")
+	public ModelAndView basicmapone() {
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("Message", "HelloSpringMVC3");
-		modelAndView.setViewName("WEB-INF/views/limit");
+		modelAndView.setViewName("WEB-INF/views/kakaomapApi/maptest1");
 
 		return modelAndView;
 	}
+	@RequestMapping(value = "maptwo.do")
+	public ModelAndView basicmaptwo() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("WEB-INF/views/kakaomapApi/maptest2");
+
+		return modelAndView;
+	}
+	@RequestMapping(value = "mapthree.do")
+	public ModelAndView basicmapthree() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("WEB-INF/views/kakaomapApi/maptest3");
+
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "mapfour.do")
+	public ModelAndView basicmapfour() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("WEB-INF/views/kakaomapApi/maptest4");
+
+		return modelAndView;
+	}
+	
+
 }

@@ -20,8 +20,8 @@ public class StoreVO {
 	private String break_time;
 	private String category;
 	private Date last_update_date;
-	private int latitude;
-	private int longitude;
+	private float latitude;
+	private float longitude;
 	private String admin_id;
 	
 }

@@ -12,9 +12,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 @Component
 public class FileUploader {
 
-	private static List<String> filePathList;
+	private static ArrayList<String> filePathList;
 
-	public List<String> getUploadFilePath() {
+	public ArrayList<String> getUploadFilePath() {
 		if (filePathList == null) {
 			return null;
 		} else {
@@ -25,6 +25,7 @@ public class FileUploader {
 	private String setUploadFileName(String originFileName, String path, String folderName, List<String> list) {
 		UUID uuid = UUID.randomUUID();
 		String resultName = path + folderName + uuid.toString() + "_" + originFileName;
+
 		list.add(resultName);
 		return resultName;
 	}

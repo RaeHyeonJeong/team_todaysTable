@@ -44,6 +44,7 @@ public class BoardController {
 
 	@RequestMapping(value = "insertNoticeBoard.do", method = RequestMethod.POST)
 	public String noticeBoardInsertAction(NoticeBoardVO vo, @RequestParam(value = "file", required = false) List<MultipartFile> fileList,MultipartHttpServletRequest request, String folderName) {
+		
 		service.insertNoticeBoard(vo, fileList, request, "noticeImg");
 		return "redirect:/noticeBoard.do";
 	}
@@ -52,6 +53,7 @@ public class BoardController {
 	public String noticeBoardDetailAction(Model model, int notice_no) {
 		service.updateHits(notice_no);
 		model.addAttribute("info", service.detailNoticeBoard(notice_no));
+		model.addAttribute("img", service.selectNoticeImage(notice_no));
 		return "WEB-INF/views/boardNoticeContentDetail";
 	}
 
@@ -65,11 +67,6 @@ public class BoardController {
 	public String noticeBoardDeleteAction(int notice_no) {
 		service.deleteNoticeBoard(notice_no);
 		return "redirect:/noticeBoard.do";
-	}
-
-	@RequestMapping(value = "insertNoticeBoardImage.do")
-	public String noticeBoardImage() {
-		return "";
 	}
 
 }

@@ -18,6 +18,8 @@ public interface NoticeBoardDao {
 	// 조회수 증가
 	public void updateHits(int no);
 	//이미지 삽입
-	public void insertNoticeBoardImage(List<NoticeBoardImageVO> list);
+	public void insertNoticeBoardImage(String path);
+	//이미지 조회
+	public List<NoticeBoardImageVO> selectNoticeBoardImage(int no);
 	 
 }

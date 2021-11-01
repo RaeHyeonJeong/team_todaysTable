@@ -34,6 +34,15 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 <!-- Font Awesome CSS-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<style>
+.swiper-slide{
+	overflow: hidden;
+	display: flex;
+	align-items : center;
+	widit: 400px;
+	height: 400px
+}
+</style>
 </head>
 <body style="padding-top: 72px;">
 	<!-- HEADER include -->
@@ -51,36 +60,13 @@
 				<!-- Additional required wrapper-->
 				<div class="swiper-wrapper">
 					<!-- Slides-->
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1426122402199-be02db90eb90.jpg" data-toggle="gallery-top" title="Our street">
-							<img class="img-fluid" src="resources/img/photo/photo-1426122402199-be02db90eb90.jpg" alt="Our street">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1512917774080-9991f1c4c750.jpg" data-toggle="gallery-top" title="Outside">
-							<img class="img-fluid" src="resources/img/photo/photo-1512917774080-9991f1c4c750.jpg" alt="Outside">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1494526585095-c41746248156.jpg" data-toggle="gallery-top" title="Rear entrance">
-							<img class="img-fluid" src="resources/img/photo/photo-1494526585095-c41746248156.jpg" alt="Rear entrance">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1484154218962-a197022b5858.jpg" data-toggle="gallery-top" title="Kitchen">
-							<img class="img-fluid" src="resources/img/photo/photo-1484154218962-a197022b5858.jpg" alt="Kitchen">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1522771739844-6a9f6d5f14af.jpg" data-toggle="gallery-top" title="Bedroom">
-							<img class="img-fluid" src="resources/img/photo/photo-1522771739844-6a9f6d5f14af.jpg" alt="Bedroom">
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="resources/img/photo/photo-1488805990569-3c9e1d76d51c.jpg" data-toggle="gallery-top" title="Bedroom">
-							<img class="img-fluid" src="resources/img/photo/photo-1488805990569-3c9e1d76d51c.jpg" alt="Bedroom">
-						</a>
-					</div>
+					<c:forEach var="row" items="${img}">
+						<div class="swiper-slide">
+							<a href="${row.image_path}" data-toggle="gallery-top" title="Our street">
+								<img class="img-fuild"  src="${row.image_path}" alt="Our street">
+							</a>
+						</div>
+					</c:forEach>
 				</div>
 				<div class="swiper-pagination swiper-pagination-white"></div>
 				<div class="swiper-button-prev swiper-button-white"></div>
@@ -92,7 +78,7 @@
 		<div class="text-block d-flex">
 			<img class="avatar avatar-md p-1 flex-shrink-0 me-4" src="resources/img/avatar/avatar-10.jpg" alt="Jack London">
 			<p class="col">
-				<span class="text-muted text-uppercase text-sm">Write by </span> <br> <strong>Jack London</strong>
+				<span class="text-muted text-uppercase text-sm">Write by </span> <br> <strong>관리자</strong>
 			</p>
 			<p class="col">
 				<span class="text-muted text-sm"> 작성일 </span> <br> ${info.reg_date}
@@ -100,7 +86,7 @@
 		</div>
 		<div class="text-block">
 			<div class="d-flex">
-				<p class="text-muted text-sm mb-2">${info.content}</p>
+				<p style="white-space: pre-line;" class="text-muted text-sm mb-2">${info.content}</p>
 			</div>
 		</div>
 	</div>

@@ -669,6 +669,16 @@
 						<!-- <div class="h-100" id="detailMap"></div> -->
 						<div id="map" style="width:100%;height:300px;"></div>
 					</div>
+					<!-- 길찾기 버튼 -->
+					<div class="text-left mt-5">
+						
+						<button class="btn btn-outline-primary" id="txt" type="txt"
+						 onclick="location.href='https://map.kakao.com/link/to/${param.name},${param.latitude},${param.longitude}';">길찾기</button>
+						<%-- <a class="txt"
+						href="https://map.kakao.com/link/to/${param.name},${param.latitude},${param.longitude}"
+						style="text-decoration: none; outline: none;"
+						>길찾기</a> --%>
+					</div>
 				</div>
 			</div>
 			

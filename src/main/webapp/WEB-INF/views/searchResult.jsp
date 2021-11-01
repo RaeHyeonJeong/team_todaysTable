@@ -54,12 +54,17 @@
 						%>
 							검색어가 입력되지 않은 경우 전체리스트를 보여드립니다.
 						<%}
+						else if(search_value.isEmpty()){
+						%>
+							'<strong>${param.location}</strong>' 지역에 대한 검색 결과
+						<%	
+						}
 						else if(location_value.isEmpty()){%>
 							'<strong>${param.search}</strong>' 에 대한 검색 결과
 						<% }
 						else{
 						%>
-						'<strong>${param.location}</strong>' 지역의 '<strong>${param.search}</strong>' 에 대한 검색 결과
+							'<strong>${param.location}</strong>' 지역의 '<strong>${param.search}</strong>' 에 대한 검색 결과
 						<%	
 						}
 						%>
@@ -130,6 +135,7 @@
 	//console.log(location);
 
 	function searchList(){
+		
 		$.ajax({
 			type : 'POST',
 			url : 'storelist.do',
@@ -174,8 +180,7 @@
 												'</p>'+
 												'<form action="#"> <a class="position-relative z-index-40" href="javascript: void();">'+
 														'<button class="btn btn-primary btn-sm" type="submit">찜하기'+ '</button>'+
-												'</a></form> </div> </div> </div> </div> </div>' 
-											
+												'</a></form> </div> </div> </div> </div> </div>'
 							)
 						}
 						else
@@ -193,12 +198,15 @@
 							    	if(count>=3 && count < data.length)count++; //count를 받아온 정보길이 개수만큼 자동증가
 							    	
 							    	//Object 변수를 이용한 url 파라미터 만들기		
-									var obj = data[idx];
+									var obj = data[count];
 									var url = 'storeDetail_wej.do';
 									Object.keys(obj).forEach(function(key, index) {
 										  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
 									});
 									
+									
+									console.log(data[count]);
+									console.log(url);
 							    	
 							    	//실행할 로직 (콘텐츠 추가 = 가게정보 데이터)
 							        var addContent = '<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%;width:900px;">'+
@@ -244,6 +252,8 @@
 	
 	window.onload = function()
 	{
+		<%-- var value = <%=search_value%>; --%>
+		//console.log(value);
 		searchList();
 		
 	}

@@ -79,7 +79,7 @@
 			style="display: block; width: 72px; height: 16px"></a>
 
 		<!-- 장소ID -->
-		<div class="wrap_btn_roadview">
+		<div class="btn btn-outline-primary">
 			<span class="txt_bar"></span><a class="txt" target="_blank"
 				href="https://map.kakao.com/link/to/18577297">길찾기</a>
 		</div>

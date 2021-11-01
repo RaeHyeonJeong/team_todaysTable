@@ -65,10 +65,11 @@ div.row2 { -
 <body style="padding-top: 72px;">
 	<!-- HEADER include -->
 	<jsp:include page="subHeader.jsp" />
+	<div><jsp:include page="subHeader_myPage.jsp" /></div>
 	<section class="py-5">
 		<div class="container">
 			<!-- Breadcrumbs -->
-			<h2 class="hero-heading mb-0">기본 정보</h2>
+			<h2 class="hero-heading mb-0">회원 정보</h2>
 			<div class="row2">
 				<!-- 테이블 정렬을 위해  css default에 row2추가 -->
 				<div class="col-lg-7 mb-5 mb-lg-0">

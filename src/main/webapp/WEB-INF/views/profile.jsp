@@ -7,13 +7,14 @@
 	// 세션값 가져오기
 String id = (String) session.getAttribute("id");
 String name = (String) session.getAttribute("NAME");
+String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");
 %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Directory Theme by Bootstrapious</title>
+<title>프로필 관리</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
@@ -60,7 +61,7 @@ String name = (String) session.getAttribute("NAME");
 						<div class="card-header bg-gray-100 py-4 border-0 text-center">
 							<a class="d-inline-block" href="#"> <img
 								class="d-block avatar avatar-xxl p-2 mb-2"
-								src="resources/img/avatar/avatar-10.jpg" alt="">
+						s82851004&		src=<%=profileImg %> alt="">
 							</a>
 							<h5><%=name%></h5>
 						</div>

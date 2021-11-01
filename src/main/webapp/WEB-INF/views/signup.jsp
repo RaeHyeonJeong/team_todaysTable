@@ -102,7 +102,7 @@
 											data-msg="이메일을 입력해 주세요" readonly="readonly"
 											aria-describedby="numsend">
 										<div class="mail_check_button">
-											<button type="button" class="btn btn-primary btn-outline"
+											<button type="button" class="btn btn-primary btn-outline ms-3"
 												id="numsend">인증번호 받기</button>
 										</div>
 									</div>

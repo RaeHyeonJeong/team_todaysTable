@@ -47,7 +47,7 @@ String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");
 							<a class="dropdown-item" href="user-grid.html">예약 내역 관리</a>
 							<a class="dropdown-item" href="user-booking-detail.html">내가 작성한 게시물</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="login.html">
+							<a class="dropdown-item" href="logout.do">
 								<i class="fas fa-sign-out-alt me-2 text-muted"></i> Sign out
 							</a>
 						</div></li>

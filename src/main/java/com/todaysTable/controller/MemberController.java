@@ -55,7 +55,7 @@ public class MemberController {
 		session.getAttribute("id");
 		vo.setId((String)session.getAttribute("id"));//vo에 ID 따로 저장->안하면 nullPoint에러 뜸
 		
-		String location = "C:\\Users\\조유주\\git\\team_todaysTable\\src\\main\\webapp\\resources\\upload\\";
+		String location = "C:\\Users\\KONGYI\\git\\team_todaysTable\\src\\main\\webapp\\resources\\upload\\";
 		FileOutputStream fos = null;
 		System.out.println(file);
 		String fileName = file.getOriginalFilename();

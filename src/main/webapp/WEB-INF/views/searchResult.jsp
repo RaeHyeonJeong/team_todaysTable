@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,9 +38,8 @@
 	<!-- HEADER include -->
 	<jsp:include page="subHeader.jsp" />
 	<section>
-		<div class="map-wrapper-450">
-			<div class="h-100" id="categoryMap"></div>
-		</div>
+		<!-- 지도 -->
+		<div id="map" class="map-wrapper-450" style="width: auto; height: 400px;"></div>
 	</section>
 	<section class="py-5">
 		<div class="container">
@@ -47,7 +47,22 @@
 				<div class="me-3">
 					<p class="mb-3 mb-md-0">
 						<!-- 검색어 삽입 -->
-						<strong>'Something'</strong> 에 대한 검색 결과
+						<%
+						String search_value = request.getParameter("search");
+						String location_value = request.getParameter("location");
+						if(location_value.isEmpty() && search_value.isEmpty()){
+						%>
+							검색어가 입력되지 않은 경우 전체리스트를 보여드립니다.
+						<%}
+						else if(location_value.isEmpty()){%>
+							'<strong>${param.search}</strong>' 에 대한 검색 결과
+						<% }
+						else{
+						%>
+						'<strong>${param.location}</strong>' 지역의 '<strong>${param.search}</strong>' 에 대한 검색 결과
+						<%	
+						}
+						%>
 					</p>
 				</div>
 				<div>
@@ -67,7 +82,8 @@
 				</div>
 				</article>
 			</div>
-
+			
+			<a me></a>
 			
 	</section>
 	<!-- Footer-->
@@ -100,7 +116,19 @@
 	<!-- jQuery-->
 	<script src="resources/vendor/jquery/jquery.min.js"></script>
 	<script type="text/javascript">
+	<%-- var search ="<%=search_value%>";  --%>
+	<%-- var location ="<%=location_value%>";  --%>
 	
+	//console.log(search);
+	//console.log(location);
+	
+	
+	//var search = '${param.search}';
+	//var location = '${param.location}';
+	//console.log(search +' '+location);
+	//console.log(search);
+	//console.log(location);
+
 	function searchList(){
 		$.ajax({
 			type : 'POST',
@@ -117,14 +145,21 @@
 					 $(data).each(function(idx){
 						
 						//페이지 로드 시 0~2번의 가게정보데이터를 추가해준다.
-						if(idx <=2 )
+						if(idx <=2)
 						{
+							//Object 변수를 이용한 url 파라미터 만들기		
+							var obj = data[idx];
+							var url = 'storeDetail_wej.do';
+							Object.keys(obj).forEach(function(key, index) {
+								  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
+							});
+							
 							$("div#storelist").append(
 									
 									'<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%; width:900px;">'+
-									'<div class="card h-100 border-0 shadow">'+
+									'<p style="display:none;">'+ url +'</p> <div class="card h-100 border-0 shadow">'+
 										'<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/photo/restaurant-1436018626274-89acd1d6ec9d.jpg); min-height: 200px;">'+
-											'<a class="tile-link" href="detail.html"></a>' +
+											'<a class="tile-link" href=" '+ url +' "></a>' +
 											'<div class="card-img-overlay-bottom z-index-20">'+
 												'<h4 class="text-white text-shadow">'+data[idx].name+'</h4>'+
 											'</div>'+
@@ -157,12 +192,19 @@
 							    	
 							    	if(count>=3 && count < data.length)count++; //count를 받아온 정보길이 개수만큼 자동증가
 							    	
+							    	//Object 변수를 이용한 url 파라미터 만들기		
+									var obj = data[idx];
+									var url = 'storeDetail_wej.do';
+									Object.keys(obj).forEach(function(key, index) {
+										  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
+									});
+									
 							    	
 							    	//실행할 로직 (콘텐츠 추가 = 가게정보 데이터)
 							        var addContent = '<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%;width:900px;">'+
-									'<div class="card h-100 border-0 shadow">'+
+							        '<p style="display:none;">'+ url +'</p> <div class="card h-100 border-0 shadow">'+
 									'<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/photo/restaurant-1436018626274-89acd1d6ec9d.jpg); min-height: 200px;">'+
-										'<a class="tile-link" href="detail.html"></a>' +
+										'<a class="tile-link" href=" '+ url +' "></a>' +
 										'<div class="card-img-overlay-bottom z-index-20">'+
 											'<h4 class="text-white text-shadow">'+data[count].name+'</h4>'+
 										'</div>'+
@@ -235,12 +277,87 @@
 	<script src="resources/js/map-category.js">
 		
 	</script>
+	<!-- 현재 위치 가져오기 (와이파이, IP에 따라 정확도 낮음) -->
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1738ef78b208b65a2926c9bbc75401d6"></script>
 	<script>
-		createListingsMap({
-			mapId : 'categoryMap',
-			jsonFile : 'resources/js/restaurants-geojson.json',
-		//tileLayer: tileLayers[5] - uncomment for a different map styling
-		});
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+			center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+			level : 2
+		// 지도의 확대 레벨 
+		};
+
+		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+		// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+		if (navigator.geolocation) {
+
+			// GeoLocation을 이용해서 접속 위치를 얻어옵니다
+			navigator.geolocation.getCurrentPosition(function(position) {
+
+				var lat = position.coords.latitude, // 위도
+				lon = position.coords.longitude; // 경도
+
+				var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+				message = '<div style="padding:5px;">내 위치</div>'; // 인포윈도우에 표시될 내용입니다
+
+				// 마커와 인포윈도우를 표시합니다
+				displayMarker(locPosition, message);
+
+			});
+
+		} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+
+			var locPosition = new kakao.maps.LatLng(33.450701, 126.570667), message = 'geolocation을 사용할수 없어요..'
+
+			displayMarker(locPosition, message);
+		}
+
+		// 지도에 마커와 인포윈도우를 표시하는 함수입니다
+		function displayMarker(locPosition, message) {
+
+			// 마커를 생성합니다
+			var marker = new kakao.maps.Marker({
+				map : map,
+				position : locPosition
+			});
+
+			var iwContent = message, // 인포윈도우에 표시할 내용
+			iwRemoveable = true;
+
+			// 인포윈도우를 생성합니다
+			var infowindow = new kakao.maps.InfoWindow({
+				content : iwContent,
+				removable : iwRemoveable
+			});
+
+			// 인포윈도우를 마커위에 표시합니다 
+			infowindow.open(map, marker);
+
+			// 지도 중심좌표를 접속위치로 변경합니다
+			map.setCenter(locPosition);
+			
+			// 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
+			var iwContent = '<div style="padding:5px;">내 위치</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+			    iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+			// 인포윈도우를 생성합니다
+			var infowindow = new kakao.maps.InfoWindow({
+			    content : iwContent,
+			    removable : iwRemoveable
+			});
+
+			// 마커에 클릭이벤트를 등록합니다
+			kakao.maps.event.addListener(marker, 'click', function() {
+			      // 마커 위에 인포윈도우를 표시합니다
+			      infowindow.open(map, marker);  
+			});
+			
+		}
+		
+		
+
+		
 	</script>
 </body>
 </html>

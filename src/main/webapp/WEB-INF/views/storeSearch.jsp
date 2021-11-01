@@ -50,7 +50,7 @@
 					<ul class="header-menu nav">
 						<li class="btn-group nav-item"><a href="dashBoard.do" class="nav-link"> <i class="nav-link-icon fa fa-arrow-circle-left"></i> 돌아가기
 						</a></li>
-						<li class="dropdown nav-item"><a href="javascript:void(0);" class="nav-link"> <i class="nav-link-icon fa fa-compass"></i> 사이트 이동
+						<li class="dropdown nav-item"><a href="main.do" class="nav-link"> <i class="nav-link-icon fa fa-compass"></i> 사이트 이동
 						</a></li>
 					</ul>
 				</div>
@@ -97,10 +97,10 @@
 									</a></li>
 									<li><a href="newStoreRegister.do"> <i class="metismenu-icon"></i> 신규 매장 등록
 									</a></li>
-									<li><a href="store_info_modify.jsp"> <i class="metismenu-icon"></i> 매장 정보 수정
-									</a></li>
-									<li><a href="#"> <i class="metismenu-icon"></i> 매장 삭제
-									</a></li>
+									<!-- <li><a href="store_info_modify.jsp"> <i class="metismenu-icon"></i> 매장 정보 수정
+									</a></li> -->
+									<!-- <li><a href="#"> <i class="metismenu-icon"></i> 매장 삭제
+									</a></li> -->
 								</ul></li>
 							<div class="app-sidebar__heading"></div>
 							<li><a href="#"> <i class="metismenu-icon pe-7s-tools"></i><font color="#3162C7"> 사이트 관리</font> <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>

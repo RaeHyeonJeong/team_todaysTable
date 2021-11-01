@@ -109,7 +109,7 @@
 		}
 	%>
 
-
+	<!-- 검색 -->
 	<section class="py-6"></section>
 	<div class="container d-flex justify-content-center">
 		<div
@@ -117,15 +117,15 @@
 			<form action="searchResult.do">
 				<div class="row">
 					<div class="col-lg-5 d-flex align-items-center form-group">
-						<input class="form-control border-0 shadow-0" type="search"
-							name="search" placeholder="What are you searching for?">
+						<input class="form-control border-0 shadow-0" type="text"
+							name="search" placeholder="가게명, 음식점을 검색해보세요">
 					</div>
 					<div class="col-md-6 col-lg-3 d-flex align-items-center form-group">
 						<div class="input-label-absolute input-label-absolute-right w-100">
 							<label class="label-absolute" for="location"><i
 								class="fa fa-crosshairs"></i> </label> <input
 								class="form-control border-0 shadow-0" type="text"
-								name="location" placeholder="Location" id="location">
+								name="location" placeholder="위치 검색" id="location">
 						</div>
 					</div>
 					<div class="col-lg-2 form-group d-grid mb-0">
@@ -138,6 +138,7 @@
 							<i class="fas fa-filter me-1"></i>FILTER
 						</button>
 					</div>
+					
 					<div class="col-12 py-4">
 						<div class="collapse" id="moreFilters">
 							<div class="col-12 mb-4">
@@ -273,13 +274,8 @@
 					</div>
 				</div>
 
-				<!-- RECOMMEND -->
-				<div class="col-lg-2 form-group d-grid mb-0"
-					style="left: 50%; transform: translateX(-50%); cue-after: none;">
-					<button class="btn btn-primary h-100" id="recBTN" type="button"
-						onclick="showPopup(true)">recommend</button>
-				</div>
-
+				
+				<!-- url넘겨받을 곳 -->
 				<div id="popup" class="hide">
 					<div class="col-sm-6 col-lg-4 mb-5 hover-animate"
 						data-marker-id="59c0c8e33b1527bfe2abaf92">
@@ -288,7 +284,7 @@
 							<div class="card-img-top overflow-hidden dark-overlay bg-cover"
 								style="background-image: url(resources/img/photo/restaurant-1430931071372-38127bd472b8.jpg); min-height: 200px;">
 								<!--가게 상세 페이지 링크  -->
-								<a class="tile-link" href="detail.html"></a>
+								<a class="tile-link" class="urlDetail" id="urlDetail"></a>
 								<div id="storeName" class="card-img-overlay-bottom z-index-20">
 									<!-- <h4 class="text-white text-shadow"></h4> -->
 								</div>
@@ -339,6 +335,11 @@
 	<section class="pt-2 pb-6"></section>
 	<section class="py-6 bg-gray-100">
 		<div class="container">
+		
+			
+		
+		
+		
 			<div class="text-center pb-lg-4">
 				<p class="subtitle text-secondary">Try something new today</p>
 				<h2 class="mb-5">오늘 당신의 식탁은 어디인가요?</h2>
@@ -710,9 +711,11 @@
 				<!-- If we need pagination-->
 				<div class="swiper-pagination"></div>
 			</div>
+			
+			<!-- RECOMMEND -->
 			<div class="text-center mt-5">
-				<a class="btn btn-outline-primary" href="category-2.html">오늘의
-					식탁은 ?</a>
+				<button class="btn btn-outline-primary" id="recBTN" type="button"
+					onclick="showPopup(true)">오늘의 식탁은 ?</button>
 			</div>
 		</div>
 	</section>
@@ -767,6 +770,22 @@
 							} else {
 								console.log(data);
 								$(data).each(function(idx){
+									
+									//Object 변수를 이용한 url 파라미터 만들기		
+									var obj = data[idx];
+									console.log(data[idx]);
+									var url = 'storeDetail_wej.do';
+									Object.keys(obj).forEach(function(key, index) {
+										  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
+									});
+									
+									//페이지 이동
+									$(function() {
+										$("a").click(function() {
+											if (this.id == 'urlDetail')
+												document.location.href = url;
+										});
+									});
 									
 									$("div#storeName").append(
 											

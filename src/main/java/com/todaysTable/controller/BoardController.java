@@ -23,9 +23,6 @@ public class BoardController {
 	@Autowired
 	NoticeBoardService service;
 
-	@Autowired
-	FileUploader fileUploader;
-
 	// BOARD 공통 메서드
 	@RequestMapping(value = "boardWriteMove.do")
 	public String writeBoardMoveAction() {
@@ -34,43 +31,32 @@ public class BoardController {
 
 	@RequestMapping(value = "boardUpdateMove.do")
 	public String updateBoardMoveAction(Model model, int notice_no) {
-		NoticeBoardVO vo = new NoticeBoardVO();
-		vo.setContent(vo.getContent().replace("<br>", "\r\n"));
-		vo = service.detailNoticeBoard(notice_no);
-		model.addAttribute("info", vo);
+		model.addAttribute("info", service.detailNoticeBoard(notice_no));
 		return "WEB-INF/views/boardUpdate";
 	}
 
 	// NoticeBoard 메서드
 	@RequestMapping(value = "noticeBoard.do")
 	public String noticeBoardListAction(Model model) {
-		List<NoticeBoardVO> list = service.noticeBoardList();
-		model.addAttribute("list", list);
+		model.addAttribute("list", service.noticeBoardList());
 		return "WEB-INF/views/boardNotice";
 	}
 
 	@RequestMapping(value = "insertNoticeBoard.do", method = RequestMethod.POST)
-	public String noticeBoardInsertAction(NoticeBoardVO vo, @RequestParam(value = "file", required = false) List<MultipartFile> fileList, MultipartHttpServletRequest request, String folderName) {
-
-		vo.setContent(vo.getContent().replace("\r\n", "<br>"));
-		service.insertNoticeBoard(vo);
-		
-		fileUploader.multiFileUploader(fileList, request, "noticeImg");
+	public String noticeBoardInsertAction(NoticeBoardVO vo, @RequestParam(value = "file", required = false) List<MultipartFile> fileList,MultipartHttpServletRequest request, String folderName) {
+		service.insertNoticeBoard(vo, fileList, request, "noticeImg");
 		return "redirect:/noticeBoard.do";
 	}
 
 	@RequestMapping(value = "noticeBoardDetail.do", method = RequestMethod.GET)
-	public String noticeBoardDetailAction(HttpServletRequest request, Model model, int notice_no) {
-		NoticeBoardVO vo = new NoticeBoardVO();
+	public String noticeBoardDetailAction(Model model, int notice_no) {
 		service.updateHits(notice_no);
-		vo = service.detailNoticeBoard(notice_no);
-		model.addAttribute("info", vo);
+		model.addAttribute("info", service.detailNoticeBoard(notice_no));
 		return "WEB-INF/views/boardNoticeContentDetail";
 	}
 
 	@RequestMapping(value = "updateNoticeBoard.do", method = RequestMethod.POST)
 	public String noticeBoardUpdateAction(NoticeBoardVO vo, int notice_no) {
-		vo.setContent(vo.getContent().replace("\r\n", "<br>"));
 		service.updateNoticeBoard(vo);
 		return "redirect:/noticeBoardDetail.do?notice_no=" + notice_no;
 	}
@@ -79,6 +65,11 @@ public class BoardController {
 	public String noticeBoardDeleteAction(int notice_no) {
 		service.deleteNoticeBoard(notice_no);
 		return "redirect:/noticeBoard.do";
+	}
+
+	@RequestMapping(value = "insertNoticeBoardImage.do")
+	public String noticeBoardImage() {
+		return "";
 	}
 
 }

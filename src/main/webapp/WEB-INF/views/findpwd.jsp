@@ -44,10 +44,12 @@
             <form class="form-validate" name="findpwd">
               <div class="mb-4">
                 <label class="form-label" >ID</label> 
-                <input class="form-control" type="text" placeholder="아이디 입력" autocomplete="off" required data-msg="Please enter your ID">
+                	<div class="input-group mb-3">
+                <input class="form-control" type="text" placeholder="name@email.com" autocomplete="off" required data-msg="Please enter your ID">
               </div>
               <div class="d-grid gap-2">
                 <button class="btn btn-lg btn-primary" type="submit" id="idcheck">ID 확인</button>
+              </div>
               </div>
               <!-- 확인버튼 실행시 나타나게 -->
               <p><small style="color: blue;">가입시 등록된 이메일로 인증번호가 발송되었습니다. 인증번호를 확인해 주세요.</small></p> 

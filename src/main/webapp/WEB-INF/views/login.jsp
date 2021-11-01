@@ -5,7 +5,7 @@
 	uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>로그인</title>
@@ -108,7 +108,7 @@
 					<hr class="my-4">
 					<p class="text-center">
 						<small class="text-muted text-center">Don't have an
-							account yet? <a href="agreement.jsp">Sign Up </a>
+							account yet? <a href="agreement.do">Sign Up </a>
 						</small>
 					</p>
 
@@ -122,7 +122,7 @@
                 <use xlink:href="#close-1"> </use>
               </svg></a>
 					<p class="text-center">
-						<a href="findid.jsp">아이디 찾기</a>&nbsp;|&nbsp;<a href="findpwd.jsp">비밀번호
+						<a href="findid.do">아이디 찾기</a>&nbsp;|&nbsp;<a href="findpwd.do">비밀번호
 							찾기</a>
 					</p>
 				</div>

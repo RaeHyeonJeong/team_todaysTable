@@ -1,14 +1,14 @@
 package com.todaysTable.vo;
 
-// 페이징 처리를 위한 클래스
-public class Criteria {
+// 페이징 처리를 위한 VO
+public class CriteriaVO {
 
 	private int page;
 	private int perPageNum;
 	private int rowStart;
 	private int rowEnd;
 
-	public Criteria() {
+	public CriteriaVO() {
 		this.page = 1;
 		this.perPageNum = 10;
 	}
@@ -53,7 +53,7 @@ public class Criteria {
 
 	@Override
 	public String toString() {
-		return "Criteria [page=" + page + ", perPageNum=" + perPageNum + ", rowStart=" + rowStart + ", rowEnd=" + rowEnd
+		return "CriteriaVO [page=" + page + ", perPageNum=" + perPageNum + ", rowStart=" + rowStart + ", rowEnd=" + rowEnd
 				+ "]";
 	}
 

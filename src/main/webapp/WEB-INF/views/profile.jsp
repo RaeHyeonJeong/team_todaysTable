@@ -61,7 +61,7 @@ String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");
 						<div class="card-header bg-gray-100 py-4 border-0 text-center">
 							<a class="d-inline-block" href="#"> <img
 								class="d-block avatar avatar-xxl p-2 mb-2"
-						s82851004&		src=<%=profileImg %> alt="">
+							src="<%=profileImg %>" alt=" ">
 							</a>
 							<h5><%=name%></h5>
 						</div>

@@ -2,6 +2,8 @@ package com.todaysTable.dao;
 
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import com.todaysTable.vo.MemberVO;
 
 public interface MemberDao {
@@ -13,5 +15,7 @@ public interface MemberDao {
 	public MemberVO getPersonalInfo(String id);
 	
 	public void updateProfile(MemberVO vo) ;
+	
+	public void logout(HttpSession session);
 	
 }

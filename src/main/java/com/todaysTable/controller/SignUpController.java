@@ -21,7 +21,7 @@ import com.todaysTable.service.SignUpService;
 import com.todaysTable.vo.MemberVO;
 
 @Controller
-public class JoinController {
+public class SignUpController {
 
 	@Autowired
 	private JavaMailSender mailSender;// 메일

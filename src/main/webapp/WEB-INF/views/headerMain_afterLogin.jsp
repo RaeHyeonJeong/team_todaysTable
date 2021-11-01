@@ -36,7 +36,7 @@ String main_profile=location.concat(profile_image_path);
 				</ul>
 				<form name="headerMain-afterLogin" id="headerMain-afterLogin" action="getLoginInfo.do">
 				<ul class="navbar-nav ms-auto">
-					<li class="nav-item  text-muted fw-bold pe-1 position-sticky"><%=name %></li>
+					<li class="nav-item  text-muted fw-bold pe-1 position-sticky"><strong style="color: navy;"><%=name %></strong>님</li>
 					<li class="nav-item dropdown ms-lg-3"><a id="userDropdownMenuLink" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<img class="avatar avatar-sm avatar-border-white me-2" src="<%= main_profile %>" alt="Jack London">
 						</a>

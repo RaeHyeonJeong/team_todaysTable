@@ -51,7 +51,6 @@
 #mail_check_input_box_true {
 	background-color: white;
 } */
-
 .correct {
 	color: blue;
 }
@@ -76,12 +75,14 @@
 						enctype="multipart/form-data">
 						<div class="mb-4">
 							<label class="form-label" for="loginUsername">아이디(본인 이메일
-								작성)</label><br> <input class="form-control"
-								style="width: 380px; float: left;" name="id" id="id"
-								placeholder="name@address.com" type="text" required
-								data-msg="주소를 입력하세요">
-							<button class="btn btn-primary" type="button" id="idCheck"
-								style="float: right;">중복확인</button>
+								작성)</label><br>
+							<div class="input-group mb-3">
+								<input class="form-control" name="id" id="id"
+									placeholder="name@address.com" type="text" required
+									data-msg="주소를 입력하세요" aria-describedby="idCheck">
+								<button class="btn btn-primary btn-outline" type="button"
+									id="idCheck">중복확인</button>
+							</div>
 							<div>
 								<span id="ok_check"> <small
 									style="color: blue; float: left;">사용가능한 아이디 입니다.</small>
@@ -90,23 +91,27 @@
 								</span>
 							</div>
 
-							<div class="mail_check_input_box" >
+							<div class="mail_check_input_box">
 								<div class="mb-4">
-									<br> <br> <br> <label class="form-label"
-										for="loginUsername">본인 확인 이메일</label><br>
-									<div class="mail_check_button">
-										<input class="form-control" style="width: 340px; float: left;"
-											name="email" id="email" placeholder="name@address.com"
-											required data-msg="이메일을 입력해 주세요" readonly="readonly">
-										<button type="button" class="btn btn-primary" id="numsend"
-											style="float: right;">인증번호 받기</button>
+									<br> <label class="form-label" for="loginUsername">본인
+										확인 이메일</label><br>
+
+									<div class="input-group mb-3">
+										<input class="form-control" name="email" id="email"
+											placeholder="name@address.com" required
+											data-msg="이메일을 입력해 주세요" readonly="readonly"
+											aria-describedby="numsend">
+										<div class="mail_check_button">
+											<button type="button" class="btn btn-primary btn-outline ms-3"
+												id="numsend">인증번호 받기</button>
+										</div>
 									</div>
+
 								</div>
 								<div class="mb-4">
 									<div class="authnum_box" id="#mail_check_input_box_false">
-										<input class="form-control" style="width: 340px; float: left;"
-											name="authnum" id="authnum" placeholder="인증번호 입력" required
-											data-msg="인증번호를 입력해 주세요."> <br>
+										<input class="form-control" name="authnum" id="authnum"
+											placeholder="인증번호 입력" required data-msg="인증번호를 입력해 주세요.">
 									</div>
 								</div>
 								<div>
@@ -115,11 +120,11 @@
 							</div>
 						</div>
 						<div class="mb-4">
-							<br> <br> <br> <label class="form-label"
-								for="password" style="float: left;">비밀번호</label> <input
-								class="form-control" name="password1" id="password1"
-								placeholder="비밀번호 입력" type="password" required
-								data-msg="비밀번호를 입력해 주세요" onchange="chkPW()">
+							<br> <label class="form-label" for="password"
+								style="float: left;">비밀번호</label> <input class="form-control"
+								name="password1" id="password1" placeholder="비밀번호 입력"
+								type="password" required data-msg="비밀번호를 입력해 주세요"
+								onchange="chkPW()">
 							<p>
 								<small style="color: red;">*특수문자, 대문자, 소문자, 숫자 조합 필수(8자리
 									이상)</small>
@@ -154,37 +159,42 @@
 								placeholder="010-1234-5678" required data-msg="전화번호를 입력하세요">
 						</div>
 						<div class="mb-4">
-							<label class="form-label" for="address">주소</label><br> <input
-								class="form-control" style="width: 350px; float: left;"
-								name="postnum" id="postnum" placeholder="우편번호" type="text"
-								required data-msg="우편번호를 입력하세요."> <input
-								class="btn btn-primary" type="button" onclick="Postcode()"
-								value="우편번호 찾기"> <input class="form-control"
-								id="address1" placeholder="주소" type="text" required
-								data-msg="주소를 입력하세요"> <input class="form-control"
-								id="address2" placeholder="상세주소" type="text" required
-								data-msg="상세주소를 입력하세요"> <input class="form-control"
-								type="text" id="extraAddress"> <input
+							<label class="form-label" for="address">주소</label><br>
+							<div class="input-group mb-3">
+								<input class="form-control" style="width: 350px; float: left;"
+									name="postnum" id="postnum" placeholder="우편번호" type="text"
+									required data-msg="우편번호를 입력하세요." aria-describedby="postselect">
+
+								<input class="btn btn-primary btn-outline" type="button"
+									onclick="Postcode()" id="postselect" value="우편번호 찾기">
+							</div>
+							<input class="form-control" id="address1" placeholder="주소"
+								type="text" required data-msg="주소를 입력하세요"> <input
+								class="form-control" id="address2" placeholder="상세주소"
+								type="text" required data-msg="상세주소를 입력하세요"> <input
+								class="form-control" type="text" id="extraAddress"> <input
 								class="form-control" type="text" id="address" name="address">
 						</div>
 						<div class="mb-4">
-							<label class="form-label" for="nickname"> 닉네임</label><br> <input
-								class="form-control" style="width: 360px; float: left;"
-								name="nickname" id="nickname" placeholder="닉네임 입력" type="text"
-								required data-msg="닉네임을 작성하세요">
-							<button type="button" class="btn btn-primary" id="nickCheck"
-								style="float: right;">중복확인</button>
+							<label class="form-label" for="nickname"> 닉네임</label><br>
+							<div class="input-group mb-3">
+								<input class="form-control" name="nickname" id="nickname"
+									placeholder="닉네임 입력" type="text" required data-msg="닉네임을 작성하세요"
+									aria-describedby="nickCheck">
+								<button type="button" class="btn btn-primary btn-outline"
+									id="nickCheck">중복확인</button>
+							</div>
 							<div>
-								<span id="ok_nick"><small
-									style="color: blue; float: left;">사용가능한 닉네임 입니다.</small></span> <span
+								<span id="ok_nick"><small style="color: blue; float: left;">사용가능한 닉네임 입니다.</small></span> <span
 									id="no_nick"><small style="color: red; float: left;">이미
 										존재하는 닉네임 입니다.</small></span>
 							</div>
 						</div>
 
-						<div class="mb-4">
-							<br> <br> <label class="form-label" for="profile">프로필</label><br>
-							<input type="file" id="file" name="file" style="float: left;">
+						<div class="mb-3">
+							<br> <label class="form-label" for="profile">프로필</label><br>
+							<input class="form-control form-control-sm" id="file" name="file"
+								type="file">
 						</div>
 						<br>
 						<div class="d-grid gap-2">
@@ -360,8 +370,11 @@
 			//아이디 중복체크
 			$("#no_check").hide();
 			$("#ok_check").hide();
-			$("button#idCheck").click(function() {
-								$.ajax({
+			$("button#idCheck")
+					.click(
+							function() {
+								$
+										.ajax({
 											url : "idCheck.do",
 											type : "post",
 											dataType : "json",
@@ -455,8 +468,7 @@
 	<script type="text/javascript">
 		/* 인증번호 비교 */
 		$("input#authnum").blur(function() {
-			var obj = document
-			.getElementsByClassName('form-control');
+			var obj = document.getElementsByClassName('form-control');
 			var inputNum = $("#authnum").val(); // 입력코드    
 			var checkResult = $("span#mail_check_warn"); // 비교 결과  
 			if (inputNum == code) { // 일치할 경우

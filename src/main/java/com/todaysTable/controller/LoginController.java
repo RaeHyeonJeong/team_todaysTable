@@ -56,4 +56,12 @@ public class LoginController {
 	public String login() {
 		return "WEB-INF/views/login";// 로그인 실패시 다시 로그인 페이지로 돌아감
 	}
+	@RequestMapping(value = "findid.do")
+	public String findId() {
+		return "WEB-INF/views/findid";
+	}
+	@RequestMapping(value = "findpwd.do")
+	public String findPwd() {
+		return "WEB-INF/views/findpwd";
+	}
 }

@@ -53,15 +53,17 @@ public class SignUpController {
 		
 		
 		// 파일업로드
-		String location = "C:\\Users\\KONGYI\\git\\team_todaysTable\\src\\main\\webapp\\resources\\upload\\";
+		String location = "C:\\Users\\조유주\\git\\team_todaysTable\\src\\main\\webapp\\resources\\upload\\";
 		FileOutputStream fos = null;
 		System.out.println(file);
+		
 		String fileName = file.getOriginalFilename();
 		if (fileName.length() > 0) {
 			try {
 				fos = new FileOutputStream(location.concat(fileName));
 				fos.write(file.getBytes());
-				vo.setProfile_image_path(fileName);
+				
+				vo.setProfile_image_path(location.concat(fileName));//location + fileName
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {

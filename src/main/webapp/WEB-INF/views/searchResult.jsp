@@ -116,19 +116,11 @@
 	<!-- jQuery-->
 	<script src="resources/vendor/jquery/jquery.min.js"></script>
 	<script type="text/javascript">
-	<%-- var search ="<%=search_value%>";  --%>
-	<%-- var location ="<%=location_value%>";  --%>
+	var key = '${param.search}';
+	var key2 = '${param.location}';
+	console.log(key);
+	console.log(key2);
 	
-	//console.log(search);
-	//console.log(location);
-	
-	
-	//var search = '${param.search}';
-	//var location = '${param.location}';
-	//console.log(search +' '+location);
-	//console.log(search);
-	//console.log(location);
-
 	function searchList(){
 		$.ajax({
 			type : 'POST',
@@ -154,6 +146,7 @@
 								  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
 							});
 							
+							
 							$("div#storelist").append(
 									
 									'<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%; width:900px;">'+
@@ -174,8 +167,7 @@
 												'</p>'+
 												'<form action="#"> <a class="position-relative z-index-40" href="javascript: void();">'+
 														'<button class="btn btn-primary btn-sm" type="submit">찜하기'+ '</button>'+
-												'</a></form> </div> </div> </div> </div> </div>' 
-											
+												'</a></form> </div> </div> </div> </div> </div>'
 							)
 						}
 						else
@@ -193,7 +185,7 @@
 							    	if(count>=3 && count < data.length)count++; //count를 받아온 정보길이 개수만큼 자동증가
 							    	
 							    	//Object 변수를 이용한 url 파라미터 만들기		
-									var obj = data[idx];
+									var obj = data[count];
 									var url = 'storeDetail_wej.do';
 									Object.keys(obj).forEach(function(key, index) {
 										  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
@@ -223,13 +215,11 @@
 							        
 									//article에 추가되는 콘텐츠를 append
 							        $('article').append(addContent);
-
 							    }
 							};
 							 
 						}
 						
-
 						
 					});
 					 
@@ -242,9 +232,146 @@
 	}
 	
 	
+	function wordSearch()
+	{
+		
+		$.ajax({
+			type : 'POST',
+			url : 'storelist.do',
+			data : "",
+			async : false,
+			contentType : "json",
+			success : function(data) {
+				
+				//리스트출력하기
+				if (data.length == 0) {
+					alert('데이터가 존재하지 않습니다.');
+				} else {
+					var storeArray = new Array();
+		 			var word_count = 0;
+		 			$(data).each(function(idx){
+							//Object 변수를 이용한 url 파라미터 만들기		
+							var obj = data[idx];
+							var url = 'storeDetail_wej.do';
+							Object.keys(obj).forEach(function(key, index) {
+								  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
+							});
+							
+							//매장리스트에 검색단어가 포함되어있는지 확인 후 출력
+							var text = data[idx].name;
+							var findStr = key;
+							
+								if (text.indexOf(findStr) != -1) {
+									word_count++;
+									if(word_count <= 3)
+									{
+										$("div#storelist").append(
+												
+												'<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%; width:900px;">'+
+												'<p style="display:none;">'+ url +'</p> <div class="card h-100 border-0 shadow">'+
+													'<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/photo/restaurant-1436018626274-89acd1d6ec9d.jpg); min-height: 200px;">'+
+														'<a class="tile-link" href=" '+ url +' "></a>' +
+														'<div class="card-img-overlay-bottom z-index-20">'+
+															'<h4 class="text-white text-shadow">'+data[idx].name+'</h4>'+
+														'</div>'+
+													'</div>'+
+													'<div class="card-body">'+
+														'<p class="text-sm text-muted fw-bold mb-3">카테고리 :'+ data[idx].category   +'</p>'+
+														'<p class="text-sm text-muted fw-bold mb-3">주소 :'+  data[idx].address  +'</p>'+
+														'<p class="text-sm text-muted fw-bold mb-3">전화번호 :'+  data[idx].tel  +'</p>'+
+														'<div class="d-flex justify-content-between align-items-center">'+
+															'<p class="mb-2 text-sm fw-bold">'+
+																'<i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i>'+
+															'</p>'+
+															'<form action="#"> <a class="position-relative z-index-40" href="javascript: void();">'+
+																	'<button class="btn btn-primary btn-sm" type="submit">찜하기'+ '</button>'+
+															'</a></form> </div> </div> </div> </div> </div>'
+										)
+									}
+									else
+									{
+										//console.log("store_no : "+ data[idx].store_no);
+										//console.log("idx :" +idx);
+										storeArray.push(idx);
+									}
+								}
+							
+					});
+		 			
+		 			//스크롤 바닥 감지
+					window.onscroll = function(e) {
+					    //window height + window scrollY 값이 document height보다 클 경우,
+					    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+							//더이상 리스트에 값이 없으면 탈출
+							if(data[storeArray[0]]==null)return;
+							
+							//Object 변수를 이용한 url 파라미터 만들기		
+							var obj = data[storeArray[0]];
+							var url = 'storeDetail_wej.do';
+							Object.keys(obj).forEach(function(key, index) {
+								  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
+							});
+							
+							
+							//실행할 로직 (콘텐츠 추가 = 가게정보 데이터)
+					        var addContent = '<div class="storeInfo" id="storeInfo">'+'<div class="col-sm-6 col-lg-4 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92" style="margin-left:10%;width:900px;">'+
+					        '<p style="display:none;">'+ url +'</p> <div class="card h-100 border-0 shadow">'+
+							'<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/photo/restaurant-1436018626274-89acd1d6ec9d.jpg); min-height: 200px;">'+
+								'<a class="tile-link" href=" '+ url +' "></a>' +
+								'<div class="card-img-overlay-bottom z-index-20">'+
+									'<h4 class="text-white text-shadow">'+data[storeArray[0]].name+'</h4>'+
+								'</div>'+
+							'</div>'+
+							'<div class="card-body">'+
+								'<p class="text-sm text-muted fw-bold mb-3">카테고리 :'+ data[storeArray[0]].category   +'</p>'+
+								'<p class="text-sm text-muted fw-bold mb-3">주소 :'+  data[storeArray[0]].address  +'</p>'+
+								'<p class="text-sm text-muted fw-bold mb-3">전화번호 :'+ data[storeArray[0]].tel  +'</p>'+
+								'<div class="d-flex justify-content-between align-items-center">'+
+									'<p class="mb-2 text-sm fw-bold">'+
+										'<i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i>'+
+									'</p>'+
+									'<form action="#"> <a class="position-relative z-index-40" href="javascript: void();">'+
+											'<button class="btn btn-primary btn-sm" type="submit">찜하기'+ '</button>'+
+									'</a></form> </div> </div> </div> </div> </div>' ;
+					        
+							//article에 추가되는 콘텐츠를 append
+					        $('article').append(addContent);
+							storeArray.shift();//배열 첫번째 아이템 제거
+					    }
+		 			}
+					 
+				}
+			},
+			error : function(request, status, error) {
+				alert(error);
+			}
+		});
+		
+	}
+	
+	
 	window.onload = function()
 	{
+		//검색어없이 search를 누른 경우
+		<%if(location_value.isEmpty() && search_value.isEmpty()){%>
 		searchList();
+		<%} //지역만 검색한 경우
+		else if(search_value.isEmpty()){
+		%>
+			
+		<%	
+		} //단어만 검색한 경우
+		else if(location_value.isEmpty()){
+		%>
+			wordSearch();
+		<% }//둘 다 있는 경우
+		else{
+		%>
+			
+		<%	
+		}
+		%>
+		
 		
 	}
 	

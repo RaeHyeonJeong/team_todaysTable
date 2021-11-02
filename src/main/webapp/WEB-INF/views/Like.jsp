@@ -691,14 +691,11 @@ div.row2 { -
 						</div>
 					</div>
 				</div>
+				
 				<div class="col-lg-9 ps-lg-5">
+	
 					<h2 class="hero-heading mb-0">찜 한 가게</h2>
-					<div align="right">
-						<button class="btn btn-outline-primary mb-4" type="submit" id="return" name="return" onClick="location.href='personal_information.jsp'">돌아가기</button>
-					</div>
-					
-					
-					
+				
 					<div class="d-flex flex-column d-block d-sm-flex review ">
 						<div class="d-flex flex-row bd-highlight mb-3">
 							<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
@@ -719,7 +716,7 @@ div.row2 { -
 							
 							
 							<!-- 찜하기 버튼 (체크박스 활성화로 상태 값을 DB에 저장해야 함)-->
-						<div class="heartbox" style="position: absolute;  left: 630px; top:160px; ">
+						<div class="heartbox" style="position: absolute;  left: 630px; top:100px; ">
 					
 							<input type="checkbox" class="checkbox1" id="checkbox1" /> 
 							<label for="checkbox1"> 
@@ -760,19 +757,8 @@ div.row2 { -
 			         </svg>
 					</label>
 				</div>
-							
-							
-							
-						</div>
-						<!-- <div class="d-flex flex-row-reverse bd-highlight">
-							<button class="btn btn-outline-primary" type="submit" id="like1" name="like1">something</button>
-						</div> -->
-						
+						</div>			
 					</div>
-					
-					
-					
-					
 					<div class="d-flex flex-column d-block d-sm-flex review ">
 						<div class="d-flex flex-row bd-highlight mb-3">
 							<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
@@ -792,11 +778,8 @@ div.row2 { -
 							</div>
 						</div>
 						
-						
-						
 							<!-- 찜하기 버튼 (체크박스 활성화로 상태 값을 DB에 저장해야 함)-->
-						<div class="heartbox" style="position: absolute;  left: 630px; top:360px; ">
-					
+						<div class="heartbox" style="position: absolute;  left: 630px; top:300px; ">
 							<input type="checkbox" class="checkbox2" id="checkbox2" /> 
 							<label for="checkbox2"> 
 							<svg id="heart-svg" viewBox="-80 -40 58 57" xmlns="http://www.w3.org/2000/svg">
@@ -836,11 +819,8 @@ div.row2 { -
 			         </svg>
 					</label>
 				</div>
-								
-					</div>
-					
-					
-					
+										</div>
+				
 					<div class="d-flex flex-column d-block d-sm-flex review ">
 						<div class="d-flex flex-row bd-highlight mb-3">
 							<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
@@ -859,11 +839,9 @@ div.row2 { -
 								<p class="text-muted text-sm">서울특별시 용산구 이태원로 189</p>
 							</div>
 						</div>
-						
-						
-						
+							
 							<!-- 찜하기 버튼 (체크박스 활성화로 상태 값을 DB에 저장해야 함)-->
-						<div class="heartbox" style="position: absolute;  left: 630px; top:560px; ">
+						<div class="heartbox" style="position: absolute;  left: 630px; top:500px; ">
 					
 							<input type="checkbox" class="checkbox3" id="checkbox3" /> 
 							<label for="checkbox3"> 
@@ -905,12 +883,15 @@ div.row2 { -
 					</label>
 				</div>
 						
-						
-						
-						
-						
+						<div>
+				<a class="close-absolute " href="myPageMove.do">
+						<svg class="svg-icon w-3rem h-3rem">
+                <use xlink:href="#close-1"> </use>
+              </svg>
+					</a>
 					</div>
-				</div>
+					</div>
+					</div>
 			</div>
 			<!-- Pagination -->
 			<nav aria-label="Page navigation example">

@@ -1,6 +1,9 @@
 package com.todaysTable.controller;
 
 import java.io.FileOutputStream;
+import java.util.List;
+import java.util.UUID;
+
 import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import com.todaysTable.service.MemberService;
@@ -45,7 +49,6 @@ public class MemberController {
 		return "WEB-INF/views/profile";//프로필 관리 페이지로 이동
 	}
 	
-	
 	@PostMapping(value = "updateProfile.do")//프로필 관리 수정하기
 	public String updateProfile(
 			MemberVO vo,HttpSession session,Model model, @RequestParam(value = "file", required = false) 
@@ -59,11 +62,13 @@ public class MemberController {
 		FileOutputStream fos = null;
 		System.out.println(file);
 		String fileName = file.getOriginalFilename();
+		UUID uuid = UUID.randomUUID();
+		String resultName = location + uuid.toString() + "_" + fileName;
 		if (fileName.length() > 0) {
 			try {
-				fos = new FileOutputStream(location.concat(fileName));
+				fos = new FileOutputStream(resultName);
 				fos.write(file.getBytes());
-				vo.setProfile_image_path(location.concat(fileName));//location + fileName
+				vo.setProfile_image_path(resultName);// location + fileName
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {

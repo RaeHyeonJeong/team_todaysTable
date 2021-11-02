@@ -8,9 +8,9 @@
 				<div class="col-lg-2 col-md-6 mb-5 mb-lg-0 mx-2">
 					<h6 class="text-uppercase text-dark mb-3">main</h6>
 					<ul class="list-unstyled">
-						<li><a class="text-muted" href="index.html">메인 페이지</a></li>
-						<li><a class="text-muted" href="category-rooms.html">아이디 찾기</a></li>
-						<li><a class="text-muted" href="category-2-rooms.html">비밀번호 찾기</a></li>
+						<li><a class="text-muted" href="main.do">메인 페이지</a></li>
+						<li><a class="text-muted" href="findid.do">아이디 찾기</a></li>
+						<li><a class="text-muted" href="findpwd.do">비밀번호 찾기</a></li>
 						<li><a class="text-muted" href="category-3-rooms.html">회원 탈퇴</a></li>
 					</ul>
 				</div>

@@ -1,7 +1,9 @@
 package com.todaysTable.controller;
 
 import java.io.FileOutputStream;
+import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 import javax.mail.internet.MimeMessage;
 
@@ -39,29 +41,30 @@ public class SignUpController {
 		return "WEB-INF/views/agreement";
 	}
 
+
 	// 회원가입
 	@PostMapping(value = "signupsubmit.do")
 	public String joinSubmit(MemberVO vo, @RequestParam(value = "file", required = false) MultipartFile file)
 			throws Exception {
-		
+
 		// 생일 yy/mm/dd로 수정
 		String birthdate = vo.getBirthdate();
 		birthdate = birthdate.replace('-', '/');
 		birthdate = birthdate.substring(2, birthdate.length());
 		vo.setBirthdate(birthdate);
-		
-		
+
 		// 파일업로드
 		String location = "C:\\Users\\조유주\\git\\team_todaysTable\\src\\main\\webapp\\resources\\upload\\";
 		FileOutputStream fos = null;
 		System.out.println(file);
-		
 		String fileName = file.getOriginalFilename();
+		UUID uuid = UUID.randomUUID();
+		String resultName = location + uuid.toString() + "_" + fileName;
 		if (fileName.length() > 0) {
 			try {
-				fos = new FileOutputStream(location.concat(fileName));
+				fos = new FileOutputStream(resultName);
 				fos.write(file.getBytes());
-				vo.setProfile_image_path(location.concat(fileName));//location + fileName
+				vo.setProfile_image_path(resultName);// location + fileName
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
@@ -106,12 +109,12 @@ public class SignUpController {
 			helper.setSubject(title);
 			helper.setText(content, true);
 			mailSender.send(message);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		String num = Integer.toString(checkNum);
-		
+
 		return num;
 	}
 

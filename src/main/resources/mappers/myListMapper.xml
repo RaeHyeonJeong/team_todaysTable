@@ -19,7 +19,10 @@
 	WHERE STORE_NO = #{VALUE}
 </select>
 
-
+<select id="checkLike" parameterType="com.todaysTable.vo.DibsVO">
+	SELECT COUNT(*) FROM DIBS
+	WHERE STORE_NO=#{VALUE} AND ID=#{VALUE} 
+</select>
 
 <!-- INSERT문 -->
 

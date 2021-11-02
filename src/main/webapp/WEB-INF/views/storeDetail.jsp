@@ -307,6 +307,90 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 <!-- Font Awesome CSS-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		$("button#submit").click(function(e) {
+			e.preventDefault();
+			
+			/* var content = $("textarea#content").html();
+			console.log(content.length);
+			content = content.substring(0, content.length-1);
+			console.log(content); */
+			var form = $("#postUpReview")[0];
+			var data = new FormData(form);
+			data.append('taste_grade', $("select#taste_grade").val());
+			data.append('service_grade', $("select#service_grade").val());
+			data.append('mood_grade', $("select#mood_grade").val());
+			data.append('content', $("textarea#content").text());
+			data.append('store_no', '${store_no}');
+			$.ajax({
+				type:'POST',
+				enctype:'multipart/form-data',
+				url:'putUpReview.do',
+				dataType:'json',
+				data:data,
+				processData:false,
+				contentType:false,
+				cache:false,
+				timeout:600000,
+				success: function(v) {
+					var addHtml = "<div class='d-flex d-block d-sm-flex review'>"
+								+	"<div class='text-md-center flex-shrink-0 me-4 me-xl-5'>"
+								+	"<img class='d-block avatar avatar-xl p-2 mb-2'"
+								+	"src='resources/img/avatar/avatar-8.jpg' alt='Padmé Amidala'>"
+								+	"<span class='text-uppercase text-muted text-sm'>"
+								+	v.reg_date
+								+	"</span>"
+								+	"</div>"
+								+	"<div>"
+								+	"<h6 class='mt-2 mb-1'>"
+								+	"${nickname}</h6>"
+								+	"<div class='mb-2'>";
+								
+					for(var i = 1; i <= 5; i++) {
+						if(i <= v.avg_grade) {
+							addHtml += "<i class='fa fa-xs fa-star text-primary'></i>"	
+						} else {
+							addHtml += "<i class='fa fa-xs fa-star text-gray-200'></i>"
+						}
+					}
+					addHtml	+=	"</div>"
+							+	"<p class='text-muted text-sm'>"
+							+	v.content
+							+	"</p>";
+							
+					addHtml += "<div class='row gallery mb-3 ms-n1 me-n1'>";
+					/*for(var i = 0 ; i < v.image_list.length; i++) {
+						addHtml +=  "<div class='col-lg-4 col-6 px-1 mb-2'>"
+								+	"<a href='resources/img/review/"
+								+	v.image_list[i].image_path
+								+	"' data-fancybox='gallery' title='"+v.image_list[i].image_no+"'>"		
+								+	"<img class='img-fluid' src='resources/img/review/"
+								+	v.image_list[i].image_path
+								+	"' alt='...'></a></div>";
+					}*/
+					for(var i = 0 ; i < v.image_list.length; i++) {
+						addHtml +=  "<div class='col-lg-4 col-6 px-1 mb-2'>"
+								+	"<img class='img-fluid' src='resources/img/review/"
+								+	v.image_list[i].image_path
+								+	"' alt='...'></div>";
+					}
+					addHtml +=	"</div>"
+							+	"</div>"
+							+	"</div>";
+							
+					$("#review").append(addHtml);
+				},
+				error:function(e) {
+					alert(e);
+				}
+			});
+		});
+	});
+</script>
 </head>
 <body style="padding-top: 72px;">
 	<!-- HEADER include -->
@@ -415,16 +499,7 @@
 							</c:forEach>
 						</div>
 						
-						
-						
-
-
 						<br>
-
-						<ul class="list-inline text-sm mb-4">
-							<li class="list-inline-item me-3"><i
-								class="fa fa-users me-1 text-secondary"></i> 테이블 당 최대 인원 수 :</li>
-						</ul>
 
 						<ul class="text-muted font-weight-light">
 							<li>주소 : ${store.address}</li>
@@ -438,24 +513,13 @@
 							</li>
 							<li>메뉴 : <br> 
 								<c:forEach var="i" items="${menu}">
-									${i.name} - ${i.price}원 <br>
+									${i.menu_name} - ${i.price}원 <br>
 								</c:forEach>
 							</li>
 							<br>
 						</ul>
 
-						<h6 class="mb-3">식당 소개</h6>
-
-						<p class="text-muted font-weight-light">
-							방황하여도 보이는 것은 거친 모래일 뿐일
-							것이다. 이상의 꽃이 없으면 쓸쓸한 인간에 남는 것은 영락과 부패 뿐이다. 낙원을 장식하는 천자만홍이 어디 있으며
-							인생을 풍부하게 하는 온갖 과실이 어디 있으랴? 이상! 우리의 청춘이 가장
-						</p>
-
 						<!-- 예약페이지로 이동 -->
-						<%
-							session.setAttribute("store_no", 51);
-						%>
 						<div class="form-group">
 							<form action="moveToBookStore.do" method="post">
 								<input type="hidden" name="store_no" value="${store_no}">
@@ -487,22 +551,22 @@
 						aria-expanded="false" aria-controls="leaveReview">리뷰 작성</button>
 					<div class="mt-4 collapse" id="leaveReview" style="">
 						<!-- <h5 class="mb-4"></h5> -->
-				 		<!-- <form class="form" id="contact-form" method="POST" action=""> -->
+				 		<form class="form" id="postUpReview" method="POST" enctype="multipart/form-data">
 							<div class="row">
 								<div class="col-sm-6">
 									<!-- DB에 저장되어 있는 닉네임 값 불러와야함 -->
 									<div class="mb-4">
 										<label class="form-label" for="name">닉네임 *</label> <input
-											class="form-control" type="text" name="nickName" id="nickName"
-											placeholder="Database nickname stored value" disabled="disabled" value="${nickName}">
+											class="form-control" type="text" name="nickname" id="nickname"
+											placeholder="Database nickname stored value" disabled="disabled" value="${nickname}">
 									</div>
 								</div>
 								
 								<!-- 리뷰 상 남긴 평점 값을 DB에 저장해야함 -->
 								<div class="col-sm-6">
 									<div class="mb-4">
-										<label class="form-label" for="rating">맛 평점 *</label> <select
-											class="form-select focus-shadow-0" name="user_rating" id="user_rating">
+										<label class="form-label" for="taste_grade">맛 평점 *</label> <select
+											class="form-select focus-shadow-0" name="taste_grade" id="taste_grade">
 											<option value="5">★★★★★ (5/5)</option>
 											<option value="4">★★★★☆ (4/5)</option>
 											<option value="3">★★★☆☆ (3/5)</option>
@@ -516,8 +580,8 @@
 								<!-- 리뷰 상 남긴 평점 값을 DB에 저장해야함 -->
 								<div class="col-sm-6">
 									<div class="mb-4">
-										<label class="form-label" for="rating">서비스 평점 *</label> <select
-											class="form-select focus-shadow-0" name="user_rating" id="user_rating">
+										<label class="form-label" for="service_grade">서비스 평점 *</label> <select
+											class="form-select focus-shadow-0" name="service_grade" id="service_grade">
 											<option value="5">★★★★★ (5/5)</option>
 											<option value="4">★★★★☆ (4/5)</option>
 											<option value="3">★★★☆☆ (3/5)</option>
@@ -530,8 +594,8 @@
 								<!-- 리뷰 상 남긴 평점 값을 DB에 저장해야함 -->
 								<div class="col-sm-6">
 									<div class="mb-4">
-										<label class="form-label" for="rating">분위기 평점 *</label> <select
-											class="form-select focus-shadow-0" name="user_rating" id="user_rating">
+										<label class="form-label" for="mood_grade">분위기 평점 *</label> <select
+											class="form-select focus-shadow-0" name="mood_grade" id="mood_grade">
 											<option value="5">★★★★★ (5/5)</option>
 											<option value="4">★★★★☆ (4/5)</option>
 											<option value="3">★★★☆☆ (3/5)</option>
@@ -542,110 +606,55 @@
 								</div>
 							</div>
 							<div class="mb-4">
-								<label class="form-label" for="review">내용 *</label>
-								<textarea class="form-control" rows="4" name="review"
-									id="review" placeholder="Enter your review" required="required"></textarea>
+								<label class="form-label" for="content">내용 *</label>
+								<textarea class="form-control" rows="4" name="content"
+									id="content" placeholder="Enter your review" required="required"></textarea>
 							</div>
 							<div class="form-group mb-4">
-								<label class="form-label" for="formFile">이미지 업로드 *</label> <input class="form-control" id="files-upload" multiple="multiple" type="file" name="filename[]">
+								<label class="form-label" for="files">이미지 업로드 *</label> <input class="form-control" id="files" multiple="multiple" type="file" name="files">
 							</div>
-							<input class="btn btn-primary" type="submit" value="게시">
-						<!-- </form> -->
+							<button id="submit" class="btn btn-primary">게시</button>
+							<!-- <input class="btn btn-primary" type="submit" value="게시"> -->
+						</form>
 					</div>
 				</div>
 
 
-				<div class="text-block">
+				<div id="review" class="text-block">
 					<p class="subtitle text-sm text-primary">리뷰</p>
-					<div class="d-flex d-block d-sm-flex review">
-						<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
-							<img class="d-block avatar avatar-xl p-2 mb-2"
-								src="resources/img/avatar/avatar-8.jpg" alt="Padmé Amidala"><span
-								class="text-uppercase text-muted text-sm">Dec 2018</span>
-						</div>
-						<div>
-							<h6 class="mt-2 mb-1">Padmé Amidala</h6>
-							<div class="mb-2">
-								<i class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i>
+					<c:forEach var="i" items="${reviewList}">
+						<div class="d-flex d-block d-sm-flex review">
+							<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
+								<img class="d-block avatar avatar-xl p-2 mb-2"
+									src="resources/img/avatar/avatar-4.jpg" alt="Jabba Hut"><span
+									class="text-uppercase text-muted text-sm">${i.reg_date}</span>
 							</div>
-							<p class="text-muted text-sm">One morning, when Gregor Samsa
-								woke from troubled dreams, he found himself transformed in his
-								bed into a horrible vermin. He lay on his armour-like back, and
-								if he lifted his head a little he could see his brown belly,
-								slightly domed and divided by arches into stiff sections</p>
-						</div>
-					</div>
-					<div class="d-flex d-block d-sm-flex review">
-						<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
-							<img class="d-block avatar avatar-xl p-2 mb-2"
-								src="resources/img/avatar/avatar-2.jpg" alt="Luke Skywalker"><span
-								class="text-uppercase text-muted text-sm">Dec 2018</span>
-						</div>
-						<div>
-							<h6 class="mt-2 mb-1">Luke Skywalker</h6>
-							<div class="mb-2">
-								<i class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-gray-200"></i>
+							<div>
+								<h6 class="mt-2 mb-1">${i.nickname}</h6>
+								<div class="mb-2">
+									<c:forEach var="cnt" begin="1" end="5">
+										<c:choose>
+											<c:when test="${cnt le i.avg_grade}">
+												<i class="fa fa-xs fa-star text-primary"></i>
+											</c:when>
+											<c:otherwise>
+												<i class='fa fa-xs fa-star text-gray-200'></i>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+								</div>
+								<p class="text-muted text-sm">${i.content}</p>
+								<div class="row gallery mb-3 ms-n1 me-n1">
+									<c:forEach var="j" items="${i.image_list}">
+										<div class="col-lg-4 col-6 px-1 mb-2"><a href="resources/img/review/${j.image_path}" data-fancybox="gallery" title="${j.image_no}"><img class="img-fluid" src="resources/img/review/${j.image_path}" alt="..."></a></div>
+									</c:forEach>
+				    			</div>
 							</div>
-							<p class="text-muted text-sm">The bedding was hardly able to
-								cover it and seemed ready to slide off any moment. His many
-								legs, pitifully thin compared with the size of the rest of him,
-								waved about helplessly as he looked. "What's happened to me?" he
-								thought. It wasn't a dream.</p>
 						</div>
-					</div>
-					<div class="d-flex d-block d-sm-flex review">
-						<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
-							<img class="d-block avatar avatar-xl p-2 mb-2"
-								src="resources/img/avatar/avatar-3.jpg" alt="Princess Leia"><span
-								class="text-uppercase text-muted text-sm">Dec 2018</span>
-						</div>
-						<div>
-							<h6 class="mt-2 mb-1">Princess Leia</h6>
-							<div class="mb-2">
-								<i class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-gray-200"></i><i
-									class="fa fa-xs fa-star text-gray-200"></i>
-							</div>
-							<p class="text-muted text-sm">His room, a proper human room
-								although a little too small, lay peacefully between its four
-								familiar walls. A collection of textile samples lay spread out
-								on the table.</p>
-						</div>
-					</div>
-					<div class="d-flex d-block d-sm-flex review">
-						<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
-							<img class="d-block avatar avatar-xl p-2 mb-2"
-								src="resources/img/avatar/avatar-4.jpg" alt="Jabba Hut"><span
-								class="text-uppercase text-muted text-sm">Dec 2018</span>
-						</div>
-						<div>
-							<h6 class="mt-2 mb-1">Jabba Hut</h6>
-							<div class="mb-2">
-								<i class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i><i
-									class="fa fa-xs fa-star text-primary"></i>
-							</div>
-							<p class="text-muted text-sm">Samsa was a travelling salesman
-								- and above it there hung a picture that he had recently cut out
-								of an illustrated magazine and housed in a nice, gilded frame.</p>
-						</div>
-					</div>
-
+					</c:forEach>
 				</div>
 			</div>
-			
+			            
 			<!-- 지도 -->
 			<div class="col-lg-4">
 				<div class="p-4 shadow ml-lg-4 rounded sticky-top" style="top: 100px;">

@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.todaysTable.vo.MenuVO;
+import com.todaysTable.vo.ReviewImageVO;
+import com.todaysTable.vo.ReviewVO;
 import com.todaysTable.vo.StoreVO;
 
 @Repository
@@ -40,10 +42,56 @@ public class DetailDaoImpl implements DetailDao {
 	}
 
 	@Override
-	public String getNickName(String id) {
+	public String getNickname(String id) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne("detailMapper.getNickName", id);
+		return sqlSession.selectOne("detailMapper.getNickname", id);
 	}
 	
+	@Override
+	public String getNicknameFromNo(int memb_no) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("detailMapper.getNicknameFromNo", memb_no);
+	}
+
+	@Override
+	public int getMemberNo(String id) {
+		return sqlSession.selectOne("detailMapper.getMemberNo", id);
+	}
+
+	@Override
+	public int getNewReviewNo() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("detailMapper.getNewReviewNo");
+	}
+
+	@Override
+	public void insertReview(ReviewVO vo) {
+		// TODO Auto-generated method stub
+		sqlSession.insert("detailMapper.insertReview", vo);
+	}
+
+	@Override
+	public void insertReviewImage(ReviewImageVO vo) {
+		// TODO Auto-generated method stub
+		sqlSession.insert("detailMapper.insertReviewImage", vo);
+	}
+
+	@Override
+	public String getRegDate(int review_no) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("detailMapper.getRegDate", review_no);
+	}
+
+	@Override
+	public List<ReviewVO> selectReviewList(int store_no) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("detailMapper.selectReviewList", store_no);
+	}
+
+	@Override
+	public List<ReviewImageVO> selectReviewImageList(int review_no) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("detailMapper.selectReviewImageList", review_no);
+	}
 	
 }

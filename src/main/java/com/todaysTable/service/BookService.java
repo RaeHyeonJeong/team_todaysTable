@@ -8,8 +8,8 @@ import com.todaysTable.vo.StoreVO;
 
 public interface BookService {
 	
-	public int getMemberNo(String id);
 	public String getReserveDate(String reserveDate, String reserveTime);
 	public void insertReservationInfo(BookVO vo);
 	public List<RoomVO> selectRooms(int store_no);
+	public boolean isAlreadyBooked(BookVO vo);
 }

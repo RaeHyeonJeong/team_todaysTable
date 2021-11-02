@@ -46,7 +46,17 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 <!-- Font Awesome CSS-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		if('${alreadyBooked}' == 'Y') {
+			alert('해당 시간에 이미 예약되어 있는 방입니다.');
+		}
+	});
+</script>
 </head>
+
 <body style="padding-top: 72px;">
 	<header class="header">
 		<!-- Navbar-->
@@ -279,17 +289,13 @@
 		</div>
 	</section>
 	
-	<form class="form" id="booking-form" method="POST" action="bookStoreSubmit.do" autocomplete="off">
-	<%
-		session.setAttribute("id", "ptag@naver.com");
-	%>
-	<input type="hidden" name="id" value="${id}">
+	<form action="bookStoreSubmit.do" class="form" id="booking-form" method="POST" autocomplete="off">
 	<input type="hidden" name="store_no" value="${store_no}">
 	<div class="container py-5">
 		<div class="row">
 			<div class="col-lg-8">
 				<div class="text-block">
-					<h1>가게명</h1>
+					<h1>${store.name}</h1>
 					<div class="text-left">
 						<br>
 						<p>

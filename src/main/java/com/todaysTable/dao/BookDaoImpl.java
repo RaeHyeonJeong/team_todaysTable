@@ -20,11 +20,6 @@ public class BookDaoImpl implements BookDao {
 	SqlSessionTemplate sqlSession;
 	
 	@Override
-	public int getMemberNo(String id) {
-		return sqlSession.selectOne("bookMapper.getMemberNo", id);
-	}
-	
-	@Override
 	public List<RoomVO> selectRooms(int store_no) {
 		return sqlSession.selectList("bookMapper.selectRooms", store_no);
 	}
@@ -32,5 +27,16 @@ public class BookDaoImpl implements BookDao {
 	@Override
 	public void insertReservationInfo(BookVO vo) {
 		sqlSession.insert("bookMapper.insertReservationInfo", vo);
-	}	
+	}
+
+	@Override
+	public boolean isAlreadyBooked(BookVO vo) {
+		// TODO Auto-generated method stub
+		if((int)sqlSession.selectOne("bookMapper.isAlreadyBooked", vo) >= 1) {
+			return true;
+		} else {
+			return false;
+		} 
+	}
+	
 }

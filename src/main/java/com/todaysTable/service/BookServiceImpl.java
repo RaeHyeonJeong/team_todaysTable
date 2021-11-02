@@ -6,20 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.todaysTable.dao.BookDao;
+import com.todaysTable.dao.DetailDao;
 import com.todaysTable.vo.BookVO;
 import com.todaysTable.vo.RoomVO;
-import com.todaysTable.vo.StoreVO;
 
 @Service
 public class BookServiceImpl implements BookService{
 	
 	@Autowired
 	private BookDao dao;
-	
-	@Override
-	public int getMemberNo(String id) {
-		return dao.getMemberNo(id);
-	}
 	
 	@Override
 	public String getReserveDate(String reserveDate, String reserveTime) {
@@ -43,4 +38,11 @@ public class BookServiceImpl implements BookService{
 	public List<RoomVO> selectRooms(int store_no) {
 		return dao.selectRooms(store_no);
 	}
+
+	@Override
+	public boolean isAlreadyBooked(BookVO vo) {
+		// TODO Auto-generated method stub
+		return dao.isAlreadyBooked(vo);
+	}
+	
 }

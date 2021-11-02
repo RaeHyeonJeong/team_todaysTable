@@ -7,7 +7,7 @@ import com.todaysTable.vo.RoomVO;
 import com.todaysTable.vo.StoreVO;
 
 public interface BookDao {
-	public int getMemberNo(String id);
 	public List<RoomVO> selectRooms(int store_no);
 	public void insertReservationInfo(BookVO vo);
+	public boolean isAlreadyBooked(BookVO vo);
 }

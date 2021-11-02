@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myListMapper">
+
+<!-- SELECT문 -->
+
+<select id="getMemberNo" parameterType="java.lang.String" resultType="java.lang.Integer">
+	SELECT MEMB_NO FROM MEMBER
+	WHERE ID=#{VALUE}
+</select>
+
+<select id="getStoreInfo" parameterType="java.lang.Integer" resultType="com.todaysTable.vo.StoreVO">
+	SELECT STORE_NAME,ADDRESS FROM STORE    
+	WHERE STORE_NO = #{VALUE}
+</select>
+
+<select id="getAvg_Grade" parameterType="java.lang.Integer" resultType="java.lang.Double">
+	SELECT AVG_GRADE FROM STORE_MORE_INFO    
+	WHERE STORE_NO = #{VALUE}
+</select>
+
+<select id="checkLike" parameterType="com.todaysTable.vo.DibsVO">
+	SELECT COUNT(*) FROM DIBS
+	WHERE STORE_NO=#{VALUE} AND ID=#{VALUE} 
+</select>
+
+<!-- INSERT문 -->
+
+<insert id="insertLikeInfo" parameterType="com.todaysTable.vo.DibsVO">
+	INSERT INTO DIBS(MEMB_NO, STORE_NO,STORE_NAME, ADDRESS,AVG_GRADE)
+	VALUES(#{memb_no}, #{store_no}, #{store_name}, #{address}, #{avg_grade})
+</insert>
+
+<!-- Delete문 -->
+
+<delete id="deleteLikeInfo" parameterType="com.todaysTable.vo.DibsVO">
+   DELETE FROM DIBS WHERE STORE_NO=#{VALUE} AND ID=#{VALUE}
+</delete>
+
+</mapper>

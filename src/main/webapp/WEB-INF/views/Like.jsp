@@ -23,12 +23,10 @@ div.row2 { -
 	margin-left: calc(var(- -bs-gutter-x)* -.5);
 	justify-content: space-evenly;
 }
-
 .score-layout {
 	color: orange;
 	font-size: 1.6em;
 }
-
 </style>
 
 
@@ -41,184 +39,151 @@ div.row2 { -
      left: 50%;
      transform: translate(-50%, -50%)
  }
-
  svg {
      cursor: pointer;
      overflow: visible;
      width: 60px;
      margin: 20px
  }
-
  svg #heart {
      transform-origin: center;
      animation: animateHeartOut .3s linear forwards
  }
-
  svg #main-circ {
      transform-origin: 29.5px 29.5px
  }
-
 /* 첫번째 하트 */
  .checkbox1 {
      display: none
  }
-
  .checkbox1:checked+label svg #heart {
      transform: scale(0.2);
      fill: #E2264D;
      animation: animateHeart .3s linear forwards .25s
  }
-
  .checkbox1:checked+label svg #main-circ {
      transition: all 2s;
      animation: animateCircle .3s linear forwards;
      opacity: 1
  }
-
  .checkbox1:checked+label svg #heartgroup1 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox1:checked+label svg #heartgroup1 #heart1 {
      transform: scale(0) translate(0, -30px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup1 #heart2 {
      transform: scale(0) translate(10px, -50px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup2 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox1:checked+label svg #heartgroup2 #heart1 {
      transform: scale(0) translate(30px, -15px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup2 #heart2 {
      transform: scale(0) translate(60px, -15px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup3 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox1:checked+label svg #heartgroup3 #heart1 {
      transform: scale(0) translate(30px, 0px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup3 #heart2 {
      transform: scale(0) translate(60px, 10px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup4 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox1:checked+label svg #heartgroup4 #heart1 {
      transform: scale(0) translate(30px, 15px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup4 #heart2 {
      transform: scale(0) translate(40px, 50px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup5 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox1:checked+label svg #heartgroup5 #heart1 {
      transform: scale(0) translate(-10px, 20px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup5 #heart2 {
      transform: scale(0) translate(-60px, 30px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup6 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox1:checked+label svg #heartgroup6 #heart1 {
      transform: scale(0) translate(-30px, 0px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup6 #heart2 {
      transform: scale(0) translate(-60px, -5px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup7 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox1:checked+label svg #heartgroup7 #heart1 {
      transform: scale(0) translate(-30px, -15px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup7 #heart2 {
      transform: scale(0) translate(-55px, -30px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox1:checked+label svg #heartgroup2 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox1:checked+label svg #heartgroup3 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox1:checked+label svg #heartgroup4 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox1:checked+label svg #heartgroup5 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox1:checked+label svg #heartgroup6 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox1:checked+label svg #heartgroup7 {
      opacity: 1;
      transition: .1s opacity .3s
@@ -228,163 +193,134 @@ div.row2 { -
  .checkbox2 {
      display: none
  }
-
  .checkbox2:checked+label svg #heart {
      transform: scale(0.2);
      fill: #E2264D;
      animation: animateHeart .3s linear forwards .25s
  }
-
  .checkbox2:checked+label svg #main-circ {
      transition: all 2s;
      animation: animateCircle .3s linear forwards;
      opacity: 1
  }
-
  .checkbox2:checked+label svg #heartgroup1 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox2:checked+label svg #heartgroup1 #heart1 {
      transform: scale(0) translate(0, -30px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup1 #heart2 {
      transform: scale(0) translate(10px, -50px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup2 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox2:checked+label svg #heartgroup2 #heart1 {
      transform: scale(0) translate(30px, -15px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup2 #heart2 {
      transform: scale(0) translate(60px, -15px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup3 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox2:checked+label svg #heartgroup3 #heart1 {
      transform: scale(0) translate(30px, 0px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup3 #heart2 {
      transform: scale(0) translate(60px, 10px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup4 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox2:checked+label svg #heartgroup4 #heart1 {
      transform: scale(0) translate(30px, 15px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup4 #heart2 {
      transform: scale(0) translate(40px, 50px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup5 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox2:checked+label svg #heartgroup5 #heart1 {
      transform: scale(0) translate(-10px, 20px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup5 #heart2 {
      transform: scale(0) translate(-60px, 30px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup6 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox2:checked+label svg #heartgroup6 #heart1 {
      transform: scale(0) translate(-30px, 0px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup6 #heart2 {
      transform: scale(0) translate(-60px, -5px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup7 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox2:checked+label svg #heartgroup7 #heart1 {
      transform: scale(0) translate(-30px, -15px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup7 #heart2 {
      transform: scale(0) translate(-55px, -30px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox2:checked+label svg #heartgroup2 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox2:checked+label svg #heartgroup3 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox2:checked+label svg #heartgroup4 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox2:checked+label svg #heartgroup5 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox2:checked+label svg #heartgroup6 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox2:checked+label svg #heartgroup7 {
      opacity: 1;
      transition: .1s opacity .3s
@@ -399,157 +335,129 @@ div.row2 { -
      fill: #E2264D;
      animation: animateHeart .3s linear forwards .25s
  }
-
  .checkbox3:checked+label svg #main-circ {
      transition: all 2s;
      animation: animateCircle .3s linear forwards;
      opacity: 1
  }
-
  .checkbox3:checked+label svg #heartgroup1 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox3:checked+label svg #heartgroup1 #heart1 {
      transform: scale(0) translate(0, -30px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup1 #heart2 {
      transform: scale(0) translate(10px, -50px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup2 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox3:checked+label svg #heartgroup2 #heart1 {
      transform: scale(0) translate(30px, -15px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup2 #heart2 {
      transform: scale(0) translate(60px, -15px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup3 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox3:checked+label svg #heartgroup3 #heart1 {
      transform: scale(0) translate(30px, 0px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup3 #heart2 {
      transform: scale(0) translate(60px, 10px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup4 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox3:checked+label svg #heartgroup4 #heart1 {
      transform: scale(0) translate(30px, 15px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup4 #heart2 {
      transform: scale(0) translate(40px, 50px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup5 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox3:checked+label svg #heartgroup5 #heart1 {
      transform: scale(0) translate(-10px, 20px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup5 #heart2 {
      transform: scale(0) translate(-60px, 30px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup6 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox3:checked+label svg #heartgroup6 #heart1 {
      transform: scale(0) translate(-30px, 0px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup6 #heart2 {
      transform: scale(0) translate(-60px, -5px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup7 {
      opacity: 1;
      transition: .1s all .3s
  }
-
  .checkbox3:checked+label svg #heartgroup7 #heart1 {
      transform: scale(0) translate(-30px, -15px);
      transform-origin: 0 0 0;
      transition: .5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup7 #heart2 {
      transform: scale(0) translate(-55px, -30px);
      transform-origin: 0 0 0;
      transition: 1.5s transform .3s
  }
-
  .checkbox3:checked+label svg #heartgroup2 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox3:checked+label svg #heartgroup3 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox3:checked+label svg #heartgroup4 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox3:checked+label svg #heartgroup5 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox3:checked+label svg #heartgroup6 {
      opacity: 1;
      transition: .1s opacity .3s
  }
-
  .checkbox3:checked+label svg #heartgroup7 {
      opacity: 1;
      transition: .1s opacity .3s
@@ -565,19 +473,16 @@ div.row2 { -
          opacity: 1;
          fill: #DD4688
      }
-
      55% {
          transform: scale(11);
          opacity: 1;
          fill: #D46ABF
      }
-
      65% {
          transform: scale(12);
          opacity: 1;
          fill: #CC8EF5
      }
-
      75% {
          transform: scale(13);
          opacity: 1;
@@ -585,7 +490,6 @@ div.row2 { -
          stroke: #CC8EF5;
          stroke-width: .5
      }
-
      85% {
          transform: scale(17);
          opacity: 1;
@@ -593,7 +497,6 @@ div.row2 { -
          stroke: #CC8EF5;
          stroke-width: .2
      }
-
      95% {
          transform: scale(18);
          opacity: 1;
@@ -601,7 +504,6 @@ div.row2 { -
          stroke: #CC8EF5;
          stroke-width: .1
      }
-
      100% {
          transform: scale(19);
          opacity: 1;
@@ -610,26 +512,21 @@ div.row2 { -
          stroke-width: 0
      }
  }
-
  @keyframes animateHeart {
      0% {
          transform: scale(0.2)
      }
-
      40% {
          transform: scale(1.2)
      }
-
      100% {
          transform: scale(1)
      }
  }
-
  @keyframes animateHeartOut {
      0% {
          transform: scale(1.4)
      }
-
      100% {
          transform: scale(1)
      }
@@ -691,14 +588,11 @@ div.row2 { -
 						</div>
 					</div>
 				</div>
+				
 				<div class="col-lg-9 ps-lg-5">
+	
 					<h2 class="hero-heading mb-0">찜 한 가게</h2>
-					<div align="right">
-						<button class="btn btn-outline-primary mb-4" type="submit" id="return" name="return" onClick="location.href='personal_information.jsp'">돌아가기</button>
-					</div>
-					
-					
-					
+				
 					<div class="d-flex flex-column d-block d-sm-flex review ">
 						<div class="d-flex flex-row bd-highlight mb-3">
 							<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
@@ -719,7 +613,7 @@ div.row2 { -
 							
 							
 							<!-- 찜하기 버튼 (체크박스 활성화로 상태 값을 DB에 저장해야 함)-->
-						<div class="heartbox" style="position: absolute;  left: 630px; top:160px; ">
+						<div class="heartbox" style="position: absolute;  left: 630px; top:100px; ">
 					
 							<input type="checkbox" class="checkbox1" id="checkbox1" /> 
 							<label for="checkbox1"> 
@@ -760,19 +654,8 @@ div.row2 { -
 			         </svg>
 					</label>
 				</div>
-							
-							
-							
-						</div>
-						<!-- <div class="d-flex flex-row-reverse bd-highlight">
-							<button class="btn btn-outline-primary" type="submit" id="like1" name="like1">something</button>
-						</div> -->
-						
+						</div>			
 					</div>
-					
-					
-					
-					
 					<div class="d-flex flex-column d-block d-sm-flex review ">
 						<div class="d-flex flex-row bd-highlight mb-3">
 							<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
@@ -792,11 +675,8 @@ div.row2 { -
 							</div>
 						</div>
 						
-						
-						
 							<!-- 찜하기 버튼 (체크박스 활성화로 상태 값을 DB에 저장해야 함)-->
-						<div class="heartbox" style="position: absolute;  left: 630px; top:360px; ">
-					
+						<div class="heartbox" style="position: absolute;  left: 630px; top:300px; ">
 							<input type="checkbox" class="checkbox2" id="checkbox2" /> 
 							<label for="checkbox2"> 
 							<svg id="heart-svg" viewBox="-80 -40 58 57" xmlns="http://www.w3.org/2000/svg">
@@ -836,11 +716,8 @@ div.row2 { -
 			         </svg>
 					</label>
 				</div>
-								
-					</div>
-					
-					
-					
+										</div>
+				
 					<div class="d-flex flex-column d-block d-sm-flex review ">
 						<div class="d-flex flex-row bd-highlight mb-3">
 							<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
@@ -859,11 +736,9 @@ div.row2 { -
 								<p class="text-muted text-sm">서울특별시 용산구 이태원로 189</p>
 							</div>
 						</div>
-						
-						
-						
+							
 							<!-- 찜하기 버튼 (체크박스 활성화로 상태 값을 DB에 저장해야 함)-->
-						<div class="heartbox" style="position: absolute;  left: 630px; top:560px; ">
+						<div class="heartbox" style="position: absolute;  left: 630px; top:500px; ">
 					
 							<input type="checkbox" class="checkbox3" id="checkbox3" /> 
 							<label for="checkbox3"> 
@@ -905,12 +780,15 @@ div.row2 { -
 					</label>
 				</div>
 						
-						
-						
-						
-						
+						<div>
+				<a class="close-absolute " href="myPageMove.do">
+						<svg class="svg-icon w-3rem h-3rem">
+                <use xlink:href="#close-1"> </use>
+              </svg>
+					</a>
 					</div>
-				</div>
+					</div>
+					</div>
 			</div>
 			<!-- Pagination -->
 			<nav aria-label="Page navigation example">
@@ -938,7 +816,6 @@ div.row2 { -
 		//   https://css-tricks.com/ajaxing-svg-sprite/
 		// ------------------------------------------------------ //
 		function injectSvgSprite(path) {
-
 			var ajax = new XMLHttpRequest();
 			ajax.open("GET", path, true);
 			ajax.send();

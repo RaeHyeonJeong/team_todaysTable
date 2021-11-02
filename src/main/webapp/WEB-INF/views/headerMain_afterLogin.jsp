@@ -12,7 +12,7 @@ String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");
 	<nav class="navbar navbar-expand-lg shadow navbar-light bg-white" style="padding-bottom: 10px; padding-top: 10px;">
 		<div class="container-fluid">
 			<div class="d-flex align-items-center">
-				<a class="navbar-brand py-1" href="index.html">
+				<a class="navbar-brand py-1" href="main.do">
 					<img src="resources/img/logo.svg" alt="Directory logo">
 				</a>
 			</div>
@@ -47,7 +47,7 @@ String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");
 							<a class="dropdown-item" href="user-grid.html">예약 내역 관리</a>
 							<a class="dropdown-item" href="user-booking-detail.html">내가 작성한 게시물</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="login.html">
+							<a class="dropdown-item" href="logout.do">
 								<i class="fas fa-sign-out-alt me-2 text-muted"></i> Sign out
 							</a>
 						</div></li>

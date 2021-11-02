@@ -44,13 +44,6 @@
 	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
 	crossorigin="anonymous">
 <style type="text/css">
-/* #mail_check_input_box_false {
-	background-color: #ebebe4;
-}
-
-#mail_check_input_box_true {
-	background-color: white;
-} */
 .correct {
 	color: blue;
 }
@@ -90,26 +83,29 @@
 									style="color: red; float: left;">이미 존재하는 아이디 입니다.</small>
 								</span>
 							</div>
-
 							<div class="mail_check_input_box">
 								<div class="mb-4">
 									<br> <label class="form-label" for="loginUsername">본인
 										확인 이메일</label><br>
-
 									<div class="input-group mb-3">
 										<input class="form-control" name="email" id="email"
 											placeholder="name@address.com" required
 											data-msg="이메일을 입력해 주세요" readonly="readonly"
 											aria-describedby="numsend">
 										<div class="mail_check_button">
-											<button type="button" class="btn btn-primary btn-outline ms-3"
-												id="numsend">인증번호 받기</button>
+											<button type="button"
+												class="btn btn-primary btn-outline ms-3" id="numsend">인증번호
+												받기</button>
 										</div>
 									</div>
-
+									<p id="sendcheck">
+										<small style="color: blue;">가입시 등록된 이메일로 인증번호가
+											발송되었습니다. <br>인증번호를 확인해 주세요.
+										</small>
+									</p>
 								</div>
 								<div class="mb-4">
-									<div class="authnum_box" id="#mail_check_input_box_false">
+									<div class="authnum_box">
 										<input class="form-control" name="authnum" id="authnum"
 											placeholder="인증번호 입력" required data-msg="인증번호를 입력해 주세요.">
 									</div>
@@ -141,7 +137,6 @@
 							</span> <span id="ok_pass"> <small
 								style="color: blue; float: left;">비밀번호가 일치합니다.</small>
 							</span>
-
 						</div>
 						<div class="mb-4">
 							<label class="form-label" for="name">이름</label> <input
@@ -164,7 +159,6 @@
 								<input class="form-control" style="width: 350px; float: left;"
 									name="postnum" id="postnum" placeholder="우편번호" type="text"
 									required data-msg="우편번호를 입력하세요." aria-describedby="postselect">
-
 								<input class="btn btn-primary btn-outline" type="button"
 									onclick="Postcode()" id="postselect" value="우편번호 찾기">
 							</div>
@@ -185,12 +179,12 @@
 									id="nickCheck">중복확인</button>
 							</div>
 							<div>
-								<span id="ok_nick"><small style="color: blue; float: left;">사용가능한 닉네임 입니다.</small></span> <span
+								<span id="ok_nick"><small
+									style="color: blue; float: left;">사용가능한 닉네임 입니다.</small></span> <span
 									id="no_nick"><small style="color: red; float: left;">이미
 										존재하는 닉네임 입니다.</small></span>
 							</div>
 						</div>
-
 						<div class="mb-3">
 							<br> <label class="form-label" for="profile">프로필</label><br>
 							<input class="form-control form-control-sm" id="file" name="file"
@@ -203,7 +197,6 @@
 								up</button>
 						</div>
 						<br>
-
 					</form>
 					<a class="close-absolute me-md-5 me-xl-6 pt-5" href="main.do">
 						<svg class="svg-icon w-3rem h-3rem">
@@ -244,7 +237,6 @@
 		//- injectSvgSprite('${path}icons/orion-svg-sprite.svg'); 
 		injectSvgSprite('https://demo.bootstrapious.com/directory/1-4/icons/orion-svg-sprite.svg');
 	</script>
-
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- jQuery-->
@@ -326,7 +318,6 @@
 					}).open();
 		}
 	</script>
-
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script type="text/javascript">
 		//비밀번호 유효성	
@@ -371,8 +362,10 @@
 			$("#no_check").hide();
 			$("#ok_check").hide();
 			$("button#idCheck")
-				.click(function() {
-					$.ajax({
+					.click(
+							function() {
+								$
+										.ajax({
 											url : "idCheck.do",
 											type : "post",
 											dataType : "text",
@@ -411,32 +404,32 @@
 			});//이메일 인증박스에 들어오도록 함
 
 			//닉네임 중복체크
-	         $("#no_nick").hide();
-	         $("#ok_nick").hide();
-	         $("button#nickCheck").click(function() {
-	            $.ajax({
-	               url : "nickCheck.do",
-	               type : "post",
-	               dataType : "text",
-	               data : {
-	                  nickname : $("input#nickname").val()
-	               },
-	               success : function(data) {
-	                  if ($("#nickname").val() == "") {
-	                     alert("닉네임을 입력해 주세요.");
-	                  } else {
-	                     if (data == 1) { //중복된 닉네임이 있을 때
-	                        $("#no_nick").css("display", "inline-block");
-	                        $("#ok_nick").css("display", "none");
+			$("#no_nick").hide();
+			$("#ok_nick").hide();
+			$("button#nickCheck").click(function() {
+				$.ajax({
+					url : "nickCheck.do",
+					type : "post",
+					dataType : "text",
+					data : {
+						nickname : $("input#nickname").val()
+					},
+					success : function(data) {
+						if ($("#nickname").val() == "") { //닉네임 창이 공백일 떄 다시 입력
+							alert("닉네임을 입력해 주세요."); 
+						} else {
+							if (data == 1) { //중복된 닉네임이 있을 때
+								$("#no_nick").css("display", "inline-block");
+								$("#ok_nick").css("display", "none");
 
-	                     } else if (data == 0) { //사용가능한 닉네임일 때
-	                        $("#ok_nick").css("display", "inline-block");
-	                        $("#no_nick").css("display", "none");
-	                     }
-	                  }
-	               }
-	            });
-	         });//닉네임 중복 end
+							} else if (data == 0) { //사용가능한 닉네임일 때
+								$("#ok_nick").css("display", "inline-block");
+								$("#no_nick").css("display", "none");
+							}
+						}
+					}
+				});
+			});//닉네임 중복 end
 
 		});
 	</script>
@@ -449,19 +442,18 @@
 	</script>
 	<script type="text/javascript">
 		/* 인증번호 이메일 전송 */
-
+		$("#sendcheck").hide();
 		var code = ""; //이메일전송 인증번호 저장위한 코드
 		$(".mail_check_button").click(function() {
 			var email = $("#email").val(); // 입력한 이메일
 			var numcheckBox1 = $("#authnum"); // 인증번호 입력란
-			var numcheckBox2 = $(".authnum_box"); // 인증번호 입력란 박스
 			$.ajax({
 				type : "GET",
 				url : "emailcheck.do?email=" + email,
 				success : function(data) {
 					//console.log("data : " + data);
+					$("#sendcheck").css("display", "inline-block");
 					numcheckBox1.attr("disabled", false);
-					numcheckBox2.attr("id");
 					code = data;
 				}
 			});

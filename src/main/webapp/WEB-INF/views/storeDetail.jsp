@@ -325,7 +325,7 @@
 			data.append('service_grade', $("select#service_grade").val());
 			data.append('mood_grade', $("select#mood_grade").val());
 			data.append('content', $("textarea#content").text());
-			data.append('store_no', '${store_no}');
+			data.append('store_no', '${param.store_no}');
 			$.ajax({
 				type:'POST',
 				enctype:'multipart/form-data',
@@ -434,7 +434,7 @@
 			<div class="col-lg-8">
 					
 				<div class="text-block">
-					<p class="text-primary"><i class="fa-map-marker-alt fa me-1"></i> 가게핀 명 </p>
+					<p class="text-primary"><i class="fa-map-marker-alt fa me-1"></i>${param.name}</p>
 					<h1>${store.name}</h1>
 					
 					<!-- 찜하기 버튼 (체크박스 활성화로 상태 값을 DB에 저장해야 함)-->
@@ -522,7 +522,7 @@
 						<!-- 예약페이지로 이동 -->
 						<div class="form-group">
 							<form action="moveToBookStore.do" method="post">
-								<input type="hidden" name="store_no" value="${store_no}">
+								<input type="hidden" name="store_no" value="${param.store_no}">
 								<button class="btn btn-primary btn-block">예약</button>
 							</form>
 						</div>
@@ -660,7 +660,15 @@
 				<div class="p-4 shadow ml-lg-4 rounded sticky-top" style="top: 100px;">
 					<h5 class="mb-4">위치</h5>
 					<div class="map-wrapper-300 mb-3">
-						<div class="h-100" id="detailMap"></div>
+						<!-- <div class="h-100" id="detailMap"></div> -->
+						<div id="map" style="width:100%;height:300px;"></div>
+					</div>
+					<!-- 길찾기 버튼 -->
+					<div class="text-left mt-5">
+						
+						<button class="btn btn-outline-primary" id="txt" type="txt"
+						 onclick="location.href='https://map.kakao.com/link/to/${param.name},${param.latitude},${param.longitude}';">길찾기
+						 </button>
 					</div>
 				</div>
 			</div>
@@ -904,18 +912,124 @@
 	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
 	<!-- Available tile layers-->
 	<script src="resources/js/map-layers.js">
+	</script>
+	<!-- 지도 핀표시 -->
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1738ef78b208b65a2926c9bbc75401d6"></script>
+	<script>
+	
+	//latitude 위도
+	var latitude = "<c:out value="${param.latitude}" />";
+	//longitude 경도
+	var longitude = "<c:out value="${param.longitude}" />";
+	
+	console.log(latitude +' '+longitude);
+	
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+	        center: new kakao.maps.LatLng(latitude, longitude), // 지도의 중심좌표
+	        level: 5 // 지도의 확대 레벨
+	    };
+	
+	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	
+	// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+	if (navigator.geolocation) {
+
+		// GeoLocation을 이용해서 접속 위치를 얻어옵니다
+		navigator.geolocation.getCurrentPosition(function(position) {
+
+			var lat = position.coords.latitude, // 위도
+			lon = position.coords.longitude; // 경도
+
+			var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+			message = '<div style="padding:5px;">내 위치</div>'; // 인포윈도우에 표시될 내용입니다
+
+			// 마커와 인포윈도우를 표시합니다
+			displayMarker(locPosition, message);
+
+		});
+
+	}
+	
+	//가게명핀 나타낸 곳
+	// 마커가 표시될 위치입니다 
+	var markerPosition  = new kakao.maps.LatLng(latitude, longitude); 
+	message = '<div style="padding:5px;"> ${param.name} </div>'; // 인포윈도우에 표시될 내용입니다
+	
+	// 마커와 인포윈도우를 표시합니다
+	displayMarker(markerPosition, message);
+	
+	// 마커를 생성합니다
+	var marker = new kakao.maps.Marker({
+	    position: markerPosition
+	});
+	
+	// 마커가 지도 위에 표시되도록 설정합니다
+	marker.setMap(map);
+	
+	// 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
+	var iwContent = '<div style="padding:5px;"> ${param.name} </div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+	    iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+	// 인포윈도우를 생성합니다
+	var infowindow = new kakao.maps.InfoWindow({
+	    content : iwContent,
+	    removable : iwRemoveable
+	});
+
+	// 마커에 클릭이벤트를 등록합니다
+	kakao.maps.event.addListener(marker, 'click', function() {
+	      // 마커 위에 인포윈도우를 표시합니다
+	      infowindow.open(map, marker);  
+	});
+	
+	
+	// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+	// marker.setMap(null);    
+	
+	
+	// 지도에 마커와 인포윈도우를 표시하는 함수입니다
+	function displayMarker(locPosition, message) {
 		
+		//내 위치핀 나타낸 곳
+		// 마커를 생성합니다
+		var marker = new kakao.maps.Marker({
+			map : map,
+			position : locPosition
+		});
+
+		var iwContent = message, // 인포윈도우에 표시할 내용
+		iwRemoveable = true;
+
+		// 인포윈도우를 생성합니다
+		var infowindow = new kakao.maps.InfoWindow({
+			content : iwContent,
+			removable : iwRemoveable
+		});
+
+		// 인포윈도우를 마커위에 표시합니다 
+		infowindow.open(map, marker);
+		
+		// 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
+		var iwContent = '<div style="padding:5px;">내 위치</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+		    iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+		// 인포윈도우를 생성합니다
+		var infowindow = new kakao.maps.InfoWindow({
+		    content : iwContent,
+		    removable : iwRemoveable
+		});
+
+		// 마커에 클릭이벤트를 등록합니다
+		kakao.maps.event.addListener(marker, 'click', function() {
+		      // 마커 위에 인포윈도우를 표시합니다
+		      infowindow.open(map, marker);  
+		});
+		
+	}
+	
 	</script>
 	<script src="resources/js/map-detail.js"></script>
-	<script>
-		createDetailMap({
-			mapId : 'detailMap',
-			mapZoom : 14,
-			mapCenter : [ 40.732346, -74.0014247 ],
-			circleShow : true,
-			circlePosition : [ 40.732346, -74.0014247 ]
-		})
-	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js">
 		
 	</script>

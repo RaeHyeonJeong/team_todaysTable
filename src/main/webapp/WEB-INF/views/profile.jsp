@@ -61,7 +61,7 @@ String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");
 						<div class="card-header bg-gray-100 py-4 border-0 text-center">
 							<a class="d-inline-block" href="#"> <img
 								class="d-block avatar avatar-xxl p-2 mb-2"
-						s82851004&		src=<%=profileImg %> alt="">
+							src="<%=profileImg %>" alt=" ">
 							</a>
 							<h5><%=name%></h5>
 						</div>
@@ -158,7 +158,6 @@ String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");
 		//   https://css-tricks.com/ajaxing-svg-sprite/
 		// ------------------------------------------------------ //
 		function injectSvgSprite(path) {
-
 			var ajax = new XMLHttpRequest();
 			ajax.open("GET", path, true);
 			ajax.send();
@@ -205,19 +204,16 @@ String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");
         new daum.Postcode({
             oncomplete: function(data) {
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
                 // 각 주소의 노출 규칙에 따라 주소를 조합한다.
                 // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
                 var addr = ''; // 주소 변수
                 var extraAddr = ''; // 참고항목 변수
-
                 //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
                 if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
                     addr = data.roadAddress;
                 } else { // 사용자가 지번 주소를 선택했을 경우(J)
                     addr = data.jibunAddress;
                 }
-
                 // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
                 if(data.userSelectedType === 'R'){
                     // 법정동명이 있을 경우 추가한다. (법정리는 제외)
@@ -239,7 +235,6 @@ String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");
                 } else {
                     document.getElementById("extraAddress").value = '';
                 }
-
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('postnum').value = data.zonecode;
                 document.getElementById("address1").value = addr;
@@ -272,7 +267,6 @@ $("button#nickCheck").click(function() {
 			if (data == 1) { //중복된 닉네임이 있을 때
 				$("#no_nick").css("display", "inline-block");
 				$("#ok_nick").css("display", "none");
-
 			} else if (data == 0) { //사용가능한 닉네임일 때
 				$("#ok_nick").css("display", "inline-block");
 				$("#no_nick").css("display", "none");
@@ -282,13 +276,10 @@ $("button#nickCheck").click(function() {
 });//닉네임 중복 end
 </script>
 	<script type="text/javascript">
-
-
 //비밀번호 유효성	
 function chkPW() {
 	var pw = $("#password1").val();
 	var id = $("#id").val();
-
 	var reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 	var hangulcheck = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
 	if (false == reg.test(pw)) {
@@ -301,10 +292,7 @@ function chkPW() {
 		alert("비밀번호에 한글을 사용 할 수 없습니다.");
 	} 
 }
-
-
 $(function() {
-
 	//비밀번호 재확인
 	$("#no_pass").hide();
 	$("#ok_pass").hide();
@@ -322,9 +310,6 @@ $(function() {
 			$("#no_pass").css("display", "none");
 		}
 	});
-
-
-
 </script>
 </body>
 </html>

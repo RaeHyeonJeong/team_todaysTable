@@ -1,6 +1,9 @@
 package com.todaysTable.dao;
 
 import java.util.HashMap;
+
+import javax.servlet.http.HttpSession;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -34,6 +37,12 @@ public class MemberDaoIpl implements MemberDao {
 		this.sqlSession.update("mypageMapper.updateProfile",vo);
 		
 	}
+
+	@Override
+	public void logout(HttpSession session) {
+				
+	}
+	
 
 	
 	

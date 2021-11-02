@@ -25,8 +25,7 @@ public class SignUpController {
 
 	@Autowired
 	private JavaMailSender mailSender;// 메일
-	@Autowired
-	private SignupMemberDao dao;
+
 	@Autowired
 	private SignUpService service;
 
@@ -53,15 +52,16 @@ public class SignUpController {
 		
 		
 		// 파일업로드
-		String location = "C:\\Users\\KONGYI\\git\\team_todaysTable\\src\\main\\webapp\\resources\\upload\\";
+		String location = "C:\\Users\\조유주\\git\\team_todaysTable\\src\\main\\webapp\\resources\\upload\\";
 		FileOutputStream fos = null;
 		System.out.println(file);
+		
 		String fileName = file.getOriginalFilename();
 		if (fileName.length() > 0) {
 			try {
 				fos = new FileOutputStream(location.concat(fileName));
 				fos.write(file.getBytes());
-				vo.setProfile_image_path(fileName);
+				vo.setProfile_image_path(location.concat(fileName));//location + fileName
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
@@ -74,7 +74,7 @@ public class SignUpController {
 		}
 
 		// 회원가입 정보 넣어줌
-		dao.memberJoin(vo);
+		service.memberJoinProcess(vo);
 		System.out.println(vo);
 
 		return "WEB-INF/views/signupcomplet";
@@ -95,7 +95,7 @@ public class SignUpController {
 		String setFrom = "duddbs1631@gmail.com";
 		String toMail = email;
 		String title = "회원가입 인증 이메일 입니다.";
-		String content = "'오늘의 식탁'을 방문해주셔서 감사합니다." + "<br><br>" + "인증 번호는 " + checkNum + "입니다." + "<br>"
+		String content = "'오늘의 식탁'을 방문해주셔서 감사합니다^^" + "<br><br>" + "인증 번호는 " + checkNum + "입니다." + "<br>"
 				+ "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
 		try {
 

@@ -4,8 +4,12 @@
 	<!-- 아이디 찾기 -->
 	
 	<select  id="serchID" resultType="String" parameterType="java.util.HashMap">
-	select id from member
-	where name=#{name} and tel=#{tel}
+	SELECT id FROM MEMBER
+	WHERE NAME=#{name} AND tel=#{tel}
+	</select>
+	<select id="serchPWD" resultType="String" parameterType="java.lang.String">
+	SELECT password FROM MEMBER
+	WHERE EMAIL=#{email}
 	</select>
 	
 	

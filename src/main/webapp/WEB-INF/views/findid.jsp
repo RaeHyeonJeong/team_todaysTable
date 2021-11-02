@@ -56,7 +56,7 @@
 							등록된 이메일로 아이디 찾기<br>가입 당시 입력한 이메일 주소를 통한 인증이 필요합니다.
 						</p>
 					</div>
-					<form class="form-validate">
+					<!-- <form class="form-validate"> -->
 						<div class="mb-4">
 							<label class="form-label" for="name">NAME</label> <input
 								class="form-control" name="name" id="name" type="text"
@@ -69,12 +69,11 @@
 						<div class="d-grid gap-2">
 							<button class="btn btn-lg btn-primary" id="IdCheck"
 								onclick="findId_check()">아이디 확인</button>
+								<p align="center" id="check">고객님의 아이디를 확인해 주세요.</p>
 								<div align="center" id="SearchComplet" style="color: navy; font-size: x-large;"></div>
 						</div>
 						
-						
-						
-					</form>
+					<!-- </form> -->
 					<a class="close-absolute me-md-5 me-xl-6 pt-5" href="main.do">
 						<svg class="svg-icon w-3rem h-3rem">
                 <use xlink:href="#close-1"> </use>
@@ -139,8 +138,8 @@
 	<script src="resources/js/theme.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script type="text/javascript">
-		
-		function findId_check() {
+		$("#check").hide();
+		function findId_check() { 
 			$.ajax({
 				type : 'POST',
 				url : 'findID.do',
@@ -148,9 +147,10 @@
 					name : $("input#name").val(),
 					tel : $("input#tel").val()
 				},
-				dataType:'html',
+				dataType:'text',
 				success : function(data) {
-					$("#SearchComplet").html(data);
+					$("#check").css("display", "inline-block");
+					$("#SearchComplet").html(data);//아이디를 나타내줌
 				}
 			});
 		}

@@ -5,4 +5,5 @@ import java.util.HashMap;
 public interface FindMemberService {
 	public String findId(HashMap<String, Object>map);
 
+	public String findPwd(String email);
 }

@@ -16,6 +16,10 @@ public class FindMemberDaoImpl implements FindMemberDao{
 		return st.selectOne("findMemberMapper.serchID", map );
 	}
 
+	@Override
+	public String findPwd(String email) {
+		return st.selectOne("findMemberMapper.serchPWD", email);
+	}
 	
 
 }

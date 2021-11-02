@@ -18,4 +18,11 @@ public class FindMemberServiceImpl implements FindMemberService{
 		return dao.findId(map);
 	}
 
+	@Override
+	public String findPwd(String email) {
+		return dao.findPwd(email);
+	}
+	
+	
+
 }

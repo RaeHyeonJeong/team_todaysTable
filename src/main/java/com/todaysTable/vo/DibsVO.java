@@ -5,7 +5,7 @@ public class DibsVO {
 	private int store_no;
 	private String store_name;
 	private String address;
-	private int avg_grade;
+	private double avg_grade;
 	public int getMemb_no() {
 		return memb_no;
 	}
@@ -30,10 +30,10 @@ public class DibsVO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getAvg_grade() {
+	public double getAvg_grade() {
 		return avg_grade;
 	}
-	public void setAvg_grade(int avg_grade) {
+	public void setAvg_grade(double avg_grade) {
 		this.avg_grade = avg_grade;
 	}
 	public DibsVO(int memb_no, int store_no, String store_name, String address, int avg_grade) {

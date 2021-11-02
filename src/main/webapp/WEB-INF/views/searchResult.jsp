@@ -141,7 +141,7 @@
 						{
 							//Object 변수를 이용한 url 파라미터 만들기		
 							var obj = data[idx];
-							var url = 'storeDetail_wej.do';
+							var url = 'moveTostoreDetail.do';
 							Object.keys(obj).forEach(function(key, index) {
 								  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
 							});
@@ -186,7 +186,7 @@
 							    	
 							    	//Object 변수를 이용한 url 파라미터 만들기		
 									var obj = data[count];
-									var url = 'storeDetail_wej.do';
+									var url = 'moveTostoreDetail.do';
 									Object.keys(obj).forEach(function(key, index) {
 										  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
 									});
@@ -252,7 +252,7 @@
 		 			$(data).each(function(idx){
 							//Object 변수를 이용한 url 파라미터 만들기		
 							var obj = data[idx];
-							var url = 'storeDetail_wej.do';
+							var url = 'moveTostoreDetail.do';
 							Object.keys(obj).forEach(function(key, index) {
 								  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
 							});
@@ -307,7 +307,7 @@
 							
 							//Object 변수를 이용한 url 파라미터 만들기		
 							var obj = data[storeArray[0]];
-							var url = 'storeDetail_wej.do';
+							var url = 'moveTostoreDetail.do';
 							Object.keys(obj).forEach(function(key, index) {
 								  url = url + (index === 0 ? "?" : "&") + key + "=" + obj[key];
 							});

@@ -96,19 +96,7 @@
 
 
 	<!-- HEADER include -->
-	<%
-		String id = (String) session.getAttribute("id");
-		if (id == null) {
-	%>
 	<jsp:include page="headerMain.jsp" />
-	<%
-		} else {
-	%>
-	<jsp:include page="headerMain_afterLogin.jsp" />
-	<%
-		}
-	%>
-
 	<!-- 검색 -->
 	<section class="py-6"></section>
 	<div class="container d-flex justify-content-center">

@@ -94,7 +94,7 @@
 					<hr class="my-3 hr-text letter-spacing-2" data-content="OR">
 					<div class="d-grid gap-2">
 						<button class="btn btn btn-outline-primary btn-social"
-							style="color: yellow; border-color: yellow;" id="kakaologin">
+							style="color: #FFE400; border-color: #FFE400;" id="kakaologin">
 							<i class="fa-2x fa-weixin fab btn-social-icon"> </i>Connect <span
 								class="d-none d-sm-inline">with KakaoTalk</span>
 						</button>

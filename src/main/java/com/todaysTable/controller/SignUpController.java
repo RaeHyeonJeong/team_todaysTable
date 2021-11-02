@@ -25,8 +25,7 @@ public class SignUpController {
 
 	@Autowired
 	private JavaMailSender mailSender;// 메일
-	@Autowired
-	private SignupMemberDao dao;
+
 	@Autowired
 	private SignUpService service;
 
@@ -76,7 +75,7 @@ public class SignUpController {
 		}
 
 		// 회원가입 정보 넣어줌
-		dao.memberJoin(vo);
+		service.memberJoinProcess(vo);
 		System.out.println(vo);
 
 		return "WEB-INF/views/signupcomplet";

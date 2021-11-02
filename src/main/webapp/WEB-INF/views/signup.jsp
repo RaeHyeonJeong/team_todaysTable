@@ -371,13 +371,11 @@
 			$("#no_check").hide();
 			$("#ok_check").hide();
 			$("button#idCheck")
-					.click(
-							function() {
-								$
-										.ajax({
+				.click(function() {
+					$.ajax({
 											url : "idCheck.do",
 											type : "post",
-											dataType : "json",
+											dataType : "text",
 											data : {
 												id : $("input#id").val()
 											},
@@ -413,28 +411,32 @@
 			});//이메일 인증박스에 들어오도록 함
 
 			//닉네임 중복체크
-			$("#no_nick").hide();
-			$("#ok_nick").hide();
-			$("button#nickCheck").click(function() {
-				$.ajax({
-					url : "nickCheck.do",
-					type : "post",
-					dataType : "json",
-					data : {
-						nickname : $("input#nickname").val()
-					},
-					success : function(data) {
-						if (data == 1) { //중복된 닉네임이 있을 때
-							$("#no_nick").css("display", "inline-block");
-							$("#ok_nick").css("display", "none");
+	         $("#no_nick").hide();
+	         $("#ok_nick").hide();
+	         $("button#nickCheck").click(function() {
+	            $.ajax({
+	               url : "nickCheck.do",
+	               type : "post",
+	               dataType : "text",
+	               data : {
+	                  nickname : $("input#nickname").val()
+	               },
+	               success : function(data) {
+	                  if ($("#nickname").val() == "") {
+	                     alert("닉네임을 입력해 주세요.");
+	                  } else {
+	                     if (data == 1) { //중복된 닉네임이 있을 때
+	                        $("#no_nick").css("display", "inline-block");
+	                        $("#ok_nick").css("display", "none");
 
-						} else if (data == 0) { //사용가능한 닉네임일 때
-							$("#ok_nick").css("display", "inline-block");
-							$("#no_nick").css("display", "none");
-						}
-					}
-				});
-			});//닉네임 중복 end
+	                     } else if (data == 0) { //사용가능한 닉네임일 때
+	                        $("#ok_nick").css("display", "inline-block");
+	                        $("#no_nick").css("display", "none");
+	                     }
+	                  }
+	               }
+	            });
+	         });//닉네임 중복 end
 
 		});
 	</script>

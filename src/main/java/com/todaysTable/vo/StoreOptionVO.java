@@ -4,22 +4,22 @@ import lombok.Data;
 
 @Data
 public class StoreOptionVO {
-	private int	STORE_NO;
-	private String CAN_PARK;
-	private String CAN_RESERVE;
-	private String CAN_TAKEOUT;
-	private String FREE_WIFI;
-	private String KIDS_ZONE;
-	private String NO_KIDS_ZONE;
-	private String KID_MENU ;
-	private String CORKAGE_FREE;
-	private String VEGETARIAN;
-	private String GLUTEN_FREE;
-	private String HIGHCHAIR;
-	private String CAN_GO_WITH_PET;
-	private String CAN_DELIVER; 
-	private String OUTSIDE_SEAT;
-	private String CAN_LUNCH_MENU;
-	private String CAN_BREAKFAST_MENU; 
-	private String CAN_SPACE_RENTAL;
+	private int	store_no;
+	private String can_park;
+	private String can_reserve;
+	private String can_takeout;
+	private String free_wifi;
+	private String kids_zone;
+	private String no_kids_zone;
+	private String kid_menu ;
+	private String corkage_free;
+	private String vegetarian;
+	private String gluten_free;
+	private String highchair;
+	private String can_go_with_pet;
+	private String can_deliver; 
+	private String outside_seat;
+	private String can_lunch_menu;
+	private String can_breakfast_menu; 
+	private String can_space_rental;
 }

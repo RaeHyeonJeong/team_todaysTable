@@ -192,7 +192,7 @@
 							<div class="card-body">
 
 								<div class="position-relative row form-group">
-									<img class="col-sm-4" src="/controller/resources/adminResources/img/store.jpg" />
+									<img class="col-sm-3" src="/controller/resources/adminResources/img/ttlogo.png" />
 								</div>
 
 								<div class="position-relative row form-group">

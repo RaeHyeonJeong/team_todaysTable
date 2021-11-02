@@ -31,8 +31,21 @@ public class MyListDaoIpl implements MyListDao{
 
 	@Override
 	public void insertLikeInfo(DibsVO vo) throws Exception {
-		this.sqlSession.insert("myListMapper.insertLikeInfo",vo);
+		this.sqlSession.selectOne("myListMapper.insertLikeInfo",vo);
 	}
+
+	@Override
+	public void deleteLikeInfo(DibsVO vo) throws Exception {
+		this.sqlSession.selectOne("myListMapper.deleteLikeInfo",vo);		
+	}
+
+	@Override
+	public int checkLike(DibsVO vo) throws Exception {
+		return sqlSession.selectOne("myListMapper.checkLike",vo);
+	}
+	
+	
+	
 	
 
 	

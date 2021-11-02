@@ -1,6 +1,9 @@
 package com.todaysTable.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,6 +43,7 @@ public class StoreController {
 		
 		model.addAttribute("pageMaker",pageMaker);
 		return "WEB-INF/views/storeSearch";
+		
 	}
 	
 	// 신규 매장 등록 SUBMIT
@@ -47,19 +51,50 @@ public class StoreController {
 	public String insertStoreInfo(StoreVO storeVO, MenuVO menuVO, StoreOptionVO storeOptionVO,
 			@RequestParam(value = "file", required = false) List<MultipartFile> fileList, MultipartHttpServletRequest request,
 			StoreImageVO storeImageVO) {
-		storeService.insertStoreInfo(storeVO);
-		storeService.insertStoreMenu(menuVO);
-		storeService.uploadStoreImg(storeImageVO);
-		//storeService.updateStoreOption(storeOptionVO);
-		fileUploader.multiFileUploader(fileList, request, "storeImg");
 		
-		System.out.println(storeVO);
-		System.out.println(menuVO);
-		System.out.println(storeOptionVO);
-		System.out.println(fileList);
+		storeService.insertStoreInfo(storeVO);
+		//storeService.uploadStoreImg(storeImageVO);
+		//storeService.updateStoreOption(storeOptionVO);
+		//fileUploader.multiFileUploader(fileList, request, "storeImg");
+		
+		/*Map<String, String> menu = new HashMap<>();
+		
+		StringTokenizer st = new StringTokenizer(menuVO.getMenu_name(),",");
+		StringTokenizer st2 = new StringTokenizer(menuVO.getPrice(),",");
+		while(st.hasMoreTokens() && st2.hasMoreTokens()) {
+			menu.put(st.nextToken(), st2.nextToken());
+		}
+		 Iterator<String> keys = menu.keySet().iterator();
+	        while(keys.hasNext() ){
+	            String key = keys.next();
+	            String value = menu.get(key);
+	     }
+	        
+	    for(int i = 0; i<menu.size();i++) {
+	    	storeService.insertStoreMenu(menu);
+	    }*/
+		
+	    Map<String, String> menu = new HashMap<>();
+	    StringTokenizer st = new StringTokenizer(menuVO.getMenu_name(),",");
+	    StringTokenizer st2 = new StringTokenizer(menuVO.getPrice(),",");
+	    while(st.hasMoreTokens() && st2.hasMoreTokens()) {
+	    	menu.put("menu_name", st.nextToken());
+	    	menu.put("price", st2.nextToken());
+	    	System.out.println(menu);
+	    	storeService.insertStoreMenu(menu);
+	    }
+	    
+		// 겟  스토어브이오 스토어넘버가져와ㅓ 맵에다가 넣어줘라 밸류로> 
+		//map.put("store_no", storeVO.getStore_no();
+		//if check = 'Y' else 'N'
+		//map.put("can_park", Y); 체크시 Y
+		//map.put("CAN_RESERVE", ); 아니면 N
+		//map.put("CAN_RESERVE", N); 아니면 N
+	    //Map<String, Object> option = new HashMap<>();
 		
 		return "redirect:storeSearch.do";
 	}
+	
 	
 	// 신규 매장 등록 페이지
 	@RequestMapping(value = "newStoreRegister.do", method = { RequestMethod.POST, RequestMethod.GET })
@@ -71,4 +106,6 @@ public class StoreController {
 	public String dashBoardView() {
 		return "WEB-INF/views/dashBoard";
 	}
+	
+	
 }

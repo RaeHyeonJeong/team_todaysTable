@@ -1,8 +1,8 @@
 package com.todaysTable.dao;
 
 import java.util.List;
+import java.util.Map;
 
-import com.todaysTable.vo.MenuVO;
 import com.todaysTable.vo.SearchCriteriaVO;
 import com.todaysTable.vo.StoreImageVO;
 import com.todaysTable.vo.StoreOptionVO;
@@ -16,8 +16,9 @@ public interface StoreDao {
 	// 매장 정보 INSERT
 	public void insertStoreInfo(StoreVO storeVO);
 	// 매장별 메뉴 insert
-	public void insertStoreMenu(MenuVO menuVO);
-	// 매장별 편의사항 update
+	// public void insertStoreMenu(MenuVO menuVO);
+	public void insertStoreMenu(Map<String, String> menu);
+	// 매장별 편의사항 updateStoreController.java
 	public void updateStoreOption(StoreOptionVO storeOptionVO);
 	// 매장 이미지 업로드
 	public void uploadStoreImg(StoreImageVO storeImageVO);

@@ -44,29 +44,21 @@
 	</insert>
 
 	<!-- 매장별 메뉴/가격 INSERT -->
-	<insert id="insertStoreMenu" parameterType="java.util.List">
-		<foreach collection="list" item="item" separator="," open="INSERT ALL" close="SELECT * FROM DUAL">
-			INTO MENU_NO, STORE_NO, MENU_NAME, PRICE
-			VALUES(
-			MENU_SEQ.NEXTVAL,
-			STORE_SEQ.CURRVAL,
-			#{item.menu_name},
-			#{item.price})
-		</foreach>
+	<insert id="insertStoreMenu" parameterType="java.util.HashMap">
+			INSERT INTO MENU(MENU_NO, STORE_NO, MENU_NAME, PRICE)
+			VALUES(MENU_SEQ.NEXTVAL,STORE_SEQ.CURRVAL,#{menu_name},#{price})
 	</insert>
 	
 <!-- STORE_NO,CAN_PARK,CAN_RESERVE,CAN_TAKEOUT,FREE_WIFI,KIDS_ZON,NO_KIDS_ZONE,KID_MENU,
 CORKAGE_FREE,VEGETARIAN,GLUTEN_FREE,HIGHCHAIR,CAN_GO_WITH_PET,CAN_DELIVER,OUTSIDE_SEAT,
 CAN_LUNCH_MENU,CAN_BREAKFAST_MENU,CAN_SPACE_RENTAL -->
 	
-	<!-- 편의사항 UPDATE -->
-	<update id="updateStoreOption" parameterType="java.util.List">
-		<foreach collection="list" item="item" separator=",">
+ 	<!-- 편의사항 UPDATE -->
+	<update id="updateStoreOption">
 		UPDATE STORE_OPTION
 		SET
-		#{storeOption}=Y
-		WHERE STORE_NO = 
-		</foreach> 
+		#{storeOption}='Y'
+		WHERE STORE_NO
 	</update>
 	
 	
@@ -87,4 +79,5 @@ CAN_LUNCH_MENU,CAN_BREAKFAST_MENU,CAN_SPACE_RENTAL -->
 		select * from  (select * from store order by dbms_random.value) where rownum = 1
 		]]>
 	</select>
+	
 </mapper>

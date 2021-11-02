@@ -1,8 +1,8 @@
 package com.todaysTable.service;
 
 import java.util.List;
+import java.util.Map;
 
-import com.todaysTable.vo.MenuVO;
 import com.todaysTable.vo.SearchCriteriaVO;
 import com.todaysTable.vo.StoreImageVO;
 import com.todaysTable.vo.StoreOptionVO;
@@ -15,8 +15,9 @@ public interface StoreService {
 	public int listCount(SearchCriteriaVO scri);
 	// 매장 정보 INSERTO
 	public void insertStoreInfo(StoreVO storeVO);
-	// 매장별 메뉴 INSERT
-	public void insertStoreMenu(MenuVO menuVO);
+	/*// 매장별 메뉴 INSERT
+	public void insertStoreMenu(MenuVO menuVO);*/
+	public void insertStoreMenu(Map<String, String> menu);
 	// 매장별 편의사항 INSERT
 	public void updateStoreOption(StoreOptionVO storeOptionVO);
 	// 매장 이미지 업로드

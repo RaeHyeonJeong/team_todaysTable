@@ -1,12 +1,12 @@
 package com.todaysTable.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.todaysTable.dao.StoreDao;
-import com.todaysTable.vo.MenuVO;
 import com.todaysTable.vo.SearchCriteriaVO;
 import com.todaysTable.vo.StoreImageVO;
 import com.todaysTable.vo.StoreOptionVO;
@@ -38,9 +38,9 @@ public class StoreServiceImpl implements StoreService {
 	}
 	// 매장별 메뉴 INSERT
 	@Override
-	public void insertStoreMenu(MenuVO menuVO) {
+	public void insertStoreMenu(Map<String, String> menu) {
 		// TODO Auto-generated method stub
-		storeDao.insertStoreMenu(menuVO);
+		storeDao.insertStoreMenu(menu);
 	}
 	// 매장별 편의사항 UPDAT
 	@Override

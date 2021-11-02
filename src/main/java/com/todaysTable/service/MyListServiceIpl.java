@@ -49,6 +49,18 @@ public class MyListServiceIpl implements MyListService{
 	public void insertLikeInfo(DibsVO vo) throws Exception {
 		this.MyListDao.insertLikeInfo(vo);
 	}
+
+	@Override
+	public void deleteLikeInfo(DibsVO vo) throws Exception {
+		this.MyListDao.deleteLikeInfo(vo);
+		
+	}
+
+	@Override
+	public int checkLike(DibsVO vo) throws Exception {
+		return MyListDao.checkLike(vo);
+	}
+	
 	
 	
 

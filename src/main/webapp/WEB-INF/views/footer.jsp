@@ -56,7 +56,7 @@
 					<div class="col col-md-4 my-4 px-2" style="min-width: 270px">
 						<div class="row align-items-end">
 							<div class="col hover-animate col-auto" style="padding-right: 10px; padding-bottom: 4px;">
-								<img class="rounded-3  border border-3" style="width: 100px" src="resources/img/photo/mimojiDemo.png">
+								<img class="rounded-3" style="width: 100px" src="resources/img/developer_profile/래현.png">
 							</div>
 							<div class="col px-1">
 								<h6 class="text-darkgray">JEONG RAE HYEON</h6>
@@ -71,13 +71,13 @@
 					<div class="col col-md-4 my-4 px-2" style="min-width: 270px">
 						<div class="row align-items-end">
 							<div class="col hover-animate col-auto" style="padding-right: 10px; padding-bottom: 4px;">
-								<img class="rounded-3  border border-3" style="width: 100px" src="resources/img/photo/mimojiDemo.png">
+								<img class="rounded-3" style="width: 100px" src="resources/img/developer_profile/의정.png">
 							</div>
 							<div class="col px-1">
-								<h6>JEONG RAE HYEON</h6>
+								<h6>WOO UI JEONG</h6>
 								<p class="text-sm text-white  mb-2">
 									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="#" title="twitter">
-										<i class="fab fa-github  me-2"></i>https://github.com/RaeHyeonJeong
+										<i class="fab fa-github  me-2"></i>https://github.com/WOOUIJEONG
 									</a>
 								</p>
 							</div>
@@ -86,13 +86,13 @@
 					<div class="col col-md-4 my-4 px-2" style="min-width: 270px">
 						<div class="row align-items-end">
 							<div class="col hover-animate col-auto" style="padding-right: 10px; padding-bottom: 4px;">
-								<img class="rounded-3  border border-3" style="width: 100px" src="resources/img/photo/mimojiDemo.png">
+								<img class="rounded-3" style="width: 100px" src="resources/img/developer_profile/호준.png">
 							</div>
 							<div class="col px-1">
-								<h6>JEONG RAE HYEON</h6>
+								<h6>JANG HO JUN</h6>
 								<p class="text-sm text-white  mb-2">
 									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="#" title="twitter">
-										<i class="fab fa-github  me-2"></i>https://github.com/RaeHyeonJeong
+										<i class="fab fa-github  me-2"></i>https://github.com/h-oho
 									</a>
 								</p>
 							</div>
@@ -101,13 +101,13 @@
 					<div class="col col-md-4 my-4 px-2" style="min-width: 270px">
 						<div class="row align-items-end">
 							<div class="col hover-animate col-auto" style="padding-right: 10px; padding-bottom: 4px;">
-								<img class="rounded-3  border border-3" style="width: 100px" src="resources/img/photo/mimojiDemo.png">
+								<img class="rounded-3" style="width: 100px" src="resources/img/developer_profile/유주.png">
 							</div>
 							<div class="col px-1">
-								<h6>JEONG RAE HYEON</h6>
+								<h6>CHO YU JU</h6>
 								<p class="text-sm text-white  mb-2">
 									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="#" title="twitter">
-										<i class="fab fa-github  me-2"></i>https://github.com/RaeHyeonJeong
+										<i class="fab fa-github  me-2"></i>https://github.com/Y00J00
 									</a>
 								</p>
 							</div>
@@ -116,13 +116,13 @@
 					<div class="col col-md-4 my-4 px-2" style="min-width: 270px">
 						<div class="row align-items-end">
 							<div class="col hover-animate col-auto" style="padding-right: 10px; padding-bottom: 4px;">
-								<img class="rounded-3  border border-3" style="width: 100px" src="resources/img/photo/mimojiDemo.png">
+								<img class="rounded-3" style="width: 100px" src="resources/img/developer_profile/형권.png">
 							</div>
 							<div class="col px-1">
-								<h6>JEONG RAE HYEON</h6>
+								<h6>KIM HYEONG GWON</h6>
 								<p class="text-sm text-white  mb-2">
 									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="#" title="twitter">
-										<i class="fab fa-github  me-2"></i>https://github.com/RaeHyeonJeong
+										<i class="fab fa-github  me-2"></i>https://github.com/hyeonggwon
 									</a>
 								</p>
 							</div>
@@ -131,13 +131,13 @@
 					<div class="col col-md-4 my-4 px-2" style="min-width: 270px">
 						<div class="row align-items-end">
 							<div class="col hover-animate col-auto" style="padding-right: 10px; padding-bottom: 4px;">
-								<img class="rounded-3  border border-3" style="width: 100px" src="resources/img/photo/mimojiDemo.png">
+								<img class="rounded-3" style="width: 100px" src="resources/img/developer_profile/윤영.png">
 							</div>
 							<div class="col px-1">
-								<h6>JEONG RAE HYEON</h6>
+								<h6>CHOI YOON YOUNG</h6>
 								<p class="text-sm text-white  mb-2">
 									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="#" title="twitter">
-										<i class="fab fa-github  me-2"></i>https://github.com/RaeHyeonJeong
+										<i class="fab fa-github  me-2"></i>https://github.com/ChoiYoonYoung09
 									</a>
 								</p>
 							</div>

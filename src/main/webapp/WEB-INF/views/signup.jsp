@@ -449,6 +449,10 @@
 			var obj = document.getElementsByClassName('form-control');
 			var inputNum = $("#authnum").val(); // 입력코드    
 			var checkResult = $("span#mail_check_warn"); // 비교 결과  
+			if ($("#authnum").val() == "") { //닉네임 창이 공백일 떄 다시 입력
+				alert("인증번호를 입력해 주세요."); 
+			} else {
+				
 			if (inputNum == code) { // 일치할 경우
 				checkResult.html("인증번호가 일치합니다.");
 				checkResult.attr("class", "correct");
@@ -458,6 +462,7 @@
 				for (var i = 0; i < obj.length; i++) { //지워짐
 					obj[i].value = '';
 				}
+			}
 			}
 		});
 	</script>

@@ -118,7 +118,7 @@
 				<div class="row">
 					<div class="col-lg-5 d-flex align-items-center form-group">
 						<input class="form-control border-0 shadow-0" type="text"
-							name="search" placeholder="가게명, 음식점을 검색해보세요">
+							name="search" placeholder="음식이름, 가게명, 위치등을 검색해보세요">
 					</div>
 					<div class="col-md-6 col-lg-3 d-flex align-items-center form-group">
 						<div class="input-label-absolute input-label-absolute-right w-100">
@@ -791,8 +791,6 @@
 											
 											'<h4 class="text-white text-shadow">'+ data[idx].name +'</h4>'
 									)
-
-									
 									$("tbody").append(
 										'<tr><td>카테고리 :</td><td>'
 										+data[idx].category+

@@ -31,4 +31,5 @@ public class DetailController {
 		modelAndView.setViewName("WEB-INF/views/storeDetail");
 		return modelAndView;
 	}
+	
 }

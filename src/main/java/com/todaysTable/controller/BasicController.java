@@ -3,8 +3,10 @@ package com.todaysTable.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.todaysTable.service.DetailService;
 import com.todaysTable.service.StoreService;
+import com.todaysTable.vo.MenuVO;
 import com.todaysTable.vo.PageMaker;
+import com.todaysTable.vo.RoomVO;
 import com.todaysTable.vo.SearchCriteria;
 import com.todaysTable.vo.StoreVO;
 
@@ -85,6 +90,14 @@ public class BasicController {
 		return storeService.storeRandomList();
 	}
 	
+	
+	//storeDetail.jsp 매장별 메뉴리스트 출력용
+	@RequestMapping(value="menulist.do")
+	@ResponseBody
+	public List<MenuVO> storemenuList() {
+		return storeService.storemenuList();
+	}
+	
 	//searchResult.jsp 매장리스트 출력용
 	@RequestMapping(value="storelist.do")
 	@ResponseBody
@@ -92,6 +105,18 @@ public class BasicController {
 		return storeService.storelist();
 	}
 	
+	//storeDetail.jsp 매장별 객실정보 출력용
+	@RequestMapping(value="capacity.do")
+	@ResponseBody
+	public List<RoomVO> storeCapacity() {
+		return storeService.storeCapacity();
+	}
+	
+	
+	
+	
+	
+	//지도맵 테스트페이지
 	@RequestMapping(value = "mapone.do")
 	public ModelAndView basicmapone() {
 		ModelAndView modelAndView = new ModelAndView();

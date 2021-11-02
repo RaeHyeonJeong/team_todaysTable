@@ -61,4 +61,15 @@
 		select * from  (select * from store order by dbms_random.value) where rownum = 1
 		]]>
 	</select>
+	
+	<!-- 매장메뉴리스트 출력용  -->
+	<select id="storemenuList" resultType="com.todaysTable.vo.MenuVO">
+		SELECT * FROM MENU
+	</select>
+	
+	<!-- 객실정보 출력용  -->
+	<select id="storeCapacity" resultType="com.todaysTable.vo.RoomVO">
+		SELECT * FROM ROOM
+	</select>
+	
 </mapper>

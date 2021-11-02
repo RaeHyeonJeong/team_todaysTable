@@ -436,10 +436,12 @@
 
 						<br>
 
-						<ul class="list-inline text-sm mb-4">
+						<div class="store_capacity" id="store_capacity">
+						<!-- <ul class="list-inline text-sm mb-4">
 							<li class="list-inline-item me-3"><i
 								class="fa fa-users me-1 text-secondary"></i> 테이블 당 최대 인원 수 :</li>
-						</ul>
+						</ul> -->
+						</div>
 
 						<ul class="text-muted font-weight-light">
 							<li>주소 : ${param.address}</li>
@@ -452,9 +454,15 @@
 								</c:choose>
 							</li>
 							<li>메뉴 : <br> 
-								<c:forEach var="i" items="${menu}">
-									${i.name} - ${i.price}원 <br>
-								</c:forEach>
+								<!-- 껍데기만 만들어놓고 ajax로 데이터받아온것을 append해주는 방식 -->
+								<table class="Rank_table">
+									<colgroup>
+										<col style="width: 30%;">
+										<col style="width: 70%">
+									</colgroup>
+									<tbody id="rankUsers">
+									</tbody>
+								</table>
 							</li>
 							<br>
 						</ul>
@@ -673,11 +681,8 @@
 					<div class="text-left mt-5">
 						
 						<button class="btn btn-outline-primary" id="txt" type="txt"
-						 onclick="location.href='https://map.kakao.com/link/to/${param.name},${param.latitude},${param.longitude}';">길찾기</button>
-						<%-- <a class="txt"
-						href="https://map.kakao.com/link/to/${param.name},${param.latitude},${param.longitude}"
-						style="text-decoration: none; outline: none;"
-						>길찾기</a> --%>
+						 onclick="location.href='https://map.kakao.com/link/to/${param.name},${param.latitude},${param.longitude}';">길찾기
+						 </button>
 					</div>
 				</div>
 			</div>
@@ -896,6 +901,55 @@
 	</script>
 	<!-- jQuery-->
 	<script src="resources/vendor/jquery/jquery.min.js"></script>
+	<script type="text/javascript">
+	//매장별 메뉴리스트 출력
+	function menuList(){
+		$.ajax({
+			type : 'POST',
+			url : 'menulist.do',
+			data : "",
+			async : false,
+			contentType : "json",
+			success : function(data) {
+				
+				//리스트출력하기
+				if (data.length == 0) {
+					alert('데이터가 존재하지 않습니다.');
+				} else {
+					 $(data).each(function(idx){
+						if(data[idx].store_no == ${param.store_no})
+						{
+							$("tbody").append
+							(
+									'<tr><td>-</td><td>'
+									+data[idx].menu_name+
+									'</td></tr>'	
+									+
+									'<tr><td>가격 :</td><td>'
+									+data[idx].price+
+									'</td></tr>'	
+							)
+						}
+					});
+					 
+				}
+				
+			},
+			error : function(request, status, error) {
+				alert(error);
+			}
+		});
+	}
+	
+	
+	
+	window.onload = function()
+	{
+		menuList();
+		
+	}
+	
+	</script>
 	<!-- heart toggle -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -931,8 +985,6 @@
 	var latitude = "<c:out value="${param.latitude}" />";
 	//longitude 경도
 	var longitude = "<c:out value="${param.longitude}" />";
-	
-	console.log(latitude +' '+longitude);
 	
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 	    mapOption = { 

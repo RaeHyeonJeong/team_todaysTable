@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.todaysTable.vo.MenuVO;
+import com.todaysTable.vo.RoomVO;
 import com.todaysTable.vo.SearchCriteria;
 import com.todaysTable.vo.StoreVO;
 
@@ -40,7 +42,16 @@ public class StoreDaoImpl implements StoreDao {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("storeMapper.storeRandomList");
 	}
+	//storeDetail.jsp 매장별 메뉴리스트 출력용
+	public List<MenuVO> storemenuList() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("storeMapper.storemenuList");
+	}
 	
-	
+	//storeDetail.jsp 매장별 객실정보 출력용
+	public List<RoomVO> storeCapacity() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("storeMapper.storeCapacity");
+	}
 
 }

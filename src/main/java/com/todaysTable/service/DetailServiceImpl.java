@@ -1,5 +1,6 @@
 package com.todaysTable.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import com.todaysTable.dao.DetailDao;
 import com.todaysTable.vo.DibsVO;
 import com.todaysTable.vo.MenuVO;
 import com.todaysTable.vo.ReviewImageVO;
+import com.todaysTable.vo.ReviewPagingVO;
 import com.todaysTable.vo.ReviewVO;
 import com.todaysTable.vo.StoreVO;
 
@@ -95,6 +97,18 @@ public class DetailServiceImpl implements DetailService{
 		// TODO Auto-generated method stub
 		return dao.selectReviewImageList(review_no);
 	}
+
+	@Override
+	public int countReview() {
+		// TODO Auto-generated method stub
+		return dao.countReview();
+	}
+
+	@Override
+	public List<ReviewVO> selectReview(HashMap<String, Object> map) {
+		// TODO Auto-generated method stub
+		return dao.selectReview(map);
+	}
 	
 	
 	//찜하기(유주)
@@ -108,21 +122,21 @@ public class DetailServiceImpl implements DetailService{
 		vo.setStore_name(storeVO.getName());
 		vo.setMemb_no(dao.getMemberNo(id));
 		vo.setAvg_grade(dao.getAvgGrade(store_no));
-		
+
 		return vo;
 	}
 
 	@Override
 	public void insertLikeInfo(DibsVO vo)  {
 		dao.insertLikeInfo(vo);
-		
+
 	}
 
 	@Override
 	public void deleteLikeInfo(DibsVO vo) {
 		dao.deleteLikeInfo(vo);		
 	}
-	
+
 	@Override
 	public int checkLike(DibsVO vo){
 		return dao.checkLike(vo);

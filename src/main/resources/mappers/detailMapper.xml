@@ -57,13 +57,13 @@
 </select>
 
 <!-- 리뷰 리스트 가져오기 -->
-<select id="selectReviewList" parameterType="java.lang.Integer" resultType="com.todaysTable.vo.ReviewVO">
+<!-- <select id="selectReviewList" parameterType="java.lang.Integer" resultType="com.todaysTable.vo.ReviewVO">
 	SELECT REVIEW_NO, MEMB_NO, STORE_NO, CONTENT, TASTE_GRADE, SERVICE_GRADE,
 	 		MOOD_GRADE, LIKES, HITS, TO_CHAR(REG_DATE, 'YYYY/MM/DD HH24:MI') REG_DATE
 	FROM REVIEW
 	WHERE STORE_NO = #{VALUE}
 	ORDER BY REVIEW_NO
-</select>
+</select> -->
 
 <!-- 리뷰 이미지 리스트 가져오기 -->
 <select id="selectReviewImageList" parameterType="java.lang.Integer" resultType="com.todaysTable.vo.ReviewImageVO">
@@ -71,6 +71,27 @@
 	FROM REVIEW_IMAGE
 	WHERE REVIEW_NO = #{VALUE}
 	ORDER BY IMAGE_NO
+</select>
+
+<!-- 총 리뷰 갯수 출력 -->
+<select id="countReview" resultType="java.lang.Integer">
+	SELECT COUNT(*) FROM REVIEW
+</select>
+
+<!-- 페이징 처리 후 리뷰 조회 -->
+<select id="selectReview" parameterType="java.util.HashMap" resultType="com.todaysTable.vo.ReviewVO">
+	SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.*
+				FROM (
+						SELECT REVIEW_NO, MEMB_NO, STORE_NO, CONTENT, TASTE_GRADE, SERVICE_GRADE,
+	 					MOOD_GRADE, LIKES, HITS, TO_CHAR(REG_DATE, 'YYYY/MM/DD HH24:MI') REG_DATE
+						FROM REVIEW
+						WHERE STORE_NO = #{store_no}
+						ORDER BY REVIEW_NO DESC
+						) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
 </select>
 
 <!-- 리뷰 정보 삽입 -->
@@ -84,7 +105,6 @@
 	INSERT INTO REVIEW_IMAGE(IMAGE_NO, REVIEW_NO, IMAGE_PATH)
 	VALUES(REVIEW_IMAGE_SEQ.NEXTVAL, #{review_no}, #{image_path})
 </insert>
-
 
 
 
@@ -106,4 +126,5 @@
 	SELECT COUNT(*) FROM DIBS
 	WHERE STORE_NO=#{store_no} AND MEMB_NO=#{memb_no} 
 </select>
+
 </mapper>

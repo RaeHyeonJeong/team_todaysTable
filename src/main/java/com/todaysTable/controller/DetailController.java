@@ -2,6 +2,7 @@ package com.todaysTable.controller;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.todaysTable.service.DetailService;
 import com.todaysTable.vo.DibsVO;
 import com.todaysTable.vo.ReviewImageVO;
+import com.todaysTable.vo.ReviewPagingVO;
 import com.todaysTable.vo.ReviewVO;
 
 @Controller
@@ -31,10 +32,11 @@ public class DetailController {
 	@Autowired
 	private DetailService service;
 	
-
-	
 	@RequestMapping(value="moveTostoreDetail.do")
-	public String storeDetail(Model model, int store_no, HttpServletRequest request) {
+	public String storeDetail(Model model, int store_no, 
+			@RequestParam(value="curPage", required=false) String curPage,
+			@RequestParam(value="cntPerPage", required=false) String cntPerPage,
+			HttpServletRequest request) {
 		// 가게 정보 불러오기
 		model.addAttribute("store", service.selectStoreInfo(store_no));
 		// 평균 평점 불러오기
@@ -43,26 +45,46 @@ public class DetailController {
 		model.addAttribute("canPark", service.getCanPark(store_no));
 		// 메뉴 정보 불러오기
 		model.addAttribute("menu", service.selectMenuList(store_no));
-				
+		
 		// 닉네임 불러오기
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
-		model.addAttribute("nickname", service.getNickname(id).trim());
+		if(id == null) {
+			model.addAttribute("nickname", "손님");
+		} else {
+			model.addAttribute("nickname", service.getNickname(id).trim());			
+		}
 		
 		// 리뷰 리스트 불러오기
-		List<ReviewVO> reviewList = service.selectReviewList(store_no);
+		//List<ReviewVO> reviewList = service.selectReviewList(store_no);
+		int total = service.countReview();
+		if(curPage == null && cntPerPage == null) {
+			curPage = "1";
+			cntPerPage = "5";
+		} else if(curPage == null) {
+			curPage = "1";
+		} else if(cntPerPage == null) {
+			cntPerPage = "5";
+		}
+		ReviewPagingVO reviewPagingVO = new ReviewPagingVO(total, Integer.parseInt(curPage), Integer.parseInt(cntPerPage));
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("store_no", store_no);
+		map.put("start", reviewPagingVO.getStart());
+		map.put("end", reviewPagingVO.getEnd());
+		List<ReviewVO> reviewList = service.selectReview(map);
 		for(ReviewVO reviewVO : reviewList) {
 			reviewVO.setAvg_grade((reviewVO.getTaste_grade() + reviewVO.getService_grade() + reviewVO.getMood_grade()) / 3);
 			reviewVO.setNickname(service.getNicknameFromNo(reviewVO.getMemb_no()));
 			reviewVO.setImage_list(service.selectReviewImageList(reviewVO.getReview_no()));
 		}
+		model.addAttribute("paging", reviewPagingVO);
 		model.addAttribute("reviewList", reviewList);
 		
-
 		//찜하기 여부 불러오기
 		DibsVO vo = service.getLikeInfo(id, store_no);
 		if(service.checkLike(vo)!=0)
-		model.addAttribute("check_value","checked");
+			model.addAttribute("check_value","checked");
+		
 		return "WEB-INF/views/storeDetail";
 	}
 	
@@ -75,6 +97,12 @@ public class DetailController {
 		// 접속중인 id 받아오기
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
+		// id가 null일 경우 memb_no을 -1로 세팅하고 리턴
+		if(id == null) {
+			vo.setMemb_no(-1);
+			return vo;
+		}
+		
 		// 회원 넘버 vo에 저장
 		vo.setMemb_no(service.getMemberNo(id));
 		// 가게 번호 vo에 저장
@@ -126,8 +154,7 @@ public class DetailController {
 		vo.setImage_list(image_list);
 		return vo;
 	}
-
-
+	
 	//찜하기 (유주)
 	@RequestMapping(value="LikeStore.do")
 	public void LikeStore(int store_no, HttpServletRequest request) {//int store_no,
@@ -147,6 +174,6 @@ public class DetailController {
 		session.getAttribute("id");
 		DibsVO vo = service.getLikeInfo(id, store_no);
 		service.deleteLikeInfo(vo);
-		
+
 	}
 }

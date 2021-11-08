@@ -78,7 +78,7 @@ div.row2 { -
 							<div class="col-sm-9">
 								<br> <br>
 								<!--   테이블 형식으로 만들기 -->
- 								<form id="mypage" name="mypage" action="getPersonalInfo.do">
+ 								<!-- <form id="mypage" name="mypage" action="getPersonalInfo.do"> -->
  								<div class="card-body">
 									<table class="table text-sm mb-0">
 										<tr>
@@ -115,7 +115,7 @@ div.row2 { -
 										</tr>
 									</table>
 								</div>
-								</form> 
+								<!-- </form>  -->
 							</div>
 						</div>
 						<br> <br>

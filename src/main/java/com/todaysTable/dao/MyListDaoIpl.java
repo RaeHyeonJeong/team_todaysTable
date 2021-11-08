@@ -1,6 +1,8 @@
 package com.todaysTable.dao;
 
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -40,9 +42,12 @@ public class MyListDaoIpl implements MyListDao{
 	}
 
 	@Override
-	public int checkLike(DibsVO vo) throws Exception {
-		return sqlSession.selectOne("myListMapper.checkLike",vo);
+	public List<DibsVO> getLikeList(int memb_no) throws Exception {
+		return sqlSession.selectList("myListMapper.getLikeList",memb_no);
 	}
+
+	
+
 	
 	
 	

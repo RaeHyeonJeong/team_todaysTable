@@ -212,7 +212,7 @@
 				</ul>
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item dropdown ms-lg-3"><a id="userDropdownMenuLink" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<img class="avatar avatar-sm avatar-border-white me-2" src="resources/img/avatar/avatar-10.jpg" alt="Jack London">
+							<img class="avatar avatar-sm avatar-border-white me-2" src="<%= profileImg %>" alt="">
 						</a>
 						<div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownMenuLink">
 							<a class="dropdown-item" href="myPageMove.do">마이페이지</a>

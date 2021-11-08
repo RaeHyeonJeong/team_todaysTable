@@ -11,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.portlet.ModelAndView;
-
 import com.todaysTable.service.MemberService;
 
 @Controller
@@ -29,31 +27,34 @@ public class LoginController {
 		boolean state = service.loginCheck(request.getParameter("id"), request.getParameter("password"));// state=true의 경우 로그인 성공
 	
 		if (state) {
-			session.setAttribute("id", request.getParameter("id"));// 로그인 성공시 입력한 id를 세션에 저장
-			session.setMaxInactiveInterval(6000);
+	         session.setAttribute("id", request.getParameter("id"));// 로그인 성공시 입력한 id를 세션에 저장
+	         session.setMaxInactiveInterval(6000);
 
-			if (request.getParameter("id").equals("ADMIN")) {
-				return "WEB-INF/views/dashBoard";// ADMIN 아이디로 로그인 성공시 dashBoard.jsp로 이동
-			} else {
+	         if (request.getParameter("id").equals("ADMIN")) {
+	            return "WEB-INF/views/dashBoard";// ADMIN 아이디로 로그인 성공시 dashBoard.jsp로 이동
+	         } else {
+	            
+	            HashMap<String, Object> map = service.getLoginInfo((String) session.getAttribute("id"));// name과profile_image_path를 가져와서 map에 저장
+	            
+	            String profileImgPath=null;
+	            String profileImg=null;
+	            
+	            if ((String) map.get("PROFILE_IMAGE_PATH") == null) {
+	               profileImg = "resources/img/avatar/default_profile.png";
+	            } else {
+	               profileImgPath = (String) map.get("PROFILE_IMAGE_PATH");
 
+	               int beginIndex = profileImgPath.lastIndexOf("resources");
+	               int endIndex = profileImgPath.length();
+	               profileImg = profileImgPath.substring(beginIndex, endIndex);
+	               profileImg = profileImg.replace("\\\\", "/");
 
-				HashMap<String, Object> map = service.getLoginInfo((String) session.getAttribute("id"));// name과profile_image_path를 가져와서 map에 저장
-	            String profileImgPath=(String)map.get("PROFILE_IMAGE_PATH");
-	               
-	             int beginIndex=profileImgPath.lastIndexOf("resource");
-	             int endIndex=profileImgPath.length();
-	            String profileImg=profileImgPath.substring(beginIndex,endIndex);
-	            profileImg = profileImg.replace("\\\\", "/");
+	            }
+
 	            map.put("PROFILE_IMAGE_PATH", profileImg);
-	                                          
+
 	            session.setAttribute("NAME", map.get("NAME"));// 가져온 name값을 세션에 저장
 	            session.setAttribute("PROFILE_IMAGE_PATH", map.get("PROFILE_IMAGE_PATH"));// 가져온 profle_image_path값을 세션에 저장
-		
-				/*
-				 * System.out.println("keySet(): " + map.keySet());
-				 * System.out.println(map.get("NAME"));
-				 * System.out.println(map.get("PROFILE_IMAGE_PATH")); key,value 확인 가능
-				 */
 
 				return "WEB-INF/views/index";// name, profle_image_path를 갖고 index로 이동
 			}
@@ -71,8 +72,7 @@ public class LoginController {
 		try {
 			service.logout(session);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		e.printStackTrace();
 		}
 		return "WEB-INF/views/index";
 	}

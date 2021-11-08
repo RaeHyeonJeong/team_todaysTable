@@ -2,8 +2,6 @@ package com.todaysTable.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.todaysTable.func.FileUploader;
+import com.todaysTable.func.AjaxFileUploader;
 import com.todaysTable.service.NoticeBoardService;
 import com.todaysTable.vo.NoticeBoardVO;
 
@@ -43,8 +41,8 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "insertNoticeBoard.do", method = RequestMethod.POST)
-	public String noticeBoardInsertAction(NoticeBoardVO vo, @RequestParam(value = "file", required = false) List<MultipartFile> fileList,MultipartHttpServletRequest request, String folderName) {
-		
+	public String noticeBoardInsertAction(NoticeBoardVO vo, @RequestParam(value = "file", required = false) List<MultipartFile> fileList, MultipartHttpServletRequest request, String folderName) {
+
 		service.insertNoticeBoard(vo, fileList, request, "noticeImg");
 		return "redirect:/noticeBoard.do";
 	}
@@ -69,4 +67,19 @@ public class BoardController {
 		return "redirect:/noticeBoard.do";
 	}
 
+	@RequestMapping(value = "uploadImgAjax.do", method = {RequestMethod.POST, RequestMethod.GET} )
+	public void uploadAjax(MultipartFile[] uploadFile) {
+		AjaxFileUploader ajaxFileUploader = new AjaxFileUploader();
+		String forderName = "noticeImg";
+		
+		for(MultipartFile multipartFile : uploadFile) {
+			try {
+				System.out.println("name : " +multipartFile.getOriginalFilename());
+				
+				ajaxFileUploader.uploadFile(multipartFile, forderName);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }

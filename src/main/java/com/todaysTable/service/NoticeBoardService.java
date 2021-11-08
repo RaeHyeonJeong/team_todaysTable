@@ -1,5 +1,6 @@
 package com.todaysTable.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -16,5 +17,4 @@ public interface NoticeBoardService {
 	public NoticeBoardVO detailNoticeBoard(int no);
 	public void updateHits(int no);
 	public List<NoticeBoardImageVO> selectNoticeImage(int no);
-	
 }

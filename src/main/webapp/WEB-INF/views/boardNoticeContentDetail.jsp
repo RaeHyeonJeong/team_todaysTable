@@ -35,12 +35,15 @@
 <!-- Font Awesome CSS-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <style>
-.swiper-slide{
+.swiper-slide {
 	overflow: hidden;
 	display: flex;
-	align-items : center;
-	widit: 400px;
-	height: 400px
+	align-items: center;
+}
+
+#list_img {
+	width: 380px;
+	height: auto;
 }
 </style>
 </head>
@@ -63,7 +66,7 @@
 					<c:forEach var="row" items="${img}">
 						<div class="swiper-slide">
 							<a href="${row.image_path}" data-toggle="gallery-top" title="Our street">
-								<img class="img-fuild"  src="${row.image_path}" alt="Our street">
+								<img class="img-fuild" id="list_img" src="${row.image_path}" alt="Our street">
 							</a>
 						</div>
 					</c:forEach>

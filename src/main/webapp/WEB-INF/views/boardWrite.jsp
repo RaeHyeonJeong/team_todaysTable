@@ -49,7 +49,12 @@
 							<textarea class="form-control" rows="4" name="content" id="content" placeholder="내용을 적어주세요" required="required" wrap="hard" style="height: 400px; width: 750px;"></textarea>
 						</div>
 						<div class="form-group mb-4">
-							<label class="form-label" for="formFile">UPLOAD IMAGE</label> <input class="form-control" id="file" name="file" multiple="multiple" type="file" >
+							<label class="form-label" for="formFile">UPLOAD IMAGE</label> <input class="form-control" id="file" name="file" multiple="multiple" type="file">
+							<ul id="img">
+								<li>Sample.file<a href="">
+										&nbsp<i class="fas fa-times-circle  me-2"></i>
+									</a></li>
+							</ul>
 						</div>
 						<div class="form-group mb-4">
 							<label class="form-label" for="formFile">비밀번호</label> <input class="form-control" id="password" type="text" name="password" required="required">
@@ -131,6 +136,55 @@
 			snapValues[handle].innerHTML = values[handle];
 			inputValues[handle].value = values[handle];
 		})
+	</script>
+	<script>
+		$(document).ready(function() {
+			var regex = new RegExp("(.*?)\.(jpg|jpeg|png|gif)$");
+			var maxSize = 14805760; // 10MB
+			
+			// 파일 사이즈 , 파일 확장자 체크
+			function checkExtension(fileName, fileSize){
+				if(fileSize >= maxSize) {
+					alert("파일 사이즈 10MB 초과");
+					 return false;
+				}
+				if(!regex.test(fileName)){
+					alert("허용되지 않는 확장자");
+					return false;
+				}
+				return true;
+			}
+			
+			// 파일 선택시 자동 업로드
+			$("#file").on("change", function(e){
+				var formData = new FormData();
+				var inputFile = $("input[name='file']");
+				var files = inputFile[0].files;
+				
+				console.log(files);
+				
+				for(var i=0; i< files.length; i++){
+					if(!checkExtension(files[i].name, files[i].size)){
+						return false;
+					}
+				}
+				
+				for(var i=0; i< files.length; i++){
+					formData.append("uploadFile", files[i]);
+				}
+				
+				$.ajax({
+					url : 'uploadImgAjax.do',
+					processData : false,
+					contentType : false,
+					data : formData,
+					type: "POST",
+					success : function(result){
+						alert("Uploaded");
+					}
+				})
+			});
+		});
 	</script>
 </body>
 </html>

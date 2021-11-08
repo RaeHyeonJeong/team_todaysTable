@@ -37,6 +37,7 @@ public class NoticeBoardServiceImpl implements NoticeBoardService {
 
 		ArrayList<String> list = fileUploader.getUploadFilePath();
 		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
 			dao.insertNoticeBoardImage(list.get(i));
 		}
 	}
@@ -81,5 +82,7 @@ public class NoticeBoardServiceImpl implements NoticeBoardService {
 
 		return list;
 	}
+	
+	
 
 }

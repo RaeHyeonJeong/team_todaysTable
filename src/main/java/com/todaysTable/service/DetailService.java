@@ -2,6 +2,7 @@ package com.todaysTable.service;
 
 import java.util.List;
 
+import com.todaysTable.vo.DibsVO;
 import com.todaysTable.vo.MenuVO;
 import com.todaysTable.vo.ReviewImageVO;
 import com.todaysTable.vo.ReviewVO;
@@ -21,4 +22,12 @@ public interface DetailService {
 	public String getRegDate(int review_no);
 	public List<ReviewVO> selectReviewList(int store_no);
 	public List<ReviewImageVO> selectReviewImageList(int review_no);
+
+	//찜하기(유주)
+	public DibsVO getLikeInfo(String id, int store_no);
+	public void insertLikeInfo(DibsVO vo);
+	public void deleteLikeInfo(DibsVO vo);
+	public int checkLike(DibsVO vo);
+	
+
 }

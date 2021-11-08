@@ -310,8 +310,16 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
+	window.onpageshow = function(event) {
+		if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+			// Back Forward Cache로 브라우저가 로딩될 경우 혹은 브라우저 뒤로가기 했을 경우
+			history.go(0);
+		}
+	}
 	$(function() {
-		
+		if('${param.isLogined}' == 'N' && '${sessionScope.id}' == '') {
+			alert("로그인 후 이용 가능합니다.");
+		}
 		$("button#submit").click(function(e) {
 			e.preventDefault();
 			
@@ -326,9 +334,6 @@
 			data.append('mood_grade', $("select#mood_grade").val());
 			data.append('content', $("textarea#content").text());
 			data.append('store_no', '${param.store_no}');
-			
-			
-			
 			$.ajax({
 				type:'POST',
 				enctype:'multipart/form-data',
@@ -340,6 +345,10 @@
 				cache:false,
 				timeout:600000,
 				success: function(v) {
+					if(v.memb_no == -1) {
+						alert("로그인 후 이용 가능합니다.");
+						return;
+					}
 					var addHtml = "<div class='d-flex d-block d-sm-flex review'>"
 								+	"<div class='text-md-center flex-shrink-0 me-4 me-xl-5'>"
 								+	"<img class='d-block avatar avatar-xl p-2 mb-2'"
@@ -385,7 +394,7 @@
 							+	"</div>"
 							+	"</div>";
 							
-					$("#review").append(addHtml);
+					$("#review").prepend(addHtml);
 				},
 				error:function(e) {
 					alert(e);
@@ -394,9 +403,8 @@
 		});
 		
 		
-	
 		
-		 $("#checkbox").change(function(){   //찜하기 , 삭제 가능
+		$("#checkbox").change(function(){   //찜하기 , 삭제 가능
 			
 			if($("#checkbox").is(":checked")){
 				
@@ -426,11 +434,11 @@
 					error:function(e) {
 						alert(e);
 					}
-			});
+				});
 				
 			}
 		});	 
-		});
+	});
 </script>
 </head>
 <body style="padding-top: 72px;">
@@ -475,16 +483,15 @@
 			<div class="col-lg-8">
 					
 				<div class="text-block">
-					<p class="text-primary"><i class="fa-map-marker-alt fa me-1"></i>${param.name}</p>
+					<p class="text-primary"><i class="fa-map-marker-alt fa me-1"></i>${store.name}</p>
 					<h1>${store.name}</h1>
-					
-					
 					
 					<!-- 찜하기 버튼 (체크박스 활성화로 상태 값을 DB에 저장해야 함)-->
 					<form>
 						<div class="heartbox" style="position: absolute; left: 850px; top:70px;">
-						<input type="checkbox" class="checkbox" id="checkbox" ${check_value} /> 
-						<label for="checkbox"> 
+					
+							<input type="checkbox" class="checkbox" id="checkbox" ${check_value} /> 
+							<label for="checkbox">
 							<svg id="heart-svg" viewBox="-80 -40 58 57" xmlns="http://www.w3.org/2000/svg">
 					         <g id="Group" fill="none" fill-rule="evenodd" transform="translate(-80 -40)">
 			                 <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2" />
@@ -519,11 +526,11 @@
 			                     <circle id="heart2" fill="#9FC7FA" cx="7.5" cy="2" r="2" />
 			                 </g>
 			             </g>
-			         </svg>
-					</label>
-				</div>
-			
-</form>
+			         	</svg>
+						</label>
+					</div>
+				</form>
+
 
 
 
@@ -664,8 +671,8 @@
 				</div>
 
 
+				<p class="subtitle text-sm text-primary">리뷰</p>
 				<div id="review" class="text-block">
-					<p class="subtitle text-sm text-primary">리뷰</p>
 					<c:forEach var="i" items="${reviewList}">
 						<div class="d-flex d-block d-sm-flex review">
 							<div class="text-md-center flex-shrink-0 me-4 me-xl-5">
@@ -697,6 +704,15 @@
 						</div>
 					</c:forEach>
 				</div>
+				
+				<ul class="pagination pagination-template d-flex justify-content-center">
+          			<li class="page-item"><a class="page-link" href="#"> <i class="fa fa-angle-left"></i></a></li>
+            		<li class="page-item active"><a class="page-link" href="#">1</a></li>
+            		<li class="page-item"><a class="page-link" href="#">2</a></li>
+            		<li class="page-item"><a class="page-link" href="#">3</a></li>
+            		<li class="page-item"><a class="page-link" href="#"> <i class="fa fa-angle-right"></i></a></li>
+				</ul>
+          
 			</div>
 			            
 			<!-- 지도 -->
@@ -711,7 +727,7 @@
 					<div class="text-left mt-5">
 						
 						<button class="btn btn-outline-primary" id="txt" type="txt"
-						 onclick="location.href='https://map.kakao.com/link/to/${param.name},${param.latitude},${param.longitude}';">길찾기
+						 onclick="location.href='https://map.kakao.com/link/to/${store.name},${store.latitude},${store.longitude}';">길찾기
 						 </button>
 					</div>
 				</div>
@@ -962,9 +978,9 @@
 	<script>
 	
 	//latitude 위도
-	var latitude = "<c:out value="${param.latitude}" />";
+	var latitude = "<c:out value="${store.latitude}" />";
 	//longitude 경도
-	var longitude = "<c:out value="${param.longitude}" />";
+	var longitude = "<c:out value="${store.longitude}" />";
 	
 	console.log(latitude +' '+longitude);
 	
@@ -998,7 +1014,7 @@
 	//가게명핀 나타낸 곳
 	// 마커가 표시될 위치입니다 
 	var markerPosition  = new kakao.maps.LatLng(latitude, longitude); 
-	message = '<div style="padding:5px;"> ${param.name} </div>'; // 인포윈도우에 표시될 내용입니다
+	message = '<div style="padding:5px;"> ${store.name} </div>'; // 인포윈도우에 표시될 내용입니다
 	
 	// 마커와 인포윈도우를 표시합니다
 	displayMarker(markerPosition, message);
@@ -1012,7 +1028,7 @@
 	marker.setMap(map);
 	
 	// 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
-	var iwContent = '<div style="padding:5px;"> ${param.name} </div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+	var iwContent = '<div style="padding:5px;"> ${store.name} </div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 	    iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
 
 	// 인포윈도우를 생성합니다

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.todaysTable.service.BookService;
 import com.todaysTable.service.DetailService;
@@ -22,7 +23,19 @@ public class BookController {
 	private DetailService detailService;
 	
 	@RequestMapping(value = "moveToBookStore.do")
-	public String moveTobookStore(Model model, int store_no) {
+	public String moveToBookStore(Model model, int store_no, 
+			HttpServletRequest request, RedirectAttributes redirect) {
+		
+		// 접속중인 id 받아오기
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+		
+		if(id == null) {
+			redirect.addAttribute("store_no", store_no);
+			redirect.addAttribute("isLogined", "N");
+			return "redirect:moveTostoreDetail.do";
+		}
+		
 		// 가게 정보 불러오기
 		model.addAttribute("store", detailService.selectStoreInfo(store_no));
 		// 전체 객실 정보 불러오기

@@ -11,6 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.todaysTable.service.MemberService;
 
 @Controller
@@ -24,8 +28,9 @@ public class LoginController {
 	public String loginCheck(HttpServletRequest request, HttpSession session) throws Exception {
 		logger.info("Login Page");
 
-		boolean state = service.loginCheck(request.getParameter("id"), request.getParameter("password"));// state=true의 경우 로그인 성공
-	
+		boolean state = service.loginCheck(request.getParameter("id"), request.getParameter("password"));// state=true의
+																											// 경우 로그인 성공
+
 		if (state) {
 	         session.setAttribute("id", request.getParameter("id"));// 로그인 성공시 입력한 id를 세션에 저장
 	         session.setMaxInactiveInterval(6000);
@@ -49,12 +54,27 @@ public class LoginController {
 	               profileImg = profileImgPath.substring(beginIndex, endIndex);
 	               profileImg = profileImg.replace("\\\\", "/");
 
-	            }
 
-	            map.put("PROFILE_IMAGE_PATH", profileImg);
+				HashMap<String, Object> map = service.getLoginInfo((String) session.getAttribute("id"));// name과profile_image_path를
+																										// 가져와서 map에 저장
+				String profileImgPath = (String) map.get("PROFILE_IMAGE_PATH");
 
-	            session.setAttribute("NAME", map.get("NAME"));// 가져온 name값을 세션에 저장
-	            session.setAttribute("PROFILE_IMAGE_PATH", map.get("PROFILE_IMAGE_PATH"));// 가져온 profle_image_path값을 세션에 저장
+				int beginIndex = profileImgPath.lastIndexOf("resource");
+				int endIndex = profileImgPath.length();
+				String profileImg = profileImgPath.substring(beginIndex, endIndex);
+				profileImg = profileImg.replace("\\\\", "/");
+				map.put("PROFILE_IMAGE_PATH", profileImg);
+
+				session.setAttribute("NAME", map.get("NAME"));// 가져온 name값을 세션에 저장
+				session.setAttribute("PROFILE_IMAGE_PATH", map.get("PROFILE_IMAGE_PATH"));// 가져온 profle_image_path값을 세션에
+																							// 저장
+
+				/*
+				 * System.out.println("keySet(): " + map.keySet());
+				 * System.out.println(map.get("NAME"));
+				 * System.out.println(map.get("PROFILE_IMAGE_PATH")); key,value 확인 가능
+				 */
+
 
 				return "WEB-INF/views/index";// name, profle_image_path를 갖고 index로 이동
 			}
@@ -67,7 +87,8 @@ public class LoginController {
 	public String login() {
 		return "WEB-INF/views/login";// 로그인 실패시 다시 로그인 페이지로 돌아감
 	}
-	@RequestMapping(value="logout.do")
+
+	@RequestMapping(value = "logout.do")
 	public String logout(HttpSession session) {
 		try {
 			service.logout(session);
@@ -76,12 +97,25 @@ public class LoginController {
 		}
 		return "WEB-INF/views/index";
 	}
+
 	@RequestMapping(value = "findid.do")
 	public String findId() {
 		return "WEB-INF/views/findid";
 	}
+
 	@RequestMapping(value = "findpwd.do")
 	public String findPwd() {
 		return "WEB-INF/views/findpwd";
 	}
+
+	@RequestMapping(value = "kakaologin.do", method = RequestMethod.GET)
+	public String login(HttpServletRequest request, HttpSession session) {
+		session = request.getSession();
+		String id = request.getParameter("id");
+		session.setAttribute("id", id);
+		session.setAttribute("NAME", id);
+
+		return "WEB-INF/views/index";
+	}
+
 }

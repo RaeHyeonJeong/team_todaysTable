@@ -10,7 +10,7 @@
 </select>
 
 <select id="getStoreInfo" parameterType="java.lang.Integer" resultType="com.todaysTable.vo.StoreVO">
-	SELECT STORE_NAME,ADDRESS FROM STORE    
+	SELECT STORE_NAME,ADDRESS,STORE_NO FROM STORE    
 	WHERE STORE_NO = #{VALUE}
 </select>
 
@@ -19,10 +19,14 @@
 	WHERE STORE_NO = #{VALUE}
 </select>
 
-<select id="checkLike" parameterType="com.todaysTable.vo.DibsVO">
-	SELECT COUNT(*) FROM DIBS
-	WHERE STORE_NO=#{VALUE} AND ID=#{VALUE} 
+<select id="getLikeList" parameterType="java.lang.Integer" resultType="com.todaysTable.vo.DibsVO" >
+	SELECT STORE_NO,STORE_NAME,ADDRESS,AVG_GRADE FROM DIBS
+	WHERE MEMB_NO=#{VALUE} 
+	ORDER BY STORE_NO
 </select>
+
+
+
 
 <!-- INSERT문 -->
 

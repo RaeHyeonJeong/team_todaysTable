@@ -7,6 +7,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,14 +19,19 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.todaysTable.service.DetailService;
+import com.todaysTable.vo.DibsVO;
 import com.todaysTable.vo.ReviewImageVO;
 import com.todaysTable.vo.ReviewVO;
 
 @Controller
 public class DetailController {
 	
+	private Logger logger = LoggerFactory.getLogger(MyListController.class);
+	
 	@Autowired
 	private DetailService service;
+	
+
 	
 	@RequestMapping(value="moveTostoreDetail.do")
 	public String storeDetail(Model model, int store_no, HttpServletRequest request) {
@@ -36,7 +43,7 @@ public class DetailController {
 		model.addAttribute("canPark", service.getCanPark(store_no));
 		// 메뉴 정보 불러오기
 		model.addAttribute("menu", service.selectMenuList(store_no));
-		
+				
 		// 닉네임 불러오기
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
@@ -51,6 +58,11 @@ public class DetailController {
 		}
 		model.addAttribute("reviewList", reviewList);
 		
+
+		//찜하기 여부 불러오기
+		DibsVO vo = service.getLikeInfo(id, store_no);
+		if(service.checkLike(vo)!=0)
+		model.addAttribute("check_value","checked");
 		return "WEB-INF/views/storeDetail";
 	}
 	
@@ -113,5 +125,28 @@ public class DetailController {
 		}
 		vo.setImage_list(image_list);
 		return vo;
+	}
+
+
+	//찜하기 (유주)
+	@RequestMapping(value="LikeStore.do")
+	public void LikeStore(int store_no, HttpServletRequest request) {//int store_no,
+		logger.info("LikeStore");
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+		session.getAttribute("id");
+		DibsVO vo = service.getLikeInfo(id,store_no);
+		service.insertLikeInfo(vo);
+	}
+	//찜해제(유주)
+	@RequestMapping(value="DislikeStore.do")
+	public void DisLikeStore(int store_no, HttpServletRequest request) {
+		logger.info("DisLikeStore");
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+		session.getAttribute("id");
+		DibsVO vo = service.getLikeInfo(id, store_no);
+		service.deleteLikeInfo(vo);
+		
 	}
 }

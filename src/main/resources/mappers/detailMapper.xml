@@ -85,4 +85,25 @@
 	VALUES(REVIEW_IMAGE_SEQ.NEXTVAL, #{review_no}, #{image_path})
 </insert>
 
+
+
+
+<!-- 찜하기 (유주) -->
+
+<!-- 찜하기 -->
+<insert id="insertLikeInfo" parameterType="com.todaysTable.vo.DibsVO">
+	INSERT INTO DIBS(MEMB_NO, STORE_NO,STORE_NAME, ADDRESS,AVG_GRADE)
+	VALUES(#{memb_no}, #{store_no}, #{store_name}, #{address}, #{avg_grade})
+</insert>
+
+<!-- 찜취소 -->
+<delete id="deleteLikeInfo" parameterType="com.todaysTable.vo.DibsVO">
+   DELETE FROM DIBS WHERE STORE_NO= #{store_no} AND MEMB_NO=#{memb_no}
+</delete>
+
+<!-- 찜하기 체크 -->
+<select id="checkLike" parameterType="com.todaysTable.vo.DibsVO" resultType="java.lang.Integer">
+	SELECT COUNT(*) FROM DIBS
+	WHERE STORE_NO=#{store_no} AND MEMB_NO=#{memb_no} 
+</select>
 </mapper>

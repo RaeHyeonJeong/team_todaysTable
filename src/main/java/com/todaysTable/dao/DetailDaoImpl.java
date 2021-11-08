@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.todaysTable.vo.DibsVO;
 import com.todaysTable.vo.MenuVO;
 import com.todaysTable.vo.ReviewImageVO;
 import com.todaysTable.vo.ReviewVO;
@@ -93,5 +94,26 @@ public class DetailDaoImpl implements DetailDao {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("detailMapper.selectReviewImageList", review_no);
 	}
+
+	
+	//찜하기(유주)
+		
+	@Override
+	public void insertLikeInfo(DibsVO vo) {
+		this.sqlSession.insert("detailMapper.insertLikeInfo",vo);
+		
+	}
+
+	@Override
+	public void deleteLikeInfo(DibsVO vo) {
+		this.sqlSession.delete("detailMapper.deleteLikeInfo",vo);
+		
+	}
+	@Override
+	public int checkLike(DibsVO vo){
+		return sqlSession.selectOne("detailMapper.checkLike",vo);
+	}
+	
+	
 	
 }

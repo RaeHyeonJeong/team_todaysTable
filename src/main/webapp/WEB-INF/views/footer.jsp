@@ -61,7 +61,7 @@
 							<div class="col px-1">
 								<h6 class="text-darkgray">JEONG RAE HYEON</h6>
 								<p class="text-sm text-white  mb-2">
-									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="#" title="twitter">
+									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="https://github.com/RaeHyeonJeong" title="twitter">
 										<i class="fab fa-github  me-2"></i>https://github.com/RaeHyeonJeong
 									</a>
 								</p>
@@ -76,7 +76,7 @@
 							<div class="col px-1">
 								<h6>WOO UI JEONG</h6>
 								<p class="text-sm text-white  mb-2">
-									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="#" title="twitter">
+									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="https://github.com/WOOUIJEONG" title="twitter">
 										<i class="fab fa-github  me-2"></i>https://github.com/WOOUIJEONG
 									</a>
 								</p>
@@ -91,7 +91,7 @@
 							<div class="col px-1">
 								<h6>JANG HO JUN</h6>
 								<p class="text-sm text-white  mb-2">
-									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="#" title="twitter">
+									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="https://github.com/h-oho" title="twitter">
 										<i class="fab fa-github  me-2"></i>https://github.com/h-oho
 									</a>
 								</p>
@@ -106,7 +106,7 @@
 							<div class="col px-1">
 								<h6>CHO YU JU</h6>
 								<p class="text-sm text-white  mb-2">
-									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="#" title="twitter">
+									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="https://github.com/Y00J00" title="twitter">
 										<i class="fab fa-github  me-2"></i>https://github.com/Y00J00
 									</a>
 								</p>
@@ -121,7 +121,7 @@
 							<div class="col px-1">
 								<h6>KIM HYEONG GWON</h6>
 								<p class="text-sm text-white  mb-2">
-									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="#" title="twitter">
+									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="https://github.com/hyeonggwon" title="twitter">
 										<i class="fab fa-github  me-2"></i>https://github.com/hyeonggwon
 									</a>
 								</p>
@@ -136,7 +136,7 @@
 							<div class="col px-1">
 								<h6>CHOI YOON YOUNG</h6>
 								<p class="text-sm text-white  mb-2">
-									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="#" title="twitter">
+									<a class="text-white text-primary-hover" style="text-decoration: none" target="_blank" href="https://github.com/ChoiYoonYoung09" title="twitter">
 										<i class="fab fa-github  me-2"></i>https://github.com/ChoiYoonYoung09
 									</a>
 								</p>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.todaysTable.dao.DetailDao;
+import com.todaysTable.vo.DibsVO;
 import com.todaysTable.vo.MenuVO;
 import com.todaysTable.vo.ReviewImageVO;
 import com.todaysTable.vo.ReviewVO;
@@ -95,5 +96,36 @@ public class DetailServiceImpl implements DetailService{
 		return dao.selectReviewImageList(review_no);
 	}
 	
+	
+	//찜하기(유주)
+
+	@Override
+	public DibsVO getLikeInfo(String id, int store_no) {
+		DibsVO vo=new DibsVO();
+		StoreVO storeVO = dao.selectStoreInfo(store_no);
+		vo.setAddress(storeVO.getAddress());
+		vo.setStore_no(storeVO.getStore_no());
+		vo.setStore_name(storeVO.getName());
+		vo.setMemb_no(dao.getMemberNo(id));
+		vo.setAvg_grade(dao.getAvgGrade(store_no));
+		
+		return vo;
+	}
+
+	@Override
+	public void insertLikeInfo(DibsVO vo)  {
+		dao.insertLikeInfo(vo);
+		
+	}
+
+	@Override
+	public void deleteLikeInfo(DibsVO vo) {
+		dao.deleteLikeInfo(vo);		
+	}
+	
+	@Override
+	public int checkLike(DibsVO vo){
+		return dao.checkLike(vo);
+	}
 	
 }

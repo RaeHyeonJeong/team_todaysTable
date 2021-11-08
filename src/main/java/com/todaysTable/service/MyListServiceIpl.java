@@ -1,6 +1,8 @@
 package com.todaysTable.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,9 +59,13 @@ public class MyListServiceIpl implements MyListService{
 	}
 
 	@Override
-	public int checkLike(DibsVO vo) throws Exception {
-		return MyListDao.checkLike(vo);
+	public List<DibsVO> getLikeList(int memb_no) throws Exception {
+		return MyListDao.getLikeList(memb_no);
 	}
+
+	
+
+
 	
 	
 	

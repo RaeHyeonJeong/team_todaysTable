@@ -326,6 +326,9 @@
 			data.append('mood_grade', $("select#mood_grade").val());
 			data.append('content', $("textarea#content").text());
 			data.append('store_no', '${param.store_no}');
+			
+			
+			
 			$.ajax({
 				type:'POST',
 				enctype:'multipart/form-data',
@@ -389,7 +392,45 @@
 				}
 			});
 		});
-	});
+		
+		
+	
+		
+		 $("#checkbox").change(function(){   //찜하기 , 삭제 가능
+			
+			if($("#checkbox").is(":checked")){
+				
+				$.ajax({
+					url:'LikeStore.do',
+					type:'POST',
+					dataType:'json',
+					data:{store_no:'${param.store_no}'},  
+					success:function(data){
+						
+					},
+					error:function(e) {
+						alert(e);
+					}
+			});
+			
+			}else{
+				alert("해제");
+				$.ajax({
+					url:'DislikeStore.do',
+					type:'POST',
+					dataType:'json',
+					data:{store_no:'${param.store_no}'},
+					success:function(data){
+						
+					},
+					error:function(e) {
+						alert(e);
+					}
+			});
+				
+			}
+		});	 
+		});
 </script>
 </head>
 <body style="padding-top: 72px;">
@@ -437,11 +478,13 @@
 					<p class="text-primary"><i class="fa-map-marker-alt fa me-1"></i>${param.name}</p>
 					<h1>${store.name}</h1>
 					
-					<!-- 찜하기 버튼 (체크박스 활성화로 상태 값을 DB에 저장해야 함)-->
-						<div class="heartbox" style="position: absolute; left: 850px; top:70px;">
 					
-							<input type="checkbox" class="checkbox" id="checkbox" /> 
-							<label for="checkbox"> 
+					
+					<!-- 찜하기 버튼 (체크박스 활성화로 상태 값을 DB에 저장해야 함)-->
+					<form>
+						<div class="heartbox" style="position: absolute; left: 850px; top:70px;">
+						<input type="checkbox" class="checkbox" id="checkbox" ${check_value} /> 
+						<label for="checkbox"> 
 							<svg id="heart-svg" viewBox="-80 -40 58 57" xmlns="http://www.w3.org/2000/svg">
 					         <g id="Group" fill="none" fill-rule="evenodd" transform="translate(-80 -40)">
 			                 <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2" />
@@ -479,7 +522,8 @@
 			         </svg>
 					</label>
 				</div>
-
+			
+</form>
 
 
 

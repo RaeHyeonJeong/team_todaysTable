@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <header class="header">
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="functions" uri="http://java.sun.com/jsp/jstl/functions" %> 
+<%
+String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");	
+%>
 	<!-- Navbar-->
 	<nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white" style="padding-bottom: 10px; padding-top: 10px;">
 		<div class="container-fluid">
@@ -34,7 +39,7 @@
 				</ul>
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item dropdown ms-lg-3"><a id="userDropdownMenuLink" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<img class="avatar avatar-sm avatar-border-white me-2" src="resources/img/avatar/avatar-10.jpg" alt="Jack London">
+							<img class="avatar avatar-sm avatar-border-white me-2" src="<%= profileImg %>" alt="">
 						</a>
 						<div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownMenuLink">
 							<a class="dropdown-item" href="myPageMove.do">마이페이지</a>

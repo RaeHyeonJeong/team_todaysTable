@@ -7,6 +7,7 @@
 	// 세션값 가져오기
 String id = (String) session.getAttribute("id");
 String name = (String) session.getAttribute("NAME");
+String nickname = (String) session.getAttribute("nickname");
 String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");
 %>
 <!DOCTYPE html>
@@ -64,6 +65,7 @@ String profileImg=(String)session.getAttribute("PROFILE_IMAGE_PATH");
 							src="<%=profileImg %>" alt=" ">
 							</a>
 							<h5><%=name%></h5>
+							<p class="text-muted text-sm mb-0"><%=nickname%></p>
 						</div>
 					</div>
 					<form class="form-validate" action="updateProfile.do" method="POST"

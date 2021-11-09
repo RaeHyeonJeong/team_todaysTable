@@ -974,7 +974,7 @@
 	<script src="resources/js/map-layers.js">
 	</script>
 	<!-- 지도 핀표시 -->
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1738ef78b208b65a2926c9bbc75401d6"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c4dd380f4d335210df6ca8afc7573ad9"></script>
 	<script>
 	
 	//latitude 위도
@@ -987,7 +987,7 @@
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 	    mapOption = { 
 	        center: new kakao.maps.LatLng(latitude, longitude), // 지도의 중심좌표
-	        level: 5 // 지도의 확대 레벨
+	        level: 6 // 지도의 확대 레벨
 	    };
 	
 	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다

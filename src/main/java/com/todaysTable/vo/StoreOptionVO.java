@@ -11,7 +11,7 @@ public class StoreOptionVO {
 	private String free_wifi;
 	private String kids_zone;
 	private String no_kids_zone;
-	private String kid_menu ;
+	private String kid_menu;
 	private String corkage_free;
 	private String vegetarian;
 	private String gluten_free;

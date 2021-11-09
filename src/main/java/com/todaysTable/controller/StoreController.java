@@ -8,6 +8,7 @@ import java.util.StringTokenizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,7 +44,6 @@ public class StoreController {
 		
 		model.addAttribute("pageMaker",pageMaker);
 		return "WEB-INF/views/storeSearch";
-		
 	}
 	
 	// 신규 매장 등록 SUBMIT
@@ -51,29 +51,13 @@ public class StoreController {
 	public String insertStoreInfo(StoreVO storeVO, MenuVO menuVO, StoreOptionVO storeOptionVO,
 			@RequestParam(value = "file", required = false) List<MultipartFile> fileList, MultipartHttpServletRequest request,
 			StoreImageVO storeImageVO) {
-		
+		//가게 기본정보
 		storeService.insertStoreInfo(storeVO);
-		//storeService.uploadStoreImg(storeImageVO);
-		//storeService.updateStoreOption(storeOptionVO);
+		
 		//fileUploader.multiFileUploader(fileList, request, "storeImg");
+		//storeService.uploadStoreImg(storeImageVO);
 		
-		/*Map<String, String> menu = new HashMap<>();
-		
-		StringTokenizer st = new StringTokenizer(menuVO.getMenu_name(),",");
-		StringTokenizer st2 = new StringTokenizer(menuVO.getPrice(),",");
-		while(st.hasMoreTokens() && st2.hasMoreTokens()) {
-			menu.put(st.nextToken(), st2.nextToken());
-		}
-		 Iterator<String> keys = menu.keySet().iterator();
-	        while(keys.hasNext() ){
-	            String key = keys.next();
-	            String value = menu.get(key);
-	     }
-	        
-	    for(int i = 0; i<menu.size();i++) {
-	    	storeService.insertStoreMenu(menu);
-	    }*/
-		
+		//가게 메뉴
 	    Map<String, String> menu = new HashMap<>();
 	    StringTokenizer st = new StringTokenizer(menuVO.getMenu_name(),",");
 	    StringTokenizer st2 = new StringTokenizer(menuVO.getPrice(),",");
@@ -84,13 +68,9 @@ public class StoreController {
 	    	storeService.insertStoreMenu(menu);
 	    }
 	    
-		// 겟  스토어브이오 스토어넘버가져와ㅓ 맵에다가 넣어줘라 밸류로> 
-		//map.put("store_no", storeVO.getStore_no();
-		//if check = 'Y' else 'N'
-		//map.put("can_park", Y); 체크시 Y
-		//map.put("CAN_RESERVE", ); 아니면 N
-		//map.put("CAN_RESERVE", N); 아니면 N
-	    //Map<String, Object> option = new HashMap<>();
+	    //가게 편의사항(OPTION)
+	    storeService.updateStoreOption(storeOptionVO);
+	    System.out.println(storeOptionVO);
 		
 		return "redirect:storeSearch.do";
 	}

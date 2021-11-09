@@ -49,16 +49,28 @@
 			VALUES(MENU_SEQ.NEXTVAL,STORE_SEQ.CURRVAL,#{menu_name},#{price})
 	</insert>
 	
-<!-- STORE_NO,CAN_PARK,CAN_RESERVE,CAN_TAKEOUT,FREE_WIFI,KIDS_ZON,NO_KIDS_ZONE,KID_MENU,
-CORKAGE_FREE,VEGETARIAN,GLUTEN_FREE,HIGHCHAIR,CAN_GO_WITH_PET,CAN_DELIVER,OUTSIDE_SEAT,
-CAN_LUNCH_MENU,CAN_BREAKFAST_MENU,CAN_SPACE_RENTAL -->
-	
- 	<!-- 편의사항 UPDATE -->
-	<update id="updateStoreOption">
+  	<!-- 편의사항 UPDATE -->
+	<update id="updateStoreOption" parameterType="com.todaysTable.vo.StoreOptionVO">
 		UPDATE STORE_OPTION
 		SET
-		#{storeOption}='Y'
-		WHERE STORE_NO
+		<choose><when test="can_park != null">can_park='Y'</when><otherwise>can_park='N'</otherwise></choose>,
+		<choose><when test="can_reserve != null">can_reserve='Y'</when><otherwise>can_reserve='N'</otherwise></choose>,
+		<choose><when test="can_takeout != null">can_takeout='Y'</when><otherwise>can_takeout='N'</otherwise></choose>,
+		<choose><when test="free_wifi != null">free_wifi='Y'</when><otherwise>free_wifi='N'</otherwise></choose>,
+		<choose><when test="kids_zone != null">kids_zone='Y'</when><otherwise>kids_zone='N'</otherwise></choose>,
+		<choose><when test="no_kids_zone != null">no_kids_zone='Y'</when><otherwise>no_kids_zone='N'</otherwise></choose>,
+		<choose><when test="kid_menu != null">kid_menu='Y'</when><otherwise>kid_menu='N'</otherwise></choose>,
+		<choose><when test="corkage_free != null">corkage_free='Y'</when><otherwise>corkage_free='N'</otherwise></choose>,
+		<choose><when test="vegetarian != null">vegetarian='Y'</when><otherwise>vegetarian='N'</otherwise></choose>,
+		<choose><when test="gluten_free != null">gluten_free='Y'</when><otherwise>gluten_free='N'</otherwise></choose>,
+		<choose><when test="highchair != null">highchair='Y'</when><otherwise>highchair='N'</otherwise></choose>,
+		<choose><when test="can_go_with_pet != null">can_go_with_pet='Y'</when><otherwise>can_go_with_pet='N'</otherwise></choose>,
+		<choose><when test="can_deliver != null">can_deliver='Y'</when><otherwise>can_deliver='N'</otherwise></choose>,
+		<choose><when test="outside_seat != null">outside_seat='Y'</when><otherwise>outside_seat='N'</otherwise></choose>,
+		<choose><when test="can_lunch_menu != null">can_lunch_menu='Y'</when><otherwise>can_lunch_menu='N'</otherwise></choose>,
+		<choose><when test="can_breakfast_menu != null">can_breakfast_menu='Y'</when><otherwise>can_breakfast_menu='N'</otherwise></choose>,
+		<choose><when test="can_space_rental != null">can_space_rental='Y'</when><otherwise>can_space_rental='N'</otherwise></choose>
+		WHERE store_no=store_no
 	</update>
 	
 	

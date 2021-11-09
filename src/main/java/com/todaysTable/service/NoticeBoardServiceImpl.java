@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.todaysTable.dao.NoticeBoardDao;
+import com.todaysTable.func.AjaxFileUploader;
 import com.todaysTable.func.FileUploader;
 import com.todaysTable.vo.NoticeBoardImageVO;
 import com.todaysTable.vo.NoticeBoardVO;
@@ -20,7 +21,7 @@ public class NoticeBoardServiceImpl implements NoticeBoardService {
 	NoticeBoardDao dao;
 
 	@Autowired
-	FileUploader fileUploader;
+	AjaxFileUploader ajaxFileUploader;
 
 	@Override
 	public List<NoticeBoardVO> noticeBoardList() {
@@ -28,18 +29,17 @@ public class NoticeBoardServiceImpl implements NoticeBoardService {
 	}
 
 	@Override
-	public void insertNoticeBoard(NoticeBoardVO vo, List<MultipartFile> fileList, MultipartHttpServletRequest request, String folderName) {
+	public void insertNoticeBoard(NoticeBoardVO vo) {
 
 		vo.setContent(vo.getContent().replace("\r\n", "<br>"));
-		fileUploader.multiFileUploader(fileList, request, folderName);
-
 		dao.insertNoticeBoard(vo);
 
-		ArrayList<String> list = fileUploader.getUploadFilePath();
+		ArrayList<String> list = ajaxFileUploader.getListInstance();
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
 			dao.insertNoticeBoardImage(list.get(i));
 		}
+		ajaxFileUploader.getListInstance().clear();
 	}
 
 	@Override
@@ -80,7 +80,29 @@ public class NoticeBoardServiceImpl implements NoticeBoardService {
 			list.get(i).setImage_path(path);
 		}
 
+		System.out.println("list 사이즈 " + list.size());
+		
 		return list;
+	}
+
+	@Override
+	public void uploadFile(MultipartFile[] uploadFile) {
+		String forderName = "noticeImg";
+
+		for (MultipartFile multipartFile : uploadFile) {
+			try {
+				System.out.println("name : " + multipartFile.getOriginalFilename());
+
+				ajaxFileUploader.uploadFile(multipartFile, forderName, ajaxFileUploader.getListInstance());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public void deleteFileAll(MultipartFile[] uploadFile) {
+		ajaxFileUploader.deleteFlieAll(ajaxFileUploader.getListInstance());
 	}
 	
 	

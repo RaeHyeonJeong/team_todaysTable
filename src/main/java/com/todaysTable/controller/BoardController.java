@@ -20,6 +20,8 @@ public class BoardController {
 
 	@Autowired
 	NoticeBoardService service;
+	
+	
 
 	// BOARD 공통 메서드
 	@RequestMapping(value = "boardWriteMove.do")
@@ -41,9 +43,9 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "insertNoticeBoard.do", method = RequestMethod.POST)
-	public String noticeBoardInsertAction(NoticeBoardVO vo, @RequestParam(value = "file", required = false) List<MultipartFile> fileList, MultipartHttpServletRequest request, String folderName) {
+	public String noticeBoardInsertAction(NoticeBoardVO vo) {
 
-		service.insertNoticeBoard(vo, fileList, request, "noticeImg");
+		service.insertNoticeBoard(vo);
 		return "redirect:/noticeBoard.do";
 	}
 
@@ -67,19 +69,14 @@ public class BoardController {
 		return "redirect:/noticeBoard.do";
 	}
 
-	@RequestMapping(value = "uploadImgAjax.do", method = {RequestMethod.POST, RequestMethod.GET} )
+	@RequestMapping(value = "uploadImgAjax.do", method = { RequestMethod.POST, RequestMethod.GET })
 	public void uploadAjax(MultipartFile[] uploadFile) {
-		AjaxFileUploader ajaxFileUploader = new AjaxFileUploader();
-		String forderName = "noticeImg";
-		
-		for(MultipartFile multipartFile : uploadFile) {
-			try {
-				System.out.println("name : " +multipartFile.getOriginalFilename());
-				
-				ajaxFileUploader.uploadFile(multipartFile, forderName);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+		service.uploadFile(uploadFile);
 	}
+
+	@RequestMapping(value = "deleteImgAllAjax.do", method = { RequestMethod.POST, RequestMethod.GET })
+	public void deleteAllAjax(MultipartFile[] uploadFile) {
+		service.deleteFileAll(uploadFile);
+	}
+
 }

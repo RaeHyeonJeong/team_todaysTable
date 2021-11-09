@@ -378,7 +378,15 @@
 								<div class="position-relative row form-group">
 									<label for="dayOff" class="col-sm-2 col-form-label">휴무일</label>
 									<div class="col-sm-2">
-										<input name="day_off" id="day_off" type="text" class="form-control">
+										<select name="day_off" id="day_off" class="form-control">
+											<option>월요일</option>
+											<option>화요일</option>
+											<option>수요일</option>
+											<option>목요일</option>
+											<option>금요일</option>
+											<option>토요일</option>
+											<option>일요일</option>
+										</select>
 									</div>
 								</div>
 								<br>
@@ -446,82 +454,84 @@
 									<label for="storeOption" class="col-sm-2 col-form-label">편의사항</label>
 									<div class="col-sm-2">
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="can_park" value="" class="custom-control-input"> 
+											<input type="checkbox" name="can_park" id="can_park" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="can_park">주차 가능</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="can_reserve" value="" class="custom-control-input"> 
+											<input type="checkbox" name="can_reserve" id="can_reserve" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="can_reserve">예약 가능</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="can_takeout" value="" class="custom-control-input"> 
+											<input type="checkbox" name="can_takeout" id="can_takeout" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="can_takeout">포장 가능</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="free_wifi" value="" class="custom-control-input"> 
+											<input type="checkbox" name="free_wifi" id="free_wifi" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="free_wifi">무료 와이파이</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="kids_zone" value="" class="custom-control-input"> 
+											<input type="checkbox" name="kids_zone" id="kids_zone" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="kids_zone">키즈존</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="no_kids_zone" value="" class="custom-control-input"> 
+											<input type="checkbox" name="no_kids_zone" id="no_kids_zone" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="no_kids_zone">노키즈존</label>
 										</div>
 									</div>
 
 									<div class="col-sm-2">
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="kid_menu" value="" class="custom-control-input"> 
+											<input type="checkbox" name="kid_menu" id="kid_menu" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="kid_menu">키즈 메뉴</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="corkage_free" value="" class="custom-control-input"> 
+											<input type="checkbox" name="corkage_free" id="corkage_free" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="corkage_free">콜키지 프리</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="vegetarian" value="" class="custom-control-input"> 
+											<input type="checkbox" name="vegetarian" id="vegetarian" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="vegetarian">비건음식</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="gluten_free" value="" class="custom-control-input"> 
+											<input type="checkbox" name="gluten_free" id="gluten_free" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="gluten_free">글루텐 프리</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="highchair" value="" class="custom-control-input"> 
+											<input type="checkbox" name="highchair" id="highchair" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="highchair">유아용 의자</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="can_go_with_pet" value="" class="custom-control-input"> 
+											<input type="checkbox" name="can_go_with_pet" id="can_go_with_pet" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="can_go_with_pet">반려동물 동반가능</label>
 										</div>
 									</div>
 
 									<div class="col-sm-2">
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="can_deliver" value="" class="custom-control-input"> 
+											<input type="checkbox" name="can_deliver" id="can_deliver" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="can_deliver">배달 가능</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="outside_seat" value="" class="custom-control-input"> 
+											<input type="checkbox" name="outside_seat" id="outside_seat" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="outside_seat">야외좌석</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="can_lunch_menu" value="" class="custom-control-input"> 
+											<input type="checkbox" name="can_lunch_menu" id="can_lunch_menu" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="can_lunch_menu">점심 특선메뉴</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="can_breakfast_menu" value="" class="custom-control-input"> 
+											<input type="checkbox" name="can_breakfast_menu" id="can_breakfast_menu" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="can_breakfast_menu">아침 특선메뉴</label>
 										</div>
 										<div class="custom-checkbox custom-control">
-											<input type="checkbox" name="storeOption" id="can_space_rental" value="" class="custom-control-input"> 
+											<input type="checkbox" name="can_space_rental" id="can_space_rental" value="Y" class="custom-control-input"> 
 											<label class="custom-control-label" for="can_space_rental">대관 가능</label>
 										</div>
 									</div>
 								</div>
 								<br>
+								
+
 								
 								<div class="position-relative row form-group">
 									<div class="col-sm-10 offset-sm-2" align="right" style="padding-right: 5%">

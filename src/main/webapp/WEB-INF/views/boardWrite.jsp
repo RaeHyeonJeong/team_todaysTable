@@ -50,11 +50,11 @@
 						</div>
 						<div class="form-group mb-4">
 							<label class="form-label" for="formFile">UPLOAD IMAGE</label> <input class="form-control" id="file" name="file" multiple="multiple" type="file">
-							<ul id="img">
+							<!-- <ul id="img">
 								<li>Sample.file<a href="">
 										&nbsp<i class="fas fa-times-circle  me-2"></i>
 									</a></li>
-							</ul>
+							</ul> -->
 						</div>
 						<div class="form-group mb-4">
 							<label class="form-label" for="formFile">비밀번호</label> <input class="form-control" id="password" type="text" name="password" required="required">
@@ -141,6 +141,7 @@
 		$(document).ready(function() {
 			var regex = new RegExp("(.*?)\.(jpg|jpeg|png|gif)$");
 			var maxSize = 14805760; // 10MB
+			var formData = new FormData();
 			
 			// 파일 사이즈 , 파일 확장자 체크
 			function checkExtension(fileName, fileSize){
@@ -155,9 +156,24 @@
 				return true;
 			}
 			
-			// 파일 선택시 자동 업로드
+			// 파일 input 태크 변화시 실행
 			$("#file").on("change", function(e){
-				var formData = new FormData();
+				if(formData.has('uploadFile')){
+					$.ajax({
+						url : 'deleteImgAllAjax.do',
+						processData : false,
+						contentType : false,
+						data : formData,
+						async : false,
+						type: "POST",
+						success : function(result){
+							alert("Uploaded");
+						}
+					})
+				}
+	
+				formData.delete('uploadFile');
+				
 				var inputFile = $("input[name='file']");
 				var files = inputFile[0].files;
 				

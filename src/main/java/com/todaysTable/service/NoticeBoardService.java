@@ -11,10 +11,12 @@ import com.todaysTable.vo.NoticeBoardVO;
 
 public interface NoticeBoardService {
 	public List<NoticeBoardVO> noticeBoardList();
-	public void insertNoticeBoard(NoticeBoardVO vo, List<MultipartFile> fileList,MultipartHttpServletRequest request, String folderName);
+	public void insertNoticeBoard(NoticeBoardVO vo);
 	public void updateNoticeBoard(NoticeBoardVO vo);
 	public void deleteNoticeBoard(int no);
 	public NoticeBoardVO detailNoticeBoard(int no);
 	public void updateHits(int no);
 	public List<NoticeBoardImageVO> selectNoticeImage(int no);
+	public void uploadFile(MultipartFile[] uploadFile);
+	public void deleteFileAll(MultipartFile[] uploadFile);
 }

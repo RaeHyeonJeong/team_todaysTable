@@ -134,11 +134,30 @@
 </br>
 
 ### 🗄️DataBase Design
-<img src="https://user-images.githubusercontent.com/62385698/141481256-0ee23ed2-7b65-40cf-803a-cb5e00b349cd.JPG" />
-<img src="https://user-images.githubusercontent.com/62385698/141481270-6070f622-beb7-48ba-8e6d-67129227a84e.JPG" />
-<img src="https://user-images.githubusercontent.com/62385698/141481306-f0a9bdd0-f90c-4a5f-9357-c5407d8efa52.JPG" />
-<img src="https://user-images.githubusercontent.com/62385698/141481319-dfd2e5db-be55-4838-8552-295f10f86f98.JPG" />
-<img src="https://user-images.githubusercontent.com/62385698/141481327-da939392-910f-4b9b-8a00-0fab9e2e4bf8.JPG" />
+> 데이터 베이스 구성
+
+<table>
+<tr>
+  <td><img src="https://user-images.githubusercontent.com/62385698/141481256-0ee23ed2-7b65-40cf-803a-cb5e00b349cd.JPG" /></td>
+</tr>
+ <tr>
+  <td><img src="https://user-images.githubusercontent.com/62385698/141481270-6070f622-beb7-48ba-8e6d-67129227a84e.JPG" /></td>
+</tr>
+<tr>
+  <td><img src="https://user-images.githubusercontent.com/62385698/141481306-f0a9bdd0-f90c-4a5f-9357-c5407d8efa52.JPG" /></td>
+</tr>
+<tr>
+  <td><img src="https://user-images.githubusercontent.com/62385698/141481319-dfd2e5db-be55-4838-8552-295f10f86f98.JPG" /></td>
+</tr>
+<tr>
+  <td><img src="https://user-images.githubusercontent.com/62385698/141481327-da939392-910f-4b9b-8a00-0fab9e2e4bf8.JPG" />
+</td>
+</tr>
+</table>
+
+
+
+
 
 
 

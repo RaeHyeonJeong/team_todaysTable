@@ -1,6 +1,11 @@
 ## WebProject - 오늘의식탁
-<img src="https://user-images.githubusercontent.com/62385698/141475374-7b53812a-a562-43e7-8981-0bce18722a17.JPG" />
-
+<table>
+<tr>
+  <th>
+    <img src="https://user-images.githubusercontent.com/62385698/141475374-7b53812a-a562-43e7-8981-0bce18722a17.JPG" />
+  </th>
+</tr>
+</table>
 
 ***
 </br>
